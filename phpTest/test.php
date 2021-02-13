@@ -41,46 +41,26 @@
     }
     echo "Connected successfully";
     ?>
-<table>
+
+    <iframe name="dummyframe" id="dummyframe" style="display: none;" action="test.php"></iframe>
+    <form action="insert.php" method="POST" target="dummyframe">
+        <input type="text" name="username" id="username" placeholder="username"/>
+        <input type="text" name="password" id="password" placeholder="password"/>
+        <input type="submit" id="btnSubmit" value="login" onClick="window.location.reload();"/>
+    </form>
+    <table>
     <tr>
         <th>Id</th>
         <th>Username</th>
         <th>Password</th>
     </tr>
   
-    
     <?php
-        $details = include('config.php');
-        $conn = mysqli_connect($details['host'], $details['username'], $details['password']);
-
-        if($conn->connect_error) {
-            die("Error connecting to: ".$conn->connect_error);
-        }
-
-        $sql = "SELECT id,username,password FROM " . $details['database'] . "." . $details['table'] ;
-        $result = $conn-> query($sql);
-
-        if($result-> num_rows > 0){
-            while($row = $result -> fetch_assoc()){
-                echo "<tr><td>".$row["id"] . "</td><td>" . $row["username"] . "</td><td>" . $row["password"] . "</td></tr>";
-            }
-            echo "</table>";
-        }else{
-            echo "0 result";
-        }
-
-    $conn->close();
+        include("list.php");
     ?>
+    
 
 </table>
-
-    <iframe name="dummyframe" id="dummyframe" style="display: none;" action="test.php"></iframe>
-    <form action="insert.php" method="POST" target="dummyframe">
-        <input type="text" name="username" id="username" placeholder="username"/>
-        <input type="text" name="password" id="password" placeholder="password"/>
-        <input type="submit" id="btnSubmit" value="login"/>
-    </form>
-
 </body>
 
 </html>
