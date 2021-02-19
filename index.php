@@ -1,3 +1,33 @@
+<?php 
+    include("config/gconfig.php");
+
+    $login_button = '';
+
+    if(isset($_GET['code'])){
+        $token = $google_client->fetchAccessTokenWithAuthCode($_GET['code']);
+        if(!isset($token['error'])){
+            $google_client->setAccessToken($token['access_token']);
+            $_SESSION['access_token'] = $token['access_token'];
+
+            $google_service = new Google_Service_Oauth2($google_client);
+
+            $data = $google_service->userinfo->get();
+
+            if(!empty($data['given_name'])){
+                $_SESSION['user_given_name'] = $data['given_name'];
+            }
+
+            if(!empty($data['email'])){
+                $_SESSION['user_email'] = $data['email'];
+            }
+
+            if(!empty($data['picture'])){
+                $_SESSION['user_picture'] = $data['picture'];
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +37,16 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <?php 
+        $details = include('config/config.php');
+        echo '<meta name="google-signin-client_id" content="'.$details['googleClientID'].'">';
+
+        //include('config/checkUser.php');
+       
+    ?>
+    <title>Cyberfoodies</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -22,6 +61,7 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/styleExtra.css" type="text/css">
 </head>
 
 <body>
@@ -30,32 +70,11 @@
         <div class="loader"></div>
     </div>
 
-   
+   <a onClick="delcookie('q');" href="">RRRRR</a>
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="header-top">
-            <div class="container">
-                <div class="ht-left">
-                    <a href="mailto:ameersorne@gmail.com?subject=FROM CYBERFOODIES&body=Hello!%0D%0AYou look cute today!%0D%0A%0D%0ARegards,%0D%0ARandom cyberians">
-                    <div class="mail-service">
-                        <i class=" fa fa-envelope"></i>
-                        contact admin
-                    </div></a>
-                   <!-- legacy@phone --><a href="https://t.me/joinchat/LaKQuhb_BCr22Ht2NRAulw">
-                   <div class="phone-service">
-                    <!-- <i class=" fa fa-phone"></i>-->
-                    Go to Cyberjaya Food telegram
-                </div></a>
-                </div>
-                <div class="ht-right">
-                    <div class="top-social">
-                        <a href="https://www.facebook.com/cyberjaya.info"><i class="ti-facebook"></i></a>
-                        <a href="https://twitter.com/Twt_Cyberjaya"><i class="ti-twitter-alt"></i></a>
-                        <!-- <a href="#"><i class="ti-linkedin"></i></a>
-                        <a href="#"><i class="ti-pinterest"></i></a> -->
-                    </div>
-                </div>
-            </div>
+           <?php include('part/topmost.php') ?>
         </div>
 
         <div class="container">
@@ -63,22 +82,30 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="#" onclick="signOut();">
                                 <img src="img/logo.png" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-7">
-                        <div class="advanced-search">
-                            <button type="button" class="category-btn">All Categories</button>
+                        <div class="advanced-search" style="border: none!important;">
+                            <!-- <button type="button" class="category-btn"></button>
                             <div class="input-group">
                                 <input type="text" placeholder="What do you need?">
-                                <button type="button"><i class="ti-search"></i></button>
+                                <button type="button" ><i class="ti-search"></i></button>
+                            </div> -->
+                            <div class="search">
+                                <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                                <button type="submit" class="searchButton">
+                                    <i class="fa fa-search"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 text-right col-md-3">
                          <!-- legacy@nav-right -->
+                         <!-- <a href="login.php" class="login-panel"><i class="fa fa-user"></i>Login</a> -->
+                         <div class="g-signin2" data-onsuccess="onSignIn"></div>
                     </div>
                 </div>
             </div>
@@ -88,9 +115,10 @@
                 <div class="nav-depart">
                     <div class="depart-btn">
                         <i class="ti-menu"></i>
-                        <span>All departments</span>
+                        <span>All categories</span>
                         <ul class="depart-hover">
-                            <li class="active"><a href="#">Women’s Clothing</a></li>
+                        <li class="active"><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
                             <li><a href="#">Men’s Clothing</a></li>
                             <li><a href="#">Underwear</a></li>
                             <li><a href="#">Kid's Clothing</a></li>
@@ -283,6 +311,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <!-- <script src="config/googlesignin.js"></script> -->
 </body>
 
 </html>
