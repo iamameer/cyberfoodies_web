@@ -1503,6 +1503,8 @@ ol {
 .footer-section {
 	background: #191919;
 	padding-top: 15px;
+	position: fixed!important;
+	bottom: 0!important;
 }
 
 .footer-left {

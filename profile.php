@@ -121,39 +121,16 @@
                         </div>-->
 
                         <div class="blog-detail-title">
-                           <h2>Store list:</h2>
+                           <h2 style="margin-top:10px;">Store list:</h2>
                             <!--  <p>travel <span>- May 19, 2019</span></p> -->
                         </div>   
                     </div>
 
                     <div class="col-lg-9 order-1 order-lg-2" style="margin: auto!important;">
                     <div class="row">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="blog-item">
-                                <div class="bi-pic">
-                                    <img src="img/blog/blog-1.jpg" alt="">
-                                </div>
-                                <div class="bi-text">
-                                    <a href="./blog-details.html">
-                                        <h4>The Personality Trait That Makes People Happier</h4>
-                                    </a>
-                                    <p>travel <span>- May 19, 2019</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="blog-item">
-                                <div class="bi-pic">
-                                    <img src="img/blog/blog-2.jpg" alt="">
-                                </div>
-                                <div class="bi-text">
-                                    <a href="./blog-details.html">
-                                        <h4>This was one of our first days in Hawaii last week.</h4>
-                                    </a>
-                                    <p>Fashion <span>- May 19, 2019</span></p>
-                                </div>
-                            </div>
-                        </div>
+                       <?php 
+                            include('part/storelist.php');
+                       ?>
                     </div>
                     </div>
                      
@@ -188,7 +165,7 @@
 
     <!-- Footer Section Begin -->
     <?php 
-        include('part/footer.php');
+       // include('part/footer.php');
    ?>
     <!-- Footer Section End -->
 

@@ -20,22 +20,24 @@
             die("Error connecting to: ".$conn->connect_error);
         }
 
-        $query = "SELECT user_email FROM ".$details['database'].".".$details['user_table'] ." WHERE user_id = " . $user_id;
-        //$statement = $connect->prepare($query);
+        $query = "SELECT user_email FROM ".$details['database'].".".$details['user_table'] .
+                    " WHERE user_id = " . $user_id;
+        //echo $query;
         $result = $conn-> query($query);
-
+        //mysqli_num_rows($result)
         //If user not found, insert
-        if($result-> num_rows < 1){
-            $sql = 'INSERT INTO '.$details[database] .'.' .$details[user_table].' 
-                                (user_id, user_image, user_name, user_email) 
-                        VALUES ("'.$user_id.'", "'.$user_image.'", "'.$user_name.'", "'.$user_email.'")';
+        if($result-> num_rows > 0){
+        }else{
+            $sql = 'INSERT IGNORE INTO '.$details[database] .'.' .$details[user_table].' 
+            (user_id, user_image, user_name, user_email) 
+                VALUES ("'.$user_id.'", "'.$user_image.'", "'.$user_name.'", "'.$user_email.'")';
             //print_r($sql);
             if(!$conn-> query($sql)){
                 echo("Error: ".$conn->error);
             }else{
-                echo "<script type='text/javascript'>alert('Successfully registered!');</script>";
+                //echo "<script type='text/javascript'>alert('Successfully logged in!');</script>";
             }
-        } 
+        }
 
         echo'<div class="posted-by">
                 <div class="pb-pic">
@@ -45,7 +47,7 @@
                     <a href="#">
                         <h5>'. $user_name .'</h5>
                     </a>
-                    <p>'. $user_email .'<br/> ' . $user_image.'</p>
+                    <p>'. $user_email .'<br/></p>
                 </div>
             </div>';
         
