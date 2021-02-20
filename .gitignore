@@ -5,3 +5,6 @@ config.php
 /phpTestImg/config.php
 /google-api
 /.vscode
+/config/googlesignin.js
+/config/gsignin.js
+/config/gconfig.php

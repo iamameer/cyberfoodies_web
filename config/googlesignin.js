@@ -14,6 +14,7 @@ function onSignIn(googleUser) {
     //localStorage.setItem('email', profile.getEmail());
     var str = profile.getName()+"|"+profile.getEmail()+"|"+profile.getImageUrl();
     setCookie("q",str,1);
+    //location.reload();
     //alert(userID);
     //sendToPHP(profile.getEmail());
     //window.location.replace('index.php?email='+profile.getEmail()); //?email='+profile.getEmail()
@@ -31,12 +32,10 @@ function setCookie(name,value,days) {
         expires = "; expires=" + date.toUTCString();
     }
     document.cookie = escape(name) + "=" + escape(value || "")  + expires + "; path=/";
-    location.reload();
 }
 
 function delcookie(name){
     setCookie(name,"",-1);
-    location.reload();
 }
 
 function sendToPHP(str){

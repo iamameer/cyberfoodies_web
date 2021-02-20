@@ -1,0 +1,1 @@
+<?php echo '<title>Cyberfoodies</title>'; ?>

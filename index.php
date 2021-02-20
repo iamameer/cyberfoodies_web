@@ -15,10 +15,8 @@
         echo '<meta name="google-signin-client_id" content="'.$details['googleClientID'].'">';
 
         //include('config/checkUser.php');
-
+        include('part/title.php');
     ?>
-
-    <title>Cyberfoodies</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -77,9 +75,20 @@
                          <!-- legacy@nav-right -->
                          <!-- <a href="login.php" class="login-panel"><i class="fa fa-user"></i>Login</a> -->
                     
-                         <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-                         <a href="http://cyberfoodies.epizy.com/" id="signout" onclick="signOut();">Sign out</a> -->
+                        <?php 
+                            if(!isset($_COOKIE["q"])){
+                                echo "<script type='text/javascript'> 
+                                        function signOut() {
+                                            setCookie('q','',-1);
+                                            var auth2 = gapi.auth2.getAuthInstance();
+                                            auth2.signOut().then(function () {
+                                            console.log('User signed out.');
+                                            });
+                                        }    
+                                    </script>";
+                                echo '<div class="g-signin2" data-onsuccess="onSignIn"></div>';
+                            }
+                        ?>
 
                     </div>
                 </div>
@@ -87,7 +96,7 @@
         </div>
         <div class="nav-item">
             <div class="container">
-                <div class="nav-depart">
+                <!-- <div class="nav-depart">
                     <div class="depart-btn">
                         <i class="ti-menu"></i>
                         <span>All categories</span>
@@ -103,30 +112,13 @@
                             <li><a href="#">Brand Outdoor Apparel</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./shop.html">Shop</a></li>
-                        <li><a href="#">Collection</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Men's</a></li>
-                                <li><a href="#">Women's</a></li>
-                                <li><a href="#">Kid's</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="dropdown">
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                <li><a href="./check-out.html">Checkout</a></li>
-                                <li><a href="./faq.html">Faq</a></li>
-                                <li><a href="./register.html">Register</a></li>
-                                <li><a href="./login.html">Login</a></li>
-                            </ul>
-                        </li>
+                        <?php include('part/nav.php'); ?>
+                        <script type="text/javascript">
+                            document.getElementById("home").classList.add("active");
+                        </script>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
@@ -254,15 +246,9 @@
     <!-- Partner Logo Section Begin -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer-section">
-    <div class="copyright-text" style="text-align: center;color:silver;">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with 
-<i class="fa fa-heart-o" aria-hidden="true" style="color:red;"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </div>
-    
-    </footer>
+   <?php 
+        include('part/footer.php');
+   ?>
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
@@ -292,6 +278,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     var str = profile.getName()+"|"+profile.getEmail()+"|"+profile.getImageUrl();
     console.log(str); 
     setCookie("q",str,1);
+    if(profile){
+        window.location.replace("profile.php");
+        googleUser.disconnect()
+    }
   }
 
   function setCookie(name,value,days) {
@@ -311,6 +301,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         auth2.signOut().then(function () {
         console.log("User signed out.");
         });
+        auth2.disconnect();
     }    
 
 
