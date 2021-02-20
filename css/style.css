@@ -1502,7 +1502,7 @@ ol {
 
 .footer-section {
 	background: #191919;
-	padding-top: 75px;
+	padding-top: 15px;
 }
 
 .footer-left {
@@ -1525,7 +1525,7 @@ ol {
 }
 
 .footer-left .footer-social {
-	padding-top: 25px;
+	padding-top: 5px;
 }
 
 .footer-left .footer-social a {
@@ -1646,11 +1646,11 @@ ol {
 .copyright-reserved {
 	border-top: 1px solid #303030;
 	padding: 15px 0;
-	margin-top: 45px;
+	margin-top: 5px;
 }
 
 .copyright-reserved .copyright-text {
-	float: left;
+	/* float: left; */
 	font-size: 16px;
 	color: #b2b2b2;
 }

@@ -3,4 +3,5 @@
 config.php
 /phpTest/config.php
 /phpTestImg/config.php
-/google-api-php-client--PHP8.0
+/google-api
+/.vscode

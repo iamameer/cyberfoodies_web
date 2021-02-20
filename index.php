@@ -1,33 +1,3 @@
-<?php 
-    include("config/gconfig.php");
-
-    $login_button = '';
-
-    if(isset($_GET['code'])){
-        $token = $google_client->fetchAccessTokenWithAuthCode($_GET['code']);
-        if(!isset($token['error'])){
-            $google_client->setAccessToken($token['access_token']);
-            $_SESSION['access_token'] = $token['access_token'];
-
-            $google_service = new Google_Service_Oauth2($google_client);
-
-            $data = $google_service->userinfo->get();
-
-            if(!empty($data['given_name'])){
-                $_SESSION['user_given_name'] = $data['given_name'];
-            }
-
-            if(!empty($data['email'])){
-                $_SESSION['user_email'] = $data['email'];
-            }
-
-            if(!empty($data['picture'])){
-                $_SESSION['user_picture'] = $data['picture'];
-            }
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,14 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+     <!-- <script src="config/gsignin.js" async defer></script> -->
 
     <?php 
         $details = include('config/config.php');
         echo '<meta name="google-signin-client_id" content="'.$details['googleClientID'].'">';
 
         //include('config/checkUser.php');
-       
+
     ?>
+
     <title>Cyberfoodies</title>
 
     <!-- Google Font -->
@@ -70,7 +42,6 @@
         <div class="loader"></div>
     </div>
 
-   <a onClick="delcookie('q');" href="">RRRRR</a>
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="header-top">
@@ -82,7 +53,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="#" onclick="signOut();">
+                            <a href="#" onclick="">
                                 <img src="img/logo.png" alt="">
                             </a>
                         </div>
@@ -105,7 +76,11 @@
                     <div class="col-lg-3 text-right col-md-3">
                          <!-- legacy@nav-right -->
                          <!-- <a href="login.php" class="login-panel"><i class="fa fa-user"></i>Login</a> -->
-                         <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    
+                         <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+                         <a href="http://cyberfoodies.epizy.com/" id="signout" onclick="signOut();">Sign out</a> -->
+
                     </div>
                 </div>
             </div>
@@ -280,23 +255,13 @@
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
-        <!-- legacy@container -->
-        <div class="copyright-reserved">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright-text">
+    <div class="copyright-text" style="text-align: center;color:silver;">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with 
+<i class="fa fa-heart-o" aria-hidden="true" style="color:red;"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </div>
-                        <div class="payment-pic">
-                            <img src="img/payment-method.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
     </footer>
     <!-- Footer Section End -->
 
@@ -311,7 +276,42 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-    <!-- <script src="config/googlesignin.js"></script> -->
 </body>
 
 </html>
+
+<script>
+
+ function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+    var str = profile.getName()+"|"+profile.getEmail()+"|"+profile.getImageUrl();
+    console.log(str); 
+    setCookie("q",str,1);
+  }
+
+  function setCookie(name,value,days) {
+    console.log("in setCookie");
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = escape(name) + "=" + escape(value || "")  + expires + "; path=/";
+}
+
+    function signOut() {
+        setCookie("q","",-1);
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+        console.log("User signed out.");
+        });
+    }    
+
+
+</script>
