@@ -12,7 +12,7 @@
     if(isset($_COOKIE['q'])){
         $str = explode("|",htmlspecialchars($_COOKIE['q'])); 
         $user_id = explode("@",$str[1])[0];
-        $store_id = $user_id . '_'. substr($store_name, 0, 5);;
+        $store_id = str_shuffle($user_id . rand ( 11 , 99 ).substr($store_name, 0, 5));;
     }else{
         $user_id = "uid";
         $store_id = "sid";
@@ -58,13 +58,15 @@
     if(!$conn-> query($sql)){
         echo("Error: ".$conn->error);
     }else{
-        echo "<script type='text/javascript'>alert('Successfully added Store!')
-        window.location.replace('http://cyberfoodies.epizy.com/profile.php'); </script>";
+        echo "<script type='text/javascript'>
+                window.location.replace('http://cyberfoodies.epizy.com/profile.php'); 
+                </script>";
         // header("profile.php");
         // exit();
     }
 
     mysql_close($conn);   
+    //mysql_close($conn);   
     // $details = include('config.php');
     // include('dbconn.php');
 
@@ -76,7 +78,9 @@
     //         $statement->execute();
     //     }
     // }
-
-
+    
+//     echo "<script type='text/javascript'>
+//     location.href = 'profile.php'; 
+// </script>";
 
 ?>

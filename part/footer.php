@@ -1,5 +1,5 @@
 <?php 
-    echo '<footer class="footer-section">';
+    echo '<footer class="footer-section" style="width: 100%!important; z-index: 10;">';
     echo '<div class="copyright-text" style="text-align: center;color:silver;">';
     echo  "<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> ";
     echo "Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with ";

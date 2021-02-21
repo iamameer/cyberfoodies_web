@@ -45,11 +45,7 @@
             <div class="inner-header">
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
-                        <div class="logo">
-                            <a href="./index.html">
-                                <img src="img/logo.png" alt="">
-                            </a>
-                        </div>
+                        <?php include('part/logo.php'); ?>
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="advanced-search" style="border: none!important;">
@@ -79,7 +75,8 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <?php include('part/nav.php'); 
+                        <?php $nav = include('part/nav.php'); 
+                            echo str_replace('class=""','class="active"',$nav);
                             if(!isset($_COOKIE["q"])){
                                 echo '<div class="g-signin2" data-onsuccess="onSignIn"></div>';
                                 echo "<script type='text/javascript'>alert('Please login first!');
@@ -165,7 +162,7 @@
 
     <!-- Footer Section Begin -->
     <?php 
-       // include('part/footer.php');
+       include('part/footer.php');
    ?>
     <!-- Footer Section End -->
 

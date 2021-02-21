@@ -12,7 +12,7 @@
     error_reporting(-1); ini_set('display_errors',1);
     $query = "SELECT store_id, store_name, store_district, store_status, store_picture
             FROM ".$details['database'].".".$details['store_table'] .
-            " WHERE user_id = '" . $user_id . "' ORDER BY store_status";
+            " WHERE user_id = '" . $user_id . "' ORDER BY store_timestamp desc, store_status, store_district";
 
     //print_r($query);
     $result = $conn-> query($query);
