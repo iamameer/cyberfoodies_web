@@ -3212,6 +3212,7 @@ ol {
 
 .blog-item .bi-pic img {
 	min-width: 100%;
+	height: 169px;
 }
 
 .blog-item .bi-text {
@@ -3786,6 +3787,18 @@ ol {
 	margin-bottom: 13px;
 }
 
+#warning{
+	color:red;
+	font-style: italic;
+	font-size: 14px;
+}
+
+.whatsapp{
+	position: relative;
+	left:10px;
+	right:5px;
+}
+
 .register-form form .group-input input,
 .login-form form .group-input input {
 	border: 1px solid #ebebeb;
@@ -3793,6 +3806,18 @@ ol {
 	width: 100%;
 	padding-left: 20px;
 	padding-right: 15px;
+}
+.register-form form .group-input textarea{
+	width: 100%;
+	resize: none;
+	font-size: 16px;
+	color: #636363;
+	height: 116px;
+	border: 1px solid #ebebeb;
+	border-radius: 5px;
+	padding-left: 20px;
+	padding-top: 0px;
+	margin-bottom: -10px;
 }
 
 .register-form form .register-btn,

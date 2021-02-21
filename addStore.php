@@ -7,7 +7,12 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <?php
+        $details = include('config/config.php');
+        echo '<meta name="google-signin-client_id" content="'.$details['googleClientID'].'">';
+        include('part/title.php');
+    ?>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -21,7 +26,9 @@
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/styleExtra.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
 </head>
 
 <body>
@@ -33,35 +40,7 @@
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="header-top">
-            <div class="container">
-                <div class="ht-left">
-                    <div class="mail-service">
-                        <i class=" fa fa-envelope"></i>
-                        hello.colorlib@gmail.com
-                    </div>
-                    <div class="phone-service">
-                        <i class=" fa fa-phone"></i>
-                        +65 11.188.888
-                    </div>
-                </div>
-                <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
-                    <div class="lan-selector">
-                        <select class="language_drop" name="countries" id="countries" style="width:300px;">
-                            <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
-                                data-title="English">English</option>
-                            <option value='yu' data-image="img/flag-2.jpg" data-imagecss="flag yu"
-                                data-title="Bangladesh">German </option>
-                        </select>
-                    </div>
-                    <div class="top-social">
-                        <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"><i class="ti-twitter-alt"></i></a>
-                        <a href="#"><i class="ti-linkedin"></i></a>
-                        <a href="#"><i class="ti-pinterest"></i></a>
-                    </div>
-                </div>
-            </div>
+            <?php include('part/topmost.php') ?>
         </div>
         <div class="container">
             <div class="inner-header">
@@ -74,68 +53,22 @@
                         </div>    
                     </div>
                     <div class="col-lg-7 col-md-7">
-                        <div class="advanced-search">
-                            <button type="button" class="category-btn">All Categories</button>
-                            <form action="#" class="input-group">
+                        <div class="advanced-search" style="border: none!important;">
+                          <!-- <button type="button" class="category-btn"></button>
+                            <div class="input-group">
                                 <input type="text" placeholder="What do you need?">
-                                <button type="button"><i class="ti-search"></i></button>
-                            </form>
+                                <button type="button" ><i class="ti-search"></i></button>
+                            </div> -->
+                            <div class="search">
+                                <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                                <button type="submit" class="searchButton">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3 text-right col-md-3">
-                        <ul class="nav-right">
-                            <li class="heart-icon"><a href="#">
-                                <i class="icon_heart_alt"></i>
-                                <span>1</span>
-                            </a>
-                            </li>
-                            <li class="cart-icon"><a href="#">
-                                <i class="icon_bag_alt"></i>
-                                <span>3</span>
-                            </a>
-                            <div class="cart-hover">
-                                <div class="select-items">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
-                                                <td class="si-text">
-                                                    <div class="product-selected">
-                                                        <p>$60.00 x 1</p>
-                                                        <h6>Kabino Bedside Table</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="si-close">
-                                                    <i class="ti-close"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
-                                                <td class="si-text">
-                                                    <div class="product-selected">
-                                                        <p>$60.00 x 1</p>
-                                                        <h6>Kabino Bedside Table</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="si-close">
-                                                    <i class="ti-close"></i>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="select-total">
-                                    <span>total:</span>
-                                    <h5>$120.00</h5>
-                                </div>
-                                <div class="select-button">
-                                    <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                    <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
-                                </div>
-                            </div>
-                        </li>
-                            <li class="cart-price">$150.00</li>
-                        </ul>
+                     
                     </div>
                 </div>
             </div>
@@ -143,44 +76,22 @@
         <div class="nav-item">
             <div class="container">
                 <div class="nav-depart">
-                    <div class="depart-btn">
-                        <i class="ti-menu"></i>
-                        <span>All departments</span>
-                        <ul class="depart-hover">
-                            <li class="active"><a href="#">Women’s Clothing</a></li>
-                            <li><a href="#">Men’s Clothing</a></li>
-                            <li><a href="#">Underwear</a></li>
-                            <li><a href="#">Kid's Clothing</a></li>
-                            <li><a href="#">Brand Fashion</a></li>
-                            <li><a href="#">Accessories/Shoes</a></li>
-                            <li><a href="#">Luxury Brands</a></li>
-                            <li><a href="#">Brand Outdoor Apparel</a></li>
-                        </ul>
-                    </div>
+                    
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./shop.html">Shop</a></li>
-                        <li><a href="#">Collection</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Men's</a></li>
-                                <li><a href="#">Women's</a></li>
-                                <li><a href="#">Kid's</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="dropdown">
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                <li><a href="./check-out.html">Checkout</a></li>
-                                <li><a href="./faq.html">Faq</a></li>
-                                <li><a href="./register.html">Register</a></li>
-                                <li><a href="./login.html">Login</a></li>
-                            </ul>
-                        </li>
+                    <?php 
+                    include('part/nav.php'); 
+                            if(!isset($_COOKIE["q"])){
+                                echo '<div class="g-signin2" data-onsuccess="onSignIn"></div>';
+                                echo "<script type='text/javascript'>alert('Please login first!');
+                                    window.location.replace('index.php');</script>";
+                            }else{
+                                echo '<script type="text/javascript">
+                                        document.getElementById("profile").classList.add("active");
+                                    </script>';
+                            }
+                        ?>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
@@ -196,7 +107,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
                         <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>Register</span>
+                        <span>Add Store</span>
                     </div>
                 </div>
             </div>
@@ -210,25 +121,94 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
-                        <h2>Register</h2>
-                        <form action="#">
+ 
+                        <h3>Please fill in the details:</h3><div id="storestatus">
+                         
+                        <!-- <iframe name="dummyframe" id="dummyframe" style="display: none;" action="profile.php"></iframe> -->
+                        <form id="addstore" action="config/newstore.php" method="POST" enctype="multipart/form-data">
                             <div class="group-input">
-                                <label for="username">Username or email address *</label>
-                                <input type="text" id="username">
+                                <label for="storestatus">Status :</label>
+                                <select type="text" id="storestatus" name="storestatus" placeholder="Status :">
+                                    <option value = "Open">Buka (Open)</option>
+                                    <option value = "Closed">Tutup (Closed)</option>
+                                    <option value = "Holiday">Cuti (Holiday)</option>
+                                    <option value = "Moved">Berpindah (Moved)</option>
+                                    <option value = "Setting">Dalam proses (Setting up)</option>
+                                    <option value = "Other">Lain (Other)</option>
+                                </select>
                             </div>
                             <div class="group-input">
-                                <label for="pass">Password *</label>
-                                <input type="text" id="pass">
+                                <label for="storename"></label>
+                                <input type="text" id="storename" name="storename"  placeholder="Nama Kedai (Store Name) *"
+                                onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
+                                onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()">
                             </div>
                             <div class="group-input">
-                                <label for="con-pass">Confirm Password *</label>
-                                <input type="text" id="con-pass">
+                                <label for="location"></label>
+                                <textarea type="text" id="location" name="location" placeholder="Lokasi (Store Location) *"
+                                onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
+                                onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()"></textarea>
                             </div>
-                            <button type="submit" class="site-btn register-btn">REGISTER</button>
+                            <div class="group-input">
+                                <label for="district">Daerah (Store District) *</label>
+                                <select type="text" id="district" name="district" placeholder="Daerah (Store District) *">
+                                    <option value = "Cyberjaya">Cyberjaya</option>
+                                    <option value = "Putrajaya">Putrajaya</option>
+                                    <option value = "Puchong">Dengkil</option>
+                                    <option value = "Puchong">Puchong</option>
+                                    <option value = "Other">Lain (Other)</option>
+                                </select>
+                            </div>
+                            <div class="group-input">
+                                <label for="time"></label>
+                                <textarea type="text" id="time" name="time" placeholder="Waktu operasi (Operating Time) *"></textarea>
+                            </div> 
+                            <div class="group-input">
+                                <label for="delivery"></label>
+                                <textarea type="text" id="delivery" name="delivery" placeholder="Maklumat Penghantaran (Delivery Information) *"
+                                onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
+                                onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()"></textarea>
+                            </div>
+                            <div class="group-input">
+                                <label for="howtoorder"></label>
+                                <textarea type="text" id="howtoorder" name="howtoorder" placeholder="Cara Tempahan (How to order) *"
+                                onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
+                                onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()"></textarea>
+                            </div> 
+                            <div class="group-input">
+                                <label for="telephone"></label>
+                                <input type="text" id="telephone" name="telephone" placeholder="Nombor Telefon (Phone Number) "
+                                onchange="enablews(this);" onfocus="enablews(this);" onblur="enablews(this);" 
+                                onclick="enablews(this);"  onkeyup="enablews(this);"></textarea>
+                            </div> 
+                            <div id="whatsappid" style="display:none">
+                                <input type="checkbox" id="whatsapp" name="whatsapp" value="whatsapp" onchange="handleChange(this);">
+                                <label for="whatsapp">  Hubungi melalui whatsapp (Contact via whatsapp) </label> 
+                            </div>
+                            <div class="group-input">
+                                <label for="extratext"></label>
+                                <textarea type="text" id="extratext" name="extratext" placeholder="Text whatsapp (Contol/Example): 
+                                &#13; &#128525; Saya nak order sekarang! I want to order right away &#129392;!" style="display:none;"></textarea>
+                            </div> 
+                            <div class="group-input">
+                                <label for="additional"></label>
+                                <textarea type="text" id="additional" name="additional" placeholder="Maklumat Tambahan (Additional Information)"></textarea>
+                            </div> 
+                            <div class="group-input">
+                                <label for="additional">Upload Gambar Kedai (Add Store Image) :</label>
+                                <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" /> 
+                                <span id="warning" style="display:none;"></span>
+                                <span>Hanya satu gambar kedai dibenarkan! Bukan gambar product!<br>
+                                <i>Only one store picture allowed! Not product's picture!</i></span>
+                            </div>
+                            <button type="submit" id="site-btn" class="site-btn register-btn" 
+                            style="opacity:.5;disabled:true;"
+                            >ADD STORE</button>
                         </form>
+                        <!-- 
                         <div class="switch-login">
                             <a href="./login.html" class="or-login">Or Login</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -237,112 +217,11 @@
     <!-- Register Form Section End -->
     
     <!-- Partner Logo Section Begin -->
-    <div class="partner-logo">
-        <div class="container">
-            <div class="logo-carousel owl-carousel">
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-1.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-2.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-3.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-4.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-5.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Partner Logo Section End -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer-left">
-                        <div class="footer-logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
-                        </div>
-                        <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello.colorlib@gmail.com</li>
-                        </ul>
-                        <div class="footer-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 offset-lg-1">
-                    <div class="footer-widget">
-                        <h5>Information</h5>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Serivius</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="footer-widget">
-                        <h5>My Account</h5>
-                        <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Shopping Cart</a></li>
-                            <li><a href="#">Shop</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="newslatter-item">
-                        <h5>Join Our Newsletter Now</h5>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#" class="subscribe-form">
-                            <input type="text" placeholder="Enter Your Mail">
-                            <button type="button">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-reserved">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright-text">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </div>
-                        <div class="payment-pic">
-                            <img src="img/payment-method.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php 
+       //include('part/footer.php');
+   ?>
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
@@ -359,3 +238,111 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </body>
 
 </html>
+<script>
+
+$(document).ready(function(){
+
+// load_images();
+
+// function load_images()
+// {
+//     $.ajax({
+//         url:"fetch.php",
+//         success:function(data)
+//         {
+//             $('#images_list').html(data);
+//         }
+//     });
+// }
+
+    // $('#addstore').on('submit', function(event){
+    //     event.preventDefault();
+    //     var image_name = $('#image').val();
+
+    //     $.ajax({
+    //         url:"config/newstore.php",
+    //         method:"POST",
+    //         data: new FormData(this),
+    //         contentType:false,
+    //         cache:false,
+    //         processData:false,
+    //         success:function(data){
+    //             $('#image').val(''); //clear value
+    //             //load_images();
+    //         }
+    //     });
+    //     //location.reload();
+
+    //     // if(image_name == ''){
+    //     //     //alert("Please Select Image");
+    //     //     return false;
+    //     // }else{
+            
+    //     // }
+    // });
+
+});  
+
+function filesize(){
+    var upl = document.getElementById("image");
+    if(upl.files[0].size > 3000000){
+        document.getElementById("warning").innerHTML = "Saiz imej melebihi had 3mb (Image size exceeded 3mb limit)";
+        document.getElementById("warning").style.display = 'block'; 
+        upl.value = ''; //clear
+    }else{
+        document.getElementById("warning").innerHTML = "";
+        document.getElementById("warning").style.display = 'none'; 
+    }
+}
+
+function handleChange(checkbox) {
+    if(checkbox.checked == true){
+        document.getElementById("extratext").style.display = 'block';
+    }else{
+        document.getElementById("extratext").style.display = 'none';
+        document.getElementById("extratext").value = '';
+    }
+}
+
+function checkIfEmpty(){
+    if( !document.getElementById("storename").value ||
+        !document.getElementById("location").value ||
+        !document.getElementById("delivery").value ||
+        !document.getElementById("howtoorder").value ){
+        document.getElementById('site-btn').setAttribute('disabled', 'disabled');
+        document.getElementById('site-btn').style.opacity= 0.5;
+    }else{
+        document.getElementById('site-btn').removeAttribute('disabled');
+        document.getElementById('site-btn').style.opacity= 1;
+    }
+}
+
+function enablews(input){
+    if(!input.value){
+        document.getElementById('whatsappid').style.display='none'; 
+    }else{
+        document.getElementById('whatsappid').style.display='block';
+    }
+}
+// $(document).ready(function() {
+//     $("#storename").change(function() {
+//         var storename = $("#storename").val();
+//         console.log(storename);
+//     });
+// });
+
+
+// function validateName(){ 
+//     console.log('in va');
+//     var storename = document.getElementById('storename').value;
+
+//     if(storename.length < 5){
+//         document.getElementById('site-btn').disabled=true;
+//         document.getElementById('site-btn').style.opacity: 0.5;
+//     }else{
+//         document.getElementById('site-btn').disabled=false;
+//         document.getElementById('site-btn').style.opacity: 1;
+//     }
+// }
+
+</script>

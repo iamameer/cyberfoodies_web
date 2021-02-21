@@ -9,26 +9,30 @@
 
     $str = explode("|",htmlspecialchars($_COOKIE["q"]));
     $user_id = explode("@",$str[1])[0];
-
-    $details = include('config.php');
+    error_reporting(-1); ini_set('display_errors',1);
     $query = "SELECT store_id, store_name, store_district, store_status, store_picture
             FROM ".$details['database'].".".$details['store_table'] .
-            " WHERE user_id = " . $user_id . " ORDER BY store_status";
+            " WHERE user_id = '" . $user_id . "' ORDER BY store_status";
 
-    //echo $query;
+    //print_r($query);
     $result = $conn-> query($query);
 
     //If store found, populate
     if($result-> num_rows > 0){
          
-    echo '<p>result found</p>';
+    //echo '<p>result found</p>';
         while($row = $result -> fetch_assoc()){
              
-    echo '<p>in while</p>';
+    //echo '<p>in while</p>';
+    if(strlen($row["store_picture"] )< 10){
+        $img = "<img src='img/blog/sample-shop-image-min.png'>";
+    }else{
+        $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'"/>';
+    }
             echo ' <div class="col-lg-4 col-sm-6">
                 <div class="blog-item">
                     <div class="bi-pic">
-                        <img src="'. $row["store_picture"] . '" alt="">
+                        '.$img.'
                     </div>
                     <div class="bi-text">
                         <a href="store.php?store_id='.$row['store_id'].'">
@@ -44,10 +48,10 @@
     echo ' <div class="col-lg-4 col-sm-6">
             <div class="blog-item">
                 <div class="bi-pic">
-                    <img src="img/blog/add-store.jpg" alt="">
+                    <img src="img/blog/add-store-new.jpg" alt="">
                 </div>
                 <div class="bi-text">
-                    <a href="addstore.php">
+                    <a href="addStore.php?">
                         <h4>- Add store -</h4>
                     </a> 
                 </div>

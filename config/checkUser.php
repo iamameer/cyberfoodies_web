@@ -28,7 +28,7 @@
         //If user not found, insert
         if($result-> num_rows > 0){
         }else{
-            $sql = 'INSERT IGNORE INTO '.$details[database] .'.' .$details[user_table].' 
+            $sql = 'INSERT IGNORE INTO '.$details['database'] .'.' .$details['user_table'].' 
             (user_id, user_image, user_name, user_email) 
                 VALUES ("'.$user_id.'", "'.$user_image.'", "'.$user_name.'", "'.$user_email.'")';
             //print_r($sql);
