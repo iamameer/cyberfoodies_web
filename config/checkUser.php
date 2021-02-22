@@ -41,7 +41,7 @@
 
         echo'<div class="posted-by">
                 <div class="pb-pic">
-                    <img src="'. $user_image .'" alt="">
+                    <img src="'. $user_image .'" alt="" style="border-radius: 50%!important;" height="89px" width="91px">
                 </div>
                 <div class="pb-text">
                     <a href="#">

@@ -1,6 +1,8 @@
 <?php
+
+    error_reporting(-1); ini_set('display_errors',1);
     $details = include('config/config.php');
-    include('dbconn.php');
+    include('config/config.php');
 
     $conn = mysqli_connect($details['host'], $details['username'], $details['password'], $details['database']);
     if($conn->connect_error) {
@@ -25,17 +27,19 @@
              
     //echo '<p>in while</p>';
     if(strlen($row["store_picture"] )< 10){
-        $img = "<img src='img/blog/sample-shop-image-min.png'>";
+        $img = "<img src='img/blog/sample-shop-image-min.png' @>";
     }else{
-        $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'"/>';
+        $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'" @/>';
     }
             echo ' <div class="col-lg-4 col-sm-6">
-                <div class="blog-item">
-                    <div class="bi-pic">
-                        '.$img.'
+                <div class="blog-item" >
+                    <div class="bi-pic" 
+                    style="width:255px!important;height:170px!important;
+                    overflow:hidden!important;">
+                        '. str_replace('@','style="height: 100%; width: 100%; object-fit: cover"',$img) .'
                     </div>
                     <div class="bi-text">
-                        <a href="store.php?store_id='.$row['store_id'].'">
+                        <a href="store.php?store_id='.$row['store_id'].'&q='.$user_id.'">
                             <h4>'.$row["store_name"] .'</h4>
                         </a>
                         <p>'.$row["store_status"] .'<span>- '.$row["store_district"] .'</span></p>

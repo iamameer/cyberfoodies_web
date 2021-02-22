@@ -112,10 +112,24 @@
 
     <!-- Shopping Cart Section Begin -->
     <section class="shopping-cart spad">
+   
         <div class="container">
+        
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="cart-table">
+                    <div class="cart-table"><center>
+                    <div class="blog-detail-title">
+                            <?php 
+                                if(isset($_GET['store_id'])){
+                                    $store_id = $_GET['store_id'];
+                                    include('part/getstorePicName.php');
+                                }else{
+                                    echo "<script type='text/javascript'>alert('Error: no store_id');
+                                    window.location.replace('http://cyberfoodies.epizy.com/index.php'); 
+                                    </script>";
+                                }
+                             ?>
+                        </div></center>
                         <table>
                             <thead>
                                 <tr>
@@ -123,36 +137,61 @@
                                     <th class="p-name">Product Name</th>
                                     <th>Price</th>
                                     <th>Stock</th>
-                                    <th>Status</th>
-                                    <th><i class="ti-close"></i></th>
+                                    <th>Availability</th>
+                                    <!-- <th><i class="ti-close"></i></th> -->
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php include('part/productlist.php'); ?> 
+                                <?php 
+                                    if(isset($_GET['store_id'])){
+                                        $store_id = $_GET['store_id'];
+                                        include('part/productlist.php'); 
+                                    }else{
+                                        echo "<script type='text/javascript'>alert('Error: no store_id');
+                                        window.location.replace('http://cyberfoodies.epizy.com/index.php'); 
+                                        </script>";
+                                    }?> 
                             </tbody>
                         </table>
                     </div>
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="cart-buttons">
-                                <a href="#" class="primary-btn continue-shop">Continue shopping</a>
-                                <a href="#" class="primary-btn up-cart">Update cart</a>
+                                <!-- <a href="#" class="primary-btn continue-shop">Continue shopping</a> -->
+                                <?php 
+                                    if(isset($_GET['store_id'])){
+                                        $store_id = $_GET['store_id'];
+                                            if(isset($_COOKIE["q"])){
+                                                $str = explode("|",htmlspecialchars($_COOKIE["q"]));
+                                                $user_id = explode("@",$str[1])[0];
+                                                if($user_id == $_GET['q']){
+                                                    echo  '
+                                                    <a href="addProduct.php?store_id='.$store_id.'" class="primary-btn up-cart">Add product</a>
+                                                    ';
+                                                }
+                                            }
+                                    }else{
+                                        echo "<script type='text/javascript'>alert('Error: no store_id');
+                                        window.location.replace('http://cyberfoodies.epizy.com/index.php'); 
+                                        </script>";
+                                    } 
+                                ?>
                             </div>
-                            <div class="discount-coupon">
+                            <!-- <div class="discount-coupon">
                                 <h6>Discount Codes</h6>
                                 <form action="#" class="coupon-form">
                                     <input type="text" placeholder="Enter your codes">
                                     <button type="submit" class="site-btn coupon-btn">Apply</button>
                                 </form>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-lg-4 offset-lg-4">
                             <div class="proceed-checkout">
-                                <ul>
+                                <!-- <ul>
                                     <li class="subtotal">Subtotal <span>$240.00</span></li>
                                     <li class="cart-total">Total <span>$240.00</span></li>
-                                </ul>
-                                <a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
+                                </ul> -->
+                                <?php include('part/wsgen.php'); ?>
                             </div>
                         </div>
                     </div>
@@ -163,7 +202,9 @@
     <!-- Shopping Cart Section End -->
 
     <!-- Partner Logo Section Begin -->
-  
+  <div id="filler" height="200px">
+      
+  </div>
 
     <!-- Footer Section Begin -->
     <?php 
