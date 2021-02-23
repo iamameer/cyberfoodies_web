@@ -120,6 +120,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
+                    <style type="text/css">
+                        textarea {
+                            width: 100%;
+                            resize: none;
+                            font-size: 16px;
+                            color: #636363;
+                            height: 116px;
+                            border: 1px solid #ebebeb;
+                            border-radius: 5px;
+                            padding-left: 20px;
+                            padding-top: 0px;
+                            margin-bottom: -10px;
+                        }
+                    </style>
                     <div class="register-form">
  
                         <h3>Please fill in the details:</h3><div id="storestatus">

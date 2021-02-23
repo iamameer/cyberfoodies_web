@@ -55,7 +55,7 @@
                     <img src="img/blog/add-store-new.jpg" alt="">
                 </div>
                 <div class="bi-text">
-                    <a href="addStore.php?">
+                    <a href="addStore.php?user_id='.$user_id.'">
                         <h4>- Add store -</h4>
                     </a> 
                 </div>
