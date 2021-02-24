@@ -12,7 +12,7 @@
     if(isset($_COOKIE['q'])){
         $str = explode("|",htmlspecialchars($_COOKIE['q'])); 
         $user_id = explode("@",$str[1])[0];
-        $store_id = str_shuffle($user_id . rand ( 11 , 99 ).substr($store_name, 0, 5));;
+        $store_id = str_shuffle($user_id . rand ( 11 , 99 ).substr(str_replace(' ','',$store_name), 0, 5));
     }else{
         $user_id = "uid";
         $store_id = "sid";

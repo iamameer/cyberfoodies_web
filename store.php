@@ -138,13 +138,31 @@
                                     <th>Price</th>
                                     <th>Stock</th>
                                     <th>Availability</th>
-                                    <!-- <th><i class="ti-close"></i></th> -->
+                                    <!-- <i class="ti-close"></i> -->
                                 </tr>
                             </thead>
                             <tbody>
+                            <style type="text/css">
+                                    .productrow:hover{ 
+                                        background: #ffffff;
+                                        margin-bottom: 11px;
+                                        -webkit-box-shadow: 0px 8px 30px 1px #ffcf87;
+                                        box-shadow: 0px 8px 30px 1px #ffcf87;
+                                    }  
+                            </style>
                                 <?php 
                                     if(isset($_GET['store_id'])){
                                         $store_id = $_GET['store_id'];
+                                        if(isset($_GET['q'])){
+                                            $user_id = $_GET['q'];
+                                        }else{
+                                            if(isset($_COOKIE["q"])){
+                                                $str = explode("|",htmlspecialchars($_COOKIE["q"]));
+                                                $user_id = explode("@",$str[1])[0];
+                                            }else{
+                                                $user_id = "";
+                                            }
+                                        }
                                         include('part/productlist.php'); 
                                     }else{
                                         echo "<script type='text/javascript'>alert('Error: no store_id');
@@ -164,9 +182,13 @@
                                             if(isset($_COOKIE["q"])){
                                                 $str = explode("|",htmlspecialchars($_COOKIE["q"]));
                                                 $user_id = explode("@",$str[1])[0];
-                                                if($user_id == $_GET['q']){
+                                                if($user_id){
+                                                    echo '<span style="font-style: italic;">*Klik pada imej untuk edit/delete produk
+                                                            <br>*Click on the image to edit/delete the product
+                                                    </span>';
                                                     echo  '
-                                                    <a href="addProduct.php?store_id='.$store_id.'" class="primary-btn up-cart">Add product</a>
+                                                    <a href="addProduct.php?store_id='.$store_id.'&mode=add" 
+                                                    class="primary-btn up-cart" style="margin-top:15px;background-color:#ff401f">Add product</a>
                                                     ';
                                                 }
                                             }

@@ -135,35 +135,12 @@
                         }
                     </style>
                     <div class="register-form">
- 
-                        <h3>Please fill in the details:</h3>
-                         
                         <!-- <div id="storestatus">
                             <iframe name="dummyframe" id="dummyframe" style="display: none;" action="profile.php"></iframe> -->
-                        <form id="addproduct" action="config/newproduct.php" method="POST" enctype="multipart/form-data">
-                            <div class="group-input">
-                                <label for="productstatus">Status :</label>
-                                <select type="text" id="productstatus" name="productstatus" placeholder="Status :">
-                                    <option value = "Available">Dijual (Available)</option>
-                                    <option value = "Limited">Terhad (Limited)</option>
-                                    <option value = "Out of stock">Kehabisan stok (Out of stock)</option>
-                                    <option value = "To be added">Akan datang (To be added)</option>
-                                    <option value = "Pre-Order">Pre-Order</option>
-                                    <option value = "Other">Lain (Other)</option>
-                                </select>
-                            </div>
-                            
-                            <div class="group-input">
-                                <label for="additional">Upload Gambar Produk (Add Product Image) :</label>
-                                <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" /> 
-                                <span id="warning" style="display:none;"></span>
-                                <span>Hanya 5 gambar product dibenarkan<br>
-                                <i>Only 5 product pictures allowed</i></span>
-                            </div>
-                            <button type="submit" id="site-btn" class="site-btn register-btn" 
-                            style="opacity:.5;disabled:true;"
-                            >ADD PRODUCT</button>
-                        </form>
+                            <?php
+                                $mode = $_GET['mode'];
+                                $store_id = $_GET['store_id'];
+                                include('part/productform.php'); ?>                  
                         <!-- 
                         <div class="switch-login">
                             <a href="./login.html" class="or-login">Or Login</a>
@@ -254,20 +231,9 @@ function filesize(){
     }
 }
 
-function handleChange(checkbox) {
-    if(checkbox.checked == true){
-        document.getElementById("extratext").style.display = 'block';
-    }else{
-        document.getElementById("extratext").style.display = 'none';
-        document.getElementById("extratext").value = '';
-    }
-}
-
 function checkIfEmpty(){
-    if( !document.getElementById("storename").value ||
-        !document.getElementById("location").value ||
-        !document.getElementById("delivery").value ||
-        !document.getElementById("howtoorder").value ){
+    if( !document.getElementById("productname").value ||
+        !document.getElementById("productprice").value ){
         document.getElementById('site-btn').setAttribute('disabled', 'disabled');
         document.getElementById('site-btn').style.opacity= 0.5;
     }else{
@@ -276,13 +242,13 @@ function checkIfEmpty(){
     }
 }
 
-function enablews(input){
-    if(!input.value){
-        document.getElementById('whatsappid').style.display='none'; 
-    }else{
-        document.getElementById('whatsappid').style.display='block';
+function checkStock(){
+    var stock = document.getElementById("productstock")
+    if( stock.value.length > 4 ){
+        stock.value = 9999;
     }
 }
+
 // $(document).ready(function() {
 //     $("#storename").change(function() {
 //         var storename = $("#storename").val();

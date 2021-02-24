@@ -156,8 +156,8 @@
                                 </select>
                             </div>
                             <div class="group-input">
-                                <label for="storename"></label>
-                                <input type="text" id="storename" name="storename"  placeholder="Nama Kedai (Store Name) *"
+                                <label for="storename">Nama Kedai (Store Name) *</label>
+                                <input type="text" id="storename" name="storename"  placeholder="eg: Kedai Nasi Ayam Viral"
                                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()">
                             </div>
@@ -174,8 +174,8 @@
                                 </select>
                             </div>
                             <div class="group-input">
-                                <label for="location"></label>
-                                <textarea type="text" id="location" name="location" placeholder="Lokasi (Store Location) *"
+                                <label for="location">Lokasi (Store Location) *</label>
+                                <textarea type="text" id="location" name="location" placeholder="eg: Tamarind Square, Persiaran Multimedia, Cyber 11"
                                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()"></textarea>
                             </div>
@@ -190,24 +190,24 @@
                                 </select>
                             </div>
                             <div class="group-input">
-                                <label for="time"></label>
-                                <textarea type="text" id="time" name="time" placeholder="Waktu operasi (Operating Time) *"></textarea>
+                                <label for="time">Waktu operasi (Operating Time) *</label>
+                                <textarea type="text" id="time" name="time" placeholder="eg: Setiap Hari 8am dan 4pm, last order 10pm"></textarea>
                             </div> 
                             <div class="group-input">
-                                <label for="delivery"></label>
-                                <textarea type="text" id="delivery" name="delivery" placeholder="Maklumat Penghantaran (Delivery Information) *"
+                                <label for="delivery">Maklumat Penghantaran (Delivery Information) *</label>
+                                <textarea type="text" id="delivery" name="delivery" placeholder="Cyberjaya (RM2) &#13;Putrajaya & Seri Kembangan (RM 4) &#13;Dengkil & Puchong (RM5)"
                                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()"></textarea>
                             </div>
                             <div class="group-input">
-                                <label for="howtoorder"></label>
-                                <textarea type="text" id="howtoorder" name="howtoorder" placeholder="Cara Tempahan (How to order) *"
+                                <label for="howtoorder">Cara Tempahan (How to order) *</label>
+                                <textarea type="text" id="howtoorder" name="howtoorder" placeholder="eg: Melalui whatsapp/telegram/sms/fb page"
                                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()"></textarea>
                             </div> 
                             <div class="group-input">
-                                <label for="telephone"></label>
-                                <input type="text" id="telephone" name="telephone" placeholder="Nombor Telefon (Phone Number) "
+                                <label for="telephone">Nombor Telefon (Phone Number) </label>
+                                <input type="text" id="telephone" name="telephone" placeholder="eg: 0123456789 (no dash)"
                                 onchange="enablews(this);" onfocus="enablews(this);" onblur="enablews(this);" 
                                 onclick="enablews(this);"  onkeyup="enablews(this);"></textarea>
                             </div> 
@@ -221,8 +221,8 @@
                                 &#13; &#128525; Saya nak order sekarang! I want to order right away &#129392;!" style="display:none;"></textarea>
                             </div> 
                             <div class="group-input">
-                                <label for="additional"></label>
-                                <textarea type="text" id="additional" name="additional" placeholder="Maklumat Tambahan (Additional Information)"></textarea>
+                                <label for="additional">Maklumat Tambahan (Additional Information)</label>
+                                <textarea type="text" id="additional" name="additional" placeholder="1) Can order via App SpeedGrocer for delivery&#13;2) Beli 10 percuma 5&#13; Tiada minimum order"></textarea>
                             </div> 
                             <div class="group-input">
                                 <label for="additional">Upload Gambar Kedai (Add Store Image) :</label>
