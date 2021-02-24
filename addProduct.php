@@ -219,6 +219,14 @@ $(document).ready(function(){
 
 });  
 
+function handleChange(checkbox) {
+    if(checkbox.checked == true){
+        document.getElementById("delbutton").style.display = 'block';
+    }else{
+        document.getElementById("delbutton").style.display = 'none';
+    }
+}
+
 function filesize(){
     var upl = document.getElementById("image");
     if(upl.files[0].size > 3000000){

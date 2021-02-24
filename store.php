@@ -188,7 +188,7 @@
                                                     </span>';
                                                     echo  '
                                                     <a href="addProduct.php?store_id='.$store_id.'&mode=add" 
-                                                    class="primary-btn up-cart" style="margin-top:15px;background-color:#ff401f">Add product</a>
+                                                    class="primary-btn up-cart" style="margin-top:15px;background-color:#e7ab3c">Add product</a>
                                                     ';
                                                 }
                                             }

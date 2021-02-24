@@ -97,8 +97,15 @@
 
             echo ' </form>';
 
-            echo  '<a href="config/updateproduct.php?product_id='.$product_id.'&store_id='.$store_id.'&mode=delete" 
-                    class="primary-btn up-cart" style="margin-top:15px;background-color:#ff401f">Delete Product</a>';
+            echo  ' <div style="margin-top:30px!important;"> 
+                        <input type="checkbox" id="del" name="del" value="del" onchange="handleChange(this);">
+                        <label for="del"> Delete produk ini (Delete this product) ? </label>
+                    ';
+            echo   '<div id="delbutton" style="display:none">
+                        <a href="config/updateproduct.php?product_id='.$product_id.'&store_id='.$store_id.'&mode=delete" 
+                        class="primary-btn up-cart" style="background-color:#ff401f;">Delete Product</a>
+                        </div>
+                    </div>';
 
         }else{ 
             echo "<script type='text/javascript'>alert('Product not found');
