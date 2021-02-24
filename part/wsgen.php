@@ -43,5 +43,5 @@
        echo 'ended here';
     }
    
-
+    mysqli_close($conn);   
 ?>

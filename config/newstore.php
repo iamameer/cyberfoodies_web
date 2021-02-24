@@ -28,6 +28,7 @@
     $store_extratext = isset($_POST['extratext']) ? $_POST['extratext'] : "";
     $store_info = $_POST['additional'];
     $store_status = $_POST['storestatus'];
+    $store_category = $_POST['category'];
 
     if(count($_FILES["image"]["tmp_name"]) > 0){
         for($count = 0; $count < count($_FILES["image"]["tmp_name"]); $count++){
@@ -51,9 +52,9 @@
  
     $sql = 'INSERT IGNORE INTO '.$details['database'] .'.' .$details['store_table'].
             '(user_id, store_id, store_name, store_location, store_district, store_delivery, 
-            store_order, store_info, store_picture, store_phone, store_time, store_status) 
+            store_order, store_info, store_picture, store_phone, store_time, store_status, store_category) 
             VALUES ("'.$user_id.'", "'.$store_id.'","'.$store_name.'","'.$store_location.'","'.$store_district.'","'.$store_delivery.'",
-             "'.$store_order.'", "'.$store_info.'", "'.$image_file.'","'.$store_phone.'","'.$store_time.'","'.$store_status.'")';
+             "'.$store_order.'", "'.$store_info.'", "'.$image_file.'","'.$store_phone.'","'.$store_time.'","'.$store_status.'","'.$store_category.'")';
 
     if(!$conn-> query($sql)){
         echo("Error: ".$conn->error);
@@ -65,7 +66,7 @@
         // exit();
     }
 
-    mysql_close($conn);   
+    mysqli_close($conn);   
     //mysql_close($conn);   
     // $details = include('config.php');
     // include('dbconn.php');

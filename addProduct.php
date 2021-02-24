@@ -107,7 +107,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
                         <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>Add Store</span>
+                        <span>Add Product</span>
                     </div>
                 </div>
             </div>
@@ -136,88 +136,33 @@
                     </style>
                     <div class="register-form">
  
-                        <h3>Please fill in the details:</h3><div id="storestatus">
+                        <h3>Please fill in the details:</h3>
                          
-                        <!-- <iframe name="dummyframe" id="dummyframe" style="display: none;" action="profile.php"></iframe> -->
-                        <form id="addstore" action="config/newstore.php" method="POST" enctype="multipart/form-data">
+                        <!-- <div id="storestatus">
+                            <iframe name="dummyframe" id="dummyframe" style="display: none;" action="profile.php"></iframe> -->
+                        <form id="addproduct" action="config/newproduct.php" method="POST" enctype="multipart/form-data">
                             <div class="group-input">
-                                <label for="storestatus">Status :</label>
-                                <select type="text" id="storestatus" name="storestatus" placeholder="Status :">
-                                    <option value = "Open">Buka (Open)</option>
-                                    <option value = "Closed">Tutup (Closed)</option>
-                                    <option value = "Holiday">Cuti (Holiday)</option>
-                                    <option value = "Moved">Berpindah (Moved)</option>
-                                    <option value = "Setting">Dalam proses (Setting up)</option>
+                                <label for="productstatus">Status :</label>
+                                <select type="text" id="productstatus" name="productstatus" placeholder="Status :">
+                                    <option value = "Available">Dijual (Available)</option>
+                                    <option value = "Limited">Terhad (Limited)</option>
+                                    <option value = "Out of stock">Kehabisan stok (Out of stock)</option>
+                                    <option value = "To be added">Akan datang (To be added)</option>
+                                    <option value = "Pre-Order">Pre-Order</option>
                                     <option value = "Other">Lain (Other)</option>
                                 </select>
                             </div>
+                            
                             <div class="group-input">
-                                <label for="storename"></label>
-                                <input type="text" id="storename" name="storename"  placeholder="Nama Kedai (Store Name) *"
-                                onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
-                                onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()">
-                            </div>
-                            <div class="group-input">
-                                <label for="location"></label>
-                                <textarea type="text" id="location" name="location" placeholder="Lokasi (Store Location) *"
-                                onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
-                                onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()"></textarea>
-                            </div>
-                            <div class="group-input">
-                                <label for="district">Daerah (Store District) *</label>
-                                <select type="text" id="district" name="district" placeholder="Daerah (Store District) *">
-                                    <option value = "Cyberjaya">Cyberjaya</option>
-                                    <option value = "Putrajaya">Putrajaya</option>
-                                    <option value = "Puchong">Dengkil</option>
-                                    <option value = "Puchong">Puchong</option>
-                                    <option value = "Other">Lain (Other)</option>
-                                </select>
-                            </div>
-                            <div class="group-input">
-                                <label for="time"></label>
-                                <textarea type="text" id="time" name="time" placeholder="Waktu operasi (Operating Time) *"></textarea>
-                            </div> 
-                            <div class="group-input">
-                                <label for="delivery"></label>
-                                <textarea type="text" id="delivery" name="delivery" placeholder="Maklumat Penghantaran (Delivery Information) *"
-                                onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
-                                onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()"></textarea>
-                            </div>
-                            <div class="group-input">
-                                <label for="howtoorder"></label>
-                                <textarea type="text" id="howtoorder" name="howtoorder" placeholder="Cara Tempahan (How to order) *"
-                                onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
-                                onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()"></textarea>
-                            </div> 
-                            <div class="group-input">
-                                <label for="telephone"></label>
-                                <input type="text" id="telephone" name="telephone" placeholder="Nombor Telefon (Phone Number) "
-                                onchange="enablews(this);" onfocus="enablews(this);" onblur="enablews(this);" 
-                                onclick="enablews(this);"  onkeyup="enablews(this);"></textarea>
-                            </div> 
-                            <div id="whatsappid" style="display:none">
-                                <input type="checkbox" id="whatsapp" name="whatsapp" value="whatsapp" onchange="handleChange(this);">
-                                <label for="whatsapp">  Hubungi melalui whatsapp (Contact via whatsapp) </label> 
-                            </div>
-                            <div class="group-input">
-                                <label for="extratext"></label>
-                                <textarea type="text" id="extratext" name="extratext" placeholder="Text whatsapp (Contol/Example): 
-                                &#13; &#128525; Saya nak order sekarang! I want to order right away &#129392;!" style="display:none;"></textarea>
-                            </div> 
-                            <div class="group-input">
-                                <label for="additional"></label>
-                                <textarea type="text" id="additional" name="additional" placeholder="Maklumat Tambahan (Additional Information)"></textarea>
-                            </div> 
-                            <div class="group-input">
-                                <label for="additional">Upload Gambar Kedai (Add Store Image) :</label>
+                                <label for="additional">Upload Gambar Produk (Add Product Image) :</label>
                                 <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" /> 
                                 <span id="warning" style="display:none;"></span>
-                                <span>Hanya satu gambar kedai dibenarkan! Bukan gambar product!<br>
-                                <i>Only one store picture allowed! Not product's picture!</i></span>
+                                <span>Hanya 5 gambar product dibenarkan<br>
+                                <i>Only 5 product pictures allowed</i></span>
                             </div>
                             <button type="submit" id="site-btn" class="site-btn register-btn" 
                             style="opacity:.5;disabled:true;"
-                            >ADD STORE</button>
+                            >ADD PRODUCT</button>
                         </form>
                         <!-- 
                         <div class="switch-login">
@@ -231,10 +176,10 @@
     <!-- Register Form Section End -->
     
     <!-- Partner Logo Section Begin -->
-
+                    </div>
     <!-- Footer Section Begin -->
     <?php 
-       //include('part/footer.php');
+       include('part/footer.php');
    ?>
     <!-- Footer Section End -->
 

@@ -205,7 +205,6 @@
   <div id="filler" height="200px">
       
   </div>
-
     <!-- Footer Section Begin -->
     <?php 
         include('part/footer.php');

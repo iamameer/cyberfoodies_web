@@ -162,6 +162,18 @@
                                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()">
                             </div>
                             <div class="group-input">
+                                <label for="category">Kategori (Category)</label>
+                                <select type="text" id="category" name="category" placeholder="Kategori (Category)">
+                                    <option value = "Homecook">Homecook</option>
+                                    <option value = "Restaurant">Restaurant</option>
+                                    <option value = "Agent">Agent</option>
+                                    <option value = "Stall">Stall</option>
+                                    <option value = "Food Truck">Food Truck</option>
+                                    <option value = "Pasar Malam">Pasar Malam</option>
+                                    <option value = "Other">Lain (Other)</option>
+                                </select>
+                            </div>
+                            <div class="group-input">
                                 <label for="location"></label>
                                 <textarea type="text" id="location" name="location" placeholder="Lokasi (Store Location) *"
                                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
@@ -172,7 +184,7 @@
                                 <select type="text" id="district" name="district" placeholder="Daerah (Store District) *">
                                     <option value = "Cyberjaya">Cyberjaya</option>
                                     <option value = "Putrajaya">Putrajaya</option>
-                                    <option value = "Puchong">Dengkil</option>
+                                    <option value = "Dengkil">Dengkil</option>
                                     <option value = "Puchong">Puchong</option>
                                     <option value = "Other">Lain (Other)</option>
                                 </select>

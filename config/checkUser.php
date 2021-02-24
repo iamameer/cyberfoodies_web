@@ -56,4 +56,6 @@
         echo "no q";
         //include('gsignin.php');
     }
+
+    mysqli_close($conn);   
 ?>

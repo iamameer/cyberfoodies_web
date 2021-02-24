@@ -124,6 +124,34 @@
                     </div>
 
                     <div class="col-lg-9 order-1 order-lg-2" style="margin: auto!important;">
+                    <style type="text/css">
+                         .blog-item{ 
+                            background: #ffffff;
+                            margin-bottom: 11px;
+                            -webkit-box-shadow: 0px 8px 35px 10px #E8E8E8;
+                            box-shadow: 0px 8px 35px 10px #E8E8E8;
+                            padding-left: 25px;
+                            padding-right: 25px;
+                            padding-top: 15px;
+                            padding-bottom: 10px;
+                            border-radius: 10px;
+                        }
+                        .blog-item:hover{ 
+                            background: #ffffff;
+                            margin-bottom: 11px;
+                            -webkit-box-shadow: 0px 8px 35px 10px #ffcf87;
+                            box-shadow: 0px 8px 35px 10px #ffcf87;
+                            padding-left: 25px;
+                            padding-right: 25px;
+                            padding-top: 15px;
+                            padding-bottom: 10px;
+                            border-radius: 10px; 
+                        } 
+                        h4:hover{ 
+                            color:red!important;
+                        }
+
+                    </style>
                     <div class="row">
                        <?php 
                             include('part/storelist.php');

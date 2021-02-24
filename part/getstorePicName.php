@@ -28,7 +28,7 @@
             while($row = $result -> fetch_assoc()){
                 echo '<h2>'.$row['store_name'].'</h2>';
                 echo '<p>Status: <span style="';
-                if(strtolower($row['store_status']) == "close"){
+                if(strtolower($row['store_status']) == "closed"){
                     echo 'color:red!important;';
                 }else{
                     echo 'color:green!important;';
@@ -37,7 +37,9 @@
                 echo ' </div>
                 <div class="blog-large-pic" style="padding-bottom:10px!important;">';
                 echo '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'" 
-                alt="" style="height: 20%; width: 20%; object-fit: cover">';
+                alt="" style="height: 50%; width: 50%; ">';
+                //object-fit: cover
             }
     }  
+    mysqli_close($conn);   
 ?>

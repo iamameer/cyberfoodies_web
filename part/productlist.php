@@ -64,5 +64,5 @@
         echo '<tr><td class="cart-title first-row" style="padding-left:20px!important;">This shop not selling anythin yet :c<br>';
         echo 'Comeback later okay? Don\'t be sad!</td></tr>';
     }
-
+    mysqli_close($conn);   
 ?>
