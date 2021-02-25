@@ -8,3 +8,4 @@ config.php
 /config/googlesignin.js
 /config/gsignin.js
 /config/gconfig.php
+/config/glogout.php

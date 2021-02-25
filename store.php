@@ -171,6 +171,33 @@
                                     }?> 
                             </tbody>
                         </table>
+                        <style type="text/css">
+                                    .th,.infodrop{
+                                        opacity: 0.6;
+                                        transition: 0.8s;
+                                    }
+                                    .infodrop{
+                                        display:none;
+                                    }
+
+                                    .dis{
+                                        padding:25px;
+                                        border: 1px solid #ebebeb;
+                                    }
+                                    </style>
+                        <table style="margin-top:15px;">
+                            <thead>
+                                <tr>
+                                    <th style="background-color:#fa9f37;opacity:1;" class="th" onclick="setActive(this)">Lokasi</th>
+                                    <th class="th" onclick="setActive(this)">Waktu Operasi</th>
+                                    <th class="th" onclick="setActive(this)" >Maklumat Penghantaran</th>
+                                    <th class="th" onclick="setActive(this)" >Cara Tempahan</th>
+                                    <th class="th" onclick="setActive(this)" >Maklumat Tambahan</th>
+                                    <!-- <i class="ti-close"></i> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <?php include('part/getstoreDetails.php'); ?>
                     </div>
                     <div class="row">
                         <div class="col-lg-4">
@@ -250,3 +277,29 @@
 </body>
 
 </html>
+
+<script>
+
+function setActive(th) {
+    var x =  document.getElementsByClassName("th");
+    var y = document.getElementsByClassName("dis");
+    for(var i=0;i<x.length;i++){
+        if(x[i].innerHTML != th.innerHTML){
+            x[i].style.backgroundColor = '#fff';
+            x[i].style.opacity = '0.6';
+
+            y[i].style.opacity = '0.6';
+            y[i].style.display = 'none';
+        }else{
+            y[i].style.opacity = '1';
+            y[i].style.display = 'block';
+        }
+        // y[i].style.opacity = '0.6';
+        // y[i].style.display = 'none';
+    }
+    th.style.backgroundColor = '#fa9f37';
+    th.style.opacity = '1';
+}
+
+
+</script>
