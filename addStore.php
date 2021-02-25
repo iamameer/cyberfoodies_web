@@ -111,7 +111,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
                         <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>Add Store</span>
+                        <span><?php echo ucfirst($_GET['mode']); ?> Store</span>
                     </div>
                 </div>
             </div>
@@ -138,6 +138,34 @@
                             margin-bottom: -10px;
                         }
                     </style>
+                    <script type="text/javascript">
+                        function checkIfEmpty(){
+                            if( !document.getElementById("storename").value ||
+                                !document.getElementById("location").value ||
+                                !document.getElementById("delivery").value ||
+                                !document.getElementById("howtoorder").value ){
+                                document.getElementById('site-btn').setAttribute('disabled', 'disabled');
+                                document.getElementById('site-btn').style.opacity= 0.5;
+                            }else{
+                                document.getElementById('site-btn').removeAttribute('disabled');
+                                document.getElementById('site-btn').style.opacity= 1;
+                            } 
+                        } 
+                        function enablews(input){
+                            if(!input.value){
+                                document.getElementById('whatsappid').style.display='none'; 
+                            }else{
+                                document.getElementById('whatsappid').style.display='block';
+                            }
+
+                            var ws = document.getElementById('extratext').value;
+                            if(ws.length > 1){
+                                document.getElementById('whatsapp').checked = true; 
+                            }else{
+                                document.getElementById('whatsapp').checked = false; 
+                            }
+                        }
+                    </script>
                     <div class="register-form">
                              <?php
                                 $mode = $_GET['mode'];
@@ -162,7 +190,7 @@
 
     <!-- Footer Section Begin -->
     <?php 
-       //include('part/footer.php');
+       include('part/footer.php');
    ?>
     <!-- Footer Section End -->
 
@@ -246,26 +274,14 @@ function handleChange(checkbox) {
     }
 }
 
-function checkIfEmpty(){
-    if( !document.getElementById("storename").value ||
-        !document.getElementById("location").value ||
-        !document.getElementById("delivery").value ||
-        !document.getElementById("howtoorder").value ){
-        document.getElementById('site-btn').setAttribute('disabled', 'disabled');
-        document.getElementById('site-btn').style.opacity= 0.5;
+function handleChange2(checkbox) {
+    if(checkbox.checked == true){
+        document.getElementById("delbutton").style.display = 'block';
     }else{
-        document.getElementById('site-btn').removeAttribute('disabled');
-        document.getElementById('site-btn').style.opacity= 1;
+        document.getElementById("delbutton").style.display = 'none';
     }
 }
 
-function enablews(input){
-    if(!input.value){
-        document.getElementById('whatsappid').style.display='none'; 
-    }else{
-        document.getElementById('whatsappid').style.display='block';
-    }
-}
 // $(document).ready(function() {
 //     $("#storename").change(function() {
 //         var storename = $("#storename").val();

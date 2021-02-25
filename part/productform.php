@@ -30,7 +30,7 @@
                     $product_image = $row['product_image'];
                 }//end while
 
-            echo '<h3>Updating '.$product_name.' details:</h3>';
+            echo '<h3>Updating <b style="color:#fa9f37;">'.$product_name.'</b> details:</h3>';
             echo '  <form id="updateproduct" action="config/updateproduct.php?product_id='.$product_id.'&store_id='.$store_id.'&mode=update" 
                 method="POST" enctype="multipart/form-data">';
 
@@ -44,12 +44,12 @@
             echo ' <div class="group-input">
                 <label for="productstatus">Status :</label>
                 <select type="text" id="productstatus" name="productstatus" placeholder="Status :">';
-            foreach($option as $item){
-                if(strpos($item,$product_status)){
-                    $item = str_replace('selected=""','selected="selected"',$item);
+                foreach($option as $item){
+                    if(strpos($item,$product_status)){
+                        $item = str_replace('selected=""','selected="selected"',$item);
+                    }
+                    echo $item;
                 }
-                echo $item;
-            }
             echo '
                 </select>
             </div>';
@@ -75,11 +75,11 @@
                 onclick="checkStock()"  onkeyup="checkStock()" value="'.$product_stock.'">
             </div>';
 
-                if(strlen($product_image)< 10){
-                    $img = "<img src='img/blog/sample-shop-image-min.png' @>";
-                }else{
-                    $img =  '<img src="data:image/jpeg;base64,'.base64_encode($product_image).'" @/>';
-                }
+            if(strlen($product_image)< 10){
+                $img = "<img src='img/blog/noproduct.png' @>";
+            }else{
+                $img =  '<img src="data:image/jpeg;base64,'.base64_encode($product_image).'" @/>';
+            }
            
             echo str_replace('@','style="padding-bottom:15px;"',$img);
 

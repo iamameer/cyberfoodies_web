@@ -37,7 +37,7 @@
                 //echo $image_file;
             }else{
                 $image_file = "No image";
-                echo $image_file;
+                //echo $image_file;
             }
         }
     }
