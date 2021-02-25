@@ -76,7 +76,7 @@
             </div>';
 
             if(strlen($product_image)< 10){
-                $img = "<img src='img/blog/noproduct.png' @>";
+                $img = "<img src='img/sample/no-product-image.jpg' @>";
             }else{
                 $img =  '<img src="data:image/jpeg;base64,'.base64_encode($product_image).'" @/>';
             }

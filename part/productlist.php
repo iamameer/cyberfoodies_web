@@ -37,7 +37,7 @@
             //$product_unit = $row['product_unit'];//'sebungkus';
             //<input type="text" value="'.$product_stock.'">
             if(strlen($row["product_image"] )< 10){
-                $img = "<img src='img/blog/sample-shop-image-min.png' @>";
+                $img = "<img src='img/sample/no-prod-img.jpg' @>";
             }else{
                 $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'" @/>';
             }

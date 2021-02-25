@@ -36,8 +36,15 @@
                 echo '">'.$row['store_status'].'</span></p>';
                 echo ' </div>
                 <div class="blog-large-pic" style="padding-bottom:10px!important;">';
-                echo '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'" 
-                alt="" style="height: 50%; width: 50%; ">';
+
+                if(strlen($row['store_picture'])< 10){
+                    $img = "<img src='img/sample/no-store-img.jpg' @>";
+                }else{
+                    $img =  '<img src="data:image/jpeg;base64,'.base64_encode($row['store_picture']).'" @/>';
+                }
+    
+                echo str_replace('@','style="padding-bottom:15px;height: 50%; width: 50%;"',$img);
+
                 //object-fit: cover
             }
     }  

@@ -27,16 +27,22 @@
     //$row = mysql_fetch_assoc($result);
     if($result-> num_rows > 0){
        while($row = $result -> fetch_assoc()){
-           if(($row['store_phone'][0] == "0" OR $row['store_phone'][0] == 0  ) AND ctype_digit($row['store_phone']) ){
-                $url = str_replace(" ","",$row["store_phone"]);
-                $url = str_replace("-","",$row["store_phone"]);
-                $url = 'https://wa.me/' .$url;
-                if(strlen($row["store_extratext"])>1){
-                    $url .= '?text=' .$row["store_extratext"];
+           if(isset($row['store_phone'])){
+                if(strlen($row['store_phone'])>2){
+                    if(($row['store_phone'][0] == "0" OR $row['store_phone'][0] == 0  ) AND ctype_digit($row['store_phone']) ){
+                        $url = str_replace(" ","",$row["store_phone"]);
+                        $url = str_replace("-","",$row["store_phone"]);
+                        $url = 'https://wa.me/' .$url;
+                        if(strlen($row["store_extratext"])>1){
+                            $url .= '?text=' .$row["store_extratext"];
+                        }
+                        echo '<a href="'. $url . '" class="proceed-btn">Contact seller now! (Whatsapp)</a>';
+                    }
+                }else{
+                    echo '<span>Contact: '.$row["store_phone"].'<br>(Invalid phone number)</span>';
                 }
-                echo '<a href="'. $url . '" class="proceed-btn">Contact seller now! (Whatsapp)</a>';
            }else{
-               echo '<span>Contact: '.$row["store_phone"].'<br>(Invalid phone number)</span>';
+               echo '<span>Contact: '.$row["store_phone"].'<br>(Phone not provided)</span>';
            }
         } 
     }else{

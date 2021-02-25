@@ -45,11 +45,11 @@
             echo '</tbody>
             </table>';
 
-             echo ' <p class="dis" style="display:block;">'.$store_location.'</tr>
-                    <p class="dis" style="display:none;">'.$store_time.'</tr>
-                    <p class="dis" style="display:none;">'.$store_delivery.'</tr>
-                    <p class="dis" style="display:none;">'.$store_order.'</tr>
-                    <p class="dis" style="display:none;">'.$store_info.'</tr>
+             echo ' <p class="dis" style="display:block;">'.str_replace('#','<br/>',$store_location).'</tr>
+                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_time).'</tr>
+                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_delivery).'</tr>
+                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_order).'</tr>
+                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_info).'</tr>
                     ';
     }  
     mysqli_close($conn);   

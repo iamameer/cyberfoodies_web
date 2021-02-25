@@ -70,7 +70,7 @@
         <div class="blog-item">
             <div class="bi-pic" style="width:100%!important;height:156px!important;
             overflow:hidden!important;">
-                <img src="img/blog/add-store-new.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover">
+                <img src="img/sample/new-store.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover">
             </div>
             <div class="bi-text">
                 <a href="addStore.php?user_id='.$user_id.'&mode=add">
