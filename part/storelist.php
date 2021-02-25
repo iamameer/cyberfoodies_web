@@ -73,7 +73,7 @@
                 <img src="img/blog/add-store-new.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover">
             </div>
             <div class="bi-text">
-                <a href="addStore.php?user_id='.$user_id.'">
+                <a href="addStore.php?user_id='.$user_id.'&mode=add">
                     <h4>- New store -</h4>
                 </a> 
                 <p>Add <span>new store</span>!</p>

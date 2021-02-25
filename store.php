@@ -189,6 +189,9 @@
                                                     echo  '
                                                     <a href="addProduct.php?store_id='.$store_id.'&mode=add" 
                                                     class="primary-btn up-cart" style="margin-top:15px;background-color:#e7ab3c">Add product</a>
+
+                                                    <a href="addStore.php?store_id='.$store_id.'&mode=edit" 
+                                                    class="primary-btn up-cart" style="margin-top:15px;background-color:#e7e43c">Edit Store</a>
                                                     ';
                                                 }
                                             }
