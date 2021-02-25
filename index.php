@@ -50,27 +50,7 @@
             <div class="inner-header">
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
-                        <div class="logo">
-                            <a href="#" onclick="">
-                                <img src="img/logo.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-md-7">
-                        <div class="advanced-search" style="border: none!important;">
-                            <!-- <button type="button" class="category-btn"></button>
-                            <div class="input-group">
-                                <input type="text" placeholder="What do you need?">
-                                <button type="button" ><i class="ti-search"></i></button>
-                            </div> -->
-                            <div class="search">
-                                <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                                <button type="submit" class="searchButton">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                        <?php include('part/logo.php') ?>
                     <div class="col-lg-3 text-right col-md-3">
                          <!-- legacy@nav-right -->
                          <!-- <a href="login.php" class="login-panel"><i class="fa fa-user"></i>Login</a> -->

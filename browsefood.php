@@ -7,7 +7,12 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <?php
+        $details = include('config/config.php');
+        echo '<meta name="google-signin-client_id" content="'.$details['googleClientID'].'">';
+        include('part/title.php');
+    ?>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -22,6 +27,7 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/styleExtra.css" type="text/css">
 </head>
 
 <body>
@@ -33,57 +39,14 @@
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="header-top">
-            <div class="container">
-                <div class="ht-left">
-                    <div class="mail-service">
-                        <i class=" fa fa-envelope"></i>
-                        hello.colorlib@gmail.com
-                    </div>
-                    <div class="phone-service">
-                        <i class=" fa fa-phone"></i>
-                        +65 11.188.888
-                    </div>
-                </div>
-                <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
-                    <div class="lan-selector">
-                        <select class="language_drop" name="countries" id="countries" style="width:300px;">
-                            <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
-                                data-title="English">English</option>
-                            <option value='yu' data-image="img/flag-2.jpg" data-imagecss="flag yu"
-                                data-title="Bangladesh">German </option>
-                        </select>
-                    </div>
-                    <div class="top-social">
-                        <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"><i class="ti-twitter-alt"></i></a>
-                        <a href="#"><i class="ti-linkedin"></i></a>
-                        <a href="#"><i class="ti-pinterest"></i></a>
-                    </div>
-                </div>
-            </div>
+            <?php include('part/topmost.php') ?>
         </div>
         <div class="container">
             <div class="inner-header">
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                        <?php include('part/logo.php'); ?>
-                    </div>
-                    <div class="col-lg-7 col-md-7">
-                        <div class="advanced-search">
-                            <!-- <button type="button" class="category-btn"></button>
-                            <div class="input-group">
-                                <input type="text" placeholder="What do you need?">
-                                <button type="button" ><i class="ti-search"></i></button>
-                            </div> -->
-                            <div class="search">
-                                <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                                <button type="submit" class="searchButton">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                   
                     <div class="col-lg-3 text-right col-md-3">
                        
                     </div>
