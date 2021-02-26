@@ -43,7 +43,8 @@
             }
 
             if(strlen($user_id)> 0){
-                $img = '<a href="addProduct.php?user_id='.$user_id.'&product_id='.$product_id.'&store_id='.$store_id.'&mode=edit">'. $img .'</a>';
+                $img = '<a href="addProduct.php?user_id='.$user_id.'&product_id='.$product_id.'&store_id='.$store_id.'&mode=edit">'. 
+                        str_replace('@','style="height: 100%; width: 100%; object-fit: cover"',$img)  .'</a>';
             }
 
             //stock color 
@@ -56,7 +57,8 @@
             }
 
             echo ' <tr class="productrow">
-                        <td class="cart-pic first-row" style="padding-left:10px;padding-right:10px;">'.$img.'</td>
+                        <td class="cart-pic first-row" style="width:262px!important;height:220px!important;
+                        overflow:hidden!important;padding-left:10px;padding-right:10px;">'.$img.'</td>
                         <td class="cart-title first-row">
                             <h5>'.$product_name.'</h5>
                         </td>
