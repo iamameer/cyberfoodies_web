@@ -283,3 +283,33 @@
 </body>
 
 </html>
+
+<script>
+    function seturl(input){
+        var url = "browsefood.php?search="+(input.innerHTML).toLowerCase();
+        input.setAttribute("href",url);  
+    }
+
+    $(document).ready(function(){
+        $('.sorting').on('change',function(){ 
+            //alert($('.current').text());  
+            var url = window.location.href;
+            if(url.indexOf("psort") >= 0){
+                url = url.split("&psort")[0];
+            }
+
+            if(url.indexOf("php?") >= 0){
+                url += "&psort=";
+            }else{
+                url += "?psort=";
+            }
+ 
+            var sort = $('.current').text(); 
+            if(sort.indexOf("High to Low") >= 0){ 
+                $(location).attr('href',url+'highest');
+            }else if(sort.indexOf("Low to High") >= 0){
+                $(location).attr('href',url+'lowest');
+            }
+        })
+    });
+</script>

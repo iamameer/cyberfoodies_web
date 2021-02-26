@@ -17,7 +17,18 @@
     }
 
     $perpage = 4;
-    $query .= " ORDER BY id ASC LIMIT ". $perpage;
+
+    $order = ' id ASC ';
+    if(isset($_GET['psort'])){
+        $psort = $_GET['psort'];
+        if($psort == 'highest'){
+            $order = ' product_price DESC ';
+        }else if($psort == 'highest'){
+            $order = ' product_price ASC ';
+        }
+    }
+
+    $query .= " ORDER BY ". $order ." LIMIT ". $perpage;
 
     if(isset($_GET['page'])){
         $query .= " OFFSET " . $perpage * ($_GET['page']-1); 
