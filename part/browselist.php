@@ -81,6 +81,7 @@
             $product_price = $row['product_price'];//'$60.00';
             $product_stock = (int)$row['product_stock'];//'11';
             $product_status = $row['product_status'];//'Available';
+            $store_id = $row['store_id'];
 
             if(strlen($row["product_image"] )< 10){
                 $img = "<img src='img/sample/no-prod-img.jpg' @>";
@@ -99,7 +100,7 @@
 
             //<img src="img/products/product-1.jpg" alt="">
             //item iteration
-            echo '  <div class="col-lg-4 col-sm-6">
+            echo '  <div class="col-lg-4 col-sm-6"><a href="store.php?store_id='.$store_id.'&product_id='.$product_id.'">
                         <div class="product-item">
                             <div class="pi-pic" style="width:100%!important;height:175px!important;
                             overflow:hidden!important;">
@@ -124,7 +125,7 @@
                                     <!-- <span>$35.00</span> -->
                                 </div>
                             </div>
-                        </div>
+                        </div></a>
                     </div>'; 
                     
                 $rowcounter++;
