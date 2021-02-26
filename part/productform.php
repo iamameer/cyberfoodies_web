@@ -63,14 +63,14 @@
 
             echo '<div class="group-input">
                 <label for="productprice">Harga Produk (Product Price) *</label>
-                <input type="text" id="productprice" name="productprice"  placeholder="eg1: RM15"
+                <input type="number" step="0.01" id="productprice" name="productprice"  placeholder="eg: 15.20"
                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()" value="'.$product_price.'">
             </div>';
 
             echo '<div class="group-input">
                 <label for="productstock">Stok (Stock) *</label>
-                <input type="number" id="productstock" name="productstock"  placeholder="eg: 10"
+                <input type="number" min="0" id="productstock" name="productstock"  placeholder="eg: 10"
                 onchange="checkStock()" onfocus="checkStock()" onblur="checkStock()" 
                 onclick="checkStock()"  onkeyup="checkStock()" value="'.$product_stock.'">
             </div>';
@@ -139,14 +139,14 @@
 
         echo '<div class="group-input">
                 <label for="productprice">Harga Produk (Product Price) *</label>
-                <input type="text" id="productprice" name="productprice"  placeholder="eg1: RM15"
+                <input type="number" step="0.01" id="productprice" name="productprice"  placeholder="eg: 15.20"
                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()">
             </div>';
 
         echo '<div class="group-input">
                 <label for="productstock">Stok (Stock) *</label>
-                <input type="number" id="productstock" name="productstock"  placeholder="eg: 10"
+                <input type="number" min="0" id="productstock" name="productstock"  placeholder="eg: 10"
                 onchange="checkStock()" onfocus="checkStock()" onblur="checkStock()" 
                 onclick="checkStock()"  onkeyup="checkStock()">
             </div>';

@@ -19,9 +19,14 @@ function setCookie(name,value,days) {
     document.cookie = escape(name) + "=" + escape(value || "")  + expires + "; path=/";
 }
 
-    function signOut() {
-        setCookie("q","",-1);
-    }    
+function signOut() {
+    setCookie("q","",-1);
+}    
+$(document).ready(function(){
+    $("").click(function(){
+        alert("The paragraph was clicked.");
+      });
+});
 
 </script>';
 

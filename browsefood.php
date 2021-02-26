@@ -45,7 +45,7 @@
             <div class="inner-header">
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
-                       <?php include('part/logo.php'); ?>
+                       <?php include('part/logo.php') ?>
                    
                     <div class="col-lg-3 text-right col-md-3">
                        
@@ -230,7 +230,28 @@
                                     </select> -->
                                 </div>
                             </div>
+                            <style type="text/css">
+                                   .primary-btn {
+                                        display: inline-block;
+                                        font-size: 14px;
+                                        font-weight: 900;
+                                        padding: 12px 30px;
+                                        margin-right: 5px;
+                                        margin-left: 5px;
+                                        color: #ffffff;
+                                        background: #e7ab3c;
+                                        text-transform: uppercase;
+                                        text-decoration: none;
+                                    }
+                                    .product-item:hover{ 
+                                        background: #ffffff;
+                                        margin-bottom: 11px;
+                                        -webkit-box-shadow: 0px 8px 30px 1px #ffcf87;
+                                        box-shadow: 0px 8px 30px 1px #ffcf87;
+                                    }  
+                            </style>
                             <div class="col-lg-5 col-md-5 text-right">
+                                
                         <?php include('part/browselist.php') ?>
                 </div>
             </div>

@@ -18,11 +18,14 @@
             </div>
         </div>
     <div class="product-list">';
-    echo '  <div class="row">';
 
     if($result-> num_rows > 0){
         $rowcounter = 0;
         while($row = $result -> fetch_assoc()){
+
+            if($rowcounter == 0){
+                echo '  <div class="row">'; // row opener
+            }
 
             $product_id = $row["product_id"];
             $product_name = $row['product_name'];//'Pure PineapplePure';
@@ -68,28 +71,40 @@
                                     <h5>'.$product_name.'</h5>
                                 </a>
                                 <div class="product-price">
-                                        '.$product_price.'
+                                        RM '.$product_price.'
                                     <!-- <span>$35.00</span> -->
                                 </div>
                             </div>
                         </div>
-                    </div>';
+                    </div>'; 
+                    
+                $rowcounter++;
                 if($rowcounter == 3){
                     echo '</div> ';// row closure
                     $rowcounter = 0;
-                }else{
-                    $rowcounter++;
                 }
         }//endwhile
 
-        echo '</div> ';// row closure 
+        echo '</div> '; //product-list
         //<!-- PAGING: -->
-        echo '<div class="loading-more">
-                <i class="icon_loading"></i>
-                <a href="#">
-                    Loading More
-                </a>
-            </div>';
+        echo '<div class="loading-more" style="padding-top: 10px">
+                <!-- <i class="icon_loading"></i> -->';
+                $maxpage = ($result-> num_rows) / 9 ; 
+                if ($maxpage <= 0){ 
+                    $maxpage = 1;
+                }else if ($maxpage > 10){
+                    $maxpage = 10;
+                }
+                for($i = 0; $i < $maxpage; $i++){
+                    $a = '<a href="#" class="primary-btn"> '.($i+1).' </a>';
+                    if($i>0){
+                        echo str_replace('#','',$a); //jQuery onclick ?
+                    }else{
+                        echo $a;
+                    }
+                }
+                
+        echo '</div>';
 
     }else{
         echo '</div> ';// row closure
