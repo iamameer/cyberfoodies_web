@@ -66,9 +66,9 @@
                                 //     echo "<script type='text/javascript'>alert('Please login first!');
                                 //         window.location.replace('index.php');</script>";
                                 // }else{
-                                //     echo '<script type="text/javascript">
-                                //             document.getElementById("profile").classList.add("active");
-                                //         </script>';
+                                    echo '<script type="text/javascript">
+                                            document.getElementById("itemlist").classList.add("active");
+                                        </script>';
                                 // }
                             ?>
                     </ul>
@@ -86,7 +86,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
                         <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>Shop</span>
+                        <span>Foods</span>
                     </div>
                 </div>
             </div>

@@ -198,6 +198,8 @@
                     <label for="del"> Delete kedai ini (Delete this store) ? </label>
                 ';
             echo   '<div id="delbutton" style="display:none">
+                        <span>Delete kedai ini akan delete SEMUA product di dalamnya<br>
+                        <i>Deleting this store will clear ALL product inside</i></span><br>
                         <a href="config/updatestore.php?store_id='.$store_id.'&mode=delete" 
                         class="primary-btn up-cart" style="background-color:#ff401f;">Delete Store</a>
                         </div>
