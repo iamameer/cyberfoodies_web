@@ -1,5 +1,12 @@
 <?php 
 
+    $string = array("What are you looking for?",
+                    "Lapar apa harini?",
+                    "Type here to start mmmmmmmmmmmakannnnn",
+                    "Cepat! Call seller cepattttt",
+                    "Hmmm lupa la nak beli apa",
+                    "What if i want to buy everything...");
+
     echo '<div class="logo">
             <a href="./index.php">
                 <img src="img/logo.png" alt="">
@@ -13,9 +20,10 @@
                                         <input type="text" placeholder="What do you need?">
                                         <button type="button" ><i class="ti-search"></i></button>
                                     </div> -->
-                                    <div class="search">
-                                        <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                                        <button type="submit" class="searchButton">
+                                    <div class="search">';
+                                    
+        echo                        '     <input id="searchInput" type="text" class="searchTerm" placeholder="'.$string[rand(0,count($string)-1)].'">
+                                        <button type="submit" class="searchButton" onclick="searchFood()">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </div>

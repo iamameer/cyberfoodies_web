@@ -11,9 +11,35 @@
 
     $query = "SELECT * FROM ".$details['database'].".".$details['product_table'];
 
+    if(isset($_GET['search'])){
+        $search = $_GET['search'];
+        $query .= " WHERE LOWER(product_name) like '%".strtolower($search)."%'";
+    }
+
+    $perpage = 4;
+    $query .= " ORDER BY id ASC LIMIT ". $perpage;
+
+    if(isset($_GET['page'])){
+        $query .= " OFFSET " . $perpage * ($_GET['page']-1); 
+    }else{
+        
+    }
+
     $result = $conn-> query($query);
 
-    echo '<p>Found: '.$result-> num_rows.' Product(s)</p>
+    if (!$result) {
+        print_r($query);
+        var_dump($result->num_rows);
+        trigger_error('Invalid query: ' . $conn->error);
+    }
+
+    //Counters
+    $queryCount = "SELECT count(id) as total FROM ".$details['database'].".".$details['product_table'];
+    $resultCount = mysqli_query($conn,$queryCount);
+    $dataCount = mysqli_fetch_assoc($resultCount);
+
+    $totalCount = isset($_GET['search']) ? $result-> num_rows : $dataCount['total'];
+    echo '<p>Found: '.$totalCount.' Product(s)</p>
                 </div>
             </div>
         </div>
@@ -21,8 +47,8 @@
 
     if($result-> num_rows > 0){
         $rowcounter = 0;
+        $limitcounter = 0;
         while($row = $result -> fetch_assoc()){
-
             if($rowcounter == 0){
                 echo '  <div class="row">'; // row opener
             }
@@ -83,24 +109,42 @@
                     echo '</div> ';// row closure
                     $rowcounter = 0;
                 }
+
+                if($limitcounter >= $perpage){
+                    break;
+                }    
         }//endwhile
 
         echo '</div> '; //product-list
-        //<!-- PAGING: -->
+
+        //<!-- PAGING: --> 
         echo '<div class="loading-more" style="padding-top: 10px">
                 <!-- <i class="icon_loading"></i> -->';
-                $maxpage = ($result-> num_rows) / 9 ; 
+                $maxpage = (int)($totalCount / $perpage) ; 
+                $mod = $dataCount['total'] % $perpage;
+                if($mod != 0){
+                    $maxpage += $mod;
+                }
                 if ($maxpage <= 0){ 
                     $maxpage = 1;
-                }else if ($maxpage > 10){
-                    $maxpage = 10;
                 }
+                // else if ($maxpage > 10){
+                //     $maxpage = 10;
+                // }
                 for($i = 0; $i < $maxpage; $i++){
                     $a = '<a href="#" class="primary-btn"> '.($i+1).' </a>';
-                    if($i>0){
-                        echo str_replace('#','',$a); //jQuery onclick ?
+                    if(isset($_GET['page'])){
+                        if($i != ($_GET['page'] - 1)){
+                            echo str_replace('#','browsefood.php?'.explode("&page=",$_SERVER['QUERY_STRING'])[0].'&page='.($i+1),$a); //jQuery onclick ?
+                        }else{
+                            echo $a;
+                        }      
                     }else{
-                        echo $a;
+                        if($i>0){ 
+                            echo str_replace('#','browsefood.php?'.explode("&page=",$_SERVER['QUERY_STRING'])[0].'&page='.($i+1),$a); //jQuery onclick ?
+                        }else{
+                            echo $a;
+                        }
                     }
                 }
                 

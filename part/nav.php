@@ -21,13 +21,7 @@ function setCookie(name,value,days) {
 
 function signOut() {
     setCookie("q","",-1);
-}    
-$(document).ready(function(){
-    $("").click(function(){
-        alert("The paragraph was clicked.");
-      });
-});
-
+}   
 </script>';
 
        echo '<li id="home" ><a href="index.php">Home</a></li>
