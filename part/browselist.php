@@ -16,6 +16,18 @@
         $query .= " WHERE LOWER(product_name) like '%".strtolower($search)."%'";
     }
 
+    if(isset($_GET['pmin']) AND isset($_GET['pmax'])){
+        $pmin = $_GET['pmin'];
+        $pmax = $_GET['pmax'];
+
+        if(strpos($query,'WHERE')){
+            $query .= " AND ";
+        }else{
+            $query .= " WHERE ";
+        }
+        $query .= " product_price >= ".$pmin. " AND product_price <= " . $pmax ;
+    }
+
     $perpage = 4;
 
     $order = ' id ASC ';

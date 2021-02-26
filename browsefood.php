@@ -145,12 +145,12 @@
                         <div class="filter-range-wrap">
                             <div class="range-slider">
                                 <div class="price-input">
-                                    <input type="text" id="minamount">
-                                    <input type="text" id="maxamount">
+                                    <input type="text" id="minamount" placeholder="RM">
+                                    <input type="text" id="maxamount" placeholder="RM">
                                 </div>
                             </div>
                             <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                data-min="0" data-max="999">
+                                data-min="0" data-max="99">
                                 <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
@@ -291,17 +291,42 @@
     }
 
     $(document).ready(function(){
-        $('.sorting').on('change',function(){ 
-            //alert($('.current').text());  
+
+        $('.filter-btn').click(function(){
+
+            var pmin = $('#minamount').val();
+            pmin = pmin.indexOf("RM") >= 0 ? pmin.split("RM")[1] : pmin;
+
+            var pmax = $('#maxamount').val();
+            pmax = pmax.indexOf("RM") >= 0 ? pmax.split("RM")[1] : pmax;
+
+            var filter = "pmin="+pmin+"&pmax="+pmax;
+
             var url = window.location.href;
-            if(url.indexOf("psort") >= 0){
-                url = url.split("&psort")[0];
+            if(url.indexOf("php?") >= 0){
+                url += "&";
+            }else{
+                url += "?";
             }
 
+            if(url.indexOf("pmin") >= 0){
+                url = url.split("pmin")[0];
+            }
+
+            $(location).attr('href',url+filter);
+
+        });
+
+        $('.sorting').on('change',function(){  
+            var url = window.location.href;
             if(url.indexOf("php?") >= 0){
                 url += "&psort=";
             }else{
                 url += "?psort=";
+            }
+
+            if(url.indexOf("psort") >= 0){
+                url = url.split("psort")[0];
             }
  
             var sort = $('.current').text(); 
