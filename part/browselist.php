@@ -28,14 +28,14 @@
         $query .= " product_price >= ".$pmin. " AND product_price <= " . $pmax ;
     }
 
-    $perpage = 4;
+    $perpage = 15;
 
     $order = ' id ASC ';
     if(isset($_GET['psort'])){
         $psort = $_GET['psort'];
         if($psort == 'highest'){
             $order = ' product_price DESC ';
-        }else if($psort == 'highest'){
+        }else if($psort == 'lowest'){
             $order = ' product_price ASC ';
         }
     }
@@ -100,19 +100,22 @@
 
             //<img src="img/products/product-1.jpg" alt="">
             //item iteration
-            echo '  <div class="col-lg-4 col-sm-6"><a href="store.php?store_id='.$store_id.'&product_id='.$product_id.'">
+            $url = 'store.php?store_id='.$store_id.'&product_id='.$product_id;
+            //echo ' <a href="'.$url.'">';
+            echo '  <div class="col-lg-4 col-sm-6">
                         <div class="product-item">
                             <div class="pi-pic" style="width:100%!important;height:175px!important;
-                            overflow:hidden!important;">
+                            overflow:hidden!important;"><a href="'.$url.'">
                                 '.str_replace('@','style="height: 100%; width: 100%; object-fit: cover"',$img) .'
-                                <!-- <div class="sale pp-sale">Sale</div> -->
+                                <!-- <div class="sale pp-sale">Sale</div> --></a>
                                 <div class="icon">
-                                    <i class="icon_heart_alt"></i>
+                                    <!-- <i class="icon_heart_alt"></i> -->
+                                    <i class="material-icons" style="color:red;">favorite</i>
                                 </div>
                                 <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                <!--<li class="w-icon active"><a href="'.$url.'"><i class="icon_bag_alt"></i></a></li> -->
+                                    <li class="quick-view active"><a href="'.$url.'">Stock: '.$product_stock.'</a></li>
+                                    <!-- <li class="w-icon"><a href="'.$url.'"><i class="fa fa-random"></i></a></li> -->
                                 </ul>
                             </div>
                             <div class="pi-text">
@@ -125,9 +128,9 @@
                                     <!-- <span>$35.00</span> -->
                                 </div>
                             </div>
-                        </div></a>
+                        </div>
                     </div>'; 
-                    
+                //echo '</a>';
                 $rowcounter++;
                 if($rowcounter == 3){
                     echo '</div> ';// row closure
@@ -144,10 +147,10 @@
         //<!-- PAGING: --> 
         echo '<div class="loading-more" style="padding-top: 10px">
                 <!-- <i class="icon_loading"></i> -->';
-                $maxpage = (int)($totalCount / $perpage) ; 
-                $mod = $dataCount['total'] % $perpage;
+                $maxpage = (int)($totalCount / $perpage) ; //15/4 = 
+                $mod = fmod($totalCount, $perpage);
                 if($mod != 0){
-                    $maxpage += $mod;
+                    $maxpage ++;
                 }
                 if ($maxpage <= 0){ 
                     $maxpage = 1;

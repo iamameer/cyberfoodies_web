@@ -231,7 +231,7 @@
                                 </div>
                             </div>
                             <style type="text/css">
-                                   .primary-btn {
+                                .primary-btn {
                                         display: inline-block;
                                         font-size: 14px;
                                         font-weight: 900;
@@ -253,7 +253,7 @@
                             <div class="col-lg-5 col-md-5 text-right">
                                 
                         <?php include('part/browselist.php') ?>
-                </div>
+                </div> 
             </div>
         </div>
     </section>
@@ -320,13 +320,15 @@
         $('.sorting').on('change',function(){  
             var url = window.location.href;
             if(url.indexOf("php?") >= 0){
-                url += "&psort=";
+                if(url.indexOf("php?psort") >= 0){
+                    url = url.split("psort")[0];
+                    url += "psort=";
+                }else{
+                    url = url.split("&psort")[0];
+                    url += "&psort=";
+                }
             }else{
                 url += "?psort=";
-            }
-
-            if(url.indexOf("psort") >= 0){
-                url = url.split("psort")[0];
             }
  
             var sort = $('.current').text(); 
