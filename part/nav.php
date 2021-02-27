@@ -26,11 +26,11 @@ function signOut() {
 
        echo '<li id="home" ><a href="index.php">Home</a></li>
             <li id="itemlist" ><a href="browsefood.php">Browse food&#127828;</a>
-                <ul class="dropdown"> 
+             <!--   <ul class="dropdown"> 
                 <li><a name="cat" href="#" onclick="seturl(this);">Chocojars</a></li>
                 <li><a name="cat" href="#" onclick="seturl(this);">Western</a></li>
                 <li><a name="cat" href="#" onclick="seturl(this);">Kuih</a></li>
-                </ul>
+                </ul> -->
             </li>
             <li id="storelist" ><a href="browsestore.php">Stores &#128722;</a></li>
             <li id="request" ><a href="request.php">Request</a></li>

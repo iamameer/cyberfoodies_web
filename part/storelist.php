@@ -21,7 +21,7 @@
 
     //If store found, populate
     if(($result-> num_rows >= 0) AND ($result-> num_rows < 11)){
-         
+        $limit = false;
         //echo '<p>result found</p>';
         while($row = $result -> fetch_assoc()){
              
@@ -50,6 +50,10 @@
 
     }else if($result-> num_rows >= 10){
         //else if exceed 10
+        $limit = true;
+    }//end if result    
+
+    if($limit){
         echo ' <div class="col-lg-4 col-sm-6">
             <div class="blog-item">
                 <div class="bi-pic" style="width:100%!important;height:156px!important;
@@ -64,9 +68,8 @@
                 </div>
             </div>
         </div>'; 
-    }//end if result    
-
-    echo ' <div class="col-lg-4 col-sm-6">
+    }else{
+        echo ' <div class="col-lg-4 col-sm-6">
         <div class="blog-item" style="background-color:#f5d9ab;">
             <div class="bi-pic" style="width:100%!important;height:156px!important;
             overflow:hidden!important;">
@@ -80,6 +83,8 @@
             </div>
         </div>
     </div>'; 
+    }
+    
 
     mysqli_close($conn);   
 ?>

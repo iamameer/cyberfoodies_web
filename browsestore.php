@@ -67,7 +67,7 @@
                                 //         window.location.replace('index.php');</script>";
                                 // }else{
                                     echo '<script type="text/javascript">
-                                            document.getElementById("itemlist").classList.add("active");
+                                            document.getElementById("storelist").classList.add("active");
                                         </script>';
                                 // }
                             ?>
@@ -196,7 +196,7 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Tags</h4>
                         <div class="fw-tags">
-                            <?php include('part/getTags.php'); ?>
+                            <?php include('part/getTagsStore.php'); ?>
                         </div>
                     </div>
                 </div>
@@ -207,8 +207,8 @@
                                 <div class="select-option">
                                     <select class="sorting">
                                         <option value="">Sort: Default</option>
-                                        <option value="">Price: Low to High</option>
-                                        <option value="">Price: High to Low</option> 
+                                        <option value="">Alphabet: A to Z</option>
+                                        <option value="">Alphabet: Z to A</option> 
                                     </select>
                                     <!-- <select class="p-show">
                                         <option value="">Show:</option>
@@ -237,7 +237,10 @@
                             </style>
                             <div class="col-lg-5 col-md-5 text-right">
                                 
-                        <?php include('part/browselist.php') ?>
+                        <?php 
+                            //include('part/browselist.php') 
+                            include('part/browsestorelist.php');
+                        ?>
                 </div> 
             </div>
         </div>
@@ -328,22 +331,22 @@
         $('.sorting').on('change',function(){  
             var url = window.location.href;
             if(url.indexOf("php?") >= 0){
-                if(url.indexOf("php?psort") >= 0){
-                    url = url.split("psort")[0];
-                    url += "psort=";
+                if(url.indexOf("php?sort") >= 0){
+                    url = url.split("sort")[0];
+                    url += "sort=";
                 }else{
-                    url = url.split("&psort")[0];
-                    url += "&psort=";
+                    url = url.split("&sort")[0];
+                    url += "&sort=";
                 }
             }else{
-                url += "?psort=";
+                url += "?sort=";
             }
  
             var sort = $('.current').text(); 
-            if(sort.indexOf("High to Low") >= 0){ 
-                $(location).attr('href',url+'highest');
-            }else if(sort.indexOf("Low to High") >= 0){
-                $(location).attr('href',url+'lowest');
+            if(sort.indexOf("A to Z") >= 0){ 
+                $(location).attr('href',url+'atoz');
+            }else if(sort.indexOf("Z to A") >= 0){
+                $(location).attr('href',url+'ztoa');
             }
         });
 
