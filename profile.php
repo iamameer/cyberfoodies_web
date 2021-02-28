@@ -168,7 +168,10 @@
     </section>
     <!-- Blog Details Section End -->
 
-    <!-- Partner Logo Section Begin -->
+    <!-- Deal Of The Week Section Begin-->
+        <?php include('exp/deal.php'); ?>
+    <!-- Deal Of The Week Section End -->
+
   
 
     <!-- Footer Section Begin -->

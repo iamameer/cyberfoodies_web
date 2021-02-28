@@ -97,7 +97,7 @@
                                 </div>
                                 <ul>
                                 <!--<li class="w-icon active"><a href="'.$url.'"><i class="icon_bag_alt"></i></a></li> -->
-                                    <li class="quick-view active"><a href="'.$url.'">Stock: '.$store_category.'</a></li>
+                                    <li class="quick-view active"><a href="'.$url.'">'.$store_category.'</a></li>
                                     <!-- <li class="w-icon"><a href="'.$url.'"><i class="fa fa-random"></i></a></li> -->
                                 </ul>
                             </div>

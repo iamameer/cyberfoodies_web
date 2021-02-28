@@ -76,23 +76,7 @@
         </div>
         <div class="nav-item">
             <div class="container">
-                <!-- <div class="nav-depart">
-                    <div class="depart-btn">
-                        <i class="ti-menu"></i>
-                        <span>All categories</span>
-                        <ul class="depart-hover">
-                        <li class="active"><a href="#">Women’s Clothing</a></li>
-                            <li><a href="#">Men’s Clothing</a></li>
-                            <li><a href="#">Men’s Clothing</a></li>
-                            <li><a href="#">Underwear</a></li>
-                            <li><a href="#">Kid's Clothing</a></li>
-                            <li><a href="#">Brand Fashion</a></li>
-                            <li><a href="#">Accessories/Shoes</a></li>
-                            <li><a href="#">Luxury Brands</a></li>
-                            <li><a href="#">Brand Outdoor Apparel</a></li>
-                        </ul>
-                    </div>
-                </div> -->
+               
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <?php include('part/nav.php'); ?>
@@ -147,83 +131,75 @@
     </section>
     <!-- Hero Section End -->
 
-    <!-- Banner Section Begin -->
-    <div class="banner-section spad">
+    <!-- Women Banner Section Begin -->
+    <section class="women-banner spad">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="single-banner">
-                        <img src="img/banner-1.jpg" alt="">
-                        <div class="inner-text">
-                            <h4>Men’s</h4>
-                        </div>
+                <div class="col-lg-3">
+                    <div class="product-large set-bg" data-setbg="img/products/women-large.jpg">
+                        <h2>Women’s</h2>
+                        <a href="#">Discover More</a>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="single-banner">
-                        <img src="img/banner-2.jpg" alt="">
-                        <div class="inner-text">
-                            <h4>Women’s</h4>
-                        </div>
+                <div class="col-lg-8 offset-lg-1">
+                    <div class="filter-control">
+                        <!-- <ul>
+                            <li class="active">Clothings</li>
+                            <li>HandBag</li>
+                            <li>Shoes</li>
+                            <li>Accessories</li>
+                        </ul> -->
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-banner">
-                        <img src="img/banner-3.jpg" alt="">
-                        <div class="inner-text">
-                            <h4>Kid’s</h4>
-                        </div>
+                    <div class="product-slider owl-carousel">
+                        <style type="text/css">
+                            .available {
+                                color: #ffffff;
+                                font-size: 10px;
+                                background: #76BC42;
+                                position: absolute;
+                                left: 0;
+                                top: 20px;
+                                padding: 5px 10px;
+                                text-transform: uppercase;
+                            }
+
+                            .outofstock {
+                                color: #ffffff;
+                                font-size: 10px;
+                                background: red;
+                                position: absolute;
+                                left: 0;
+                                top: 20px;
+                                padding: 5px 10px;
+                                text-transform: uppercase;
+                            }
+
+                            .other {
+                                color: #ffffff;
+                                font-size: 10px;
+                                background: orange;
+                                position: absolute;
+                                left: 0;
+                                top: 20px;
+                                padding: 5px 10px;
+                                text-transform: uppercase;
+                            }
+                        </style>
+                      <?php //include('part/foodslider.php'); ?>
+                       
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Banner Section End -->
+    </section>
+    <!-- Women Banner Section End -->
 
- 
-
+    
     <!-- Instagram Section Begin -->
-    <div class="instagram-photo">
-        <div class="insta-item set-bg" data-setbg="img/insta-1.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-2.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-3.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-4.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-5.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
-            </div>
-        </div>
-        <div class="insta-item set-bg" data-setbg="img/insta-6.jpg">
-            <div class="inside-text">
-                <i class="ti-instagram"></i>
-                <h5><a href="#">colorlib_Collection</a></h5>
-            </div>
-        </div>
-    </div>
+    <?php include('exp/featuredstores.php'); ?>
     <!-- Instagram Section End -->
 
-    <!-- Partner Logo Section Begin -->
+  
 
     <!-- Footer Section Begin -->
    <?php 
