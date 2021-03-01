@@ -13,7 +13,17 @@
 
     if(isset($_GET['search'])){
         $search = $_GET['search'];
-        $query .= " WHERE LOWER(product_name) like '%".strtolower($search)."%'";
+        if(strpos($search," ")){
+            $find = explode(" ",$search);
+            $found = " LOWER(product_name) LIKE '%".strtolower($search)."%' OR ";
+            foreach($find as $item){
+                $found .= " LOWER(product_name) LIKE '%".strtolower($item)."%' OR ";
+            }
+            $found = substr($found,0,-3); 
+            $query .= ' WHERE ' . $found;
+        }else{
+            $query .= " WHERE LOWER(product_name) like '%".strtolower($search)."%'";
+        }
     }
 
     if(isset($_GET['pmin']) AND isset($_GET['pmax'])){
@@ -48,6 +58,7 @@
         
     }
 
+    //print_r($query);
     $result = $conn-> query($query);
 
     if (!$result) {
@@ -57,7 +68,8 @@
     }
 
     //Counters
-    $queryCount = "SELECT count(id) as total FROM ".$details['database'].".".$details['product_table'];
+    $queryCount = str_replace("SELECT *","SELECT count(id) as total",$query);
+    //"SELECT count(id) as total FROM ".$details['database'].".".$details['product_table'];
     $resultCount = mysqli_query($conn,$queryCount);
     $dataCount = mysqli_fetch_assoc($resultCount);
 

@@ -99,107 +99,88 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
-                    <!-- <div class="filter-widget">
-                        <h4 class="fw-title">Status</h4>
-                        <ul class="filter-catagories">
-                        <li><a name="cat" href="#" onclick="seturl(this);">Dijual (Available)</a></li>
-                        <li><a name="cat" href="#" onclick="seturl(this);">Terhad (Limited)</a></li>
-                        <li><a name="cat" href="#" onclick="seturl(this);">Out of stock</a></li>
-                        <li><a name="cat" href="#" onclick="seturl(this);">To be added</a></li>
-                        <li><a name="cat" href="#" onclick="seturl(this);">Pre-Order</a></li>
-                        <li><a name="cat" href="#" onclick="seturl(this);">Lain (Other)</a></li>
-                        </ul>
-                    </div> -->
+                    
                     <div class="filter-widget">
-                        <h4 class="fw-title">Price</h4>
-                        <div class="filter-range-wrap">
-                            <div class="range-slider">
-                                <div class="price-input">
-                                    <input type="text" id="minamount" placeholder="RM">
-                                    <input type="text" id="maxamount" placeholder="RM">
-                                </div>
-                            </div>
-                            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                data-min="0" data-max="99">
-                                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                            </div>
+                        <h4 class="fw-title">Store name</h4>
+                        <div class="group-input">
+                            <style type="text/css">
+                                #username {
+                                    border: 1px solid #ebebeb;
+                                    height: 50px;
+                                    width: 100%;
+                                    padding-left: 20px;
+                                    padding-right: 15px;
+                                }
+
+                                /* #cyberjaya,#putrajaya,#puchong,#dengkil,#other { 
+                                    height: 20px;  
+                                    width: 100%;
+                                    float: left!important;
+                                }
+
+                                .filter-widget label{
+                                    float: right!important;
+                                } */
+                            </style>
+                            <!-- <label for="username">Username or email address *</label> -->
+                            <input type="text" id="searchstore" placeholder="eg: Kedai Ayam Viral">
                         </div>
-                        <a href="#" class="filter-btn">Filter</a>
+
+                        <a href="#" class="filter-btn" style="margin-top:20px;height:auto;" onclick="searchStore();">Search Store</a>
                     </div>
-                    <!-- <div class="filter-widget">
-                        <h4 class="fw-title"><S>Status</S></h4> 
-                       
-                        <div class="fw-brand-check">
-                           <?php 
-                                // if(isset($_GET['status'])){
-                                //     $status = $_GET['status'];
-                                // }else{
-                                //     $status = '@';
-                                // }
-                                // include('part/browsefoodstatus.php'); 
-                            ?>
-                        </div>
-                    </div> -->
-                 
-                    <!-- <div class="filter-widget">
-                        <h4 class="fw-title">Color</h4>
-                        <div class="fw-color-choose">
-                            <div class="cs-item">
-                                <input type="radio" id="cs-black">
-                                <label class="cs-black" for="cs-black">Black</label>
-                            </div>
-                            <div class="cs-item">
-                                <input type="radio" id="cs-violet">
-                                <label class="cs-violet" for="cs-violet">Violet</label>
-                            </div>
-                            <div class="cs-item">
-                                <input type="radio" id="cs-blue">
-                                <label class="cs-blue" for="cs-blue">Blue</label>
-                            </div>
-                            <div class="cs-item">
-                                <input type="radio" id="cs-yellow">
-                                <label class="cs-yellow" for="cs-yellow">Yellow</label>
-                            </div>
-                            <div class="cs-item">
-                                <input type="radio" id="cs-red">
-                                <label class="cs-red" for="cs-red">Red</label>
-                            </div>
-                            <div class="cs-item">
-                                <input type="radio" id="cs-green">
-                                <label class="cs-green" for="cs-green">Green</label>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="filter-widget">
-                        <h4 class="fw-title">Size</h4>
-                        <div class="fw-size-choose">
-                            <div class="sc-item">
-                                <input type="radio" id="s-size">
-                                <label for="s-size">s</label>
-                            </div>
-                            <div class="sc-item">
-                                <input type="radio" id="m-size">
-                                <label for="m-size">m</label>
-                            </div>
-                            <div class="sc-item">
-                                <input type="radio" id="l-size">
-                                <label for="l-size">l</label>
-                            </div>
-                            <div class="sc-item">
-                                <input type="radio" id="xs-size">
-                                <label for="xs-size">xs</label>
-                            </div>
-                        </div>
-                    </div> -->
+                <div style="border: 1px solid #ebebeb; padding-left:10px; padding-top:10px">
                     <div class="filter-widget">
+                        <h4 class="fw-title">District</h4>
+                            <input type="checkbox" id="cyberjaya">
+                            <label for="cyberjaya">Cyberjaya</label> <br />
+                            <input type="checkbox" id="putrajaya">
+                            <label for="putrajaya">Putrajaya</label> <br />
+                            <input type="checkbox" id="dengkil">
+                            <label for="dengkil">Dengkil</label> <br />
+                            <input type="checkbox" id="puchong">
+                            <label for="puchong">Puchong</label> <br />
+                            <input type="checkbox" id="other">
+                            <label for="other">Lain (Other)</label>
+                    </div>
+
+                    <div class="filter-widget" style="margin-top:-30px;">
+                        <h4 class="fw-title">Status</h4>
+                        <select type="text" id="storestatus" name="storestatus" placeholder="Status :">
+                            <option value = "Open">Buka (Open)</option>
+                            <option value = "Closed">Tutup (Closed)</option>
+                            <option value = "Holiday">Cuti (Holiday)</option>
+                            <option value = "Moved">Berpindah (Moved)</option>
+                            <option value = "Setting">Dalam proses (Setting up)</option>
+                            <option value = "Other">Lain (Other)</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-widget" style="margin-top:-20px;">
+                        <h4 class="fw-title">Category</h4>
+                        <select type="text" id="category" name="category" placeholder="Kategori (Category)">
+                            <option value = "Homecook">Homecook</option>
+                            <option value = "Restaurant">Restaurant</option>
+                            <option value = "Agent">Agent</option>
+                            <option value = "Stall">Stall</option>
+                            <option value = "Food Truck">Food Truck</option>
+                            <option value = "Pasar Malam">Pasar Malam</option>
+                            <option value = "Other">Lain (Other)</option>
+                        </select>
+                        <br />
+                        <a href="#" class="filter-btn" style="margin-top:20px;height:auto;" onclick="filterStore()">Filter Store</a>
+                    </div>
+
+                </div> 
+                   
+
+                    <div class="filter-widget" style='padding-top:20px;'>
                         <h4 class="fw-title">Tags</h4>
                         <div class="fw-tags">
                             <?php include('part/getTagsStore.php'); ?>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-9 order-1 order-lg-2">
                     <div class="product-show-option">
                         <div class="row">
@@ -238,7 +219,6 @@
                             <div class="col-lg-5 col-md-5 text-right">
                                 
                         <?php 
-                            //include('part/browselist.php') 
                             include('part/browsestorelist.php');
                         ?>
                 </div> 

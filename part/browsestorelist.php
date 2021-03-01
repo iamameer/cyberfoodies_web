@@ -12,9 +12,69 @@
     $query = "SELECT * FROM ".$details['database'].".".$details['store_table'];
      
     //filter param
+    $search = '';
     if(isset($_GET['search'])){
         $search = $_GET['search'];
-        $query .= " WHERE LOWER(store_name) like '%".strtolower($search)."%'";
+        if(strpos($search," ")){
+            $find = explode(" ",$search);
+            $found = " LOWER(store_name) LIKE '%".strtolower($search)."%' OR ";
+            foreach($find as $item){
+                $found .= " LOWER(store_name) LIKE '%".strtolower($item)."%' OR ";
+            }
+            $found = substr($found,0,-3); 
+            $query .= ' WHERE ' . $found;
+        }else{
+            $query .= " WHERE LOWER(store_name) like '%".strtolower($search)."%'";
+        }
+    }
+
+    if(isset($_GET['district'])){
+        $district = $_GET['district'];
+        if(strlen($district)>0){
+            $district = explode("+",$district);
+            $dd = "";
+            foreach($district as $d){
+                switch($d){
+                    case "a":
+                        $dd .= " 'cyberjaya' ,";
+                    break;
+                    case "b":
+                        $dd .= " 'putrajaya' ,";
+                    break;
+                    case "c":
+                        $dd .= " 'dengkil' ,";
+                    break;
+                    case "d":
+                        $dd .= " 'puchong' ,";
+                    break;
+                    case "e":
+                        $dd .= " 'other' ,";
+                    break;
+                    default:
+                    //do nothing
+                } 
+            }
+            $dd = substr($dd,0,-1); 
+            if(strlen($search)>0){
+                $query .= " AND store_district IN ( ".$dd. ")";
+            }else{
+                $query .= " WHERE store_district IN ( ".$dd. ")";
+            }
+        }
+    }
+
+    if(isset($_GET['status'])){
+        $status = $_GET['status'];
+        if(strlen($status)>0){
+            $query .= " AND store_status IN ( '".$status. "')";
+        }
+    }
+
+    if(isset($_GET['category'])){
+        $category = $_GET['category'];
+        if(strlen($category)>0){
+            $query .= " AND store_category IN ( '".$category. "')";
+        }
     }
 
     $perpage = 15;
@@ -46,7 +106,7 @@
     }
 
     //Counters
-    $queryCount = "SELECT count(id) as total FROM ".$details['database'].".".$details['store_table'];
+    $queryCount = str_replace("SELECT *","SELECT count(id) as total",$query);
     $resultCount = mysqli_query($conn,$queryCount);
     $dataCount = mysqli_fetch_assoc($resultCount);
 
@@ -84,6 +144,15 @@
             }
 
             $url = 'store.php?store_id='.$store_id;
+
+            //stock color 
+            if(strtolower($store_category) == 'open'){
+                $store_category = '<span style="color:green!important;">'.$store_category .'</span>';
+            }else if(strtolower($store_category) == 'closed'){
+                $store_category = '<span style="color:red!important;">'.$store_category .'</span>';
+            }else{
+                $store_category = '<span style="color:#fc8803!important;">'.$store_category .'</span>';
+            }
 
             echo '  <div class="col-lg-4 col-sm-6">
                         <div class="product-item">

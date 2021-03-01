@@ -131,6 +131,10 @@
     </section>
     <!-- Hero Section End -->
 
+    <div class="banner-section spad">
+       
+    </div>
+
     <!-- Women Banner Section Begin -->
     <section class="women-banner spad">
         <div class="container-fluid">
@@ -185,7 +189,7 @@
                                 text-transform: uppercase;
                             }
                         </style>
-                      <?php //include('part/foodslider.php'); ?>
+                      <?php include('part/foodslider.php'); ?>
                        
                     </div>
                 </div>
