@@ -60,6 +60,8 @@
             }else{
                 $query .= " WHERE store_district IN ( ".$dd. ")";
             }
+        }else{
+            $query .= " WHERE 1 ";
         }
     }
 

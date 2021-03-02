@@ -14,7 +14,7 @@
     //     $store_id = $_GET['store_id'];
     // }else{
     //     echo "<script type='text/javascript'>alert('Error: no store_id');
-    //     window.location.replace('http://cyberfoodies.epizy.com/index.php'); 
+    //     window.location.replace('index.php'); 
     //     </script>";
     // }
 

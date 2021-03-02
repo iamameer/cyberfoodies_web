@@ -55,7 +55,7 @@
         $str = explode("|",htmlspecialchars($_COOKIE['q'])); 
         $user_id = explode("@",$str[1])[0];
         echo "<script type='text/javascript'>
-                window.location.replace('http://cyberfoodies.epizy.com/store.php?store_id=".$store_id."&q=".$user_id."'); 
+                window.location.replace('../store.php?store_id=".$store_id."&q=".$user_id."'); 
                 </script>";
         // header("profile.php");
         // exit();

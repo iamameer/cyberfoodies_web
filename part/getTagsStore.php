@@ -32,16 +32,19 @@
     // }
 
     if($result-> num_rows > 0){
-        $str = '';
+        $tag = array();
         while($row = $result -> fetch_assoc()){
-            $tag = explode(" ",$row['store_name']); 
-            foreach($tag as $word){ 
+            $tag_name = explode(" ",$row['store_name']); 
+            foreach($tag_name as $word){ 
                 if(strlen($word)>2){
-                    echo '  <a href="browsestore.php?search='.$word.'">'.$word.'</a>';
+                    array_push($tag,$word);
                 }
             }
         }
- 
+        $tag = array_unique($tag);
+        foreach($tag as $word){ 
+            echo '  <a href="browsestore.php?search='.$word.'">'.$word.'</a>';
+        }
     }
 
     // echo '  <a href="#">Towel</a>

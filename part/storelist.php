@@ -25,13 +25,14 @@
         //echo '<p>result found</p>';
         while($row = $result -> fetch_assoc()){
              
-        //echo '<p>in while</p>';
-        if(strlen($row["store_picture"] )< 10){
-            $img = "<img src='img/blog/sample-shop-image-min.png' @>";
-        }else{
-            $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'" @/>';
-        }
-                echo ' <div class="col-lg-4 col-sm-6">
+            //echo '<p>in while</p>';
+            if(strlen($row["store_picture"] )< 10){
+                $img = "<img src='img/blog/sample-shop-image-min.png' @>";
+            }else{
+                $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'" @/>';
+            }
+
+            echo ' <div class="col-lg-4 col-sm-6" style="margin-top:10px">
                     <div class="blog-item" >
                         <div class="bi-pic" 
                         style="width:100%!important;height:156px!important;

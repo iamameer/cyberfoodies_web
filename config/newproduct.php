@@ -44,7 +44,7 @@
         echo("Error: ".$conn->error);
     }else{
         echo "<script type='text/javascript'>
-                window.location.replace('http://cyberfoodies.epizy.com/store.php?store_id=".$store_id."'); 
+                window.location.replace('../store.php?store_id=".$store_id."'); 
                 </script>";
         // header("profile.php");
         // exit();

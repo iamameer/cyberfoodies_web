@@ -51,16 +51,16 @@
     // }
  
     $sql = 'INSERT IGNORE INTO '.$details['database'] .'.' .$details['store_table'].
-            '(user_id, store_id, store_name, store_location, store_district, store_delivery, 
+            '(user_id, store_id, store_name, store_location, store_district, store_delivery, store_extratext,
             store_order, store_info, store_picture, store_phone, store_time, store_status, store_category) 
-            VALUES ("'.$user_id.'", "'.$store_id.'","'.$store_name.'","'.$store_location.'","'.$store_district.'","'.$store_delivery.'",
+            VALUES ("'.$user_id.'", "'.$store_id.'","'.$store_name.'","'.$store_location.'","'.$store_district.'","'.$store_delivery.'","'.$store_extratext.'",
              "'.$store_order.'", "'.$store_info.'", "'.$image_file.'","'.$store_phone.'","'.$store_time.'","'.$store_status.'","'.$store_category.'")';
 
     if(!$conn-> query($sql)){
         echo("Error: ".$conn->error);
     }else{
         echo "<script type='text/javascript'>
-                window.location.replace('http://cyberfoodies.epizy.com/profile.php'); 
+                window.location.replace('../profile.php'); 
                 </script>";
         // header("profile.php");
         // exit();
