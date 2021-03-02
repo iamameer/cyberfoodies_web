@@ -131,40 +131,90 @@
                 <div style="border: 1px solid #ebebeb; padding-left:10px; padding-top:10px">
                     <div class="filter-widget">
                         <h4 class="fw-title">District</h4>
-                            <input type="checkbox" id="cyberjaya">
-                            <label for="cyberjaya">Cyberjaya</label> <br />
-                            <input type="checkbox" id="putrajaya">
-                            <label for="putrajaya">Putrajaya</label> <br />
-                            <input type="checkbox" id="dengkil">
-                            <label for="dengkil">Dengkil</label> <br />
-                            <input type="checkbox" id="puchong">
-                            <label for="puchong">Puchong</label> <br />
-                            <input type="checkbox" id="other">
-                            <label for="other">Lain (Other)</label>
+                        <?php 
+                            if(isset($_GET['district'])){
+                                $district = $_GET['district'];
+                                if(strpos($district,'a')!== false){
+                                    $a = 'checked';
+                                }
+                                if(strpos($district,'b')!== false){
+                                    $b = 'checked';
+                                }
+                                if(strpos($district,'c')!== false){
+                                    $c = 'checked';
+                                }
+                                if(strpos($district,'d')!== false){
+                                    $d = 'checked';
+                                }
+                                if(strpos($district,'e')!== false){
+                                    $e = 'checked';
+                                }
+                            }else{
+                                $a = ''; $b = ''; $c = ''; $d = ''; $e = ''; 
+                            }
+
+                            echo '  <input type="checkbox" id="cyberjaya" '.$a.'>
+                                    <label for="cyberjaya">Cyberjaya</label> <br />
+                                    <input type="checkbox" id="putrajaya" '.$b.'>
+                                    <label for="putrajaya">Putrajaya</label> <br />
+                                    <input type="checkbox" id="dengkil" '.$c.'>
+                                    <label for="dengkil">Dengkil</label> <br />
+                                    <input type="checkbox" id="puchong" '.$d.'>
+                                    <label for="puchong">Puchong</label> <br />
+                                    <input type="checkbox" id="other" '.$e.'>
+                                    <label for="other">Lain (Other)</label>';
+                        ?>
+                          
                     </div>
 
                     <div class="filter-widget" style="margin-top:-30px;">
                         <h4 class="fw-title">Status</h4>
                         <select type="text" id="storestatus" name="storestatus" placeholder="Status :">
-                            <option value = "Open">Buka (Open)</option>
-                            <option value = "Closed">Tutup (Closed)</option>
-                            <option value = "Holiday">Cuti (Holiday)</option>
-                            <option value = "Moved">Berpindah (Moved)</option>
-                            <option value = "Setting">Dalam proses (Setting up)</option>
-                            <option value = "Other">Lain (Other)</option>
+                          <?php 
+                            $arr = array('<option selected="" value = "Open">Buka (Open)</option>',
+                                         '<option selected="" value = "Closed">Tutup (Closed)</option>',
+                                         '<option selected="" value = "Holiday">Cuti (Holiday)</option>',
+                                         '<option selected="" value = "Moved">Berpindah (Moved)</option>',
+                                         '<option selected="" value = "Setting">Dalam proses (Setting up)</option>',
+                                         '<option selected="" value = "Other">Lain (Other)</option>');
+
+                            foreach($arr as $item){
+                                if(isset($_GET['status'])){
+                                    if(strpos($item,$_GET['status'])){
+                                        $item = str_replace('selected=""','selected="selected"',$item);
+                                    }else{
+                                        $item = str_replace('selected=""','',$item);
+                                    }
+                                }
+                                echo $item;
+                            }
+                          ?>
                         </select>
                     </div>
 
                     <div class="filter-widget" style="margin-top:-20px;">
                         <h4 class="fw-title">Category</h4>
                         <select type="text" id="category" name="category" placeholder="Kategori (Category)">
-                            <option value = "Homecook">Homecook</option>
-                            <option value = "Restaurant">Restaurant</option>
-                            <option value = "Agent">Agent</option>
-                            <option value = "Stall">Stall</option>
-                            <option value = "Food Truck">Food Truck</option>
-                            <option value = "Pasar Malam">Pasar Malam</option>
-                            <option value = "Other">Lain (Other)</option>
+                        <?php 
+                            $arr = array(' <option selected="" value = "Homecook">Homecook</option>',
+                                          '<option selected="" value = "Restaurant">Restaurant</option>',
+                                          '<option selected="" value = "Agent">Agent</option>',
+                                          '<option selected="" value = "Stall">Stall</option>',
+                                          '<option selected="" value = "Food Truck">Food Truck</option>',
+                                          '<option selected="" value = "Pasar Malam">Pasar Malam</option>',
+                                          '<option selected="" value = "Other">Lain (Other)</option>');
+
+                            foreach($arr as $item){
+                                if(isset($_GET['category'])){
+                                    if(strpos($item,$_GET['category'])){
+                                        $item = str_replace('selected=""','selected="selected"',$item);
+                                    }else{
+                                        $item = str_replace('selected=""','',$item);
+                                    }
+                                }
+                                echo $item;
+                            }
+                          ?>
                         </select>
                         <br />
                         <a href="#" class="filter-btn" style="margin-top:20px;height:auto;" onclick="filterStore()">Filter Store</a>

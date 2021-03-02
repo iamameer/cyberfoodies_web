@@ -84,9 +84,25 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="blog-details-inner">
-                        
+                        <style type="text/css">
+                             .filter-btn2{
+                                        margin-top:10px;
+                                        display: none;
+                                        font-size: 14px;
+                                        font-weight: 900;
+                                        padding: 7px 20px 5px;
+                                        margin-right: 5px;
+                                        margin-left: 5px;
+                                        color: #ffffff;
+                                        background: red;
+                                        text-transform: uppercase;
+                                        text-decoration: none;
+                                        height:33px!important;
+                                        float:right;
+                                    }
+                        </style>
                         <?php include('config/checkUser.php'); ?>
-
+                        <a href="#" class="filter-btn2">Delete user</a>
                         <!-- <div class="blog-large-pic" style="width:50%;height:auto;">
                             <img src="img/blog/blog-detail.jpg" alt="">
                         </div> 

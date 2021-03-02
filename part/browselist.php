@@ -36,6 +36,11 @@
             $query .= " WHERE ";
         }
         $query .= " product_price >= ".$pmin. " AND product_price <= " . $pmax ;
+
+        if(isset($_GET['status'])){
+            $status = $_GET['status'];
+            $query .= " AND product_status like '%" .$status. "%'";
+        }
     }
 
     $perpage = 15;
@@ -157,7 +162,8 @@
         echo '</div> '; //product-list
 
         //<!-- PAGING: --> 
-        echo '<div class="loading-more" style="padding-top: 10px">
+        if($totalCount>0){
+            echo '<div class="loading-more" style="padding-top: 10px">
                 <!-- <i class="icon_loading"></i> -->';
                 $maxpage = (int)($totalCount / $perpage) ; //15/4 = 
                 $mod = fmod($totalCount, $perpage);
@@ -187,7 +193,8 @@
                     }
                 }
                 
-        echo '</div>';
+            echo '</div>';
+        }
 
     }else{
         echo '</div> ';// row closure

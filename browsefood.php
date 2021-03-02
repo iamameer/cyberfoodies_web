@@ -110,38 +110,57 @@
                         <li><a name="cat" href="#" onclick="seturl(this);">Lain (Other)</a></li>
                         </ul>
                     </div> -->
+              
                     <div class="filter-widget">
                         <h4 class="fw-title">Price</h4>
                         <div class="filter-range-wrap">
                             <div class="range-slider">
                                 <div class="price-input">
-                                    <input type="text" id="minamount" placeholder="RM">
-                                    <input type="text" id="maxamount" placeholder="RM">
+                                    <?php    
+                                        $pmin = $_GET['pmin'] ?? '0';
+                                        $pmax = $_GET['pmax'] ?? '99';
+                                        echo ' <input type="text" id="minamount" placeholder="RM" value="'.$pmin.'">
+                                               <input type="text" id="maxamount" placeholder="RM" value="'.$pmax.'">';
+                                    ?>
                                 </div>
-                            </div>
+                            </div> 
                             <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                data-min="0" data-max="99">
+                                    data-min="0" data-max="99">
                                 <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                             </div>
                         </div>
-                        <a href="#" class="filter-btn">Filter</a>
+                        <a href="#" class="filter-btn">Select by price</a>
                     </div>
-                    <!-- <div class="filter-widget">
-                        <h4 class="fw-title"><S>Status</S></h4> 
-                       
-                        <div class="fw-brand-check">
-                           <?php 
-                                // if(isset($_GET['status'])){
-                                //     $status = $_GET['status'];
-                                // }else{
-                                //     $status = '@';
-                                // }
-                                // include('part/browsefoodstatus.php'); 
-                            ?>
-                        </div>
-                    </div> -->
+                <div style="border: 1px solid #ebebeb; padding-left:10px; padding-top:10px; margin-bottom:10px;">
+                    <div class="filter-widget">
+                        <h4 class="fw-title">Status</h4>
+                            <select type="text" id="productstatus" name="productstatus" placeholder="Status :">
+                            <?php 
+                                $arr = array('<option selected="" value = "Available">Dijual (Available)</option>',
+                                             '<option selected="" value = "Limited">Terhad (Limited)</option>',
+                                             '<option selected="" value = "Out of stock">Kehabisan stok (Out of stock)</option>',
+                                             '<option selected="" value = "To be added">Akan datang (To be added)</option>',
+                                             '<option selected="" value = "Pre-Order">Pre-Order</option>',
+                                             '<option selected="" value = "Other">Lain (Other)</option>');
+
+                                foreach($arr as $item){
+                                    if(isset($_GET['status'])){
+                                        if(strpos($item,$_GET['status'])){
+                                            $item = str_replace('selected=""','selected="selected"',$item);
+                                        }else{
+                                            $item = str_replace('selected=""','',$item);
+                                        }
+                                    }
+                                    echo $item;
+                                }
+                            ?> 
+                            </select>
+                        <a href="#" class="filter-btn2">Filter</a>
+                    </div>
+                </div>
+                  
                  
                     <!-- <div class="filter-widget">
                         <h4 class="fw-title">Color</h4>
@@ -216,7 +235,8 @@
                                 </div>
                             </div>
                             <style type="text/css">
-                                .primary-btn {
+                                .primary-btn, .filter-btn {
+                                        margin-top:10px;
                                         display: inline-block;
                                         font-size: 14px;
                                         font-weight: 900;
@@ -227,6 +247,21 @@
                                         background: #e7ab3c;
                                         text-transform: uppercase;
                                         text-decoration: none;
+                                        height:33px!important;
+                                    }
+                                    .filter-btn2{
+                                        margin-top:10px;
+                                        display: inline-block;
+                                        font-size: 14px;
+                                        font-weight: 900;
+                                        padding: 7px 20px 5px;
+                                        margin-right: 5px;
+                                        margin-left: 5px;
+                                        color: #ffffff;
+                                        background: #e7ab3c;
+                                        text-transform: uppercase;
+                                        text-decoration: none;
+                                        height:33px!important;
                                     }
                                     .product-item:hover{ 
                                         background: #ffffff;
@@ -298,25 +333,69 @@
                 url = url.split("pmin")[0];
             }
  
+            // //status
+            // var status = '&status=';
+            // if ($('input#available').is(':checked')) {
+            //     status += "a";
+            // }
+            // if ($('input#limited').is(':checked')) {
+            //     status += "b";
+            // }
+            // if ($('input#outofstock').is(':checked')) {
+            //     status += "c";
+            // }
+            // if ($('input#tobeadded').is(':checked')) {
+            //     status += "d";
+            // }
+            // if ($('input#preorder').is(':checked')) {
+            //     status += "e";
+            // }
+            // if ($('input#other').is(':checked')) {
+            //     status += "f";
+            // }
+
+            // filter += status;
+
+            $(location).attr('href',url+filter);
+
+        });
+
+        $('.filter-btn2').click(function(){
+
+            var pmin = $('#minamount').val();
+            pmin = pmin.indexOf("RM") >= 0 ? pmin.split("RM")[1] : pmin;
+
+            var pmax = $('#maxamount').val();
+            pmax = pmax.indexOf("RM") >= 0 ? pmax.split("RM")[1] : pmax;
+
+            var filter = "pmin="+pmin+"&pmax="+pmax;
+
+            var url = window.location.href;
+            if(url.indexOf("php?") >= 0){
+                url += "&";
+            }else{
+                url += "?";
+            }
+
+            if(url.indexOf("pmin") >= 0){
+                url = url.split("pmin")[0];
+            }
+
             //status
             var status = '&status=';
-            if ($('input#available').is(':checked')) {
-                status += "a";
-            }
-            if ($('input#limited').is(':checked')) {
-                status += "b";
-            }
-            if ($('input#outofstock').is(':checked')) {
-                status += "c";
-            }
-            if ($('input#tobeadded').is(':checked')) {
-                status += "d";
-            }
-            if ($('input#preorder').is(':checked')) {
-                status += "e";
-            }
-            if ($('input#other').is(':checked')) {
-                status += "f";
+            var selected =  $('#productstatus').find(":selected").text();
+            if(selected.indexOf("Available") >= 0){
+                status += 'Available';
+            }else if(selected.indexOf("Limited") >= 0){
+                status += 'Limited';
+            }else if(selected.indexOf("stock") >= 0){
+                status += 'Out of stock';
+            }else if(selected.indexOf("added") >= 0){
+                status += 'To be added';
+            }else if(selected.indexOf("Order") >= 0){
+                status += 'Pre-Order';
+            }else if(selected.indexOf("Other") >= 0){
+                status += 'Other';
             }
 
             filter += status;

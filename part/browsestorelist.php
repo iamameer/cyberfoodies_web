@@ -31,7 +31,7 @@
     if(isset($_GET['district'])){
         $district = $_GET['district'];
         if(strlen($district)>0){
-            $district = explode("+",$district);
+            $district = explode(" ",$district);
             $dd = "";
             foreach($district as $d){
                 switch($d){
@@ -118,7 +118,7 @@
     <div class="product-list">';
 
     //If store found, populate
-    if($result-> num_rows >= 0){
+    if($result-> num_rows > 0){
         $rowcounter = 0;
         $limitcounter = 0;
         //echo '<p>result found</p>';
@@ -195,7 +195,8 @@
         echo '</div> '; //product-list
 
         //<!-- PAGING: --> 
-        echo '<div class="loading-more" style="padding-top: 10px">
+        if($totalCount > 0){
+            echo '<div class="loading-more" style="padding-top: 10px">
             <!-- <i class="icon_loading"></i> -->';
             $maxpage = (int)($totalCount / $perpage) ; //15/4 = 
             $mod = fmod($totalCount, $perpage);
@@ -225,7 +226,8 @@
                 }
             }
                 
-        echo '</div>';
+            echo '</div>';
+        }
 
     }else{
         echo '</div> ';// row closure
