@@ -1,7 +1,7 @@
 <?php
 echo '<div class="container">
                 <div class="ht-left">
-                    <a href="mailto:ameersorne@gmail.com?subject=FROM CYBERFOODIES&body=Hello!%0D%0AYou look cute today!%0D%0A%0D%0ARegards,%0D%0ARandom cyberians">
+                    <a href="../fashi-master/request.php">
                     <div class="mail-service">
                         <i class=" fa fa-envelope"></i>
                         contact admin

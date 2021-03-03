@@ -36,9 +36,9 @@ function signOut() {
             <li id="request" ><a href="request.php">Request</a></li>
             <li id="etc" ><a href="#">Etc</a>
                 <ul class="dropdown">
-                    <li><a href="etc/announce.php">Anouncement</a></li>
-                    <li><a href="etc/faq.php">FAQ</a></li>
-                    <li><a href="etc/disclaimer.php">Disclaimer</a></li>
+                    <li><a href="announce.php">Anouncement</a></li>
+                    <li><a href="faq.php">FAQ</a></li>
+                    <li><a href="disclaimer.php">Disclaimer</a></li>
                 </ul>
             </li>';
 
