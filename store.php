@@ -32,9 +32,9 @@
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Header Section Begin -->
     <header class="header-section">
@@ -190,10 +190,11 @@
                                 <?php 
                                     if(isset($_GET['store_id'])){
                                         $store_id = $_GET['store_id'];
-                                            if(isset($_COOKIE["q"])){
+                                            if(isset($_COOKIE["q"]) AND isset($_GET['q'])){
                                                 $str = explode("|",htmlspecialchars($_COOKIE["q"]));
                                                 $user_id = explode("@",$str[1])[0];
-                                                if($user_id){
+                                                $q = $_GET['q'];
+                                                if($user_id == $q){
                                                     echo '<span style="font-style: italic;">*Klik pada imej untuk edit/delete produk
                                                             <br>*Click on the image to edit/delete the product
                                                     </span>';
