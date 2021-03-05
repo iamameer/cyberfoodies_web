@@ -42,7 +42,7 @@
                     $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'" @/>';
                 }
 
-                if(strlen($user_id)> 0){
+                if($user_id == $q){
                     $img = '<a href="addProduct.php?user_id='.$user_id.'&product_id='.$prod_id.'&store_id='.$store_id.'&mode=edit">'. 
                             str_replace('@','style="height: 100%; width: 100%; object-fit: cover"',$img)  .'</a>';
                 }

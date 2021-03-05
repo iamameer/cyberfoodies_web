@@ -32,9 +32,9 @@
 
 <body>
     <!-- Page Preloder -->
-    <!-- <div id="preloder">
+    <div id="preloder">
         <div class="loader"></div>
-    </div> -->
+    </div>
 
     <!-- Header Section Begin -->
     <header class="header-section">
@@ -138,14 +138,15 @@
                                     if(isset($_GET['store_id'])){
                                         $store_id = $_GET['store_id'];
                                         if(isset($_GET['q'])){
-                                            $user_id = $_GET['q'];
+                                            $q = $_GET['q'];
                                         }else{
-                                            if(isset($_COOKIE["q"])){
-                                                $str = explode("|",htmlspecialchars($_COOKIE["q"]));
-                                                $user_id = explode("@",$str[1])[0];
-                                            }else{
-                                                $user_id = "";
-                                            }
+                                            $q = 'nouser';
+                                        } 
+                                        if(isset($_COOKIE["q"])){
+                                            $str = explode("|",htmlspecialchars($_COOKIE["q"]));
+                                            $user_id = explode("@",$str[1])[0];
+                                        }else{
+                                            $user_id = "";
                                         }
                                         include('part/productlist.php'); 
                                     }else{
