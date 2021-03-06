@@ -142,13 +142,13 @@
                             <form action="config/newrequest.php" class="comment-form" method="POST" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <input type="text" id="name" name="name" placeholder="Your name">
+                                        <input type="text" id="name" name="name" placeholder="Your name" required>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="text" id="email" name="email" placeholder="Your email">
+                                        <input type="text" id="email" name="email" placeholder="Your email" required>
                                     </div>
                                     <div class="col-lg-12">
-                                        <textarea id="message" name="message" placeholder="Your message"></textarea>
+                                        <textarea id="message" name="message" placeholder="Your message" required></textarea>
                                         <button type="submit" class="site-btn">Send request</button>
                                     </div>
                                 </div>

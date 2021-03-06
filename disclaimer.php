@@ -66,7 +66,7 @@
                             //         window.location.replace('index.php');</script>";
                             // }else{
                                 echo '<script type="text/javascript">
-                                        document.getElementById("etc").classList.add("active");
+                                        document.getElementById("dis").classList.add("active");
                                     </script>';
                             // }
                         ?>

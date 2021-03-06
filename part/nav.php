@@ -24,7 +24,7 @@ function signOut() {
 }   
 </script>';
 
-       echo '<li id="home" ><a href="index.php">Home</a></li>
+       echo '<li id="home" ><a href="index.php">Home</a></li> 
             <li id="itemlist" ><a href="browsefood.php">Browse food&#127828;</a>
              <!--   <ul class="dropdown"> 
                 <li><a name="cat" href="#" onclick="seturl(this);">Chocojars</a></li>
@@ -33,6 +33,7 @@ function signOut() {
                 </ul> -->
             </li>
             <li id="storelist" ><a href="browsestore.php">Stores &#128722;</a></li>
+            <li id="bazaar" ><a href="bazaar.php">Bazaar! &#x1F389;</a>
             <li id="request"><a href="request.php">Request</a>
                 <!-- <ul class="dropdown">
                 <li><a href="announcement.php">Timeline</a></li>
