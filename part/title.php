@@ -75,6 +75,6 @@
             }
         </script>';
 
-    echo '<title>Cyberfoodies</title>';
+    echo '<title>Cybereats</title>';
 
 ?>

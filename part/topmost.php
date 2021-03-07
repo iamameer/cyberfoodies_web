@@ -1,7 +1,7 @@
 <?php
 echo '<div class="container">
                 <div class="ht-left">
-                    <a href="../fashi-master/request.php">
+                    <a href="request.php">
                     <div class="mail-service">
                         <i class=" fa fa-envelope"></i>
                         contact admin

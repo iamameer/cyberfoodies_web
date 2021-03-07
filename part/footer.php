@@ -17,7 +17,7 @@
                     </div>
                     <ul>
                         <li>Cyber 11, Persiaran Sepang, Cyberjaya</li> 
-                        <li><a href="request.php">Email: ameersorne@gmail.com</a></li>
+                        <li><a href="request.php">Email: admin@realtea.me</a></li>
                     </ul>
                   
                 </div>
@@ -28,8 +28,8 @@
                     <div class="footer-left">
                     <div class="footer-social">
                     <a href="#" title="website"><i class="fa fa-globe"></i></a>
-                    <a href="#" title="instagram"><i class="fa fa-instagram"></i></a>
-                    <a href="#" title="twitter"><i class="fa fa-twitter"></i></a> 
+                    <a href="https://www.instagram.com/amrsorne" title="instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/_aprillicious" title="twitter"><i class="fa fa-twitter"></i></a> 
                     </div> </div>
                 </div>
             </div>
@@ -48,7 +48,10 @@
                     4) <a href="https://www.freepik.com/free-vector/alphabetical-letter-o-logo-collection_12811058.htm#page=1&query=logo&position=6">  
                         Logo
                         </a><br>
-                    </p>
+                    5) <a href="https://www.freepik.com/free-vector/coming-soon-construction-yellow-background-design_8562867.htm#page=1&query=under%20construction&position=4">  
+                        Logo
+                        </a><br>
+                        </p>
                     <!--<form action="#" class="subscribe-form">
                         <input type="text" placeholder="Enter Your Mail">
                         <button type="button">Subscribe</button>

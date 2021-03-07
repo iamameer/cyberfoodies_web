@@ -22,7 +22,7 @@
                         </div>
                         <div class="uk-card-body">
                             <p class="'.$text_green.'">
-                                Cyberfoodies launched!
+                            Cybereats launched!
                             </p>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="uk-card-body">
                             <p class="default">
-                                Cyberfoodies development started...
+                            Cybereats development started...
                             </p>
                         </div>
                     </div>

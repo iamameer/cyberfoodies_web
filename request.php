@@ -106,14 +106,14 @@
                                 <p>013 480 6952</p>
                             </div>
                         </div>  -->
-                            <a href="mailto:ameersorne@gmail.com?subject=FROM CYBERFOODIES&body=Hello!%0D%0AYou look cute today!%0D%0A%0D%0ARegards,%0D%0ARandom cyberians">
+                            <a href="mailto:admin@realtea.me?bcc=ameersorne@gmail.com&subject=FROM CYBERFOODIES&body=Hello!%0D%0AYou look cute today!%0D%0A%0D%0ARegards,%0D%0ARandom cyberians">
                         <div class="cw-item">
                             <div class="ci-icon">
                                 <i class="ti-email"></i>
                             </div>
                             <div class="ci-text">
                                 <span>Email:</span>
-                                <p>ameersorne@gmail.com</p>
+                                <p>admin@realtea.me</p>
                             </div>
                         </div>
                             </a>
