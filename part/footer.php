@@ -7,6 +7,29 @@
     // echo "<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
     // </footer>";
 
+    echo ' <style type="text/css">
+            .footer-section{
+                padding-top:5px; 
+            }
+            .copyright-reserved,.footer-left{
+                margin-top:2px;   
+            }
+            .footer-left{
+                margin-bottom:2px;  
+            }
+            .newslatter-item p,.infos li,.copyright-text{
+                margin-top:5px;  
+                font-size: 70%!important;
+                line-height: 1.6;
+            } 
+            .imgbottom{
+                width: 40%; 
+                height: auto; 
+                object-fit: contain; 
+                margin: 0;   
+            }
+            </style>';
+
     echo ' <footer class="footer-section">
     <div class="container">
         <div class="row">
@@ -14,32 +37,27 @@
                 <div class="footer-left">
                     <div class="footer-logo">
                         <a href="#"><img src="img/sample/imglogo.png" alt=""></a>
+                        <ul class="infos">
+                            <li>Cyber 11, Persiaran Sepang, Cyberjaya <a href="request.php">Email: admin@realtea.me</a></li>
+                        </ul> 
                     </div>
-                    <ul>
-                        <li>Cyber 11, Persiaran Sepang, Cyberjaya</li> 
-                        <li><a href="request.php">Email: admin@realtea.me</a></li>
-                    </ul>
-                  
+                    
                 </div>
             </div>
-            <div class="col-lg-2 offset-lg-1">
-                <div class="footer-widget">
-                    <h5>Information</h5> 
-                    <div class="footer-left">
-                    <div class="footer-social">
-                    <a href="#" title="website"><i class="fa fa-globe"></i></a>
-                    <a href="https://www.instagram.com/amrsorne" title="instagram"><i class="fa fa-instagram"></i></a>
-                    <a href="https://www.twitter.com/_aprillicious" title="twitter"><i class="fa fa-twitter"></i></a> 
-                    </div> </div>
+             
+            <div class="col-lg-3">
+                <div class="footer-left">
+                    
                 </div>
-            </div>
-            <div class="col-lg-2">
+            </div>  
                 
-            </div>
+            <div class="col-lg-2">
+               
+            </div> 
+
             <div class="col-lg-4">
                 <div class="newslatter-item">
-                    <h5>Credits :</h5>
-                    <p>
+                    <p><span><b>Credits :</span></b><br> 
                     1) Web template: Colorlib<br>
                     2) <a href="https://www.freepik.com/free-photo/3d-illustration-smartphone-with-products-coming-out-screen-online-shopping-e-commerce-concept_12740329.htm#page=1&position=15">
                         Carousel online</a><br>
@@ -49,7 +67,7 @@
                         Logo
                         </a><br>
                     5) <a href="https://www.freepik.com/free-vector/coming-soon-construction-yellow-background-design_8562867.htm#page=1&query=under%20construction&position=4">  
-                        Logo
+                        Coming soon
                         </a><br>
                         </p>
                     <!--<form action="#" class="subscribe-form">

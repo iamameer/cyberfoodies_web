@@ -83,6 +83,21 @@
     </header>
     <!-- Header End -->
 
+    <!-- Breadcrumb Section Begin -->
+    <div class="breacrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <a href="#"><i class="fa fa-home"></i> Etc</a>
+                        <span>Announcement</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section Begin -->
+
     <!-- Blog Details Section Begin -->
     <section class="blog-details spad">
         <style type="text/css">
