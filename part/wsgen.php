@@ -36,7 +36,7 @@
                         if(strlen($row["store_extratext"])>1){
                             $url .= '?text=' .$row["store_extratext"];
                         }
-                        echo '<a href="'. $url . '" class="proceed-btn">Contact seller now! (Whatsapp)</a>';
+                        echo '<a href="'. $url . '" class="proceed-btn" style="background:#25D366">Contact seller now! <i class="fa fa-whatsapp"></i></a>';
                     }
                 }else{
                     echo '<span>Contact: '.$row["store_phone"].'<br>(Invalid phone number)</span>';

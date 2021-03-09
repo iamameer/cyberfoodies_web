@@ -169,11 +169,11 @@
                                 <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <p>Nak jual kat sini senang je, (1) Login, (2) Add new store, (3) Add products, siap!
-                                           <br>Tapi kalau terdesak sangat boleh je <a href="#">klik sini</a><br>
+                                           <br>Tapi kalau terdesak sangat boleh je <a href="tutorial.php">klik sini</a><br>
                                         ... atau klik gambar ni... atau melalui menu kat atas tu</p><br>
                                         <i>
                                         <p>Tbh it's pretty straight forward, (1) Login, (2) Add new store, (3) Add products, and you're set!
-                                           <br>But you can see the details in case you need it badly by <a href="#">clicking here</a><br>
+                                           <br>But you can see the details in case you need it badly by <a href="tutorial.php">clicking here</a><br>
                                          ... or even clicking the picture.... or via the navigation menu</p><br></i>
                                             <center> 
                                             <figure>

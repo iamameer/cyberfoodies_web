@@ -12,6 +12,8 @@
     //echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>';
     echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
 
+    echo "<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=60476a9f39329f00123ae914&product=analytics' async='async'></script>";
+    
     echo '<script>
             // $(document).ready(function(){
             //     $(".searchButton").click(function(){ 

@@ -41,6 +41,7 @@ function signOut() {
             </li>
             <li id="etc" ><a href="#">Etc</a>
                 <ul class="dropdown">
+                    <li id="tutorial"><a href="tutorial.php">Tutorial</a></li>
                     <li id="announce"><a href="announcement.php">Anouncement</a></li>
                     <li id="faq"><a href="faq.php">FAQ</a></li>
                     <li id="dis"><a href="disclaimer.php">Disclaimer</a></li>

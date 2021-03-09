@@ -187,7 +187,9 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="cart-buttons">
+                                Share this shop!
                                 <!-- <a href="#" class="primary-btn continue-shop">Continue shopping</a> -->
+                                <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
                                 <?php 
                                     if(isset($_GET['store_id'])){
                                         $store_id = $_GET['store_id'];
@@ -196,7 +198,7 @@
                                                 $user_id = explode("@",$str[1])[0];
                                                 $q = $_GET['q'];
                                                 if($user_id == $q){
-                                                    echo '<span style="font-style: italic;">*Klik pada imej untuk edit/delete produk
+                                                    echo '<br><br><span style="font-style: italic;">*Klik pada imej untuk edit/delete produk
                                                             <br>*Click on the image to edit/delete the product
                                                     </span>';
                                                     echo  '
@@ -206,6 +208,8 @@
                                                     <a href="addStore.php?store_id='.$store_id.'&mode=edit" 
                                                     class="primary-btn up-cart" style="margin-top:15px;background-color:#e7e43c">Edit Store</a>
                                                     ';
+                                                }else{
+                                                    //REPORT STORE
                                                 }
                                             }
                                     }else{

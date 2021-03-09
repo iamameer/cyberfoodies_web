@@ -3,6 +3,13 @@
 
      //if edit mode
      if($mode == "edit"){
+
+        if(!isset($_GET['store_id'])){
+            echo "<script type='text/javascript'>alert('Error: no store_id');
+            window.location.replace('profile.php'); 
+            </script>";
+        }
+
         $details = include('config/config.php');
         include('config/dbconn.php');
     
@@ -167,8 +174,7 @@
             echo ' <div class="group-input">
                     <label for="additional">Maklumat Tambahan (Additional Information)</label>
                     <textarea title="Use # for a newline" type="text" id="additional" 
-                    name="additional" placeholder="1) Can order via App SpeedGrocer for delivery&#13;
-                    2) Beli 10 percuma 5&#13; Tiada minimum order">'.$store_info.'</textarea>
+                    name="additional" placeholder="1) Can order via App SpeedGrocer for delivery&#13;2) Beli 10 percuma 5&#13; Tiada minimum order">'.$store_info.'</textarea>
                 </div> ';
 
             if(strlen($store_picture)< 10){
