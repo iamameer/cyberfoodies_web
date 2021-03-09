@@ -74,11 +74,17 @@
 
     //Counters
     $queryCount = str_replace("SELECT *","SELECT count(id) as total",$query);
-    //"SELECT count(id) as total FROM ".$details['database'].".".$details['product_table'];
+    //print_r($queryCount);
     $resultCount = mysqli_query($conn,$queryCount);
     $dataCount = mysqli_fetch_assoc($resultCount);
 
-    $totalCount = isset($_GET['search']) ? $result-> num_rows : $dataCount['total'];
+    //$totalCount = isset($_GET['search']) ? $result-> num_rows : $dataCount['total'];
+    if(isset($_GET['search']) ){
+        $totalCount = $result-> num_rows;
+    }else{
+        $totalCount = $dataCount['total'];
+    }
+
     echo '<p>Found: '.$totalCount.' Product(s)</p>
                 </div>
             </div>
@@ -180,13 +186,13 @@
                     $a = '<a href="#" class="primary-btn"> '.($i+1).' </a>';
                     if(isset($_GET['page'])){
                         if($i != ($_GET['page'] - 1)){
-                            echo str_replace('#','browsefood.php?'.explode("&page=",$_SERVER['QUERY_STRING'])[0].'&page='.($i+1),$a); //jQuery onclick ?
+                            echo str_replace('#','browsefood.php?'.explode("&page=",$_SERVER['QUERY_STRING'])[0].'page='.($i+1),$a); //jQuery onclick ?
                         }else{
                             echo $a;
                         }      
                     }else{
                         if($i>0){ 
-                            echo str_replace('#','browsefood.php?'.explode("&page=",$_SERVER['QUERY_STRING'])[0].'&page='.($i+1),$a); //jQuery onclick ?
+                            echo str_replace('#','browsefood.php?'.explode("&page=",$_SERVER['QUERY_STRING'])[0].'page='.($i+1),$a); //jQuery onclick ?
                         }else{
                             echo $a;
                         }
