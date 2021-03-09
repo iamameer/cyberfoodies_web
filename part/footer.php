@@ -36,7 +36,7 @@
             <div class="col-lg-3">
                 <div class="footer-left">
                     <div class="footer-logo">
-                        <a href="#"><img src="img/sample/imglogo.png" alt=""></a>
+                        <a href="#"><img src="img/sample/imglogo3.png" alt=""></a>
                         <ul class="infos">
                             <li>Cyber 11, Persiaran Sepang, Cyberjaya <a href="request.php">Email: admin@realtea.me</a></li>
                         </ul> 

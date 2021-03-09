@@ -9,7 +9,7 @@
 
     echo '<div class="logo">
             <a href="./index.php">
-                <img src="img/sample/imglogo.png" alt="">
+                <img src="img/sample/imglogo3.png" alt="">
             </a>
         </div>
             </div> <!-- endDiv col-md-2 -->

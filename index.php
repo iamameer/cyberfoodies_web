@@ -110,20 +110,10 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="product-large set-bg" data-setbg="img/products/women-large.jpg">
-                        <h2>Women’s</h2>
-                        <a href="#">Discover More</a>
+                        <h2>Sample</h2>
+                        <a href="#">This is sample image</a>
                     </div>
-                    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    !-- responsive unit --
-                    <ins class="adsbygoogle"
-                        style="display:block"
-                        data-ad-client="ca-pub-6026641918722832"
-                        data-ad-slot="3525584330"
-                        data-ad-format="auto"
-                        data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script> -->
+                    
                 </div>
                 <div class="col-lg-8 offset-lg-1">
                     <div class="filter-control">
