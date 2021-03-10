@@ -107,13 +107,34 @@
         trigger_error('Invalid query: ' . $conn->error);
     }
 
-    //Counters
-    $queryCount = str_replace("SELECT *","SELECT count(id) as total",$query);
-    $resultCount = mysqli_query($conn,$queryCount);
-    $dataCount = mysqli_fetch_assoc($resultCount);
+    //Counters [old]
+    // $queryCount = str_replace("SELECT *","SELECT count(id) as total",$query);
+    // $resultCount = mysqli_query($conn,$queryCount);
+    // $dataCount = mysqli_fetch_assoc($resultCount);
 
-    $totalCount = isset($_GET['search']) ? $result-> num_rows : $dataCount['total'];
-    echo '<p>Found: '.$totalCount.' Store(s)</p>
+    // $totalCount = isset($_GET['search']) ? $result-> num_rows : $dataCount['total'];
+
+    //Counters [new]
+    $queryCount = "SELECT count(id) as total FROM ".$details['database'].".".$details['store_table'];
+    $resultCount = mysqli_query($conn,$queryCount);
+    $dataCount = mysqli_fetch_assoc($resultCount); 
+    $totalCount = $dataCount['total'];  
+     
+    if(isset($result-> num_rows)){ 
+        if(strpos($query,"OFFSET")){
+            $totalFound = $result-> num_rows;
+        }else{
+            $totalFound = $totalCount;
+        }
+
+        if(strpos($query,"OFFSET 0")){
+            $totalFound = $totalCount;
+        }
+    }else{
+        $totalFound = 0;
+    }
+
+    echo '<p>Found: '.$totalFound.' Store(s)</p>
                 </div>
             </div>
          </div>
@@ -215,13 +236,13 @@
                 $a = '<a href="#" class="primary-btn"> '.($i+1).' </a>';
                 if(isset($_GET['page'])){
                     if($i != ($_GET['page'] - 1)){
-                        echo str_replace('#','browsefood.php?'.explode("&page=",$_SERVER['QUERY_STRING'])[0].'&page='.($i+1),$a); //jQuery onclick ?
+                        echo str_replace('#','browsefood.php?'.explode("page=",$_SERVER['QUERY_STRING'])[0].'page='.($i+1),$a); //jQuery onclick ?
                     }else{
                         echo $a;
                     }      
                 }else{
                     if($i>0){ 
-                        echo str_replace('#','browsefood.php?'.explode("&page=",$_SERVER['QUERY_STRING'])[0].'&page='.($i+1),$a); //jQuery onclick ?
+                        echo str_replace('#','browsefood.php?'.explode("page=",$_SERVER['QUERY_STRING'])[0].'page='.($i+1),$a); //jQuery onclick ?
                     }else{
                         echo $a;
                     }

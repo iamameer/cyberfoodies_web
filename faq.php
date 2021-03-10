@@ -66,7 +66,7 @@
                             //         window.location.replace('index.php');</script>";
                             // }else{
                                 echo '<script type="text/javascript">
-                                        document.getElementById("dis").classList.add("active");
+                                        document.getElementById("faq").classList.add("active");
                                     </script>';
                             // }
                         ?>
@@ -149,7 +149,7 @@
                                         <i>
                                         <p>It's FREE.
                                            <br>Yes, you read it right, free.<br>
-                                            Why are you still reading. But you can <a href="https://www.buymeacoffee.com/ameersorne">buy me a coffe (:</a></p><br></i>
+                                            Why are you still reading. But you can <a href="https://www.buymeacoffee.com/ameersorne">buy me a coffee (:</a></p><br></i>
                                             <center> 
                                             <figure>
                                                 <img src='https://i.imgur.com/Cw70nyW.png' alt='missing' />
@@ -177,7 +177,7 @@
                                          ... or even clicking the picture.... or via the navigation menu</p><br></i>
                                             <center> 
                                             <figure>
-                                                <a href="#"><img src='https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif' alt='missing' /></a>
+                                                <a href="tutorial.php"><img src='https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif' alt='missing' /></a>
                                                 <figcaption>Tak pasti cemana? (Unsure how?)</figcaption>
                                             </figure>
                                             </center>
