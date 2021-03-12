@@ -179,47 +179,7 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="config/gsignin.js"></script>
 </body>
 
 </html>
-
-<script>
-
- function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-
-    var str = profile.getName()+"|"+profile.getEmail()+"|"+profile.getImageUrl();
-    console.log(str); 
-    setCookie("q",str,1);
-    if(profile){
-        window.location.replace("profile.php");
-        googleUser.disconnect()
-    }
-  }
-
-  function setCookie(name,value,days) {
-    console.log("in setCookie");
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = escape(name) + "=" + escape(value || "")  + expires + "; path=/";
-}
-
-    function signOut() {
-        setCookie("q","",-1);
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-        console.log("User signed out.");
-        });
-        auth2.disconnect();
-    }    
-
-
-</script>

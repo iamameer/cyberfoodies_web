@@ -207,25 +207,8 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="config/gsignin.js"></script>
 </body>
 
 </html>
-
-<script>
  
-  function setCookie(name,value,days) {
-    console.log("in setCookie");
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = escape(name) + "=" + escape(value || "")  + expires + "; path=/";
-}
-
-    function signOut() {
-        setCookie("q","",-1);
-    }    
-
-</script>

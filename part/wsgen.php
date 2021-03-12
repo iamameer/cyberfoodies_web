@@ -32,7 +32,7 @@
                     if(($row['store_phone'][0] == "0" OR $row['store_phone'][0] == 0  ) AND ctype_digit($row['store_phone']) ){
                         $url = str_replace(" ","",$row["store_phone"]);
                         $url = str_replace("-","",$row["store_phone"]);
-                        $url = 'https://wa.me/' .$url;
+                        $url = 'https://wa.me/6' .$url;
                         if(strlen($row["store_extratext"])>1){
                             $url .= '?text=' .$row["store_extratext"];
                         }

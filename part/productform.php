@@ -12,7 +12,8 @@
             die("Error connecting to: ".$conn->connect_error);
         }
 
-        $query = "SELECT user_id,product_id,product_image,product_name,product_price,product_stock,product_status
+        $query = "SELECT user_id,product_id,product_image,product_name,product_description,
+                            product_price,product_stock,product_status
                 FROM ".$details['database'].".".$details['product_table'] .
                 " WHERE product_id = '" . $_GET['product_id'] . "'
                 AND user_id = '" . $_GET['user_id'] . "'
@@ -28,6 +29,7 @@
                     $product_stock = (int)$row['product_stock'];//'11';
                     $product_status = $row['product_status'];//'Available';
                     $product_image = $row['product_image'];
+                    $product_desc = $row['product_description'];
                 }//end while
 
             echo '<h3>Updating <b style="color:#fa9f37;">'.$product_name.'</b> details:</h3>';
@@ -61,6 +63,13 @@
                     onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()" value="'.$product_name.'">
                 </div>';
 
+            echo ' <div class="group-input">
+                    <label for="productdesc">Tentang Produk (Product Desription) [limit 255]</label>
+                    <input type="text" id="productdesc" name="productdesc"  
+                    placeholder="eg: 100% Halal, telur dibasuh" maxlength="255"
+                    value="'.$product_desc.'">
+            </div>';
+
             echo '<div class="group-input">
                 <label for="productprice">Harga Produk (Product Price) *</label>
                 <input type="number" step="0.01" id="productprice" name="productprice"  placeholder="eg: 15.20"
@@ -76,7 +85,7 @@
             </div>';
 
             if(strlen($product_image)< 10){
-                $img = "<img src='img/sample/no-product-image.jpg' @>";
+                $img = "<img src='img/sample/no-product-img.jpg' @>";
             }else{
                 $img =  '<img src="data:image/jpeg;base64,'.base64_encode($product_image).'" @/>';
             }
@@ -135,6 +144,13 @@
                 <input type="text" id="productname" name="productname"  placeholder="eg: Nasi Ayam Viral"
                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()">
+            </div>';
+
+        echo ' <div class="group-input">
+            <label for="productdesc">Tentang Produk (Product Desription) *</label>
+            <input type="text" id="productdesc" name="productdesc"  
+            placeholder="eg: 100% Halal, telur dibasuh" maxlength="255"
+            value="'.$product_desc.'">
             </div>';
 
         echo '<div class="group-input">

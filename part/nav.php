@@ -8,24 +8,10 @@ function seturl(input){
     var url = "browsefood.php?search="+(input.innerHTML).toLowerCase();
     input.setAttribute("href",url);  
 }
-function setCookie(name,value,days) {
-    console.log("in setCookie");
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = escape(name) + "=" + escape(value || "")  + expires + "; path=/";
-}
-
-function signOut() {
-    setCookie("q","",-1);
-}   
 </script>';
 
        echo '<li id="home" ><a href="index.php">Home</a></li> 
-            <li id="itemlist" ><a href="browsefood.php">Browse food&#127828;</a>
+            <li id="itemlist" ><a href="browsefood.php">Browse food &#127828;</a>
              <!--   <ul class="dropdown"> 
                 <li><a name="cat" href="#" onclick="seturl(this);">Chocojars</a></li>
                 <li><a name="cat" href="#" onclick="seturl(this);">Western</a></li>
@@ -51,7 +37,7 @@ function signOut() {
             if(isset($_COOKIE["q"])){
                 echo '<li id="profile" class=""><a href="profile.php">My Page</a>
                         <ul class="dropdown">
-                        <li><a href="index.php" id="signout" onclick="signOut();">Sign Out</a></li>
+                        <li><a href="" id="signout" onclick="signOut();">Sign Out</a></li>
                         </ul>
                     </li>';
             }else{
