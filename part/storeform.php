@@ -97,7 +97,8 @@
 
             echo ' <div class="group-input">
                     <label for="location">Lokasi (Store Location) *</label>
-                    <textarea title="Use # for a newline" type="text" id="location" name="location" placeholder="eg: Tamarind Square, Persiaran Multimedia, Cyber 11"
+                    <textarea title="Use # for a newline" type="text" id="location" name="location" 
+                    placeholder="eg: Tamarind Square, Persiaran Multimedia, Cyber 11&#13; (# = new line)"
                     onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                     onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()">'.$store_location.'</textarea>
                 </div>';
@@ -123,13 +124,13 @@
             echo '<div class="group-input">
                     <label for="time">Waktu operasi (Operating Time) *</label>
                     <textarea title="Use # for a newline" type="text" id="time" name="time"  
-                    placeholder="eg: Setiap Hari 8am dan 4pm, last order 10pm">'.$store_time.'</textarea>
+                    placeholder="eg: Setiap Hari 8am dan 4pm, last order 10pm&#13; (# = new line)">'.$store_time.'</textarea>
                 </div> ';
 
             echo '<div class="group-input">
                     <label for="delivery">Maklumat Penghantaran (Delivery Information) *</label>
                     <textarea title="Use # for a newline" type="text" id="delivery" name="delivery"  
-                    placeholder="Cyberjaya (RM2) &#13;Putrajaya & Seri Kembangan (RM 4) &#13;Dengkil & Puchong (RM5)"
+                    placeholder="Cyberjaya (RM2) &#13;Putrajaya & Seri Kembangan (RM 4) &#13;Dengkil & Puchong (RM5)&#13; (# = new line)"
                     onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                     onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()">'.$store_delivery.'</textarea>
                 </div>';
@@ -137,7 +138,7 @@
             echo '<div class="group-input">
                     <label for="howtoorder">Cara Tempahan (How to order) *</label>
                     <textarea title="Use # for a newline" type="text" id="howtoorder" name="howtoorder"  
-                    placeholder="eg: Melalui whatsapp/telegram/sms/fb page"
+                    placeholder="eg: Melalui whatsapp/telegram/sms/fb page&#13; (# = new line)"
                     onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                     onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()">'.$store_order.'</textarea>
                 </div> ';
@@ -174,7 +175,8 @@
             echo ' <div class="group-input">
                     <label for="additional">Maklumat Tambahan (Additional Information)</label>
                     <textarea title="Use # for a newline" type="text" id="additional" 
-                    name="additional" placeholder="1) Can order via App SpeedGrocer for delivery&#13;2) Beli 10 percuma 5&#13; Tiada minimum order">'.$store_info.'</textarea>
+                    name="additional" placeholder="1) Can order via App SpeedGrocer for delivery&#13;2) Beli 10 percuma 5&#13; Tiada minimum order&#13; (# = new line)"
+                    >'.$store_info.'</textarea>
                 </div> ';
 
             if(strlen($store_picture)< 10){
@@ -204,8 +206,8 @@
                     <label for="del"> Delete kedai ini (Delete this store) ? </label>
                 ';
             echo   '<div id="delbutton" style="display:none">
-                        <span>Delete kedai ini akan delete SEMUA product di dalamnya<br>
-                        <i>Deleting this store will clear ALL product inside</i></span><br>
+                        <span>Delete kedai ini akan delete SEMUA produk di dalamnya<br>
+                        <i>Deleting this store will clear ALL products inside</i></span><br>
                         <a href="config/updatestore.php?store_id='.$store_id.'&mode=delete" 
                         class="primary-btn up-cart" style="background-color:#ff401f;">Delete Store</a>
                         </div>
@@ -253,7 +255,8 @@
 
         echo ' <div class="group-input">
                 <label for="location">Lokasi (Store Location) *</label>
-                <textarea title="Use # for a newline" type="text" id="location" name="location" placeholder="eg: Tamarind Square, Persiaran Multimedia, Cyber 11"
+                <textarea title="Use # for a newline" type="text" id="location" name="location" 
+                placeholder="eg: Tamarind Square, Persiaran Multimedia, Cyber 11&#13; (# = new line)"
                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()"></textarea>
             </div>';
@@ -272,19 +275,22 @@
 
         echo '<div class="group-input">
                 <label for="time">Waktu operasi (Operating Time) *</label>
-                <textarea title="Use # for a newline" type="text" id="time" name="time" placeholder="eg: Setiap Hari 8am dan 4pm, last order 10pm"></textarea>
+                <textarea title="Use # for a newline" type="text" id="time" name="time" 
+                placeholder="eg: Setiap Hari 8am dan 4pm, last order 10pm" &#13; (# = new line)></textarea>
             </div> ';
 
         echo '<div class="group-input">
                 <label for="delivery">Maklumat Penghantaran (Delivery Information) *</label>
-                <textarea title="Use # for a newline" type="text" id="delivery" name="delivery" placeholder="Cyberjaya (RM2) &#13;Putrajaya & Seri Kembangan (RM 4) &#13;Dengkil & Puchong (RM5)"
+                <textarea title="Use # for a newline" type="text" id="delivery" name="delivery" 
+                placeholder="Cyberjaya (RM2) &#13;Putrajaya & Seri Kembangan (RM 4) &#13;Dengkil & Puchong (RM5)&#13; (# = new line)"
                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()"></textarea>
             </div>';
 
         echo '<div class="group-input">
                 <label for="howtoorder">Cara Tempahan (How to order) *</label>
-                <textarea title="Use # for a newline" type="text" id="howtoorder" name="howtoorder" placeholder="eg: Melalui whatsapp/telegram/sms/fb page"
+                <textarea title="Use # for a newline" type="text" id="howtoorder" name="howtoorder" 
+                placeholder="eg: Melalui whatsapp/telegram/sms/fb page&#13; (# = new line)"
                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()"></textarea>
             </div> ';
@@ -309,7 +315,8 @@
 
         echo ' <div class="group-input">
                 <label for="additional">Maklumat Tambahan (Additional Information)</label>
-                <textarea title="Use # for a newline" type="text" id="additional" name="additional" placeholder="1) Can order via App SpeedGrocer for delivery&#13;2) Beli 10 percuma 5&#13; Tiada minimum order"></textarea>
+                <textarea title="Use # for a newline" type="text" id="additional" name="additional" 
+                placeholder="1) Can order via App SpeedGrocer for delivery&#13;2) Beli 10 percuma 5&#13; Tiada minimum order&#13; (# = new line)"></textarea>
             </div> ';
 
         echo ' <div class="group-input">

@@ -17,6 +17,7 @@
         $product_price = $_POST['productprice'];
         $product_stock = $_POST['productstock'];
         $product_status = $_POST['productstatus'];
+        $product_desc = $_POST['productdesc'];
     
         if(count($_FILES["image"]["tmp_name"]) > 0){
             for($count = 0; $count < count($_FILES["image"]["tmp_name"]); $count++){
@@ -36,7 +37,8 @@
                 product_name = "'.$product_name.'",
                 product_price = "'.$product_price.'",
                 product_stock = "'.$product_stock.'",
-                product_status = "'.$product_status.'"';
+                product_status = "'.$product_status.'",
+                product_description = "'.$product_desc.'"';
        
         if($image_file != "No image"){
             $sql .= ',product_image = "'.$image_file.'"';
