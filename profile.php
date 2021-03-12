@@ -86,8 +86,8 @@
                     <div class="blog-details-inner">
                         <style type="text/css">
                              .filter-btn2{
-                                        margin-top:10px;
                                         display: none;
+                                        margin-top:10px;
                                         font-size: 14px;
                                         font-weight: 900;
                                         padding: 7px 20px 5px;

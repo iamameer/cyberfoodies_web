@@ -3533,6 +3533,36 @@ ol {
 	margin-bottom: 0;
 }
 
+.blog-details-inner .posted-by2 {
+	border: 1px solid #ebebeb;
+	border-radius: 5px;
+	padding: 40px 65px;
+}
+
+.blog-details-inner .posted-by2 .pb-pic {
+	float: left;
+}
+
+.blog-details-inner .posted-by2 .pb-text {
+	padding-left: 22px;
+	display: table;
+}
+
+.blog-details-inner .posted-by2 .pb-text a {
+	display: block;
+}
+
+.blog-details-inner .posted-by2 .pb-text a h5 {
+	color: #252525;
+	font-weight: 700;
+	margin-bottom: 13px;
+}
+
+.blog-details-inner .posted-by2 .pb-text p {
+	line-height: 30px;
+	margin-bottom: 0;
+}
+
 .blog-details-inner .leave-comment {
 	padding-top: 55px;
 }
@@ -4254,6 +4284,10 @@ ol {
 	.checkout-content input {
 		margin-top: 50px;
 	}
+ 
+	.posted-by2{
+		float:left!important;
+	}  
 }
 
 /* Small Device: 320px */

@@ -46,7 +46,7 @@
                 <div class="row"><div class="col-lg-2 col-md-2">
                     <?php include('part/logo.php') ?>
                     <div class="col-lg-3 text-right col-md-3">
-                        
+                        <?php include('config/signedin.php') ?>
                     </div>
                 </div>
             </div>

@@ -71,6 +71,8 @@
     <div class="col-lg-12">
     <div class="faq-accordin">
     <div class="accordion" id="accordionExample">
+
+                <!-- tambah kedai -->
                     <div class="card">
                         <div class="card-heading">
                             <a data-toggle="collapse" data-target="#collapseOne">
@@ -162,7 +164,7 @@
                         </div>
                     </div>
 
-
+                <!-- tambah produk -->   
                     <div class="card">
                         <div class="card-heading">
                             <a data-toggle="collapse" data-target="#collapseTwo">
@@ -248,6 +250,152 @@
                             </div>
                         </div>
                     </div>
+
+                <!-- edit kedai -->   
+                    <div class="card">
+                        <div class="card-heading">
+                            <a data-toggle="collapse" data-target="#collapseThree">
+                                Cemana nak edit kedai? (How to edit store?) :
+                            </a>
+                        </div>
+                        <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="timeline-item">
+                                    <div class="timeline-content timeline-card js--fadeInRight">
+                                        <div class="img">
+                                        <!-- <h3>Step 1:</h3> -->
+                                        <img src="https://i.imgur.com/uF42Axj.png" >
+                                        </div>
+                                        <div class="date">Step 1:</div>
+                                        <p>Pastikan anda telah sign-in, klik <a href="profile.php">MY PAGE</a> <i>(Ensure you're logged in, click <a href="profile.php">MY PAGE</a>)</i></p>
+                                       
+                                        <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-content timeline-card js--fadeInRight">
+                                        <div class="img">
+                                        <!-- <h3>Step 1:</h3> -->
+                                        <img src="https://i.imgur.com/Ro1WOWA.png" >
+                                        </div>
+                                        <div class="date">Step 2:</div>
+                                        <p>Pilih store yang berkenaan <i>(Select the related store)</i></p> 
+                                        <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-content timeline-card js--fadeInRight">
+                                        <div class="img">
+                                        <!-- <h3>Step 1:</h3> -->
+                                        <img src="https://i.imgur.com/5myb42b.png" >
+                                        </div>
+                                        <div class="date">Step 3:</div>
+                                        <p>Pilih EDIT STORE <i>(Choose EDIT STORE)</i></p>
+                                        <span class="q">
+                                        <br>Q1: Takde pun ADD PRODUCT! <i>(There's no ADD PRODUCT!)</i>
+                                        <br>A1: Check adakah itu kedai anda.... kalau problem, <a href="request.php">contact admin</a> <i>(Is that your store....? Else <a href="request.php">contact admin</a>)</i>
+                                        </span>
+                                        <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-content timeline-card js--fadeInRight">
+                                        <div class="img">
+                                        <!-- <h3>Step 1:</h3> -->
+                                        <img src="https://i.imgur.com/KVfIDT0.png" >
+                                        </div>
+                                        <div class="date">Step 4:</div>
+                                        <p>Isikan maklumat yang berkenaan kemudian tekan UPDATE STORE <i>(Fill in the information and click UPDATE STORE)</i></p>
+                                        <span class="q">
+                                        <br>Q1: Tak boleh tekan lah... <i>(Can't click, send help)</i>
+                                        <br>A1: Pastikan tempat kosong yang wajib diisi <i>(Make sure required fields are filled)</i>
+                                        </span>
+                                        <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                                    </div>
+                                </div>
+ 
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- edit produk -->
+                    <div class="card">
+                        <div class="card-heading">
+                            <a data-toggle="collapse" data-target="#collapseFour">
+                                Cemana nak edit produk? (How to edit products?) :
+                            </a>
+                        </div>
+                        <div id="collapseFour" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="timeline-item">
+                                    <div class="timeline-content timeline-card js--fadeInRight">
+                                        <div class="img">
+                                        <!-- <h3>Step 1:</h3> -->
+                                        <img src="https://i.imgur.com/uF42Axj.png" >
+                                        </div>
+                                        <div class="date">Step 1:</div>
+                                        <p>Pastikan anda telah sign-in, klik <a href="profile.php">MY PAGE</a> <i>(Ensure you're logged in, click <a href="profile.php">MY PAGE</a>)</i></p>
+                                       
+                                        <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-content timeline-card js--fadeInRight">
+                                        <div class="img">
+                                        <!-- <h3>Step 1:</h3> -->
+                                        <img src="https://i.imgur.com/Ro1WOWA.png" >
+                                        </div>
+                                        <div class="date">Step 2:</div>
+                                        <p>Pilih store yang berkenaan <i>(Select the related store)</i></p> 
+                                        <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-content timeline-card js--fadeInRight">
+                                        <div class="img">
+                                        <!-- <h3>Step 1:</h3> -->
+                                        <img src="https://i.imgur.com/hDasVQw.png" >
+                                        </div>
+                                        <div class="date">Step 3:</div>
+                                        <p>Seperti arahan yang tertera (petak biru), klik pada imej produk yang ingin diubah (petak merah)<br>
+                                        <i>(As intructed (in blue rectangle), click on the particular product image (red rectangle)</i></p>
+                                        <span class="q">
+                                        <br>Q1: Takde arahan pun? / Tak boleh klik imej pun! 
+                                        <i>(There's no instruction / Unable to click the image!)</i>
+                                        <br>A1: Check adakah itu kedai anda.... kalau problem, <a href="request.php">contact admin</a> 
+                                        <i>(Is that your store....? Else <a href="request.php">contact admin</a>)</i> 
+                                        </span>
+                                        <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-content timeline-card js--fadeInRight">
+                                        <div class="img">
+                                        <!-- <h3>Step 1:</h3> -->
+                                        <img src="https://i.imgur.com/82oCMfL.png" >
+                                        </div>
+                                        <div class="date">Step 4:</div>
+                                        <p>Isikan maklumat yang berkenaan kemudian tekan UPDATE PRODUCT 
+                                        <i>(Fill in the information and click UPDATE PRODUCT)</i></p>
+                                        <span class="q">
+                                        <br>Q1: Tak boleh tekan lah... <i>(Can't click, send help)</i>
+                                        <br>A1: Pastikan tempat kosong yang wajib diisi <i>(Make sure required fields are filled)</i>
+                                        </span>
+                                        <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- delete account ? -->   
+                   
     </div></div></div></div>
 
     

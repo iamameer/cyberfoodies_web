@@ -55,21 +55,8 @@
                          <!-- legacy@nav-right -->
                          <!-- <a href="login.php" class="login-panel"><i class="fa fa-user"></i>Login</a> -->
                     
-                        <?php 
-                            if(!isset($_COOKIE["q"])){
-                                echo "<script type='text/javascript'> 
-                                        function signOut() {
-                                            setCookie('q','',-1);
-                                            var auth2 = gapi.auth2.getAuthInstance();
-                                            auth2.signOut().then(function () {
-                                            console.log('User signed out.');
-                                            });
-                                        }    
-                                    </script>";
-                                echo '<div class="g-signin2" data-onsuccess="onSignIn"></div>';
-                            }
-                        ?>
-
+                       <?php include('config/signedin.php') ?>
+                       
                     </div>
                 </div>
             </div>
