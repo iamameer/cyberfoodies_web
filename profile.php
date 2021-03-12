@@ -59,7 +59,7 @@
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <?php $nav = include('part/nav.php'); 
-                            echo str_replace('class=""','class="active"',$nav);
+                            //echo str_replace('class=""','class="active"',$nav);
                             if(!isset($_COOKIE["q"])){
                                 echo '<div class="g-signin2" data-onsuccess="onSignIn"></div>';
                                 echo "<script type='text/javascript'>alert('Please login first!');
