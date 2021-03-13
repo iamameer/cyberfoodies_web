@@ -126,9 +126,9 @@
                             </div> 
                             <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
                                     data-min="0" data-max="99">
-                                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                <div class="ui-slider-range ui-corner-all ui-widget-header" id="bef"></div>
+                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" id="omin"></span>
+                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" id="omax"></span>
                             </div>
                         </div>
                         <a href="#" class="filter-btn">Select by price</a>
@@ -434,4 +434,10 @@
         // });
 
     });
+</script>
+
+<script type="module"> 
+    var url = window.location.href;
+    document.getElementById("minamount").value = (url.split("pmin=")[1]).split("&")[0]; 
+    document.getElementById("maxamount").value = url.split("pmax=")[1]; 
 </script>
