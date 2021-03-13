@@ -114,27 +114,27 @@
 
     // $totalCount = isset($_GET['search']) ? $result-> num_rows : $dataCount['total'];
 
-    //Counters [new]
+    //Counters
+    $totalCount = 0;
+    $totalFound = 0;
     $queryCount = "SELECT count(id) as total FROM ".$details['database'].".".$details['store_table'];
+    if(isset($_GET['search'])){ 
+        $queryCount = explode("LIMIT",$query)[0];
+        $queryCount = str_replace("*","count(id) as total",$queryCount);
+    } 
     $resultCount = mysqli_query($conn,$queryCount);
     $dataCount = mysqli_fetch_assoc($resultCount); 
     $totalCount = $dataCount['total'];  
-     
-    if(isset($result-> num_rows)){ 
-        if(strpos($query,"OFFSET")){
-            $totalFound = $result-> num_rows;
-        }else{
-            $totalFound = $totalCount;
-        }
 
-        if(strpos($query,"OFFSET 0")){
-            $totalFound = $totalCount;
-        }
+    if(isset($result-> num_rows)){ 
+        $totalFound = $result-> num_rows; 
     }else{
         $totalFound = 0;
     }
-
-    echo '<p>Found: '.$totalFound.' Store(s)</p>
+   
+    //$totalCount = isset($_GET['search']) ? $result-> num_rows : $dataCount['total'];
+     
+    echo '<p>Showing: '.$totalFound.' out of '.$totalCount.' Store(s)</p>
                 </div>
             </div>
          </div>
