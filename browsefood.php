@@ -119,8 +119,8 @@
                                     <?php    
                                         $pmin = $_GET['pmin'] ?? '0';
                                         $pmax = $_GET['pmax'] ?? '99';
-                                        echo ' <input type="text" id="minamount" placeholder="RM" value="'.$pmin.'">
-                                               <input type="text" id="maxamount" placeholder="RM" value="'.$pmax.'">';
+                                        echo ' <input type="number" id="minamount" placeholder="RM" value="'.$pmin.'">
+                                               <input type="number" id="maxamount" placeholder="RM" value="'.$pmax.'">';
                                     ?>
                                 </div>
                             </div> 
@@ -439,5 +439,5 @@
 <script type="module"> 
     var url = window.location.href;
     document.getElementById("minamount").value = (url.split("pmin=")[1]).split("&")[0]; 
-    document.getElementById("maxamount").value = url.split("pmax=")[1]; 
+    document.getElementById("maxamount").value =(url.split("pmax=")[1]).split("&")[0]; ; 
 </script>

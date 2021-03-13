@@ -131,7 +131,8 @@
                 <div style="border: 1px solid #ebebeb; padding-left:10px; padding-top:10px">
                     <div class="filter-widget">
                         <h4 class="fw-title">District</h4>
-                        <?php 
+                        <?php  
+                            $a = ''; $b = ''; $c = ''; $d = ''; $e = ''; 
                             if(isset($_GET['district'])){
                                 $district = $_GET['district'];
                                 if(strpos($district,'a')!== false){
@@ -149,9 +150,7 @@
                                 if(strpos($district,'e')!== false){
                                     $e = 'checked';
                                 }
-                            }else{
-                                $a = ''; $b = ''; $c = ''; $d = ''; $e = ''; 
-                            }
+                            } 
 
                             echo '  <input type="checkbox" id="cyberjaya" '.$a.'>
                                     <label for="cyberjaya">Cyberjaya</label> <br />
@@ -176,7 +175,8 @@
                                          '<option selected="" value = "Holiday">Cuti (Holiday)</option>',
                                          '<option selected="" value = "Moved">Berpindah (Moved)</option>',
                                          '<option selected="" value = "Setting">Dalam proses (Setting up)</option>',
-                                         '<option selected="" value = "Other">Lain (Other)</option>');
+                                         '<option selected="" value = "Other">Lain (Other)</option>',
+                                         '<option selected="" value = "Any">Semua (Any)</option>');
 
                             foreach($arr as $item){
                                 if(isset($_GET['status'])){
@@ -196,13 +196,14 @@
                         <h4 class="fw-title">Category</h4>
                         <select type="text" id="category" name="category" placeholder="Kategori (Category)">
                         <?php 
-                            $arr = array(' <option selected="" value = "Homecook">Homecook</option>',
+                            $arr = array( '<option selected="" value = "Homecook">Homecook</option>',
                                           '<option selected="" value = "Restaurant">Restaurant</option>',
                                           '<option selected="" value = "Agent">Agent</option>',
                                           '<option selected="" value = "Stall">Stall</option>',
                                           '<option selected="" value = "Food Truck">Food Truck</option>',
                                           '<option selected="" value = "Pasar Malam">Pasar Malam</option>',
-                                          '<option selected="" value = "Other">Lain (Other)</option>');
+                                          '<option selected="" value = "Other">Lain (Other)</option>',
+                                          '<option selected="" value = "Any">Semua (Any)</option>');
 
                             foreach($arr as $item){
                                 if(isset($_GET['category'])){
@@ -311,53 +312,53 @@
 
     $(document).ready(function(){
 
-        $('.filter-btn').click(function(){
+        // $('.filter-btn').click(function(){
 
-            var pmin = $('#minamount').val();
-            pmin = pmin.indexOf("RM") >= 0 ? pmin.split("RM")[1] : pmin;
+        //     var pmin = $('#minamount').val();
+        //     pmin = pmin.indexOf("RM") >= 0 ? pmin.split("RM")[1] : pmin;
 
-            var pmax = $('#maxamount').val();
-            pmax = pmax.indexOf("RM") >= 0 ? pmax.split("RM")[1] : pmax;
+        //     var pmax = $('#maxamount').val();
+        //     pmax = pmax.indexOf("RM") >= 0 ? pmax.split("RM")[1] : pmax;
 
-            var filter = "pmin="+pmin+"&pmax="+pmax;
+        //     var filter = "pmin="+pmin+"&pmax="+pmax;
 
-            var url = window.location.href;
-            if(url.indexOf("php?") >= 0){
-                url += "&";
-            }else{
-                url += "?";
-            }
+        //     var url = window.location.href;
+        //     if(url.indexOf("php?") >= 0){
+        //         url += "&";
+        //     }else{
+        //         url += "?";
+        //     }
 
-            if(url.indexOf("pmin") >= 0){
-                url = url.split("pmin")[0];
-            }
+        //     if(url.indexOf("pmin") >= 0){
+        //         url = url.split("pmin")[0];
+        //     }
  
-            //status
-            var status = '&status=';
-            if ($('input#available').is(':checked')) {
-                status += "a";
-            }
-            if ($('input#limited').is(':checked')) {
-                status += "b";
-            }
-            if ($('input#outofstock').is(':checked')) {
-                status += "c";
-            }
-            if ($('input#tobeadded').is(':checked')) {
-                status += "d";
-            }
-            if ($('input#preorder').is(':checked')) {
-                status += "e";
-            }
-            if ($('input#other').is(':checked')) {
-                status += "f";
-            }
+        //     //status
+        //     var status = '&status=';
+        //     if ($('input#available').is(':checked')) {
+        //         status += "a";
+        //     }
+        //     if ($('input#limited').is(':checked')) {
+        //         status += "b";
+        //     }
+        //     if ($('input#outofstock').is(':checked')) {
+        //         status += "c";
+        //     }
+        //     if ($('input#tobeadded').is(':checked')) {
+        //         status += "d";
+        //     }
+        //     if ($('input#preorder').is(':checked')) {
+        //         status += "e";
+        //     }
+        //     if ($('input#other').is(':checked')) {
+        //         status += "f";
+        //     }
 
-            filter += status;
+        //     filter += status;
 
-            $(location).attr('href',url+filter);
+        //     $(location).attr('href',url+filter);
 
-        });
+        // });
 
         $('.sorting').on('change',function(){  
             var url = window.location.href;

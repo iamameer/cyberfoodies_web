@@ -67,14 +67,14 @@
 
     if(isset($_GET['status'])){
         $status = $_GET['status'];
-        if(strlen($status)>0){
-            $query .= " AND store_status IN ( '".$status. "')";
+        if(strlen($status)>0 AND strtolower($status) != 'any'){
+            $query .= " AND store_status IN ( '".$status. "')"; 
         }
     }
 
     if(isset($_GET['category'])){
         $category = $_GET['category'];
-        if(strlen($category)>0){
+        if(strlen($category)>0 AND strtolower($category) != 'any'){
             $query .= " AND store_category IN ( '".$category. "')";
         }
     }
