@@ -149,8 +149,7 @@
         echo ' <div class="group-input">
             <label for="productdesc">Tentang Produk (Product Desription) *</label>
             <input type="text" id="productdesc" name="productdesc"  
-            placeholder="eg: 100% Halal, telur dibasuh" maxlength="255"
-            value="'.$product_desc.'">
+            placeholder="eg: 100% Halal, telur dibasuh" maxlength="255">
             </div>';
 
         echo '<div class="group-input">
