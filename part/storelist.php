@@ -40,7 +40,7 @@
                             '. str_replace('@','style="height: 100%; width: 100%; object-fit: cover"',$img) .'
                         </div>
                         <div class="bi-text">
-                            <a href="store.php?store_id='.$row['store_id'].'&q='.$user_id.'">
+                            <a href="store.php?store_id='.$row['store_id'].'">
                                 <h4>'.$row["store_name"] .'</h4>
                             </a>
                             <p>'.$row["store_status"] .'<span>- '.$row["store_district"] .'</span></p>

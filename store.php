@@ -182,41 +182,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                    <?php include('part/getstoreDetails.php'); ?>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="cart-buttons">
-                                <!-- <a href="#" class="primary-btn continue-shop">Continue shopping</a> -->
-                                <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
-                                <?php 
-                                    if(isset($_GET['store_id'])){
-                                        $store_id = $_GET['store_id'];
-                                            if(isset($_COOKIE["q"]) AND isset($_GET['q'])){
-                                                $str = explode("|",htmlspecialchars($_COOKIE["q"]));
-                                                $user_id = explode("@",$str[1])[0];
-                                                $q = $_GET['q'];
-                                                if($user_id == $q){
-                                                    echo '<br><br><span style="font-style: italic;">*Klik pada imej untuk edit/delete produk
-                                                            <br>*Click on the image to edit/delete the product
-                                                    </span>';
-                                                    echo  '
-                                                    <a href="addProduct.php?store_id='.$store_id.'&mode=add" 
-                                                    class="primary-btn up-cart" style="margin-top:15px;background-color:#e7ab3c">Add product</a>
-
-                                                    <a href="addStore.php?store_id='.$store_id.'&mode=edit" 
-                                                    class="primary-btn up-cart" style="margin-top:15px;background-color:#e7e43c">Edit Store</a>
-                                                    ';
-                                                }else{
-                                                    //REPORT STORE
-                                                }
-                                            }
-                                    }else{
-                                        echo "<script type='text/javascript'>alert('Error: no store_id');
-                                        window.location.replace('index.php'); 
-                                        </script>";
-                                    } 
-                                ?>
+                                    <style type="text/css">
+                                        .continue-shop:{   
+                                            background-color:silver;
+                                            transition: 0.3s;
+                                        }
+                                        .continue-shop:hover{ 
+                                            background-color:red; 
+                                        }
+                                    </style>
+                                    <?php include('part/getstoreDetails.php'); ?> 
                             </div>
                             <!-- <div class="discount-coupon">
                                 <h6>Discount Codes</h6>
@@ -269,6 +244,17 @@
 </html>
 
 <script>
+
+function report(item){
+    if((item.innerHTML).toLowerCase() == 'report store'){
+        document.getElementById("report").style.display = 'block';
+        item.innerHTML = 'cancel report'
+    }else{
+        document.getElementById("report").style.display = 'none';
+        document.getElementById("reportform").reset();
+        item.innerHTML = 'report store'
+    }
+}
 
 function setActive(th) {
     var x =  document.getElementsByClassName("th");
