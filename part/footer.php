@@ -66,8 +66,8 @@
                     4) <a href="https://www.freepik.com/free-vector/alphabetical-letter-o-logo-collection_12811058.htm#page=1&query=logo&position=6">  
                         Logo
                         </a><br>
-                    5) <a href="https://www.freepik.com/free-vector/coming-soon-construction-yellow-background-design_8562867.htm#page=1&query=under%20construction&position=4">  
-                        Coming soon
+                    5) <a href="https://www.freepik.com/free-vector/realistic-eid-mubarak-background-with-candles-mosque_7963466.htm">  
+                        Ramadhan
                         </a><br>
                         </p>
                     <!--<form action="#" class="subscribe-form">

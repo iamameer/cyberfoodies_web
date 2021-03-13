@@ -183,11 +183,6 @@
         </div>
     </section>
     <!-- Blog Details Section End -->
-
-    <!-- Deal Of The Week Section Begin-->
-        <?php include('exp/deal.php'); ?>
-    <!-- Deal Of The Week Section End -->
-
   
 
     <!-- Footer Section Begin -->

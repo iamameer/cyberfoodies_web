@@ -81,23 +81,21 @@
     <!-- Blog Details Section Begin -->
     <section class="blog-details spad">
         <div class="container">
-            <center><img src="img/coming-soon.jpg" alt="" >
+            <!-- Deal Of The Week Section Begin -->
+                <?php include('exp/deal.php'); ?>
+            <!--Deal Of The Week Section End -->
+            
+            <!-- <center><img src="img/coming-soon.jpg" alt="" >
 
             <br><br>
             <h4>What is this?<h4>
                 <p>This is a new feature we're developing to cater for the upcoming bazaar during ramadhan! 
                 <br>Stay tuned!</p>
-            </center>
+            </center> -->
         </div>
     </section>
     <!-- Blog Details Section End -->
-
-    <!-- Deal Of The Week Section Begin 
-        <?php include('exp/deal.php'); ?>
-     Deal Of The Week Section End -->
-
   
-
     <!-- Footer Section Begin -->
     <?php 
        include('part/footer.php');
