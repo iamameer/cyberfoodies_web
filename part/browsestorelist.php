@@ -118,7 +118,7 @@
     $totalCount = 0;
     $totalFound = 0;
     $queryCount = "SELECT count(id) as total FROM ".$details['database'].".".$details['store_table'];
-    if(isset($_GET['search'])){ 
+    if(strpos($query,"WHERE")){ //if(isset($_GET['search'])){ 
         $queryCount = explode("LIMIT",$query)[0];
         $queryCount = str_replace("*","count(id) as total",$queryCount);
     } 
