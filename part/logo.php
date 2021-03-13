@@ -22,12 +22,21 @@
                                     </div> -->
                                     <div class="search">';
                                     
-        echo                        '     <input id="searchInput" type="text" class="searchTerm" placeholder="'.$string[rand(0,count($string)-1)].'">
-                                        <button type="submit" class="searchButton" onclick="searchFood()">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>'
+echo   '     <input id="searchInput" type="text" class="searchTerm" placeholder="'.$string[rand(0,count($string)-1)].'">
+                <button type="submit" class="searchButton" id="searchButton" onclick="searchFood()">
+                    <i class="fa fa-search"></i>
+                </button>
+                <script type="text/javascript">
+                    var input = document.getElementById("searchInput"); 
+                    input.addEventListener("keyup", function(event) { 
+                        if (event.keyCode === 13) { 
+                        event.preventDefault(); 
+                        document.getElementById("searchButton").click();
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </div>'
 
 ?>
