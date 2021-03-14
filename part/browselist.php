@@ -236,13 +236,13 @@
                     $a = '<a href="#" class="primary-btn"> '.($i+1).' </a>';
                     if(isset($_GET['page'])){
                         if($i != ($_GET['page'] - 1)){
-                            echo str_replace('#','browsefood.php?'.explode("page=",$_SERVER['QUERY_STRING'])[0].'page='.($i+1),$a); //jQuery onclick ?
+                            echo str_replace('#','browsefood.php?'.explode("&page=",$_SERVER['QUERY_STRING'])[0].'&page='.($i+1),$a); //jQuery onclick ?
                         }else{
                             echo $a;
                         }      
                     }else{
                         if($i>0){ 
-                            echo str_replace('#','browsefood.php?'.explode("page=",$_SERVER['QUERY_STRING'])[0].'page='.($i+1),$a); //jQuery onclick ?
+                            echo str_replace('#','browsefood.php?'.explode("&page=",$_SERVER['QUERY_STRING'])[0].'&page='.($i+1),$a); //jQuery onclick ?
                         }else{
                             echo $a;
                         }
