@@ -111,8 +111,7 @@
                             <li>Accessories</li>
                         </ul> -->
                     </div>
-                    <div class="product-slider owl-carousel">
-                        <style type="text/css">
+                    <style type="text/css">
                             .available {
                                 color: #ffffff;
                                 font-size: 10px;
@@ -146,7 +145,8 @@
                                 text-transform: uppercase;
                             }
                         </style>
-                      <?php include('part/foodslider.php'); ?>
+                    <div class="product-slider owl-carousel"> 
+                      <?php include('exp/foodslider.php'); ?>
                        
                     </div>
                 </div>

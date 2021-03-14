@@ -53,9 +53,18 @@
             }
     
             $url = 'store.php?store_id='.$store_id.'&product_id='.$product_id;
+
+            $img = str_replace('@','
+                        style="
+                        height: 350px!important;
+                        object-fit: contain;
+                        background: linear-gradient(rgba(255, 154, 54, .4),rgba(66, 252, 200,.2));"',
+                        $img);
     
             echo '  <div class="product-item">
-                        <div class="pi-pic">
+                        <div class="pi-pic" style="box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.42);
+                        -webkit-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.42);
+                        -moz-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.42);">
                              '.$img.'
                              '.$product_status.'
                             <div class="icon">

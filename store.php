@@ -185,7 +185,9 @@
                                     <style type="text/css">
                                         .continue-shop:{   
                                             background-color:silver;
-                                            transition: 0.3s;
+                                            -webkit-transition: all 0.3s;
+                                            -o-transition: all 0.3s;
+                                            transition: all 0.3s;
                                         }
                                         .continue-shop:hover{ 
                                             background-color:red; 
