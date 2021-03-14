@@ -96,9 +96,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="product-large set-bg" data-setbg="img/products/women-large.jpg">
-                        <h2>Sample</h2>
-                        <a href="#">This is sample image</a>
+                    <div class="product-large set-bg" data-setbg="img/pasar.jpg">
+                        <h2 style="text-shadow: 3px 3px 11px rgba(128, 0, 0, 1);">Bazaar</h2>
+                        <a href="bazaar.php" style="text-shadow: 3px 3px 11px rgba(0, 0, 0, 1);">Special promotion during bazaar?</a>
                     </div>
                     
                 </div>
