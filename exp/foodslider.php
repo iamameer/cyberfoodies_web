@@ -58,13 +58,13 @@
                         style="
                         height: 350px!important;
                         object-fit: contain;
-                        background: linear-gradient(rgba(255, 154, 54, .4),rgba(66, 252, 200,.2));"',
+                        background: linear-gradient(rgba(94, 0, 49, .4),rgba(255, 154, 54,.2));"',
                         $img);
     
             echo '  <div class="product-item">
-                        <div class="pi-pic" style="box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.42);
-                        -webkit-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.42);
-                        -moz-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.42);">
+                        <div class="pi-pic" style="box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.22);
+                        -webkit-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.22);
+                        -moz-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.22);">
                              '.$img.'
                              '.$product_status.'
                             <div class="icon">
