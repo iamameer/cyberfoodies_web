@@ -8,9 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <?php
-        $details = include('config/config.php');
-        echo '<meta name="google-signin-client_id" content="'.$details['googleClientID'].'">';
+    <?php 
         include('part/title.php');
     ?>
 

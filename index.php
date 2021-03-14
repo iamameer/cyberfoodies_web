@@ -10,9 +10,7 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
      <!-- <script src="config/gsignin.js" async defer></script> -->
 
-    <?php 
-        $details = include('config/config.php');
-        echo '<meta name="google-signin-client_id" content="'.$details['googleClientID'].'">';
+    <?php  
 
         //include('config/checkUser.php');
         include('part/title.php');

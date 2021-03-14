@@ -11,9 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js" ></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>   
-    <?php
-        $details = include('config/config.php');
-        echo '<meta name="google-signin-client_id" content="'.$details['googleClientID'].'">';
+    <?php 
         include('part/title.php');
     ?>
 
