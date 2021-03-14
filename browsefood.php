@@ -110,7 +110,8 @@
                         <li><a name="cat" href="#" onclick="seturl(this);">Lain (Other)</a></li>
                         </ul>
                     </div> -->
-              
+                    <div style="border: 1px solid #ebebeb; padding-left:10px; padding-top:10px; margin-bottom:10px;">
+               
                     <div class="filter-widget">
                         <h4 class="fw-title">Price</h4>
                         <div class="filter-range-wrap">
@@ -124,16 +125,53 @@
                                     ?>
                                 </div>
                             </div> 
-                            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+                            <div style="margin-left:15px; margin-right:15px;" class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
                                     data-min="0" data-max="99">
                                 <div class="ui-slider-range ui-corner-all ui-widget-header" id="bef"></div>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" id="omin"></span>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" id="omax"></span>
                             </div>
                         </div>
-                        <a href="#" class="filter-btn">Select by price</a>
+                        <!-- <a href="#" class="filter-btn">Select by price</a> -->
                     </div>
-                <div style="border: 1px solid #ebebeb; padding-left:10px; padding-top:10px; margin-bottom:10px;">
+                    
+                    <div class="filter-widget">
+                        <h4 class="fw-title">District</h4>
+                        <?php  
+                            $a = ''; $b = ''; $c = ''; $d = ''; $e = ''; 
+                            if(isset($_GET['district'])){
+                                $district = $_GET['district'];
+                                if(strpos($district,'a')!== false){
+                                    $a = 'checked';
+                                }
+                                if(strpos($district,'b')!== false){
+                                    $b = 'checked';
+                                }
+                                if(strpos($district,'c')!== false){
+                                    $c = 'checked';
+                                }
+                                if(strpos($district,'d')!== false){
+                                    $d = 'checked';
+                                }
+                                if(strpos($district,'e')!== false){
+                                    $e = 'checked';
+                                }
+                            } 
+
+                            echo '  <input type="checkbox" id="cyberjaya" '.$a.'>
+                                    <label for="cyberjaya">Cyberjaya</label> <br />
+                                    <input type="checkbox" id="putrajaya" '.$b.'>
+                                    <label for="putrajaya">Putrajaya</label> <br />
+                                    <input type="checkbox" id="dengkil" '.$c.'>
+                                    <label for="dengkil">Dengkil</label> <br />
+                                    <input type="checkbox" id="puchong" '.$d.'>
+                                    <label for="puchong">Puchong</label> <br />
+                                    <input type="checkbox" id="other" '.$e.'>
+                                    <label for="other">Lain (Other)</label>';
+                        ?>
+                          
+                    </div>                           
+                
                     <div class="filter-widget">
                         <h4 class="fw-title">Status</h4>
                             <select type="text" id="productstatus" name="productstatus" placeholder="Status :">
@@ -143,7 +181,8 @@
                                              '<option selected="" value = "Out of stock">Kehabisan stok (Out of stock)</option>',
                                              '<option selected="" value = "To be added">Akan datang (To be added)</option>',
                                              '<option selected="" value = "Pre-Order">Pre-Order</option>',
-                                             '<option selected="" value = "Other">Lain (Other)</option>');
+                                             '<option selected="" value = "Other">Lain (Other)</option>',
+                                             '<option selected="" value = "Any">Semua (Any)</option>');
 
                                 foreach($arr as $item){
                                     if(isset($_GET['status'])){
@@ -157,7 +196,7 @@
                                 }
                             ?> 
                             </select>
-                        <a href="#" class="filter-btn2">Filter</a>
+                        <a href="#" class="filter-btn2" onclick="filterFood()">Filter</a>
                     </div>
                 </div>
                   
@@ -361,49 +400,51 @@
 
         });
 
-        $('.filter-btn2').click(function(){
+        // $('.filter-btn2').click(function(){
 
-            var pmin = $('#minamount').val();
-            pmin = pmin.indexOf("RM") >= 0 ? pmin.split("RM")[1] : pmin;
+        //     var pmin = $('#minamount').val();
+        //     pmin = pmin.indexOf("RM") >= 0 ? pmin.split("RM")[1] : pmin;
 
-            var pmax = $('#maxamount').val();
-            pmax = pmax.indexOf("RM") >= 0 ? pmax.split("RM")[1] : pmax;
+        //     var pmax = $('#maxamount').val();
+        //     pmax = pmax.indexOf("RM") >= 0 ? pmax.split("RM")[1] : pmax;
 
-            var filter = "pmin="+pmin+"&pmax="+pmax;
+        //     var filter = "pmin="+pmin+"&pmax="+pmax;
 
-            var url = window.location.href;
-            if(url.indexOf("php?") >= 0){
-                url += "&";
-            }else{
-                url += "?";
-            }
+        //     //district
 
-            if(url.indexOf("pmin") >= 0){
-                url = url.split("pmin")[0];
-            }
+        //     var url = window.location.href;
+        //     if(url.indexOf("php?") >= 0){
+        //         url += "&";
+        //     }else{
+        //         url += "?";
+        //     }
 
-            //status
-            var status = '&status=';
-            var selected =  $('#productstatus').find(":selected").text();
-            if(selected.indexOf("Available") >= 0){
-                status += 'Available';
-            }else if(selected.indexOf("Limited") >= 0){
-                status += 'Limited';
-            }else if(selected.indexOf("stock") >= 0){
-                status += 'Out of stock';
-            }else if(selected.indexOf("added") >= 0){
-                status += 'To be added';
-            }else if(selected.indexOf("Order") >= 0){
-                status += 'Pre-Order';
-            }else if(selected.indexOf("Other") >= 0){
-                status += 'Other';
-            }
+        //     if(url.indexOf("pmin") >= 0){
+        //         url = url.split("pmin")[0];
+        //     }
 
-            filter += status;
+        //     //status
+        //     var status = '&status=';
+        //     var selected =  $('#productstatus').find(":selected").text();
+        //     if(selected.indexOf("Available") >= 0){
+        //         status += 'Available';
+        //     }else if(selected.indexOf("Limited") >= 0){
+        //         status += 'Limited';
+        //     }else if(selected.indexOf("stock") >= 0){
+        //         status += 'Out of stock';
+        //     }else if(selected.indexOf("added") >= 0){
+        //         status += 'To be added';
+        //     }else if(selected.indexOf("Order") >= 0){
+        //         status += 'Pre-Order';
+        //     }else if(selected.indexOf("Other") >= 0){
+        //         status += 'Other';
+        //     }
 
-            $(location).attr('href',url+filter);
+        //     filter += status;
 
-        });
+        //     $(location).attr('href',url+filter);
+
+        // });
 
         $('.sorting').on('change',function(){  
             var url = window.location.href;
@@ -438,6 +479,8 @@
 
 <script type="module"> 
     var url = window.location.href;
-    document.getElementById("minamount").value = (url.split("pmin=")[1]).split("&")[0]; 
-    document.getElementById("maxamount").value =(url.split("pmax=")[1]).split("&")[0]; ; 
+    if(url.includes("pmin")){
+        document.getElementById("minamount").value = (url.split("pmin=")[1]).split("&")[0]; 
+        document.getElementById("maxamount").value =(url.split("pmax=")[1]).split("&")[0]; 
+    }
 </script>

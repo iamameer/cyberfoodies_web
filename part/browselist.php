@@ -28,8 +28,9 @@
         }
     }
 
-    #and/where pmin pmax
+    #and/where pmin pmax, district, status
     if(isset($_GET['pmin']) AND isset($_GET['pmax'])){
+        #price
         $pmin = $_GET['pmin'];
         $pmax = $_GET['pmax'];
 
@@ -38,11 +39,48 @@
         }else{
             $query .= " WHERE ";
         }
-        $query .= " product_price >= ".$pmin. " AND product_price <= " . $pmax ;
+        $query .= " product_price >= ".$pmin. " AND product_price <= " . $pmax ." ";
 
+        #district
+        if(isset($_GET['district'])){
+            $district = $_GET['district'];
+            if(strlen($district)>0){
+                $district = explode(" ",$district);
+                $dd = "";
+                foreach($district as $d){
+                    switch($d){
+                        case "a":
+                            $dd .= " 'cyberjaya' ,";
+                        break;
+                        case "b":
+                            $dd .= " 'putrajaya' ,";
+                        break;
+                        case "c":
+                            $dd .= " 'dengkil' ,";
+                        break;
+                        case "d":
+                            $dd .= " 'puchong' ,";
+                        break;
+                        case "e":
+                            $dd .= " 'other' ,";
+                        break;
+                        default:
+                        //do nothing
+                    } 
+                }
+                $dd = substr($dd,0,-1); 
+                $query .= " AND store_district IN ( ".$dd. ")";
+            }else{
+                //$query .= " WHERE 1 ";
+            }
+        }
+
+        #status
         if(isset($_GET['status'])){
-            $status = $_GET['status'];
-            $query .= " AND product_status like '%" .$status. "%'";
+            $status = strtolower($_GET['status']);
+            if($status != 'any'){
+                $query .= " AND product_status like '%" .$status. "%'";
+            }
         }
     }
  

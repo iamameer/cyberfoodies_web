@@ -58,3 +58,41 @@ function filterStore(){
         window.location.replace("browsestore.php?"+district+status+category);
     }
 }
+
+function filterFood(){
+    //price
+    var pmin = document.getElementById("minamount").value;
+    var pmax = document.getElementById("maxamount").value;
+    var price = "pmin="+pmin+"&pmax="+pmax;
+
+    //district checkbox
+    var district = "&district=";
+    if(document.getElementById("cyberjaya").checked){
+        district += "a";
+    }
+    if(document.getElementById("putrajaya").checked){
+        district += "+b";
+    }
+    if(document.getElementById("dengkil").checked){
+        district += "+c";
+    }
+    if(document.getElementById("puchong").checked){
+        district += "+d";
+    }
+    if(document.getElementById("other").checked){
+        district += "+e";
+    } 
+
+    //status
+    var status = "&status="+document.getElementById("productstatus").value;
+
+    //search (url)
+    var x = window.location.href; 
+    x = (x.includes("search")) ? (x.split("search=")[1]).split("&")[0] : '';
+
+    if(x.length>0){
+        window.location.replace("browsefood.php?search="+x+"&"+price+district+status);
+    }else{ 
+        window.location.replace("browsefood.php?"+price+district+status);
+    }
+}

@@ -35,9 +35,14 @@
         }
     }
 
+    $store_district = '';
+    if(isset($_POST['store_district'])){
+        $store_district = strtolower($_POST['store_district']);
+    }
+
     $sql = 'INSERT IGNORE INTO '.$details['database'] .'.' .$details['product_table'].
-            '(user_id, store_id,product_id,product_name, product_price, product_stock, product_status, product_image) 
-            VALUES ("'.$user_id.'","'.$store_id.'","'.$product_id.'",
+            '(user_id, store_id,store_district,product_id,product_name, product_price, product_stock, product_status, product_image) 
+            VALUES ("'.$user_id.'","'.$store_id.'","'.$store_district.'","'.$product_id.'",
                 "'.$product_name.'","'.$product_price.'","'.$product_stock.'","'.$product_status.'", "'.$image_file.'")';
     //print_r($sql);
     if(!$conn-> query($sql)){

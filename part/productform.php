@@ -124,9 +124,36 @@
         mysqli_close($conn);  
     }else{
     //if addition mode
+
+        $details = include('config/config.php');
+        include('config/dbconn.php');
+
+        $conn = mysqli_connect($details['host'], $details['username'], $details['password'], $details['database']);
+        if($conn->connect_error) {
+            die("Error connecting to: ".$conn->connect_error);
+        }
+
+        $query = "SELECT store_district
+                FROM ".$details['database'].".".$details['store_table'] .
+                " WHERE store_id = '" . $_GET['store_id']."'"; 
+
+        $store_district = '';
+        print_r($query);
+        $result = $conn-> query($query);
+        if($result-> num_rows > 0){
+            //echo '<p>result found</p>';
+                while($row = $result -> fetch_assoc()){
+                    $store_district = $row["store_district"]; 
+                }//end while
+        }
+
+
         echo '<h3>Please fill in the details:</h3>';
         echo '  <form id="addproduct" action="config/newproduct.php?store_id='.$_GET['store_id'].'" 
                 method="POST" enctype="multipart/form-data">';
+
+        echo ' <input type="text" id="store_district" name="store_district" 
+                value="'.$store_district.'" style="display:none">';
         echo ' <div class="group-input">
                 <label for="productstatus">Status :</label>
                 <select type="text" id="productstatus" name="productstatus" placeholder="Status :">

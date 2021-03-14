@@ -85,13 +85,14 @@
                 <?php include('exp/deal.php'); ?>
             <!--Deal Of The Week Section End -->
             
-            <!-- <center><img src="img/coming-soon.jpg" alt="" >
-
+             <center><!--<img src="img/coming-soon.jpg" alt="" >
+                -->
             <br><br>
-            <h4>What is this?<h4>
-                <p>This is a new feature we're developing to cater for the upcoming bazaar during ramadhan! 
-                <br>Stay tuned!</p>
-            </center> -->
+            <style type="text/css">.n:hover{color:pink}</style>
+            <h4>Berminat? (Interested?)<h4>
+                <p>Hubungi admin melalui <a class="n" href="request.php">request</a>
+                <br>(Feel free to contact admin via <a class="n" href="request.php">request</a>)</p>
+            </center> 
         </div>
     </section>
     <!-- Blog Details Section End -->
