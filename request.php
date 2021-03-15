@@ -80,57 +80,7 @@
       <section class="contact-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5">
-                    <div class="contact-title">
-                        <h4>Contact Me</h4>
-                        <p>Reach me out if you wanted to suggest out anything!</p>
-                    </div>
-                    <style type="text/css">
-                        .cw-item:hover {
-                            background-color:#ffd561;
-                            color:black!important;
-                        }
-                        .cw-item span { 
-                            color:black!important;
-                        }
-                    </style>
-                    <div class="contact-widget"> 
-                        <!-- <div class="cw-item">
-                            <div class="ci-icon">
-                                <i class="ti-mobile"></i>
-                            </div>
-                            <div class="ci-text">
-                                <span>Phone:</span>
-                                <p>013 480 6952</p>
-                            </div>
-                        </div>  -->
-                            <a href="mailto:admin@realtea.me?bcc=ameersorne@gmail.com&subject=FROM CYBERFOODIES&body=Hello!%0D%0AYou look cute today!%0D%0A%0D%0ARegards,%0D%0ARandom cyberians">
-                        <div class="cw-item">
-                            <div class="ci-icon">
-                                <i class="ti-email"></i>
-                            </div>
-                            <div class="ci-text">
-                                <span>Email:</span>
-                                <p>admin@realtea.me</p>
-                            </div>
-                        </div>
-                            </a>
-                            <a href="https://www.buymeacoffee.com/ameersorne">
-                        <div class="cw-item">
-                            <div class="ci-icon">
-                                <i class="ti-location-pin"></i>
-                            </div>
-                            <div class="ci-text">
-                                <span>Donate:</span>
-                                <p>Like what I did? Click this image <br/>to donate c: </p>
-                            </div>
-                            <img style="padding-right:25px" class="post-share-img object-fit-cover laazy br-r-12 og-image-modal og-image-modal-footer" 
-                            src="https://img.buymeacoffee.com/api/?url=aHR0cHM6Ly9pbWcuYnV5bWVhY29mZmVlLmNvbS9hcGkvP3VybD1hSFIwY0hNNkx5OWpaRzR1WW5WNWJXVmhZMjltWm1WbExtTnZiUzkxY0d4dllXUnpMM0J5YjJacGJHVmZjR2xqZEhWeVpYTXZNakF5TVM4d015OHpPVEUwWVdJMk56QmtOamd3T1RnMVpXSXdORGt4Wm1NME1HSm1aV1l4Tnk1cWNHYz0mc2l6ZT0zMDAmbmFtZT1hbWVlcnNvcm5l&amp;creator=ameersorne&amp;is_creating=developing websites, creating posters, designing logo and banners&amp;design_code=1&amp;design_color=%23FF5F5F&amp;slug=ameersorne" 
-                            data-src="https://img.buymeacoffee.com/api/?url=aHR0cHM6Ly9pbWcuYnV5bWVhY29mZmVlLmNvbS9hcGkvP3VybD1hSFIwY0hNNkx5OWpaRzR1WW5WNWJXVmhZMjltWm1WbExtTnZiUzkxY0d4dllXUnpMM0J5YjJacGJHVmZjR2xqZEhWeVpYTXZNakF5TVM4d015OHpPVEUwWVdJMk56QmtOamd3T1RnMVpXSXdORGt4Wm1NME1HSm1aV1l4Tnk1cWNHYz0mc2l6ZT0zMDAmbmFtZT1hbWVlcnNvcm5l&amp;creator=ameersorne&amp;is_creating=developing websites, creating posters, designing logo and banners&amp;design_code=1&amp;design_color=%23FF5F5F&amp;slug=ameersorne">
-                        </div>
-                            </a>
-                    </div>
-                </div>
+
                 <div class="col-lg-6 offset-lg-1">
                     <div class="contact-form">
                         <div class="leave-comment">
@@ -154,6 +104,75 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-5">
+                    <div class="contact-title">
+                        <h4>Contact Me</h4>
+                        <p>Reach me out if you wanted to suggest out anything!</p>
+                    </div>
+                    <style type="text/css">
+                        .cw-item:hover {
+                            background-color:#ffd561;
+                            color:black!important;
+                        }
+                        .cw-item span { 
+                            color:black!important;
+                        }
+                    </style>
+
+                    <div class="contact-widget"> 
+                        <!-- <div class="cw-item">
+                            <div class="ci-icon">
+                                <i class="ti-mobile"></i>
+                            </div>
+                            <div class="ci-text">
+                                <span>Phone:</span>
+                                <p>013 480 6952</p>
+                            </div>
+                        </div>  -->
+                            <a href="mailto:admin@realtea.me?bcc=ameersorne@gmail.com&subject=FROM CYBERFOODIES&body=Hello!%0D%0AYou look cute today!%0D%0A%0D%0ARegards,%0D%0ARandom cyberians">
+                        <div class="cw-item">
+                            <div class="ci-icon">
+                                <i class="ti-email"></i>
+                            </div>
+                            <div class="ci-text">
+                                <span>Email:</span>
+                                <p>admin@realtea.me</p>
+                            </div>
+                        </div>
+                            </a>
+ 
+                        <div class="cw-item">
+                            <div class="ci-icon">
+                                <i class="ti-crown"></i>
+                            </div>
+                            <div class="ci-text">
+                                <span>Like what I did? Feel free to donate c:</span><br>
+                                <!-- <p>admin@realtea.me</p> -->
+                               <?php include('part/paypal.html'); ?>
+  
+                            </div>
+                        </div> 
+
+                        <!--  <a href="https://www.buymeacoffee.com/ameersorne">
+                        <div class="cw-item">
+                            <div class="ci-icon">
+                                <i class="ti-location-pin"></i>
+                            </div>
+                            <div class="ci-text">
+                                <span>Donate:</span>
+                                <p>Like what I did? Click this image <br/>to donate c: </p>
+                            </div>
+                            <img style="padding-right:25px" class="post-share-img object-fit-cover laazy br-r-12 og-image-modal og-image-modal-footer" 
+                            src="https://img.buymeacoffee.com/api/?url=aHR0cHM6Ly9pbWcuYnV5bWVhY29mZmVlLmNvbS9hcGkvP3VybD1hSFIwY0hNNkx5OWpaRzR1WW5WNWJXVmhZMjltWm1WbExtTnZiUzkxY0d4dllXUnpMM0J5YjJacGJHVmZjR2xqZEhWeVpYTXZNakF5TVM4d015OHpPVEUwWVdJMk56QmtOamd3T1RnMVpXSXdORGt4Wm1NME1HSm1aV1l4Tnk1cWNHYz0mc2l6ZT0zMDAmbmFtZT1hbWVlcnNvcm5l&amp;creator=ameersorne&amp;is_creating=developing websites, creating posters, designing logo and banners&amp;design_code=1&amp;design_color=%23FF5F5F&amp;slug=ameersorne" 
+                            data-src="https://img.buymeacoffee.com/api/?url=aHR0cHM6Ly9pbWcuYnV5bWVhY29mZmVlLmNvbS9hcGkvP3VybD1hSFIwY0hNNkx5OWpaRzR1WW5WNWJXVmhZMjltWm1WbExtTnZiUzkxY0d4dllXUnpMM0J5YjJacGJHVmZjR2xqZEhWeVpYTXZNakF5TVM4d015OHpPVEUwWVdJMk56QmtOamd3T1RnMVpXSXdORGt4Wm1NME1HSm1aV1l4Tnk1cWNHYz0mc2l6ZT0zMDAmbmFtZT1hbWVlcnNvcm5l&amp;creator=ameersorne&amp;is_creating=developing websites, creating posters, designing logo and banners&amp;design_code=1&amp;design_color=%23FF5F5F&amp;slug=ameersorne">
+                        </div>
+                            </a>-->
+
+                    </div>
+
+                </div>
+              
             </div>
         </div>
     </section>
@@ -194,3 +213,15 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+function buycoffee(){
+    console.log("buycoffee")
+    var x = document.getElementById("buycoffee")
+    if(x.style.display=="none"){
+        x.style.display = "block";
+    }else{
+        x.style.display = "none";
+    }
+}
+</script>

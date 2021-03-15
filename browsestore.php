@@ -124,7 +124,7 @@
                             <input type="text" id="searchstore" placeholder="eg: Kedai Ayam Viral">
                         </div>
 
-                        <a href="#" class="filter-btn" style="margin-top:20px;height:auto;" onclick="searchStore();">Search Store</a>
+                        <a href="#" id="searchStoreName" class="filter-btn" style="margin-top:20px;height:auto;" onclick="searchStore();">Search Store</a>
                     </div>
                 <div style="border: 1px solid #ebebeb; padding-left:10px; padding-top:10px">
                     <div class="filter-widget">
@@ -387,4 +387,25 @@
         // });
 
     });
+</script>
+
+<script type="module"> 
+
+    var input = document.getElementById("searchstore"); 
+    input.addEventListener("keyup", function(event) { 
+        if (event.keyCode === 13) { 
+        event.preventDefault(); 
+        document.getElementById("searchStoreName").click();
+        }
+    });
+
+    var url = window.location.href;
+     
+    if(url.includes("search")){
+        var searchVal = url.split("search=")[1];
+        if(searchVal.includes("&")){
+            searchVal = searchVal.split("&")[0];
+        } 
+        document.getElementById("searchstore").value = searchVal.replace("%20"," ");
+    }
 </script>

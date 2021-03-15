@@ -4370,4 +4370,18 @@ ol {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
+
+	.blog-details {
+		padding-left: 20px;
+		padding-right: 20px;
+	} 
+
+	.filter-range-wrap:after{
+		padding-left:2em;
+		content: '(mobile users need to tap instead of drag)'!important;
+	}
+
+	.contact-title{
+		margin-top:50px;
+	}
 }

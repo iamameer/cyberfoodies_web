@@ -481,4 +481,12 @@
         document.getElementById("minamount").value = (url.split("pmin=")[1]).split("&")[0]; 
         document.getElementById("maxamount").value =(url.split("pmax=")[1]).split("&")[0]; 
     }
+
+    if(url.includes("search")){
+        var searchVal = url.split("search=")[1];
+        if(searchVal.includes("&")){
+            searchVal = searchVal.split("&")[0];
+        } 
+        document.getElementById("searchInput").value = searchVal.replace("%20"," ");
+    }
 </script>

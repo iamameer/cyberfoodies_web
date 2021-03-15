@@ -106,6 +106,7 @@
             .uk-timeline .uk-timeline-item {
                 display: flex;
                 position: relative;
+                z-index: 10;
             }
 
             .uk-timeline .uk-timeline-item::before {
@@ -116,11 +117,11 @@
                 position: absolute;
                 top: 20px;
                 width: 2px;
-                    z-index: -1;
+                z-index: -1;
             }
 
             .uk-timeline .uk-timeline-item .uk-timeline-icon .uk-badge {
-                    margin-top: 20px;
+                margin-top: 20px;
                 width: 40px;
                 height: 40px;
             }
