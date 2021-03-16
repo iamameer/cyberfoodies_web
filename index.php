@@ -85,19 +85,25 @@
     </section>
     <!-- Hero Section End -->
 
-    <div class="banner-section spad">
-       
-    </div>
 
     <!-- Women Banner Section Begin -->
-    <section class="women-banner spad">
+    <section class="women-banner spad" style="margin-top:10px;">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row">  
                 <div class="col-lg-3">
-                    <div class="product-large set-bg" data-setbg="img/pasar.jpg">
+                    <!-- Switch Mode
+                 <div class="onoffswitch">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" 
+                        onchange='handleChange' id="myonoffswitch" tabindex="0">
+                        <label class="onoffswitch-label" for="myonoffswitch"> </label> 
+                    </div>  -->
+                <a class="twitter-timeline" data-theme="light" id="toggle" height="650px"
+                href="https://twitter.com/Twt_Cyberjaya?ref_src=twsrc%5Etfw">Tweets by Twt_Cyberjaya</a> 
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <!-- <div class="product-large set-bg" data-setbg="img/pasar.jpg">
                         <h2 style="text-shadow: 3px 3px 11px rgba(128, 0, 0, 1);">Bazaar</h2>
                         <a href="bazaar.php" style="text-shadow: 3px 3px 11px rgba(0, 0, 0, 1);">Special promotion during bazaar?</a>
-                    </div>
+                    </div> -->
                     
                 </div>
                 <div class="col-lg-8 offset-lg-1">
@@ -181,3 +187,14 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+    function handleChange(){
+        var switch = document.getElementById("myonoffswitch")
+        if(switch.checked == true){
+            document.getElementById("toggle").setAttribute("data-theme","dark");
+        }else{
+            document.getElementById("toggle").setAttribute("data-theme","light");
+        }
+    }
+</script>
