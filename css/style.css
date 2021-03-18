@@ -4384,4 +4384,9 @@ ol {
 	.contact-title{
 		margin-top:50px;
 	}
+
+	.timeline-Widget,.twitter-timeline{ 
+		margin-top: 30px!important;  
+		margin-right: 10px!important; 
+	}
 }
