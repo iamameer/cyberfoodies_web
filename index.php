@@ -199,11 +199,11 @@
 
 <script type="text/javascript">
     function handleChange(){
-        var switch = document.getElementById("myonoffswitch")
-        if(switch.checked == true){
-            document.getElementById("toggle").setAttribute("data-theme","dark");
-        }else{
-            document.getElementById("toggle").setAttribute("data-theme","light");
-        }
+        // var switch = document.getElementById("myonoffswitch")
+        // if(switch.checked == true){
+        //     document.getElementById("toggle").setAttribute("data-theme","dark");
+        // }else{
+        //     document.getElementById("toggle").setAttribute("data-theme","light");
+        // }
     }
 </script>

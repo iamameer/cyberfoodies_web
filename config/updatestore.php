@@ -57,20 +57,25 @@
 
     }else if($mode == 'delete'){ 
         $sql = 'DELETE FROM '.$details['database'] .'.' .$details['store_table'];
+        $sql2 = 'DELETE FROM '.$details['database'] .'.' .$details['product_table'];
     }
 
-    $sqlW = " WHERE store_id = '".$store_id."'";
+    $sqlW = " WHERE store_id = '".$store_id."'"; 
     $sql .= $sqlW;
+    $sql2 .= $sqlW;
 
     if(!$conn-> query($sql)){
         echo("Error: ".$conn->error);
         print_r($sql);
-    }else{
-        $str = explode("|",htmlspecialchars($_COOKIE['q'])); 
-        $user_id = explode("@",$str[1])[0];
-        echo "<script type='text/javascript'>
-                window.location.replace('../profile.php'); 
-                </script>";
+    }else{ 
+        if(!$conn-> query($sql2)){
+            echo("Error: ".$conn->error);
+            print_r($sql);
+        }else{ 
+            echo "<script type='text/javascript'>
+                    window.location.replace('../profile.php'); 
+                    </script>";
+        } 
     }
 
     mysqli_close($conn);  
