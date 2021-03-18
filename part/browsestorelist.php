@@ -219,8 +219,7 @@
 
         //<!-- PAGING: --> 
         if($totalCount > 0){
-            echo '<div class="loading-more" style="padding-top: 10px">
-            <!-- <i class="icon_loading"></i> -->';
+            echo ' <div class="pagination" style="padding-top: 10px">';
             $maxpage = (int)($totalCount / $perpage) ; //15/4 = 
             $mod = fmod($totalCount, $perpage);
             if($mod != 0){
@@ -232,20 +231,55 @@
             // else if ($maxpage > 10){
             //     $maxpage = 10;
             // }
+            if(isset($_GET['search'])){
+                $p = "&page="; 
+            }else{
+                $p = "page=";
+            }
+            $firstpage = '<a href="#" class="page-btn" id="pageJump"> ❮❮ </a>';
+            $lastpage = '<a href="#" class="page-btn" id="pageJump"> ❯❯ </a>'; 
+            if(isset($_GET['page'])){
+                if($_GET['page'] >= 5){ 
+                    echo str_replace('#','browsestore.php?'.explode($p,$_SERVER['QUERY_STRING'])[0].$p.'1',$firstpage);
+                }
+            }
             for($i = 0; $i < $maxpage; $i++){
-                $a = '<a href="#" class="primary-btn"> '.($i+1).' </a>';
+                $a = '<a href="#" class="page-btn" id="pageNum"> '.($i+1).' </a>';
                 if(isset($_GET['page'])){
                     if($i != ($_GET['page'] - 1)){
-                        echo str_replace('#','browsefood.php?'.explode("&page=",$_SERVER['QUERY_STRING'])[0].'&page='.($i+1),$a); //jQuery onclick ?
+                        $a = str_replace('#','browsestore.php?'.explode($p,$_SERVER['QUERY_STRING'])[0].$p.($i+1),$a); //jQuery onclick ?
                     }else{
-                        echo $a;
-                    }      
+                        $a = str_replace('class="page-btn"','class="page-btn active"',$a);
+                    }
+                    if($_GET['page'] < 5){
+                        if($i >= 8){
+                            break;
+                        }else{
+                            echo $a;
+                        }
+                    }else{
+                        $pageStart = $_GET['page'] - 4;
+                        $pageEnd = $_GET['page'] + 2;
+                        if($i >= $pageStart and $i <= $pageEnd){
+                            echo $a;
+                        }
+                    } 
                 }else{
                     if($i>0){ 
-                        echo str_replace('#','browsefood.php?'.explode("&page=",$_SERVER['QUERY_STRING'])[0].'&page='.($i+1),$a); //jQuery onclick ?
+                        $a = str_replace('#','browsestore.php?'.explode($p,$_SERVER['QUERY_STRING'])[0].'page='.($i+1),$a); //jQuery onclick ?
+                    }else{
+                        $a = str_replace('class="page-btn"','class="page-btn active"',$a);
+                    }  
+                    if($i >= 8){
+                        break;
                     }else{
                         echo $a;
                     }
+                }  
+            }//endfor page 
+            if(isset($_GET['page'])){
+                if($_GET['page'] != $maxpage){ 
+                    echo str_replace('#','browsestore.php?'.explode($p,$_SERVER['QUERY_STRING'])[0].$p.($maxpage),$lastpage);
                 }
             }
                 

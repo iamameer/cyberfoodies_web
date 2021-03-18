@@ -97,3 +97,30 @@ form .group-input textarea{
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
   right: 0px; 
 }
+
+.pagination{
+  width: 50%;
+  margin: 0 auto;
+  
+}
+
+.page-btn{
+  transition: background-color .2s;
+  border-radius: 5px;
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin:5px; 
+  background-color:#e7ab3c !important;
+}
+
+.page-btn.active{
+  background-color: #4CAF50!important;
+  color: white!important;
+}
+.page-btn:hover:not(.active) {background-color: #ddd!important;color: #4caf50 !important;}
+
+#pageJump {
+  background-color: #a16333 !important;
+}
