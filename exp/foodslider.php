@@ -61,11 +61,13 @@
                         background: linear-gradient(rgba(94, 0, 49, .4),rgba(255, 154, 54,.2));"',
                         $img);
     
-            echo '  <div class="product-item">
+            $item = '  <div class="product-item">
                         <div class="pi-pic" style="box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.22);
                         -webkit-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.22);
                         -moz-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.22);">
+                        <a href="#">
                              '.$img.'
+                             </a>
                              '.$product_status.'
                             <div class="icon">
                                 <i class="icon_heart_alt"></i>
@@ -87,6 +89,8 @@
                             </div>
                         </div>
                     </div>';
+
+            echo str_replace('#',$url,$item);
        
         }//endwhile
 
