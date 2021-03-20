@@ -1,7 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.g-signin2{
+  margin-top:5px!important;
+}
  
 .search {
-  width: 75%;
+  width: 100%!important;
   height: 100%;
   position: relative;
   display: flex;
@@ -25,7 +29,7 @@
 }
 
 .searchButton {
-  width: 40px;
+  width: 20%!important;
   height: 45px;
   border: 1px solid #e7ab3c;
   background: #e7ab3c;

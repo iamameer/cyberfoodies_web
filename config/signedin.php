@@ -22,13 +22,16 @@
 
         echo'<div class="posted-by2">
                 <div class="pb-pic">
+                    <a href="profile.php">
                     <img src="'. $user_image .'" alt="" style="margin-left:10px;border-radius: 50%!important;float:right;" height="auto" width="45px">
+                    </a>
                 </div>
                 <div class="pb-text">
                     <a href="profile.php">
                         <h5>Hi '. $user_name .' !</h5>
+                    
+                    <p>'. $user_email .'</p>
                     </a>
-                    <p>'. $user_email .'<br/></p>
                 </div>
             </div>';
     }

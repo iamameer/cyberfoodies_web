@@ -112,14 +112,19 @@
                                 }
                              ?>
                         </div></center>
+                        <style type="text/css">
+                            .thprod{ 
+                                background: #d95825; 
+                            }  
+                        </style>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Image</th>
-                                    <th class="p-name">Product Name</th>
-                                    <th>Price</th>
-                                    <th>Stock</th>
-                                    <th>Availability</th>
+                                    <th class="thprod">Image</th>
+                                    <th class="p-name thprod">Product Name</th>
+                                    <th class="thprod">Price</th>
+                                    <th class="thprod">Stock</th>
+                                    <th class="thprod">Availability</th>
                                     <!-- <i class="ti-close"></i> -->
                                 </tr>
                             </thead>
@@ -213,6 +218,13 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="blog-details-inner"> 
+                        <div class="leave-comment review"> 
+                            <?php include('part/comment.php'); ?> 
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -3,17 +3,20 @@
     $flag_green = 'uk-label-success';
     $flag_orange = 'uk-label-warning';
     $flag_red = 'uk-label-danger';
+    $flag_blue = 'default';
 
     $text_green = 'uk-text-success';
     $text_orange = 'uk-text-warning'; 
     $text_red = 'uk-text-danger'; 
+    $text_blue = 'uk-text-primary';
 
     $timeline = array(
             //0.icon  2.date  3.flag_color  4.flag_text  5.text_color,  6.$text
-        array("info","20th March 2021",$text_orange,"LAUNCH",$text_orange,"Cybereats soft launching!"),
+        array("info","21st March 2021",$flag_blue,"FEATURE",$text_blue,"Comment/Review feature added!"),
+        array("check","20th March 2021",$flag_green,"LAUNCH",$text_green,"Cybereats soft launching!"),
         array("check","15th March 2021",$flag_green,"REGISTERED",$text_green,"Cyberfoodies registered as Cybereats.fun"),
         array("check","09th March 2021",$flag_orange,"BETA",$text_orange,"Open Beta test start"),
-        array("check","19th Feb 2021","default","STARTED","default","Development started...."),
+        array("check","19th Feb 2021",$flag_blue,"STARTED","default","Development started...."),
     );
 
     for($d = 0;$d<count($timeline);$d++){
