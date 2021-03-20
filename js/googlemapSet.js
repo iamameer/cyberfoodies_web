@@ -10,6 +10,7 @@ function initMap() {
         console.log(latlong)
     }else{
         latlong = { lat: 2.9213, lng: 101.6559};
+        document.getElementById("latlong").value = "2.9213,101.6559"
     }
     const cyberjaya = {lat: latlong.lat, lng: latlong.lng};
     // The map, centered at cyberjaya

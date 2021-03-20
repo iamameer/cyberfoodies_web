@@ -47,7 +47,7 @@
             <label for="checkmap">  Set GoogleMap Location </label> 
             <span id="spanmap" style="display:none">
                 <label for="map"></label>
-                <input type="text" id="latlong" name="latlong" value="" style="display:none"></input> 
+                <input type="text" id="latlong" name="latlong" value="2.9213,101.6559" style="display:none"></input> 
                 <div id="map" style="height:350px;width:auto"></div>
                 <script src="../js/googlemapSet.js"></script>
                 <?php $config = include('config/config.php'); 
