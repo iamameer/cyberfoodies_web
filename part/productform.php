@@ -138,7 +138,7 @@
                 " WHERE store_id = '" . $_GET['store_id']."'"; 
 
         $store_district = '';
-        print_r($query);
+        //print_r($query);
         $result = $conn-> query($query);
         if($result-> num_rows > 0){
             //echo '<p>result found</p>';

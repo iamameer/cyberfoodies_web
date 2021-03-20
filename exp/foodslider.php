@@ -28,6 +28,7 @@
             $product_stock = (int)$row['product_stock'];//'11';
             $product_status = $row['product_status'];//'Available';
             $store_id = $row['store_id'];
+            $store_district = $row['store_district'];
     
             if(strlen($row["product_image"] )< 10){
                 $img = "<img src='img/sample/no-prod-img.jpg' @>";
@@ -65,7 +66,7 @@
                         <div class="pi-pic" style="box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.22);
                         -webkit-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.22);
                         -moz-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.22);">
-                        <a href="#">
+                        <a href="@">
                              '.$img.'
                              </a>
                              '.$product_status.'
@@ -73,14 +74,14 @@
                                 <i class="icon_heart_alt"></i>
                             </div>
                             <ul>
-                                <!-- <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li> -->
-                                <li class="quick-view"><a href="#">Stock: '.$product_stock.'</a></li>
-                                <!-- <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li> -->
+                                <li class="w-icon quick-view"><a href="@">'.$product_stock.'</a></li>
+                                <li class="w-icon active"><a href="@">'.$store_district.'</a></li>
+                                <li class="w-icon"><a href="@" style="background:#25D366!important"><i class="fa fa-whatsapp"></i></a></li>
                             </ul>
                         </div>
                         <div class="pi-text">
                             <!-- <div class="catagory-name">Coat</div>-->
-                            <a href="#">
+                            <a href="@">
                                 <h5>'.$product_name.'</h5>
                             </a>
                             <div class="product-price">
@@ -90,7 +91,7 @@
                         </div>
                     </div>';
 
-            echo str_replace('#',$url,$item);
+            echo str_replace('@',$url,$item);
        
         }//endwhile
 
