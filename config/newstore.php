@@ -29,6 +29,7 @@
     $store_info = $_POST['additional'];
     $store_status = $_POST['storestatus'];
     $store_category = $_POST['category'];
+    $store_map = $_POST['latlong'];
 
     if(count($_FILES["image"]["tmp_name"]) > 0){
         for($count = 0; $count < count($_FILES["image"]["tmp_name"]); $count++){
@@ -51,10 +52,13 @@
     // }
  
     $sql = 'INSERT IGNORE INTO '.$details['database'] .'.' .$details['store_table'].
-            '(user_id, store_id, store_name, store_location, store_district, store_delivery, store_extratext,
-            store_order, store_info, store_picture, store_phone, store_time, store_status, store_category) 
-            VALUES ("'.$user_id.'", "'.$store_id.'","'.$store_name.'","'.$store_location.'","'.$store_district.'","'.$store_delivery.'","'.$store_extratext.'",
-             "'.$store_order.'", "'.$store_info.'", "'.$image_file.'","'.$store_phone.'","'.$store_time.'","'.$store_status.'","'.$store_category.'")';
+            '(user_id, store_id, store_name, store_location, store_district, store_delivery, 
+            store_extratext, store_order, store_info, store_picture, store_phone, store_time, 
+            store_status, store_category, store_map) 
+            VALUES 
+            ("'.$user_id.'", "'.$store_id.'","'.$store_name.'","'.$store_location.'","'.$store_district.'","'.$store_delivery.'",
+            "'.$store_extratext.'", "'.$store_order.'", "'.$store_info.'", "'.$image_file.'","'.$store_phone.'","'.$store_time.'",
+            "'.$store_status.'","'.$store_category.'","'.$store_map.'" )';
 
     if(!$conn-> query($sql)){
         echo("Error: ".$conn->error);

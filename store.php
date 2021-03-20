@@ -190,8 +190,10 @@
                                         .continue-shop:hover{ 
                                             background-color:red; 
                                         }
+                                        p{margin-bottom:0px!important;}
                                     </style>
                                     <?php include('part/getstoreDetails.php'); ?> 
+                            </tbody>
                             </div>
                             <!-- <div class="discount-coupon">
                                 <h6>Discount Codes</h6>
@@ -275,6 +277,12 @@ function setActive(th) {
     }
     th.style.backgroundColor = '#fa9f37';
     th.style.opacity = '1';
+
+    if(th.innerHTML === 'Lokasi'){ 
+        document.getElementById("map").style.display = 'block';
+    }else{ 
+        document.getElementById("map").style.display = 'none';
+    }
 }
 
 

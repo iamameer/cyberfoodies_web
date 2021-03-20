@@ -10,6 +10,8 @@
 
     $mode = $_GET['mode']; 
     $store_id = $_GET['store_id'];
+ 
+    $sqlW = " WHERE store_id = '".$store_id."'"; 
 
     if($mode == 'update'){
 
@@ -24,6 +26,7 @@
         $store_phone = $_POST['telephone'];
         $store_extratext = isset($_POST['extratext']) ? $_POST['extratext'] : "";
         $store_info = $_POST['additional'];
+        $store_map = $_POST['latlong'];
 
         if(count($_FILES["image"]["tmp_name"]) > 0){
             for($count = 0; $count < count($_FILES["image"]["tmp_name"]); $count++){
@@ -49,26 +52,17 @@
                 store_order = "'.$store_order.'",
                 store_phone = "'.$store_phone.'",
                 store_extratext = "'.$store_extratext.'",
-                store_info = "'.$store_info.'"';
+                store_info = "'.$store_info.'",
+                store_map = "'.$store_map.'"';
 
         if($image_file != "No image"){
             $sql .= ',product_image = "'.$image_file.'"';
         }
 
-    }else if($mode == 'delete'){ 
-        $sql = 'DELETE FROM '.$details['database'] .'.' .$details['store_table'];
-        $sql2 = 'DELETE FROM '.$details['database'] .'.' .$details['product_table'];
-    }
-
-    $sqlW = " WHERE store_id = '".$store_id."'"; 
-    $sql .= $sqlW;
-    $sql2 .= $sqlW;
-
-    if(!$conn-> query($sql)){
-        echo("Error: ".$conn->error);
-        print_r($sql);
-    }else{ 
-        if(!$conn-> query($sql2)){
+        
+        $sql .= $sqlW;
+        
+        if(!$conn-> query($sql)){
             echo("Error: ".$conn->error);
             print_r($sql);
         }else{ 
@@ -76,7 +70,26 @@
                     window.location.replace('../profile.php'); 
                     </script>";
         } 
-    }
 
+    }else if($mode == 'delete'){ 
+        $sql = 'DELETE FROM '.$details['database'] .'.' .$details['store_table'];
+        $sql2 = 'DELETE FROM '.$details['database'] .'.' .$details['product_table']; 
+        $sql2 .= $sqlW;
+
+        if(!$conn-> query($sql)){
+            echo("Error: ".$conn->error);
+            print_r($sql);
+        }else{ 
+            if(!$conn-> query($sql2)){
+                echo("Error: ".$conn->error);
+                print_r($sql);
+            }else{ 
+                echo "<script type='text/javascript'>
+                        window.location.replace('../profile.php'); 
+                        </script>";
+            } 
+        }
+    }
+  
     mysqli_close($conn);  
 ?>

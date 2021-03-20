@@ -17,7 +17,7 @@
         </script>";
     } 
 
-    $query = "SELECT store_location,store_time,store_delivery,store_order,store_info,user_id 
+    $query = "SELECT store_location,store_time,store_delivery,store_order,store_info,user_id, store_map  
             FROM ".$details['database'].".".$details['store_table'] .
             " WHERE store_id = '" . $store_id ."'";
 
@@ -32,6 +32,7 @@
                $store_order = $row['store_order'];
                $store_info = $row['store_info'];
                $user_id = $row['user_id'];
+               $store_map = $row['store_map'];
             }
 
             // echo ' <tr class="productrow">
@@ -46,11 +47,19 @@
             echo '</tbody>
             </table>';
 
-             echo ' <p class="dis" style="display:block;">'.str_replace('#','<br/>',$store_location).'</tr>
-                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_time).'</tr>
-                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_delivery).'</tr>
-                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_order).'</tr>
-                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_info).'</tr>
+             echo ' <p class="dis" style="display:block;">'.str_replace('#','<br/>',$store_location).' 
+                    <br/> 
+                        <input type="text" id="latlong" name="latlong" value="'.$store_map.'" style="display:none" ></input> 
+                        <div id="map" style="height:350px;width:auto"></div>  
+                        <script src="../js/googlemapView.js"></script>
+                        <script
+                        src="https://maps.googleapis.com/maps/api/js?key='.$details['googleAPIKey'].'&callback=initMap&libraries=&v=weekly"
+                        async ></script> 
+                    </p> 
+                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_time).'</p>
+                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_delivery).'</p>
+                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_order).'</p>
+                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_info).'</p>
                     ';
 
             #Part closure
