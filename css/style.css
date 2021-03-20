@@ -4478,6 +4478,51 @@ ol {
 	}
 
 	.slicknav_btn {
-		margin-top: 10px!important;
+		margin-top: 10px!important; 
+	}
+
+	.signedName,.signedEmail{
+		font-size: 14px!important;
+	}
+
+	.signedEmail{
+		margin-bottom: 0px!important;
+	}
+
+	.signedName{
+		padding-top: 15px!important;
+	}
+
+	.signedBar {
+		width:60%!important;
+		height:auto!important;
+	}
+
+	.contact-section,.contact-form{
+		padding-top: 0px !important;
+	}
+
+	.illget{
+		margin-bottom: 5px !important;
+	}
+
+	.annsection{
+		padding-top:0px!important;
+	}
+
+	.annpadding,.anncontainer,.annheader{
+		padding: 2px !important;
+	}
+
+	time{
+		font-size:15px!important;
+	}
+
+	.annlabel{
+		font-size:10px!important;
+	}
+
+	.profilenav{
+		margin: 50px!important;
 	}
 }

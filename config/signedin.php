@@ -1,4 +1,5 @@
 <?php 
+    echo '<div class="col-lg-3 text-right col-md-3 signedBar">';
     if(!isset($_COOKIE["q"])){
         // echo "<script type='text/javascript'> 
         //         function signOut() {
@@ -28,11 +29,12 @@
                 </div>
                 <div class="pb-text">
                     <a href="profile.php">
-                        <h5>Hi '. $user_name .' !</h5>
+                        <h5 class="signedName">Hi '. $user_name .' !</h5>
                     
-                    <p>'. $user_email .'</p>
+                    <p class="signedEmail">'. $user_email .'</p>
                     </a>
                 </div>
             </div>';
     }
+    echo '</div>';
 ?>

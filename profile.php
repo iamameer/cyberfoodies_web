@@ -44,14 +44,14 @@
                 <div class="row"><div class="col-lg-2 col-md-2">
                     <?php include('part/logo.php') ?>
                     <div class="col-lg-3 text-right col-md-3">
-                        
+                        <p style="visibility: hidden;">Contact admin if you can read this</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="nav-item">
             <div class="container">
-                <div class="nav-depart">
+                <div class="nav-depart profilenav">
                   
                 </div>
                 <nav class="nav-menu mobile-menu">

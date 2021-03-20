@@ -47,10 +47,8 @@
         <div class="container">
             <div class="inner-header">
                 <div class="row"><div class="col-lg-2 col-md-2">
-                    <?php include('part/logo.php') ?>
-                    <div class="col-lg-3 text-right col-md-3">
-                        <?php include('config/signedin.php') ?>
-                    </div>
+                    <?php include('part/logo.php') ?> 
+                        <?php include('config/signedin.php') ?> 
                 </div>
             </div>
         </div>
@@ -97,7 +95,7 @@
     <!-- Breadcrumb Section Begin -->
 
     <!-- Blog Details Section Begin -->
-    <section class="blog-details spad">
+    <section class="blog-details spad annsection">
         <style type="text/css">
             .uk-timeline .uk-timeline-item .uk-card {
                 max-height: 300px;
@@ -132,8 +130,8 @@
                 padding: 0 0 0 1rem;
             }
         </style>
-        <div class="container">
-            <div class="uk-container uk-padding">
+        <div class="container anncontainer">
+            <div class="uk-container uk-padding annpadding">
                 <div class="uk-timeline">
                     <?php include('part/timeline.php'); ?>
                 </div>

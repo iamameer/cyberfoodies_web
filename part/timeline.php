@@ -31,10 +31,10 @@
                     </div>
                     <div class="uk-timeline-content">
                         <div class="uk-card uk-card-default uk-margin-medium-bottom uk-overflow-auto">
-                            <div class="uk-card-header">
+                            <div class="uk-card-header annheader">
                                 <div class="uk-grid-small uk-flex-middle" uk-grid>
                                     <h3 class="uk-card-title"><time datetime="2020-07-08">'.$timeline[$d][1].'</time></h3>
-                                    <span class="uk-label '.$timeline[$d][2].' uk-margin-auto-left">'.$timeline[$d][3].'</span>
+                                    <span class="uk-label '.$timeline[$d][2].' uk-margin-auto-left annlabel">'.$timeline[$d][3].'</span>
                                 </div>
                             </div>
                             <div class="uk-card-body">
