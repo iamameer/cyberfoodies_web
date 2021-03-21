@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/styleExtra.css" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="config/addhomescreen/style/addtohomescreen.css">
 </head>
 
 <body>
@@ -190,6 +192,17 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     <script src="config/gsignin.js"></script>
+
+    <script src="config/addhomescreen/src/addtohomescreen.js" type="text/javascript"></script>
+    <script>
+        if(
+            (("standalone" in window.navigator) && !window.navigator.standalone) //ios
+            ||
+            (!window.matchMedia('(display-mode:standalone)').matches) //android
+        ){
+            addToHomescreen();
+        }
+    </script>
 </body>
 
 </html>

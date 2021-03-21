@@ -16,6 +16,15 @@
             <meta name="msapplication-TileColor" content="#da532c">
             <meta name="theme-color" content="#ffffff">';
 
+    ## Addtohomescreen
+    echo '<meta name="mobile-web-app-capable" content="yes">';
+    echo '<meta name="apple-mobile-web-app-capable" content="yes">';
+    echo '<meta name="apple-mobile-web-app-" content="yes" />';
+    echo '<meta name="mobile-web-app-capable" content="yes" />';
+    echo '<meta name="apple-mobile-web-app-status-bar-style" content="black">';
+    echo '<meta name="apple-mobile-web-app-title" content="Cybereats.fun">';
+    echo '<meta name="theme-color" content="#f79131">';
+
     ####################scripts and etc
     //echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>';
     echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
