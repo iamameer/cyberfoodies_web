@@ -44,10 +44,20 @@
 
     $arr4 = array($img_url,$small_tag,$big_title,$text,$button,$spinsales);  
 
+    #Slider 5 ###################################
+    $img_url = 'img/sample/addhome.png';
+    $small_tag = 'Notice'; //caps
+    $big_title = 'Feature';
+    $text = '[Mobile users] Don\'t forget to add to your homescreen! ';
+    $button = '';//'<a href="#" class="primary-btn">Shop Now</a>';
+    $spinsales = '';
+
+    $arr5 = array($img_url,$small_tag,$big_title,$text,$button,$spinsales);  
+
     ///////////////////////////////////////////////////////////////////
 
     $arr = array(
-            $arr1,$arr2,$arr3,$arr4
+            $arr1,$arr2,$arr3,$arr4,$arr5
         );
 
     for($d = 0;$d<count($arr);$d++){
