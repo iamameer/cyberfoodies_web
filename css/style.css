@@ -4212,10 +4212,28 @@ ol {
 		float: none;
 		text-align: center;
 	}
-	.header-top .ht-left,
+
+	/* .header-top .ht-left,
 	.header-top .top-social {
+		padding-bottom: 1px!important;
+	}
+
+	.topcontainer {
+		height:10px!important;
+	} */
+
+	.mail-service, .phone-service,.top-social{
+		padding:5px !important;
+	}
+
+	.top-social a{
+		margin: 5px !important;
+	}
+
+	.textTop{ 
 		display: none;
 	}
+
 	.header-top .ht-right .login-panel {
 		padding-top: 9px;
 		padding-bottom: 7px;

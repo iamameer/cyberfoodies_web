@@ -206,8 +206,8 @@ function handleChange(checkbox) {
 
 function filesize(){
     var upl = document.getElementById("image");
-    if(upl.files[0].size > 3000000){
-        document.getElementById("warning").innerHTML = "Saiz imej melebihi had 3mb (Image size exceeded 3mb limit)";
+    if(upl.files[0].size > 5000000){
+        document.getElementById("warning").innerHTML = "Saiz imej melebihi had 5mb (Image size exceeded 5mb limit)";
         document.getElementById("warning").style.display = 'block'; 
         upl.value = ''; //clear
     }else{
