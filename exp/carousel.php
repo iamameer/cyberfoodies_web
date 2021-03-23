@@ -63,13 +63,13 @@
     for($d = 0;$d<count($arr);$d++){
        
         echo '<div class="single-hero-items set-bg" data-setbg="'. $arr[$d][0].'">
-                <div class="container">
+                <div class="container carr">
                     <div class="row">
                         <div class="col-lg-5 indexrow">
                             <span style="background-color:black;padding-left:5px;padding-right:5px">'. $arr[$d][1].'</span>
                             <h1  >'. $arr[$d][2].'</h1>
                             <p style="color:#4f3814;
-                            text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);">'. $arr[$d][3].'</p>
+                            text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);" >'. $arr[$d][3].'</p>
                             '. $arr[$d][4].'
                         </div>
                     </div>

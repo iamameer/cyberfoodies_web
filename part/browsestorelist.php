@@ -134,7 +134,7 @@
    
     //$totalCount = isset($_GET['search']) ? $result-> num_rows : $dataCount['total'];
      
-    echo '<p>Showing: '.$totalFound.' out of '.$totalCount.' Store(s)</p>
+    echo '<p class="found">Showing: '.$totalFound.' out of '.$totalCount.' Store(s)</p>
                 </div>
             </div>
          </div>
@@ -147,7 +147,7 @@
         //echo '<p>result found</p>';
         while($row = $result -> fetch_assoc()){
             if($rowcounter == 0){
-                echo '  <div class="row">'; // row opener
+                echo '  <div class="row mobilerow">'; // row opener
             }
              
             $store_id = $row['store_id'];
@@ -169,19 +169,18 @@
             $url = 'store.php?store_id='.$store_id;
 
             //stock color 
-            if(strtolower($store_category) == 'open'){
-                $store_category = '<span style="color:green!important;">'.$store_category .'</span>';
-            }else if(strtolower($store_category) == 'closed'){
-                $store_category = '<span style="color:red!important;">'.$store_category .'</span>';
+            if(strtolower($store_status) == 'open'){
+                $store_status = '<span style="color:green!important;">'.$store_status .'</span>';
+            }else if(strtolower($store_status) == 'closed'){
+                $store_status = '<span style="color:red!important;">'.$store_status .'</span>';
             }else{
-                $store_category = '<span style="color:#fc8803!important;">'.$store_category .'</span>';
+                $store_status = '<span style="color:#fc8803!important;">'.$store_status .'</span>';
             }
 
-            echo '  <div class="col-lg-4 col-sm-6">
+            echo '  <div class="col-lg-4 col-sm-6 mobilelist">
                         <div class="product-item">
-                            <div class="pi-pic" style="width:100%!important;height:175px!important;
-                            overflow:hidden!important;"><a href="'.$url.'">
-                                '.str_replace('@','style="height: 100%; width: 100%; object-fit: cover"',$img) .'
+                            <div class="pi-pic" style="overflow:hidden!important;"><a href="'.$url.'">
+                                '.str_replace('@','',$img) .'
                                 <!-- <div class="sale pp-sale">Sale</div> --></a>
                                 <div class="icon">
                                     <!-- <i class="icon_heart_alt"></i> -->

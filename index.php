@@ -89,7 +89,7 @@
     <section class="women-banner spad" style="margin-top:10px;">
         <div class="container-fluid">
             <div class="row">   
-                <div class="col-lg-8 offset-lg-1">
+                <div class="col-lg-8 offset-lg-1" style="margin-left:20px!important">
                     <div class="filter-control">
                         <!-- <ul>
                             <li class="active">Clothings</li>
@@ -138,7 +138,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3 tuiter">
                     <style type="text/css">
                         .timeline-Widget,.twitter-timeline{ 
                             box-shadow: 10px 10px 62px -13px rgba(88,200,248,0.75)!important;

@@ -135,7 +135,7 @@
    
     //$totalCount = isset($_GET['search']) ? $result-> num_rows : $dataCount['total'];
      
-    echo '<p>Showing: '.$totalFound.' out of '.$totalCount.' Product(s)</p>
+    echo '<p class="found">Showing: '.$totalFound.' out of '.$totalCount.' Product(s)</p>
                 </div>
             </div>
         </div>
@@ -146,7 +146,7 @@
         $limitcounter = 0;
         while($row = $result -> fetch_assoc()){
             if($rowcounter == 0){
-                echo '  <div class="row">'; // row opener
+                echo '  <div class="row mobilerow">'; // row opener
             }
 
             $product_id = $row["product_id"];
@@ -175,11 +175,10 @@
             //item iteration
             $url = 'store.php?store_id='.$store_id.'&product_id='.$product_id;
             //echo ' <a href="'.$url.'">';
-            echo '  <div class="col-lg-4 col-sm-6">
+            echo '  <div class="col-lg-4 col-sm-6 mobilelist">
                         <div class="product-item">
-                            <div class="pi-pic" style="width:100%!important;height:175px!important;
-                            overflow:hidden!important;"><a href="'.$url.'">
-                                '.str_replace('@','style="height: 100%; width: 100%; object-fit: cover"',$img) .'
+                            <div class="pi-pic"><a href="'.$url.'">
+                                '.str_replace('@','',$img) .'
                                 <!-- <div class="sale pp-sale">Sale</div> --></a>
                                 <div class="icon">
                                     <!-- <i class="icon_heart_alt"></i> -->

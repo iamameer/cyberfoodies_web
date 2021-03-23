@@ -5,26 +5,37 @@
             //     });
             // });
 
-function searchFood(){
+function searchFood(){ 
     var x = document.getElementById("searchInput").value;
-    //x = x.replace(" ","+");
-    if(x.length>1){
-        window.location.replace("browsefood.php?search="+x);
-    }else{
+    if(x.length<2){
         alert("Please insert a logical keyword to be searched");
+        return;
     }
-}
-
-function searchStore(){
-    var x = document.getElementById("searchstore").value;
-    if(x.length>1){
+    
+    var url = window.location.href;
+    if(url.includes("browsestore.php")){
         window.location.replace("browsestore.php?search="+x);
     }else{
-        alert("Please insert a logical keyword to be searched");
+        //search outside browsestore
+        window.location.replace("browsefood.php?search="+x);
     }
 }
 
+// function searchStore(){
+//     var x = document.getElementById("searchstore").value;
+//     if(x.length>1){
+//         window.location.replace("browsestore.php?search="+x);
+//     }else{
+//         alert("Please insert a logical keyword to be searched");
+//     }
+// }
+
 function filterStore(){
+
+    //search input
+    var x = document.getElementById("searchInput").value;   
+    var search = "search="+x; 
+
     //district checkbox
     var district = "&district=";
     if(document.getElementById("cyberjaya").checked){
@@ -49,14 +60,14 @@ function filterStore(){
     //category
     var category = "&category="+document.getElementById("category").value;
 
-    //search input
-    var x = document.getElementById("searchstore").value; 
-    if(x.length>0){
-        window.location.replace("browsestore.php?search="+x+district+status+category);
-    }else{
-        district = district.substring(1);
-        window.location.replace("browsestore.php?"+district+status+category);
-    }
+    window.location.replace("browsestore.php?"+search+district+status+category);
+
+    // if(x.length>0){
+    //     window.location.replace("browsestore.php?search="+x+district+status+category);
+    // }else{
+    //     district = district.substring(1);
+    //     window.location.replace("browsestore.php?"+district+status+category);
+    // }
 }
 
 function filterFood(){
@@ -96,3 +107,19 @@ function filterFood(){
         window.location.replace("browsefood.php?"+price+district+status);
     }
 }
+
+function openNav() { 
+    document.getElementById("filterbar").style.width = "80%"; 
+    document.getElementById("filterbar").style.left = "0px";  
+
+    document.getElementById("filterblocker").style.width = "100%"; 
+    document.getElementById("filterblocker").style.right = "0px";  
+}
+
+function closeNav() { 
+    document.getElementById("filterbar").style.width = "0";  
+    document.getElementById("filterbar").style.left = "-50px"; 
+
+    document.getElementById("filterblocker").style.width = "0"; 
+    document.getElementById("filterblocker").style.right = "-50px";  
+  }

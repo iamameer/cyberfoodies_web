@@ -93,9 +93,10 @@
     <section class="product-shop spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
+                <div id="filterblocker" onclick="closeNav()"></div>
+                <div id="filterbar" class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
                     
-                    <div class="filter-widget">
+                    <!-- <div class="filter-widget">
                         <h4 class="fw-title">Store name</h4>
                         <div class="group-input">
                             <style type="text/css">
@@ -117,14 +118,14 @@
                                     float: right!important;
                                 } */
                             </style>
-                            <!-- <label for="username">Username or email address *</label> -->
+                           <label for="username">Username or email address *</label> 
                             <input type="text" id="searchstore" placeholder="eg: Kedai Ayam Viral">
                         </div>
 
                         <a href="#" id="searchStoreName" class="filter-btn" style="margin-top:20px;height:auto;" onclick="searchStore();">Search Store</a>
-                    </div>
+                    </div> -->
                 <div style="border: 1px solid #ebebeb; padding-left:10px; padding-top:10px">
-                    <div class="filter-widget">
+                    <div class="filter-widget filter-widget2">
                         <h4 class="fw-title">District</h4>
                         <?php  
                             $a = ''; $b = ''; $c = ''; $d = ''; $e = ''; 
@@ -161,7 +162,7 @@
                           
                     </div>
 
-                    <div class="filter-widget" style="margin-top:-30px;">
+                    <div class="filter-widget filter-widget2" style="margin-top:-30px;">
                         <h4 class="fw-title">Status</h4>
                         <select type="text" id="storestatus" name="storestatus" placeholder="Status :">
                           <?php 
@@ -187,7 +188,7 @@
                         </select>
                     </div>
 
-                    <div class="filter-widget" style="margin-top:-20px;">
+                    <div class="filter-widget filter-widget2" style="margin-top:-20px;">
                         <h4 class="fw-title">Category</h4>
                         <select type="text" id="category" name="category" placeholder="Kategori (Category)">
                         <?php 
@@ -213,7 +214,7 @@
                           ?>
                         </select>
                         <br />
-                        <a href="#" class="filter-btn" style="margin-top:20px;height:auto;" onclick="filterStore()">Filter Store</a>
+                        <a href="#" class="filter-btn2" style="margin-top:20px;height:auto;" onclick="filterStore()">Filter Store</a>
                     </div>
 
                 </div> 
@@ -231,7 +232,8 @@
                     <div class="product-show-option">
                         <div class="row">
                             <div class="col-lg-7 col-md-7">
-                                <div class="select-option">
+                                <div class="select-option"> 
+                                    <div class="mobilefilter" onclick="openNav()"><i class="fa fa-filter"></i> Filter</div>
                                     <select class="sorting">
                                         <option value="">Sort: Default</option>
                                         <option value="">Alphabet: A to Z</option>
@@ -388,21 +390,21 @@
 
 <script type="module"> 
 
-    var input = document.getElementById("searchstore"); 
-    input.addEventListener("keyup", function(event) { 
-        if (event.keyCode === 13) { 
-        event.preventDefault(); 
-        document.getElementById("searchStoreName").click();
-        }
-    });
+    // var input = document.getElementById("searchstore"); 
+    // input.addEventListener("keyup", function(event) { 
+    //     if (event.keyCode === 13) { 
+    //     event.preventDefault(); 
+    //     document.getElementById("searchStoreName").click();
+    //     }
+    // });
 
+    // var url = window.location.href;
     var url = window.location.href;
-     
     if(url.includes("search")){
         var searchVal = url.split("search=")[1];
         if(searchVal.includes("&")){
             searchVal = searchVal.split("&")[0];
         } 
-        document.getElementById("searchstore").value = searchVal.replace("%20"," ");
+        document.getElementById("searchInput").value = searchVal.replace("%20"," ");
     }
 </script>

@@ -76,6 +76,9 @@
 
             #Part edit/add mode 
             $owner = 'no';
+//             echo '  <a href="addProduct.php?store_id='.$store_id.'&mode=add" 
+//             class="primary-btn up-cart ownerbtn" style="margin-top:15px;background-color:#e7ab3c">Add product</a>
+// ';
             if(isset($_COOKIE["q"])){
                 $str = explode("|",htmlspecialchars($_COOKIE["q"]));
                 $q = explode("@",$str[1])[0];
@@ -86,10 +89,10 @@
                     </span>';
                     echo  '
                     <a href="addProduct.php?store_id='.$store_id.'&mode=add" 
-                    class="primary-btn up-cart" style="margin-top:15px;background-color:#e7ab3c">Add product</a>
+                    class="primary-btn up-cart ownerbtn" style="margin-top:15px;background-color:#e7ab3c">Add product</a>
 
                     <a href="addStore.php?store_id='.$store_id.'&mode=edit" 
-                    class="primary-btn up-cart" style="margin-top:15px;background-color:#e7e43c">Edit Store</a>
+                    class="primary-btn up-cart ownerbtn" style="margin-top:15px;background-color:#e7e43c">Edit Store</a>
                     ';
                     
                     $owner = 'yes';
@@ -104,7 +107,7 @@
 
             if($owner == 'no'){ 
                 //REPORT STORE
-                echo '<a href="#" class="primary-btn continue-shop" 
+                echo '<a href="#" class="primary-btn continue-shop reportbutton" 
                         style="margin-top:25px"
                         onclick="report(this);return false;">Report store</a>';
  
@@ -151,5 +154,13 @@
                 window.location.replace('browsestore.php'); 
             </script>";
     }
-    mysqli_close($conn);   
+    mysqli_close($conn); 
+        
+    //     echo '</tbody>
+    //         </div> 
+    //     </div>
+    //     <div class="col-lg-4 offset-lg-4">
+    //         <div class="proceed-checkout">';
+
+    // $e = include('part/wsgen.php');
 ?>

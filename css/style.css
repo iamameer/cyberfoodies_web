@@ -4025,6 +4025,43 @@ ol {
 	padding-top: 0px!important;
 }
 
+.tuiter{
+	margin-left:40px;
+}
+
+.mobilefilter,#filterblocker{
+	visibility:hidden;
+}
+
+.pi-pic {
+	width:100%;
+	height:175px;
+}
+
+.pi-pic img{
+	height: 100%; 
+	width: 100%; 
+	object-fit: cover
+}
+
+.reportbutton{
+	padding-bottom:30px!important;
+}
+
+ .first-row{
+	width:262px;
+	height:220px;
+    overflow:hidden;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.first-row img{
+	height: 100%; 
+	width: 100%; 
+	object-fit: cover
+}
+
 /* ------------------------------ Responsive Media Styles ---------------------------- */
 
 @media only screen and (min-width: 1200px) and (max-width: 1920px) {
@@ -4387,160 +4424,4 @@ ol {
 	.posted-by2{
 		float:left!important;
 	}  
-}
-
-/* Small Device: 320px */
-
-@media only screen and (max-width: 479px) {
-	.instagram-photo .insta-item {
-		width: 100%;
-	}
-	.inner-header .advanced-search .category-btn {
-		display: none;
-	}
-	.inner-header .advanced-search .input-group {
-		max-width: 100%;
-	}
-	.inner-header .nav-right li.cart-icon .cart-hover {
-		width: 270px;
-		padding: 20px;
-	}
-	.countdown-timer .cd-item {
-		margin-right: 5px;
-		padding: 10px 6px;
-	}
-	.product-show-option .select-option {
-		display: inline-block;
-	}
-	.product-show-option .select-option .sorting.nice-select {
-		margin-bottom: 10px;
-	}
-	.product-details .quantity .primary-btn.pd-cart {
-		padding: 14px 20px 10px;
-	}
-	.tab-item ul li a {
-		padding: 18px 30px;
-		margin-bottom: 10px;
-	}
-	.specification-table table tr td.p-catagory {
-		width: 160px;
-	}
-	.blog-details-inner .blog-post .next-blog .nb-pic i {
-		display: none;
-	}
-	.blog-details-inner .blog-post .prev-blog .pb-pic i {
-		display: none;
-	}
-	.blog-details-inner .tag-share .details-tag {
-		float: none;
-		margin-bottom: 10px;
-	}
-	.blog-details-inner .tag-share .blog-share {
-		float: none;
-	}
-	.blog-details-inner .blog-detail-title p:before {
-		left: -62px;
-		width: 50px;
-	}
-	.blog-details-inner .blog-detail-title p:after {
-		right: -62px;
-		width: 50px;
-	}
-	.blog-details-inner .posted-by .pb-pic {
-		float: none;
-		margin-bottom: 15px;
-	}
-	.blog-details-inner .posted-by .pb-text {
-		padding-left: 0;
-		display: block;
-	}
-	.checkout-form .place-order .order-total {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-	.contact-widget .cw-item .ci-icon {
-		float: none;
-		margin-bottom: 5px;
-	}
-	.contact-widget .cw-item .ci-text {
-		padding-left: 0;
-	}
-	.benefit-items .single-benefit, th, #report.contact-form {
-		padding-left: 15px!important;
-		padding-right: 15px!important;
-	}
-
-	.blog-details {
-		padding-left: 20px;
-		padding-right: 20px;
-	} 
-
-	.filter-range-wrap:after{
-		padding-left:2em;
-		content: '(mobile users need to tap instead of drag)'!important;
-	}
-
-	.contact-title{
-		margin-top:50px;
-	}
-
-	.timeline-Widget,.twitter-timeline{ 
-		margin-top: 30px!important;  
-		margin-right: 20px!important; 
-		margin-left: 0px!important; 
-		padding-right: 10px!important;
-	}
-
-	.review{
-		padding-top: 10px!important;
-	}
-
-	.slicknav_btn {
-		margin-top: 10px!important; 
-	}
-
-	.signedName,.signedEmail{
-		font-size: 14px!important;
-	}
-
-	.signedEmail{
-		margin-bottom: 0px!important;
-	}
-
-	.signedName{
-		padding-top: 15px!important;
-	}
-
-	.signedBar {
-		width:60%!important;
-		height:auto!important;
-	}
-
-	.contact-section,.contact-form{
-		padding-top: 0px !important;
-	}
-
-	.illget{
-		margin-bottom: 5px !important;
-	}
-
-	.annsection{
-		padding-top:0px!important;
-	}
-
-	.annpadding,.anncontainer,.annheader{
-		padding: 2px !important;
-	}
-
-	time{
-		font-size:15px!important;
-	}
-
-	.annlabel{
-		font-size:10px!important;
-	}
-
-	.profilenav{
-		margin: 50px!important;
-	}
 }

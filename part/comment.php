@@ -52,7 +52,7 @@
      <div class="row d-flex justify-content-center">
          <div class="col-md-8">
              <div class="headings d-flex justify-content-between align-items-center mb-3">
-                 <h5>Comments and Reviews('.$count.')</h5> 
+                 <h5 class="comments">Comments and Reviews('.$count.')</h5> 
              </div>';
 
     if($count > 0){ 
@@ -126,7 +126,7 @@
     #Part Form 
     if(!isset($_COOKIE["q"])){ 
         echo '<div id="commentform"><center>';
-        echo '<h5>Sign in to leave a Comment/Review</h5><br/>
+        echo '<h5 class="comments">Sign in to leave a Comment/Review</h5><br/>
                 <div class="g-signin2" data-onsuccess="onSignIn"></div></center>';
         echo '</div>';
     }else{

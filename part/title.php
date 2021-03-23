@@ -7,6 +7,9 @@
         echo '<meta name="google-signin-client_id" content="'.$details['googleClientID'].'">';
     }
     
+    ##responsive // pwa
+    echo '<link rel="stylesheet" href="css/pwa.css?v1" type="text/css">';
+    
     ## favico
     echo '  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -34,5 +37,4 @@
     echo "<script type='text/javascript' src='js/search.js'> </script>";
 
     echo '<title>Cybereats</title>';
-
 ?>

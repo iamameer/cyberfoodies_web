@@ -1,0 +1,420 @@
+/* Small Device: 320px */
+
+@media only screen and (max-width: 479px) {
+    body {
+        width: 100%;
+    }
+
+	.instagram-photo .insta-item {
+		width: 100%;
+	}
+	.inner-header .advanced-search .category-btn {
+		display: none;
+	}
+	.inner-header .advanced-search .input-group {
+		max-width: 100%;
+	}
+	.inner-header .nav-right li.cart-icon .cart-hover {
+		width: 270px;
+		padding: 20px;
+	}
+	.countdown-timer .cd-item {
+		margin-right: 5px;
+		padding: 10px 6px;
+	}
+	.product-show-option .select-option {
+		display: inline-block;
+	}
+	.product-show-option .select-option .sorting.nice-select {
+		margin-bottom: 10px;
+	}
+	.product-details .quantity .primary-btn.pd-cart {
+		padding: 14px 20px 10px;
+	}
+	.tab-item ul li a {
+		padding: 18px 30px;
+		margin-bottom: 10px;
+	}
+	.specification-table table tr td.p-catagory {
+		width: 160px;
+	}
+	.blog-details-inner .blog-post .next-blog .nb-pic i {
+		display: none;
+	}
+	.blog-details-inner .blog-post .prev-blog .pb-pic i {
+		display: none;
+	}
+	.blog-details-inner .tag-share .details-tag {
+		float: none;
+		margin-bottom: 10px;
+	}
+	.blog-details-inner .tag-share .blog-share {
+		float: none;
+	}
+	.blog-details-inner .blog-detail-title p:before {
+		left: -62px;
+		width: 50px;
+	}
+	.blog-details-inner .blog-detail-title p:after {
+		right: -62px;
+		width: 50px;
+	}
+	.blog-details-inner .posted-by .pb-pic {
+		float: none;
+		margin-bottom: 15px;
+	}
+	.blog-details-inner .posted-by .pb-text {
+		padding-left: 0;
+		display: block;
+	}
+	.checkout-form .place-order .order-total {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.contact-widget .cw-item .ci-icon {
+		float: none;
+		margin-bottom: 5px;
+	}
+	.contact-widget .cw-item .ci-text {
+		padding-left: 0;
+	}
+	.benefit-items .single-benefit, th, #report.contact-form {
+		padding-left: 15px!important;
+		padding-right: 15px!important;
+	}
+
+	.blog-details {
+		padding-left: 20px;
+		padding-right: 20px;
+	} 
+
+	.filter-range-wrap:after{
+		padding-left:2em;
+		content: '(mobile users need to tap instead of drag)'!important;
+	}
+
+	.contact-title{
+		margin-top:50px;
+	}
+
+	.timeline-Widget,.twitter-timeline{ 
+		margin-top: 30px!important;  
+		margin-right: 20px!important; 
+		margin-left: 0px!important; 
+		padding-right: 10px!important;
+	}
+
+	.review{
+		padding-top: 10px!important;
+	}
+
+	.slicknav_btn {
+		margin-top: 10px!important; 
+	}
+
+	.signedName,.signedEmail{
+		font-size: 14px!important;
+	}
+
+	.signedEmail{
+		margin-bottom: 0px!important;
+	}
+
+	.signedName{
+		padding-top: 15px!important;
+	}
+
+	.signedBar {
+		width:60%!important;
+		height:auto!important;
+	}
+
+	.contact-section,.contact-form{
+		padding-top: 0px !important;
+	}
+
+	.illget{
+		margin-bottom: 5px !important;
+	}
+
+	.annsection{
+		padding-top:0px!important;
+	}
+
+	.annpadding,.anncontainer,.annheader{
+		padding: 2px !important;
+	}
+
+	time{
+		font-size:15px!important;
+	}
+
+	.annlabel{
+		font-size:10px!important;
+	}
+
+	.profilenav{
+		margin: 50px!important;
+	}
+
+    /* #########################################  PWA mode  ############################################ */
+
+    /* 1. INDEX */
+    .single-hero-items ,.set-bg{
+        height: 20%!important; 
+        background-size: 10% auto;
+    }
+
+    .carr {
+         width:70%!important; 
+    }
+
+    h1{
+        font-size: 30px!important;
+    }
+
+    .filter-control{
+        padding-top: 0px !important;
+    }
+
+    .product-slider{
+        margin-left:5%!important;
+        height:40%!important;
+        width:85%!important;
+    }
+
+    .tuiter{
+        margin-left:5px!important;
+    }
+
+    .footer-section{
+        width: 105%!important;
+    }
+
+    /* 2. BROWSE FOOD */
+    p.found{
+        font-size:12px!important;
+    }
+
+    .product-show-option{
+        margin-bottom: 5px !important;
+    }
+
+    .product-shop{
+        padding-top:5px!important;
+    }
+
+    .pi-pic{
+        margin: 0 0!important;
+        height: 100px!important;  
+    }
+
+    .pi-pic img{
+        padding-top:5px!important;
+        width: 100%;  
+        object-fit: contain!important;
+        overflow: hidden!important;
+    }
+
+    .product-item .pi-pic ul li a {
+        padding: 2px 5px 2px 5px !important;
+    }
+
+    .pi-text{
+        padding-top: 4px!important;
+        width:100%!important; 
+    }
+
+    li.quick-view{
+        background:rgba(255, 134, 69, 0.981)!important;
+    }
+
+    .product-item .pi-text a h5 {
+        font-size:12px!important;
+    }
+
+    .product-item .pi-text .catagory-name { 
+        letter-spacing: 1px!important; 
+        margin-bottom: 5px!important;
+    }
+
+    .product-item .pi-text .product-price {
+        color: #e7ab3c;
+        font-size: 14px!important;
+        font-weight: 700!important;
+    }
+    
+    .mobilelist {
+        margin:2px 2px !important;
+        width:32%!important; 
+        height: 180px!important; 
+        overflow: hidden!important; 
+        padding-left:2px!important;
+        padding-right:2px!important;
+        background-color: rgba(240, 160, 123, 0.15)!important;
+    }
+
+    .mobilerow{
+        margin-left:2%!important;
+        height:45%!important;  
+    }
+
+    .mobilefilter{
+        visibility:visible!important;
+        height:38px;
+        width: 80px;
+        padding: 8px 0 0 8px !important;
+        margin:0px 20px 2px 10px !important;
+        background-color: #e7ab3c;
+    }
+
+    #filterbar{
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: -30px;
+        background-color: rgba(255, 182, 72, 0.885);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px; 
+    }
+
+    #filterblocker{ 
+        visibility:visible!important;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: -30px;
+        background-color: rgba(0, 0, 0, 0.385);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;  
+    }
+
+    .page-btn{
+        padding: 4px 10px!important;
+    }
+
+    .filter-widget{
+        margin-bottom: 5px !important;
+    }
+ 
+    .fw-title{
+        margin-bottom:3px!important;
+    }
+    
+    /* 3. BROWSE STORE */ 
+    .filter-widget2{
+        margin-bottom: 35px !important;
+    }
+
+    .filter-btn2{ 
+        margin-left:25px!important;
+        margin-top:15px!important;
+        background:rgb(197, 91, 10)!important
+    }
+
+    /* 4. STORE */
+    .shopping-cart{
+        padding-top:5px!important; 
+        width: 100% !important;
+        margin-left:5px !important;
+    }
+
+    .shopping-cart .container{
+        padding:0px!important;    
+        margin: 2px!important;
+    }
+
+    .cart-table table,.storeinfo{ 
+        padding: 2px!important;  
+        max-width  :100vw;  
+        width      :100vw; 
+        min-width: 20vw!important;
+    }
+
+    .storeinfo{
+        margin-right: 5px!important;
+    }
+
+    .cart-table h2 {
+        font-size: 20px !important;
+    }
+
+    .mob{
+        display:none !important;
+    } 
+
+    .cart-table table tr th {
+        font-size: 12px;
+        color: #252525;
+        font-weight: 700;
+        border-bottom: 1px solid #ebebeb;
+        text-align: center;
+        padding: 8px 2px 5px 2px!important;
+        text-transform: uppercase;
+    } 
+
+    th.th{
+        font-size:20px!important;
+        /* width:1px!important;
+        white-space: nowrap!important; */
+    }
+ 
+
+    .first-row img{
+        height: auto!important;
+        width: 80px !important;
+    }
+
+    .first-row, .first-row h5 {
+        font-size:12px!important;
+        padding-top:2px!important;
+        padding-bottom:0px!important;
+        height:40px!important;
+    }
+
+    .productrow {
+        height:80px!important;
+        width:200px!important;
+    }
+
+    .col-lg-12{
+        width:100%!important;
+    }
+
+    h5.comments{
+        margin-top:15px!important;
+        font-size:14px!important;
+        margin-left: 20px!important;
+    }
+  
+    /* 5. BAZAAR */ 
+    .countdown-timer .cd-item { 
+        margin-right: 10px!important;
+    }
+
+    .posted-by2{
+        padding: 4px!important;
+        background: rgb(36,11,0);
+        background:linear-gradient(0deg, rgba(36,11,0,1) 0%, rgba(255,141,0,0.2) 0%, rgba(121,54,9,0) 97%)!important;
+    }
+
+    .proceed-checkout{
+        padding-left: 20px!important;
+        padding-right: 20px!important;
+    }
+
+    .reportbutton{
+        margin-left: 30px!important;
+    }
+
+    p.dis{ 
+        font-size: 12px!important;
+    }
+
+}

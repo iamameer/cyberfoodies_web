@@ -39,14 +39,14 @@
                 //$product_unit = $row['product_unit'];//'sebungkus';
                 //<input type="text" value="'.$product_stock.'">
                 if(strlen($row["product_image"] )< 10){
-                    $img = "<img src='img/sample/no-prod-img.jpg' @>";
+                    $img = "<img src='img/sample/no-prod-img.jpg' >";
                 }else{
-                    $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'" @/>';
+                    $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'"  onclick="imgTap()" />';
                 }
 
                 if($user_id == $q){
                     $img = '<a href="addProduct.php?user_id='.$user_id.'&product_id='.$prod_id.'&store_id='.$store_id.'&mode=edit">'. 
-                            str_replace('@','style="height: 100%; width: 100%; object-fit: cover"',$img)  .'</a>';
+                            str_replace('@','',$img)  .'</a>';
                 }
 
                 //stock color 
@@ -58,9 +58,8 @@
                     $product_stock = '<span style="color:green!important;">'.$product_stock .'</span>';
                 }
 
-                $product_row = ' <tr class="productrow" style="">
-                                    <td class="cart-pic first-row" style="width:262px!important;height:220px!important;
-                                    overflow:hidden!important;padding-left:10px;padding-right:10px;">'.$img.'</td>
+                $product_row = ' <tr class="productrow">
+                                    <td class="cart-pic first-row">'.$img.'</td>
                                     <td class="cart-title first-row">
                                         <h5>'.$product_name.'</h5>
                                         <i style="color:#613000">'.$product_desc.'</i>

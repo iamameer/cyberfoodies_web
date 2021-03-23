@@ -124,7 +124,7 @@ form .group-input textarea{
   float: left;
   padding: 8px 16px;
   text-decoration: none;
-  margin:5px; 
+  margin:5px auto; 
   background-color:#e7ab3c !important;
 }
 
@@ -136,4 +136,52 @@ form .group-input textarea{
 
 #pageJump {
   background-color: #a16333 !important;
+}
+
+.primary-btn, .filter-btn {
+  margin-top:10px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 900;
+  padding: 12px 30px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #ffffff;
+  background: #e7ab3c;
+  text-transform: uppercase;
+  text-decoration: none;
+  height:33px;
+}
+.filter-btn2{
+  margin-top:10px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 900;
+  padding: 7px 20px 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #ffffff;
+  background: #e7ab3c;
+  text-transform: uppercase;
+  text-decoration: none;
+  height:33px!important;
+}
+.product-item:hover{ 
+  background: #ffffff;
+  margin-bottom: 11px;
+  -webkit-box-shadow: 0px 8px 30px 1px #ffcf87;
+  box-shadow: 0px 8px 30px 1px #ffcf87;
+}  
+
+.thprod{ 
+  background: #f79131; 
+} 
+
+.ownerbtn {
+  height: 47px!important ;
+  margin-bottom:10px!important;
+}
+
+.imob{
+    color: green;
 }

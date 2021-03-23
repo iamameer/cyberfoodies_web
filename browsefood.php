@@ -93,7 +93,8 @@
     <section class="product-shop spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
+                <div id="filterblocker" onclick="closeNav()"></div>
+                <div id="filterbar" class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
                     <!-- <div class="filter-widget">
                         <h4 class="fw-title">Status</h4>
                         <ul class="filter-catagories">
@@ -258,6 +259,7 @@
                         <div class="row">
                             <div class="col-lg-7 col-md-7">
                                 <div class="select-option">
+                                    <div class="mobilefilter" onclick="openNav()"><i class="fa fa-filter"></i> Filter</div>
                                     <select class="sorting">
                                         <option value="">Sort: Default</option>
                                         <option value="">Price: Low to High</option>
@@ -268,42 +270,6 @@
                                     </select> -->
                                 </div>
                             </div>
-                            <style type="text/css">
-                                .primary-btn, .filter-btn {
-                                        margin-top:10px;
-                                        display: inline-block;
-                                        font-size: 14px;
-                                        font-weight: 900;
-                                        padding: 12px 30px;
-                                        margin-right: 5px;
-                                        margin-left: 5px;
-                                        color: #ffffff;
-                                        background: #e7ab3c;
-                                        text-transform: uppercase;
-                                        text-decoration: none;
-                                        height:33px!important;
-                                    }
-                                    .filter-btn2{
-                                        margin-top:10px;
-                                        display: inline-block;
-                                        font-size: 14px;
-                                        font-weight: 900;
-                                        padding: 7px 20px 5px;
-                                        margin-right: 5px;
-                                        margin-left: 5px;
-                                        color: #ffffff;
-                                        background: #e7ab3c;
-                                        text-transform: uppercase;
-                                        text-decoration: none;
-                                        height:33px!important;
-                                    }
-                                    .product-item:hover{ 
-                                        background: #ffffff;
-                                        margin-bottom: 11px;
-                                        -webkit-box-shadow: 0px 8px 30px 1px #ffcf87;
-                                        box-shadow: 0px 8px 30px 1px #ffcf87;
-                                    }  
-                            </style>
                             <div class="col-lg-5 col-md-5 text-right">
                                 
                         <?php include('part/browselist.php') ?>

@@ -109,17 +109,12 @@
                                     </script>";
                                 }
                              ?>
-                        </div></center>
-                        <style type="text/css">
-                            .thprod{ 
-                                background: #f79131; 
-                            }  
-                        </style>
+                        </div></center> 
                         <table>
                             <thead>
                                 <tr>
                                     <th class="thprod">Image</th>
-                                    <th class="p-name thprod">Product Name</th>
+                                    <th class="p-name thprod">Name</th>
                                     <th class="thprod">Price</th>
                                     <th class="thprod">Stock</th>
                                     <th class="thprod">Availability</th>
@@ -171,14 +166,19 @@
                                         border: 1px solid #ebebeb;
                                     }
                                     </style>
-                        <table style="margin-top:15px;">
+                        <table style="margin-top:15px;" class="storeinfo">
                             <thead>
                                 <tr>
-                                    <th style="background-color:#fa9f37;opacity:1;" class="th" onclick="setActive(this)">Lokasi</th>
-                                    <th class="th" onclick="setActive(this)">Waktu Operasi</th>
-                                    <th class="th" onclick="setActive(this)" >Maklumat Penghantaran</th>
-                                    <th class="th" onclick="setActive(this)" >Cara Tempahan</th>
-                                    <th class="th" onclick="setActive(this)" >Maklumat Tambahan</th>
+                                    <th style="background-color:#fa9f37;opacity:1;" class="th" onclick="setActive(this)">
+                                    &#127759;<span class="mob"> Lokasi</span></th>
+                                    <th class="th" onclick="setActive(this)">
+                                    &#128338;<span class="mob"> Waktu Operasi</span></th>
+                                    <th class="th" onclick="setActive(this)" >
+                                    &#128666;<span class="mob"> Maklumat Penghantaran</span></th>
+                                    <th class="th" onclick="setActive(this)" >
+                                    &#128242;</i><span class="mob"> Cara Tempahan</span></th>
+                                    <th class="th" onclick="setActive(this)" >
+                                    &#10071;<span class="mob"> Maklumat Tambahan</span></th>
                                     <!-- <i class="ti-close"></i> -->
                                 </tr>
                             </thead>
