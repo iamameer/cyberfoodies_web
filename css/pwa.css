@@ -1,8 +1,12 @@
 /* Small Device: 320px */
 
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 479px) { 
     body {
-        width: 100%;
+        width: 95vw !important; 
+    }
+
+    .header-section,.hero-section{
+        width: 100vw !important;
     }
 
 	.instagram-photo .insta-item {
@@ -38,6 +42,11 @@
 	.specification-table table tr td.p-catagory {
 		width: 160px;
 	}
+
+    .blogcontent{
+        width: 100vw !important;
+    }
+
 	.blog-details-inner .blog-post .next-blog .nb-pic i {
 		display: none;
 	}
@@ -166,7 +175,7 @@
     }
 
     .carr {
-         width:70%!important; 
+        width:70%!important; 
     }
 
     h1{
@@ -188,7 +197,8 @@
     }
 
     .footer-section{
-        width: 105%!important;
+        width: 100vw!important;
+        overflow: hidden!important;
     }
 
     /* 2. BROWSE FOOD */
@@ -210,19 +220,27 @@
     }
 
     .owl-item .pi-pic {
-        height: 350px!important;
-        width: 385px!important;
+        max-width: 360px !important;
+        width: 100% !important;
     }
+
+    .owl-item .pi-pic img{
+        width: 100px !important;
+    } 
+
+    .owl-item .cloned { 
+        margin-left: 25px !important;
+      }
 
     .owl-item h5, .frontp .product-price {
         font-size:22px!important;
     }
 
     .pi-pic img{
-        padding-top:5px!important;
+        padding:5px!important;
         width: 100%;  
         object-fit: contain!important;
-        overflow: hidden!important;
+        overflow: hidden!important; 
     }
 
     .product-item .pi-pic ul li a {
@@ -428,7 +446,7 @@
 
     posted-by .pb-text {
         width: 50%!important;
-  margin: 0 auto!important;
+        margin: 0 auto!important;
     }
 
 }

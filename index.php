@@ -133,8 +133,7 @@
                             }
                         </style>
                     <div class="product-slider owl-carousel"> 
-                      <?php include('exp/foodslider.php'); ?>
-                       
+                      <?php include('exp/foodslider.php'); ?> 
                     </div>
                 </div>
 

@@ -75,7 +75,7 @@
     <!-- Header End -->
 
     <!-- Blog Details Section Begin -->
-    <section class="blog-details spad">
+    <section class="blog-details spad blogcontent">
         <div class="container">
             <!-- Deal Of The Week Section Begin -->
                 <?php include('exp/deal.php'); ?>
