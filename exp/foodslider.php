@@ -55,18 +55,16 @@
     
             $url = 'store.php?store_id='.$store_id.'&product_id='.$product_id;
 
-            $img = str_replace('@','
-                        style="
-                        height: 350px!important;
-                        object-fit: contain;
-                        background: linear-gradient(rgba(94, 0, 49, .4),rgba(255, 154, 54,.2));"',
-                        $img);
+            // $img = str_replace('@','
+            //             style="
+            //             height: 350px!important;
+            //             object-fit: contain;
+            //             background: linear-gradient(rgba(94, 0, 49, .4),rgba(255, 154, 54,.2));"',
+            //             $img);
     
             $item = '  <div class="product-item">
-                        <div class="pi-pic" style="box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.22);
-                        -webkit-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.22);
-                        -moz-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.22);">
-                        <a href="@">
+                        <div class="pi-pic">
+                        <a href="#">
                              '.$img.'
                              </a>
                              '.$product_status.'
@@ -81,17 +79,17 @@
                         </div>
                         <div class="pi-text">
                             <!-- <div class="catagory-name">Coat</div>-->
-                            <a href="@">
+                            <a href="#">
                                 <h5>'.$product_name.'</h5>
                             </a>
-                            <div class="product-price">
+                            <div class="frontp product-price">
                                 RM '.$product_price.'
                                 <!-- <span>$35.00</span> -->
                             </div>
                         </div>
                     </div>';
 
-            echo str_replace('@',$url,$item);
+            echo str_replace('#',$url,$item);
        
         }//endwhile
 

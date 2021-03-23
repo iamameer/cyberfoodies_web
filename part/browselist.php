@@ -193,9 +193,9 @@
                             <div class="pi-text">
                                 <div class="catagory-name">'.$product_status.'</div>
                                 <a href="'.$url.'">
-                                    <h5>'.$product_name.'</h5>
+                                    <h5 class="browselist">'.$product_name.'</h5>
                                 </a>
-                                <div class="product-price">
+                                <div class="product-price browselist">
                                         RM '.$product_price.'
                                     <!-- <span>$35.00</span> -->
                                 </div>

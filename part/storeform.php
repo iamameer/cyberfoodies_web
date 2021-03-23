@@ -104,7 +104,7 @@
             echo ' <input type="checkbox" id="checkmap" name="checkmap" value="checkmap" onchange="handleMap(this);">
             <label for="checkmap">  Set GoogleMap Location </label> 
             <span id="spanmap" style="display:none">
-                <label for="map"></label>
+                <label for="map">Drag the red pin</label>
                 <input type="text" id="latlong" name="latlong" value="'.$store_map.'" style="display:none"></input> 
                 <div id="map" style="height:350px;width:auto"></div>
                 <script src="../js/googlemapSet.js"></script>'; 

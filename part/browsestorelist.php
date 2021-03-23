@@ -195,9 +195,9 @@
                             <div class="pi-text">
                                 <div class="catagory-name">'.$store_status.'</div>
                                 <a href="'.$url.'">
-                                    <h5>'.$store_district.'</h5>
+                                    <h5 class="browselist">'.$store_district.'</h5>
                                 </a>
-                                <div class="product-price">
+                                <div class="product-price browselist">
                                         '.$store_name.'
                                     <!-- <span>$35.00</span> -->
                                 </div>

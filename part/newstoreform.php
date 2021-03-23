@@ -46,7 +46,7 @@
         <input type="checkbox" id="checkmap" name="checkmap" value="checkmap" onchange="handleMap(this);">
             <label for="checkmap">  Set GoogleMap Location </label> 
             <span id="spanmap" style="display:none">
-                <label for="map"></label>
+                <label for="map">Drag the red pin</label>
                 <input type="text" id="latlong" name="latlong" value="2.9213,101.6559" style="display:none"></input> 
                 <div id="map" style="height:350px;width:auto"></div>
                 <script src="../js/googlemapSet.js"></script>
@@ -119,7 +119,7 @@
             <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" /> 
             <span id="warning" style="display:none;"></span>
             <span>Hanya satu gambar kedai dibenarkan! Bukan gambar product!<br>
-            <i>Only one store picture allowed! Not product\'s picture!</i></span>
+            <i>Only one store picture allowed! Not product's picture!</i></span>
         </div>
 
         <button type="submit" id="site-btn" class="site-btn register-btn" 

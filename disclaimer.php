@@ -80,7 +80,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <a href="#"><i class="fa fa-home"></i> Etc</a>
+                        <a href="index.php"><i class="fa fa-home"></i> Etc</a>
                         <span>Disclaimer</span>
                     </div>
                 </div>

@@ -32,12 +32,12 @@
                 $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'" @/>';
             }
 
+            $linkimage = '<a href="store.php?store_id='.$row['store_id'].'">' . str_replace('@','style="height: 100%; width: 100%; object-fit: cover"',$img) . '</a>';
+            
             echo ' <div class="col-lg-4 col-sm-6" style="margin-top:10px">
                     <div class="blog-item" >
-                        <div class="bi-pic" 
-                        style="width:100%!important;height:156px!important;
-                        overflow:hidden!important;">
-                            '. str_replace('@','style="height: 100%; width: 100%; object-fit: cover"',$img) .'
+                        <div class="bi-pic">
+                            '. $linkimage.'
                         </div>
                         <div class="bi-text">
                             <a href="store.php?store_id='.$row['store_id'].'">
@@ -74,7 +74,9 @@
         <div class="blog-item" style="background-color:#f5d9ab;">
             <div class="bi-pic" style="width:100%!important;height:156px!important;
             overflow:hidden!important;">
+            <a href="addStore.php?user_id='.$user_id.'&mode=add">
                 <img src="img/sample/new-store.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover">
+            </a>
             </div>
             <div class="bi-text">
                 <a href="addStore.php?user_id='.$user_id.'&mode=add">
