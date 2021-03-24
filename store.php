@@ -288,7 +288,7 @@ function setActive(th) {
     th.style.backgroundColor = '#fa9f37';
     th.style.opacity = '1';
 
-    if(th.innerHTML === 'Lokasi'){ 
+    if((th.innerHTML).includes("Lokasi")){ 
         document.getElementById("map").style.display = 'block';
     }else{ 
         document.getElementById("map").style.display = 'none';
