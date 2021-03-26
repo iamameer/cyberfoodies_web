@@ -425,6 +425,11 @@
         margin-right: 10px!important;
     }
 
+    /* STORE */
+    .blog-large-pic img{
+        width:100vw !important;
+    }
+
     .posted-by2{
         padding: 4px!important;
         background: rgb(36,11,0);

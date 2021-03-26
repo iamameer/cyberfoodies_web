@@ -200,3 +200,7 @@ form .group-input textarea{
 .bi-pic{
   width:100%!important;height:156px!important;
 }
+
+.blog-large-pic img{
+  padding-bottom:15px;height: auto; width: 50%;
+}

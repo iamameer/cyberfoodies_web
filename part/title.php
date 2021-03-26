@@ -8,7 +8,7 @@
     }
     
     ##responsive // pwa
-    echo '<link rel="stylesheet" href="css/pwa.css?v2" type="text/css">';
+    echo '<link rel="stylesheet" href="css/pwa.css?v3" type="text/css">';
     
     ## favico
     echo '  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">

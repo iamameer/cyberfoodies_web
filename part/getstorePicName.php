@@ -43,7 +43,7 @@
                     $img =  '<img src="data:image/jpeg;base64,'.base64_encode($row['store_picture']).'" @/>';
                 }
     
-                echo str_replace('@','style="padding-bottom:15px;height: 50%; width: 50%;"',$img);
+                echo str_replace('@','',$img);
 
                 //object-fit: cover
             }
