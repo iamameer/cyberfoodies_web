@@ -8,6 +8,8 @@
         die("Error connecting to: ".$conn->connect_error);
     }
 
+    $str = explode("|",htmlspecialchars($_COOKIE['q']));
+
     $mode = $_GET['mode']; 
     $store_id = $_GET['store_id'];
  
@@ -65,7 +67,11 @@
         if(!$conn-> query($sql)){
             echo("Error: ".$conn->error);
             print_r($sql);
-        }else{ 
+        }else{  
+            $sql = addslashes(trim(preg_replace('/\s+/', ' ', $sql)));
+            $sqlQ = ' INSERT IGNORE INTO '.$details['database'] .'.' .$details['query_table'].
+                ' (user_email,query) VALUES ("'.$str[1].'","'.$sql.'")';
+            $conn->query($sqlQ); 
             echo "<script type='text/javascript'>
                     window.location.replace('../profile.php'); 
                     </script>";
@@ -81,10 +87,18 @@
             echo("Error: ".$conn->error);
             print_r($sql);
         }else{ 
+            $sql = addslashes(trim(preg_replace('/\s+/', ' ', $sql)));
+            $sqlQ = ' INSERT IGNORE INTO '.$details['database'] .'.' .$details['query_table'].
+                ' (user_email,query) VALUES ("'.$str[1].'","'.$sql.'")';
+            $conn->query($sqlQ); 
             if(!$conn-> query($sql2)){
                 echo("Error: ".$conn->error);
                 print_r($sql);
             }else{ 
+                $sql2 = addslashes(trim(preg_replace('/\s+/', ' ', $sql2)));
+                $sqlQ = ' INSERT IGNORE INTO '.$details['database'] .'.' .$details['query_table'].
+                    ' (user_email,query) VALUES ("'.$str[1].'","'.$sql2.'")';
+                $conn->query($sqlQ); 
                 echo "<script type='text/javascript'>
                         window.location.replace('../profile.php'); 
                         </script>";

@@ -48,6 +48,10 @@
     if(!$conn-> query($sql)){
         echo("Error: ".$conn->error);
     }else{
+        $sql = addslashes(trim(preg_replace('/\s+/', ' ', $sql)));
+        $sqlQ = ' INSERT IGNORE INTO '.$details['database'] .'.' .$details['query_table'].
+            ' (user_email,query) VALUES ("'.$str[1].'","'.$sql.'")';
+        $conn->query($sqlQ); 
         echo "<script type='text/javascript'>
                 window.location.replace('../store.php?store_id=".$store_id."'); 
                 </script>";

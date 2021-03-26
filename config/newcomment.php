@@ -9,6 +9,8 @@
         die("Error connecting to: ".$conn->connect_error);
     }
 
+    $str = explode("|",htmlspecialchars($_COOKIE['q']));
+
     if($_GET['mode'] == 'delete'){
         //delete mode
         $store_id = $_GET['store_id'];
@@ -41,6 +43,10 @@
     if(!$conn-> query($sql)){
         echo("Error: ".$conn->error);
     }else{
+        $sql = addslashes(trim(preg_replace('/\s+/', ' ', $sql)));
+        $sqlQ = ' INSERT IGNORE INTO '.$details['database'] .'.' .$details['query_table'].
+            ' (user_email,query) VALUES ("'.$str[1].'","'.$sql.'")';
+        $conn->query($sqlQ); 
         echo "<script type='text/javascript'>
             //alert('Successfully added comment');
                 window.location.replace('../store.php?store_id=".$store_id."'); 

@@ -8,6 +8,8 @@
         die("Error connecting to: ".$conn->connect_error);
     }
 
+    $str = explode("|",htmlspecialchars($_COOKIE['q'])); 
+
     $product_id = $_GET['product_id'];
     //$user_id = $_GET['user_id'];
     $store_id = $_GET['store_id'];
@@ -53,9 +55,11 @@
     if(!$conn-> query($sql)){
         echo("Error: ".$conn->error);
         print_r($sql);
-    }else{
-        $str = explode("|",htmlspecialchars($_COOKIE['q'])); 
-        $user_id = explode("@",$str[1])[0];
+    }else{ 
+        $sql = addslashes(trim(preg_replace('/\s+/', ' ', $sql)));
+        $sqlQ = ' INSERT IGNORE INTO '.$details['database'] .'.' .$details['query_table'].
+            ' (user_email,query) VALUES ("'.$str[1].'","'.$sql.'")';
+        $conn->query($sqlQ); 
         echo "<script type='text/javascript'>
                 window.location.replace('../store.php?store_id=".$store_id."&q=".$user_id."'); 
                 </script>";
