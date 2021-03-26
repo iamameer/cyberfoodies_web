@@ -89,8 +89,8 @@
             }//endwhile
     }else{
         // 0 products
-        echo '<tr><td class="cart-title first-row" style="padding-left:20px!important;">This shop not selling anythin yet :c<br>';
-        echo 'Comeback later okay? Don\'t be sad!</td></tr>';
+        echo '<tr><td class="cart-title first-row" style="padding-left:20px!important;">Belum ada product dijual
+        <br/>(No products listed, yet)</td></tr>';
     }
     mysqli_close($conn);   
 ?>

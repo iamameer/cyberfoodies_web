@@ -81,7 +81,7 @@
 
     $perpage = 15;
 
-    $order = ' id ASC ';
+    $order = ' store_timestamp DESC ';
     if(isset($_GET['sort'])){
         $psort = $_GET['sort'];
         if($psort == 'atoz'){
@@ -99,7 +99,7 @@
         
     }
 
-    print_r($query);
+    //print_r($query);
     $result = $conn-> query($query);
 
     if (!$result) {
