@@ -30,6 +30,7 @@
             while($row = $result -> fetch_assoc()){
                 
                 //$product_image = $row['product_image'];//"No Im";//'src="img/cart-page/product-1.jpg"' ;
+                $user_id = $row['user_id'];
                 $prod_id = $row["product_id"];
                 $product_name = $row['product_name'];//'Pure PineapplePure';
                 $product_price = $row['product_price'];//'$60.00';
@@ -44,7 +45,8 @@
                     $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'"  onclick="imgTap()" />';
                 }
 
-                if($user_id == $q){
+                //print_r($quser_id."//".$user_id);
+                if($quser_id == $user_id){
                     $img = '<a href="addProduct.php?user_id='.$user_id.'&product_id='.$prod_id.'&store_id='.$store_id.'&mode=edit">'. 
                             str_replace('@','',$img)  .'</a>';
                 }

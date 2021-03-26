@@ -61,7 +61,7 @@
             ' (user_email,query) VALUES ("'.$str[1].'","'.$sql.'")';
         $conn->query($sqlQ); 
         echo "<script type='text/javascript'>
-                window.location.replace('../store.php?store_id=".$store_id."&q=".$user_id."'); 
+                window.location.replace('../store.php?store_id=".$store_id."'); 
                 </script>";
         // header("profile.php");
         // exit();

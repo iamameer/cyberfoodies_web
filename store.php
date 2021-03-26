@@ -132,17 +132,12 @@
                             </style>
                                 <?php 
                                     if(isset($_GET['store_id'])){
-                                        $store_id = $_GET['store_id'];
-                                        if(isset($_GET['q'])){
-                                            $q = $_GET['q'];
-                                        }else{
-                                            $q = 'nouser';
-                                        } 
+                                        $store_id = $_GET['store_id']; 
                                         if(isset($_COOKIE["q"])){
                                             $str = explode("|",htmlspecialchars($_COOKIE["q"]));
-                                            $user_id = explode("@",$str[1])[0];
+                                            $quser_id = explode("@",$str[1])[0];
                                         }else{
-                                            $user_id = "";
+                                            $quser_id = "";
                                         }
                                         include('part/productlist.php'); 
                                     }else{
