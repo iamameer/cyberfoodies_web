@@ -116,10 +116,11 @@
                     </style>
                     <script type="text/javascript">
                         function checkIfEmpty(){
-                            if( !document.getElementById("storename").value ||
-                                !document.getElementById("location").value ||
-                                !document.getElementById("delivery").value ||
-                                !document.getElementById("howtoorder").value ){
+                            if( !document.getElementById("storename").value 
+                                // || !document.getElementById("location").value ||
+                                // !document.getElementById("delivery").value ||
+                                // !document.getElementById("howtoorder").value
+                                 ){
                                 document.getElementById('site-btn').setAttribute('disabled', 'disabled');
                                 document.getElementById('site-btn').style.opacity= 0.5;
                             }else{

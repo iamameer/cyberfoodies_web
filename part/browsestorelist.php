@@ -99,6 +99,7 @@
         
     }
 
+    print_r($query);
     $result = $conn-> query($query);
 
     if (!$result) {

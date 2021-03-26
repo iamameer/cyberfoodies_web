@@ -71,14 +71,14 @@
             </div>';
 
             echo '<div class="group-input">
-                <label for="productprice">Harga Produk (Product Price) *</label>
+                <label for="productprice">Harga Produk (Product Price)</label>
                 <input type="number" step="0.01" id="productprice" name="productprice"  placeholder="eg: 15.20"
                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()" value="'.$product_price.'">
             </div>';
 
             echo '<div class="group-input">
-                <label for="productstock">Stok (Stock) *</label>
+                <label for="productstock">Stok (Stock)</label>
                 <input type="number" min="0" id="productstock" name="productstock"  placeholder="eg: 10"
                 onchange="checkStock()" onfocus="checkStock()" onblur="checkStock()" 
                 onclick="checkStock()"  onkeyup="checkStock()" value="'.$product_stock.'">
@@ -174,20 +174,20 @@
             </div>';
 
         echo ' <div class="group-input">
-            <label for="productdesc">Tentang Produk (Product Desription) *</label>
+            <label for="productdesc">Tentang Produk (Product Desription)</label>
             <input type="text" id="productdesc" name="productdesc"  
             placeholder="eg: 100% Halal, telur dibasuh" maxlength="255">
             </div>';
 
         echo '<div class="group-input">
-                <label for="productprice">Harga Produk (Product Price) *</label>
+                <label for="productprice">Harga Produk (Product Price)</label>
                 <input type="number" step="0.01" id="productprice" name="productprice"  placeholder="eg: 15.20"
                 onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
                 onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()">
             </div>';
 
         echo '<div class="group-input">
-                <label for="productstock">Stok (Stock) *</label>
+                <label for="productstock">Stok (Stock)</label>
                 <input type="number" min="0" id="productstock" name="productstock"  placeholder="eg: 10"
                 onchange="checkStock()" onfocus="checkStock()" onblur="checkStock()" 
                 onclick="checkStock()"  onkeyup="checkStock()">

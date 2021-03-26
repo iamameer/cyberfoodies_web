@@ -217,8 +217,9 @@ function filesize(){
 }
 
 function checkIfEmpty(){
-    if( !document.getElementById("productname").value ||
-        !document.getElementById("productprice").value ){
+    if( !document.getElementById("productname").value 
+        // || !document.getElementById("productprice").value
+         ){
         document.getElementById('site-btn').setAttribute('disabled', 'disabled');
         document.getElementById('site-btn').style.opacity= 0.5;
     }else{

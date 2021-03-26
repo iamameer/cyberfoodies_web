@@ -74,6 +74,7 @@
     }else if($mode == 'delete'){ 
         $sql = 'DELETE FROM '.$details['database'] .'.' .$details['store_table'];
         $sql2 = 'DELETE FROM '.$details['database'] .'.' .$details['product_table']; 
+        $sql .= $sqlW;
         $sql2 .= $sqlW;
 
         if(!$conn-> query($sql)){

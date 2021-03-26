@@ -3,7 +3,7 @@ function initMap() {
     // The location of cyberjaya
     var latlong = document.getElementById("latlong").value;
     if(document.getElementById("latlong").value){  
-        ltlg = '{ "lat":'+latlong.split(',')[0] +', "lng":'+ latlong.split(',')[1] +'}'
+        ltlg = '{ "lat":'+ (latlong.split(',')[0].replace('{','')) +', "lng":'+ (latlong.split(',')[1].replace('}','')) +'}'
         console.log(ltlg)
         latlong = JSON.parse(ltlg);
         console.log(latlong)

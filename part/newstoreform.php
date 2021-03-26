@@ -36,7 +36,7 @@
         </div>
 
         <div class="group-input">
-            <label for="location">Lokasi (Store Location) *</label>
+            <label for="location">Lokasi (Store Location)</label>
             <textarea title="Use # for a newline" type="text" id="location" name="location" 
             placeholder="eg: Tamarind Square, Persiaran Multimedia, Cyber 11&#13; (# = new line)"
             onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
@@ -58,7 +58,7 @@
             </span><br>
 
         <div class="group-input">
-            <label for="district">Daerah (Store District) *</label>
+            <label for="district">Daerah (Store District)</label>
             <select type="text" id="district" name="district" placeholder="Daerah (Store District) *">
                 <option value = "Cyberjaya">Cyberjaya</option>
                 <option value = "Putrajaya">Putrajaya</option>
@@ -69,13 +69,13 @@
         </div>
   
         <div class="group-input">
-            <label for="time">Waktu operasi (Operating Time) *</label>
+            <label for="time">Waktu operasi (Operating Time)</label>
             <textarea title="Use # for a newline" type="text" id="time" name="time" 
             placeholder="eg: Setiap Hari 8am dan 4pm, last order 10pm" &#13; (# = new line)></textarea>
         </div> 
 
         <div class="group-input">
-            <label for="delivery">Maklumat Penghantaran (Delivery Information) *</label>
+            <label for="delivery">Maklumat Penghantaran (Delivery Information)</label>
             <textarea title="Use # for a newline" type="text" id="delivery" name="delivery" 
             placeholder="Cyberjaya (RM2) &#13;Putrajaya & Seri Kembangan (RM 4) &#13;Dengkil & Puchong (RM5)&#13; (# = new line)"
             onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
@@ -83,7 +83,7 @@
         </div>
 
         <div class="group-input">
-            <label for="howtoorder">Cara Tempahan (How to order) *</label>
+            <label for="howtoorder">Cara Tempahan (How to order)</label>
             <textarea title="Use # for a newline" type="text" id="howtoorder" name="howtoorder" 
             placeholder="eg: Melalui whatsapp/telegram/sms/fb page&#13; (# = new line)"
             onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
