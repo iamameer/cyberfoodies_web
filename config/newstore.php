@@ -70,10 +70,13 @@
     if(!$conn-> query($sql)){ 
         echo("Error: ".$conn->error. ' @'.$sql);
     }else{
+        $sql2 = ' INSERT INTO '.$details['database'] .'.' .$details['user_table'].
+                '(user_phone) VALUES ("'.$store_phone.'") ';
+        $conn->query($sql2); 
         $sql = addslashes(trim(preg_replace('/\s+/', ' ', $sql)));
             $sqlQ = ' INSERT IGNORE INTO '.$details['database'] .'.' .$details['query_table'].
                 ' (user_email,query) VALUES ("'.$str[1].'","'.$sql.'")';
-            $conn->query($sqlQ); 
+        $conn->query($sqlQ); 
         echo "<script type='text/javascript'>
                 window.location.replace('../profile.php'); 
                 </script>";
