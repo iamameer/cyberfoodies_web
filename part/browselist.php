@@ -10,7 +10,9 @@
     }
 
     #select from 
-    $query = "SELECT * FROM ".$details['database'].".".$details['product_table'];
+    $query = "SELECT product_id,product_name,product_price,product_description,
+                product_stock,product_status,product_image_url, store_id, store_district 
+                 FROM ".$details['database'].".".$details['product_table'];
 
     #where product_name
     if(isset($_GET['search'])){
@@ -85,7 +87,7 @@
     }
  
     #order
-    $order = ' id ASC ';
+    $order = ' product_timestamp DESC ';
     if(isset($_GET['psort'])){
         $psort = $_GET['psort'];
         if($psort == 'highest'){
@@ -96,7 +98,7 @@
     }
 
     #limit 
-    $perpage = 15;
+    $perpage = 9;
     $query .= " ORDER BY ". $order ." LIMIT ". $perpage;
 
     #offset
@@ -156,11 +158,16 @@
             $product_status = $row['product_status'];//'Available';
             $store_id = $row['store_id'];
 
-            if(strlen($row["product_image"] )< 10){
-                $img = "<img src='img/sample/no-prod-img.jpg' @>";
-            }else{
-                $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'" @/>';
+            $thumb = $row["product_image_url"] ? $row["product_image_url"] : 'img/sample/no-prod-img.jpg';
+            if(strpos($thumb,'/store/')){
+                $thumb = explode("/store/",$thumb)[0] .'/store/thumb_'. explode("/store/",$thumb)[1];
             }
+            $img =  '<img src="'.$thumb.'" @/>';
+            // if(strlen($row["product_image"] )< 10){
+            //     $img = "<img src='img/sample/no-prod-img.jpg' @>";
+            // }else{
+            //     $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'" @/>';
+            // }
 
             //stock color 
             if($product_stock >= 5 and $product_stock < 10){

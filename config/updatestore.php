@@ -12,6 +12,9 @@
 
     $mode = $_GET['mode']; 
     $store_id = $_GET['store_id'];
+
+    $folder = '/Zpictures/'.$store_id.'/';
+    $chkDir = dirname(__DIR__). $folder;
  
     $sqlW = " WHERE store_id = '".$store_id."'"; 
 
@@ -30,18 +33,6 @@
         $store_info = $_POST['additional'];
         $store_map = $_POST['latlong'];
 
-        if(count($_FILES["image"]["tmp_name"]) > 0){
-            for($count = 0; $count < count($_FILES["image"]["tmp_name"]); $count++){
-                if($_FILES["image"]["tmp_name"][$count]){
-                    $image_file = addslashes(file_get_contents($_FILES["image"]["tmp_name"][$count]));
-                    //echo $image_file;
-                }else{
-                    $image_file = "No image";
-                    //echo $image_file;
-                }
-            }
-        }//end image
-
         $sql = 'UPDATE '.$details['database'] .'.' .$details['store_table']. 
                 ' SET 
                 store_name = "'.$store_name.'",
@@ -57,11 +48,72 @@
                 store_info = "'.$store_info.'",
                 store_map = "'.$store_map.'"';
 
-        if($image_file != "No image"){
-            $sql .= ',product_image = "'.$image_file.'"';
-        }
-
+        #img 1.0
+        $image_file = 'No image';
+        // if(count($_FILES["image"]["tmp_name"]) > 0){
+        //     for($count = 0; $count < count($_FILES["image"]["tmp_name"]); $count++){
+        //         if($_FILES["image"]["tmp_name"][$count]){
+        //             $image_file = addslashes(file_get_contents($_FILES["image"]["tmp_name"][$count]));
+        //             //echo $image_file;
+        //         }else{
+        //             $image_file = "No image";
+        //             $store_picture_url = 'img/sample/no-store-img.jpg';
+        //             //echo $image_file;
+        //         }
+        //     }
+        // }
+ 
+        if (!file_exists($chkDir)) {
+            mkdir($chkDir, 0755, true);
+        } 
+        array_map('unlink', glob( "$chkDir*.txt"));
+        $time = new DateTime();
+        $time->setTimezone(new DateTimeZone('Asia/Kuala_Lumpur'));
+        $time = $time->format('Y-m-d H:i:s');
+        $myfile = fopen($chkDir.$store_name.'_'.$time.'.txt', "a");
         
+        #img 2.0
+        $store_picture_url = 'img/sample/no-store-img.jpg';
+        if (isset($_FILES['uploadedFile']) && $_FILES['uploadedFile']['error'] === UPLOAD_ERR_OK) {
+            $fileTmpPath = $_FILES['uploadedFile']['tmp_name'];
+            $fileName = $_FILES['uploadedFile']['name'];
+            $fileSize = $_FILES['uploadedFile']['size'];
+            $fileType = $_FILES['uploadedFile']['type'];
+            $fileNameCmps = explode(".", $fileName);
+            $fileExtension = strtolower(end($fileNameCmps));
+
+            $newFileName = $store_id . '.' . $fileExtension;
+  
+            $dest_path = $chkDir. $newFileName;
+            if(move_uploaded_file($fileTmpPath, $dest_path)){
+                $store_picture_url =  $folder.$newFileName;
+            }else{
+                print_r(`err upload`);
+                $store_picture_url = 'img/blog/sample-shop-image-min.png';
+            } 
+    
+            #thumbnail
+            $thumbnail =  $chkDir . 'thumb_' . $newFileName;
+            list($width, $height) = getimagesize($dest_path);
+
+            if($fileExtension == 'jpg'){
+                $image = imagecreatefromjpeg($dest_path);
+            }else if($fileExtension == 'gif'){ 
+                $image = imagecreatefromgif($dest_path);
+            }else if($fileExtension == 'png'){ 
+                $image = imagecreatefrompng($dest_path);
+            }
+
+            $resize = .4; 
+            $tn = imagecreatetruecolor($width*$resize, $height*$resize);
+            imagecopyresampled($tn,$image,0,0,0,0,$width*$resize,$height*$resize,$width,$height);
+            imagejpeg($tn,$thumbnail,70);
+
+            $image_file = 'has image';
+
+            $sql .= ',store_picture_url = "'.$store_picture_url.'"';
+        }//end of image upload 2.0
+      
         $sql .= $sqlW;
         
         if(!$conn-> query($sql)){
@@ -87,6 +139,11 @@
             echo("Error: ".$conn->error);
             print_r($sql);
         }else{ 
+            //rename folder to deleted
+            if (file_exists($chkDir)) {
+                rename($chkDir, substr($chkDir,0,-1).'_deleted');
+            }
+            
             $sql = addslashes(trim(preg_replace('/\s+/', ' ', $sql)));
             $sqlQ = ' INSERT IGNORE INTO '.$details['database'] .'.' .$details['query_table'].
                 ' (user_email,query) VALUES ("'.$str[1].'","'.$sql.'")';

@@ -39,6 +39,7 @@
                     $store_extratext = $row['store_extratext'];
                     $store_info = $row['store_info'];
                     $store_picture = $row['store_picture'];
+                    $store_picture_url = $row['store_picture_url'];
                     $store_map = $row['store_map'];
                 }//end while
 
@@ -189,17 +190,20 @@
                     >'.$store_info.'</textarea>
                 </div> ';
 
-            if(strlen($store_picture)< 10){
-                $img = "<img src='img/sample/no-store-img.jpg' @>";
-            }else{
-                $img =  '<img src="data:image/jpeg;base64,'.base64_encode($store_picture).'" @/>';
-            }
+            // if(strlen($store_picture)< 10){
+            //     $img = "<img src='img/sample/no-store-img.jpg' @>";
+            // }else{
+            //     $img =  '<img src="data:image/jpeg;base64,'.base64_encode($store_picture).'" @/>';
+            // }
+
+            $img = '<img src="'.$store_picture_url.'" @>';
 
             echo str_replace('@','style="padding-bottom:15px;"',$img);
 
             echo ' <div class="group-input">
                     <label for="additional">Upload Gambar Kedai (Add Store Image) :</label>
-                    <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" /> 
+                    <input type="file" id="file-upload" name="uploadedFile" accept=".jpg, .png, .gif" onchange="filesize()">
+                    <!-- <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" /> -->
                     <span id="warning" style="display:none;"></span>
                     <span>Upload gambar baru akan menggantikan gambar sekarang<br>
                     <i>Uploading new image will replace the current one</i></span>

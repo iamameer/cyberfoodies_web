@@ -17,7 +17,7 @@
     //     </script>";
     // }
 
-    $query = "SELECT store_name,store_picture,store_status
+    $query = "SELECT store_name,store_picture_url,store_status
             FROM ".$details['database'].".".$details['store_table'] .
             " WHERE store_id = '" . $store_id ."'";
 
@@ -37,11 +37,12 @@
                 echo ' </div>
                 <div class="blog-large-pic" style="padding-bottom:10px!important;">';
 
-                if(strlen($row['store_picture'])< 10){
-                    $img = "<img src='img/sample/no-store-img.jpg' @>";
-                }else{
-                    $img =  '<img src="data:image/jpeg;base64,'.base64_encode($row['store_picture']).'" @/>';
-                }
+                $img =  '<img src="'.$row['store_picture_url'].'" @/>';
+                // if(strlen($row['store_picture'])< 10){
+                //     $img = "<img src='img/sample/no-store-img.jpg' @>";
+                // }else{
+                //     $img =  '<img src="data:image/jpeg;base64,'.base64_encode($row['store_picture']).'" @/>';
+                // }
     
                 echo str_replace('@','',$img);
 

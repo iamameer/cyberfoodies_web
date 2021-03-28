@@ -13,7 +13,7 @@
         }
 
         $query = "SELECT user_id,product_id,product_image,product_name,product_description,
-                            product_price,product_stock,product_status
+                            product_price,product_image_url,product_stock,product_status
                 FROM ".$details['database'].".".$details['product_table'] .
                 " WHERE product_id = '" . $_GET['product_id'] . "'
                 AND user_id = '" . $_GET['user_id'] . "'
@@ -29,6 +29,7 @@
                     $product_stock = (int)$row['product_stock'];//'11';
                     $product_status = $row['product_status'];//'Available';
                     $product_image = $row['product_image'];
+                    $product_image_url = $row['product_image_url'];
                     $product_desc = $row['product_description'];
                 }//end while
 
@@ -84,17 +85,20 @@
                 onclick="checkStock()"  onkeyup="checkStock()" value="'.$product_stock.'">
             </div>';
 
-            if(strlen($product_image)< 10){
-                $img = "<img src='img/sample/no-prod-img.jpg' @>";
-            }else{
-                $img =  '<img src="data:image/jpeg;base64,'.base64_encode($product_image).'" @/>';
-            }
+            // if(strlen($product_image)< 10){
+            //     $img = "<img src='img/sample/no-prod-img.jpg' @>";
+            // }else{
+            //     $img =  '<img src="data:image/jpeg;base64,'.base64_encode($product_image).'" @/>';
+            // }
+
+            $img = '<img src="'.$product_image_url.'" @>';
            
             echo str_replace('@','style="padding-bottom:15px;"',$img);
 
             echo '<div class="group-input">
                 <label for="additional">Upload Gambar Produk (Add Product Image) :</label>
-                <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" /> 
+                <input type="file" id="file-upload" name="uploadedFile" accept=".jpg, .png, .gif" onchange="filesize()">
+                <!-- <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" /> -->
                 <span id="warning" style="display:none;"></span>
                 <span>Upload gambar baru akan menggantikan gambar sekarang<br>
                 <i>Uploading new image will replace the current one</i></span>
@@ -195,7 +199,8 @@
 
         echo '<div class="group-input">
                 <label for="additional">Upload Gambar Produk (Add Product Image) :</label>
-                <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" /> 
+                <input type="file" id="file-upload" name="uploadedFile" accept=".jpg, .png, .gif" onchange="filesize()">
+                <!-- <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" />  -->
                 <span id="warning" style="display:none;"></span>
                 <span>Hanya 1 gambar produk dibenarkan<br>
                 <i>Only 1 product picture allowed</i></span>

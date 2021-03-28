@@ -18,7 +18,7 @@
     // }
 
     $query = "SELECT user_id,product_id,product_image,product_name,product_description,
-                product_price,product_stock,product_status
+                product_price,product_stock,product_status, product_image_url 
             FROM ".$details['database'].".".$details['product_table'] .
             " WHERE store_id = '" . $store_id . "'
             ORDER BY product_timestamp desc" ; // AND user_id = '" . $user_id . "'
@@ -39,11 +39,17 @@
                 $product_desc = $row['product_description'];
                 //$product_unit = $row['product_unit'];//'sebungkus';
                 //<input type="text" value="'.$product_stock.'">
-                if(strlen($row["product_image"] )< 10){
-                    $img = "<img src='img/sample/no-prod-img.jpg' >";
-                }else{
-                    $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'"  onclick="imgTap()" />';
+
+                $thumb = $row["product_image_url"] ? $row["product_image_url"] : 'img/sample/no-prod-img.jpg';
+                if(strpos($thumb,'/store/')){
+                    $thumb = explode("/store/",$thumb)[0] .'/store/thumb_'. explode("/store/",$thumb)[1];
                 }
+                $img =  '<img src="'.$thumb.'" @/>';
+                // if(strlen($row["product_image"] )< 10){
+                //     $img = "<img src='img/sample/no-prod-img.jpg' >";
+                // }else{
+                //     $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'"  onclick="imgTap()" />';
+                // }
 
                 //print_r($quser_id."//".$user_id);
                 if($quser_id == $user_id){

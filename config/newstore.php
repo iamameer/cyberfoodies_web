@@ -37,34 +37,83 @@
         $store_map = explode(':',$lat)[1] . "," . explode(':',$long)[1]; 
         $store_map = trim($store_map);
     }
-
-    if(count($_FILES["image"]["tmp_name"]) > 0){
-        for($count = 0; $count < count($_FILES["image"]["tmp_name"]); $count++){
-            if($_FILES["image"]["tmp_name"][$count]){
-                $image_file = addslashes(file_get_contents($_FILES["image"]["tmp_name"][$count]));
-                //echo $image_file;
-            }else{
-                $image_file = "No image";
-                //echo $image_file;
-            }
-        }
-    }
-
-    //generate whatsapp link
-    // if ($whatsapp) {
-    //     $telephone = str_replace('-', '', $telephone);
-    //     $telephone = str_replace(' ', '', $telephone);    
-    //     $telephone = preg_replace('/[^A-Za-z0-9\-]/', '', $telephone);
-    //     echo '<a href="https://wa.me/'.$telephone.'?text='.$extratext.'">Click here</a>';
+  
+    #img 1.0
+    $image_file = '';
+    // if(count($_FILES["image"]["tmp_name"]) > 0){
+    //     for($count = 0; $count < count($_FILES["image"]["tmp_name"]); $count++){
+    //         if($_FILES["image"]["tmp_name"][$count]){
+    //             $image_file = addslashes(file_get_contents($_FILES["image"]["tmp_name"][$count]));
+    //             //echo $image_file;
+    //         }else{
+    //             $image_file = "No image";
+    //             $store_picture_url = 'img/sample/no-store-img.jpg';
+    //             //echo $image_file;
+    //         }
+    //     }
     // }
+    
+    $folder = '/Zpictures/'.$store_id.'/';
+    $chkDir = dirname(__DIR__). $folder;
+    if (!file_exists($chkDir)) {
+        mkdir($chkDir, 0755, true);
+    }
+    //unlink('$chkDir*.txt');
+    $time = new DateTime();
+    $time->setTimezone(new DateTimeZone('Asia/Kuala_Lumpur'));
+    $time = $time->format('Y-m-d H:i:s');
+    $myfile = fopen($chkDir.$store_name.'_'.$time.'.txt', "a");
+
+    #img 2.0
+    $store_picture_url = 'img/blog/sample-shop-image-min.png';
+    if (isset($_FILES['uploadedFile']) && $_FILES['uploadedFile']['error'] === UPLOAD_ERR_OK) {
+        $fileTmpPath = $_FILES['uploadedFile']['tmp_name'];
+        $fileName = $_FILES['uploadedFile']['name'];
+        $fileSize = $_FILES['uploadedFile']['size'];
+        $fileType = $_FILES['uploadedFile']['type'];
+        $fileNameCmps = explode(".", $fileName);
+        $fileExtension = strtolower(end($fileNameCmps));
+
+        $newFileName = $store_id . '.' . $fileExtension;
  
+        $dest_path = $chkDir. $newFileName;
+        if(move_uploaded_file($fileTmpPath, $dest_path)){
+            $store_picture_url =  $folder.$newFileName;
+        }else{
+            print_r(`err upload`);
+            $store_picture_url = 'img/blog/sample-shop-image-min.png';
+        } 
+
+        #thumbnail
+        $thumbnail =  $chkDir . 'thumb_' . $newFileName;
+        list($width, $height) = getimagesize($dest_path);
+
+        if($fileExtension == 'jpg'){
+            $image = imagecreatefromjpeg($dest_path);
+        }else if($fileExtension == 'gif'){ 
+            $image = imagecreatefromgif($dest_path);
+        }else if($fileExtension == 'png'){ 
+            $image = imagecreatefrompng($dest_path);
+        }
+
+        $resize = .4; 
+        $tn = imagecreatetruecolor($width*$resize, $height*$resize);
+        imagecopyresampled($tn,$image,0,0,0,0,$width*$resize,$height*$resize,$width,$height);
+        imagejpeg($tn,$thumbnail,70);
+
+    }//end of image upload 2.0
+    
+
+    #writing part
     $sql = 'INSERT IGNORE INTO '.$details['database'] .'.' .$details['store_table'].
             '(user_id, store_id, store_name, store_location, store_district, store_delivery, 
-            store_extratext, store_order, store_info, store_picture, store_phone, store_time, 
+            store_extratext, store_order, store_info, store_picture, store_picture_url,
+            store_phone, store_time, 
             store_status, store_category, store_map) 
             VALUES 
             ("'.$user_id.'", "'.$store_id.'","'.$store_name.'","'.$store_location.'","'.$store_district.'","'.$store_delivery.'",
-            "'.$store_extratext.'", "'.$store_order.'", "'.$store_info.'", "'.$image_file.'","'.$store_phone.'","'.$store_time.'",
+            "'.$store_extratext.'", "'.$store_order.'", "'.$store_info.'", "'.$image_file.'","'.$store_picture_url.'",
+            "'.$store_phone.'","'.$store_time.'",
             "'.$store_status.'","'.$store_category.'","'.$store_map.'" )';
 
     if(!$conn-> query($sql)){ 
@@ -85,21 +134,5 @@
     }
 
     mysqli_close($conn);   
-    //mysql_close($conn);   
-    // $details = include('config.php');
-    // include('dbconn.php');
-
-    // if(count($_FILES["image"]["tmp_name"]) > 0){
-    //     for($count = 0; $count < count($_FILES["image"]["tmp_name"]); $count++){
-    //         $image_file = addslashes(file_get_contents($_FILES["image"]["tmp_name"][$count]));
-    //         $query = "INSERT INTO $details[table](images) VALUES ('$image_file')";
-    //         $statement = $connect->prepare($query);
-    //         $statement->execute();
-    //     }
-    // }
-    
-//     echo "<script type='text/javascript'>
-//     location.href = 'profile.php'; 
-// </script>";
 
 ?>

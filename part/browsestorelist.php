@@ -9,7 +9,9 @@
         die("Error connecting to: ".$conn->connect_error);
     }
 
-    $query = "SELECT * FROM ".$details['database'].".".$details['store_table'];
+    $query = "SELECT store_id,store_name,store_location,store_district,
+                store_order,store_phone,store_time,store_status,store_category,store_picture_url 
+                 FROM ".$details['database'].".".$details['store_table'];
      
     //filter param
     $search = '';
@@ -79,7 +81,7 @@
         }
     }
 
-    $perpage = 15;
+    $perpage = 9;
 
     $order = ' store_timestamp DESC ';
     if(isset($_GET['sort'])){
@@ -161,11 +163,16 @@
             $store_status = $row['store_status'];
             $store_category = $row['store_category'];
 
-            if(strlen($row["store_picture"] )< 10){
-                $img = "<img src='img/blog/sample-shop-image-min.png' @>";
-            }else{
-                $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'" @/>';
+            $thumb = $row["store_picture_url"] ? $row["store_picture_url"] : 'img/blog/sample-shop-image-min.png';
+            if(strpos($thumb,'/store/')){
+                $thumb = explode("/store/",$thumb)[0] .'/store/thumb_'. explode("/store/",$thumb)[1];
             }
+            $img =  '<img src="'.$thumb.'" @/>';
+            // if(strlen($row["store_picture"] )< 10){
+            //     $img = "<img src='img/blog/sample-shop-image-min.png' @>";
+            // }else{
+            //     $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'" @/>';
+            // }
 
             $url = 'store.php?store_id='.$store_id;
 

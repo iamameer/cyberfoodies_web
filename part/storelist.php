@@ -12,7 +12,7 @@
     $str = explode("|",htmlspecialchars($_COOKIE["q"]));
     $user_id = explode("@",$str[1])[0];
     error_reporting(-1); ini_set('display_errors',1);
-    $query = "SELECT store_id, store_name, store_district, store_status, store_picture
+    $query = "SELECT store_id, store_name, store_district, store_status, store_picture, store_picture_url 
             FROM ".$details['database'].".".$details['store_table'] .
             " WHERE user_id = '" . $user_id . "' ORDER BY store_timestamp desc, store_status, store_district";
 
@@ -24,13 +24,17 @@
         $limit = false;
         //echo '<p>result found</p>';
         while($row = $result -> fetch_assoc()){
-             
-            //echo '<p>in while</p>';
-            if(strlen($row["store_picture"] )< 10){
-                $img = "<img src='img/blog/sample-shop-image-min.png' @>";
-            }else{
-                $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'" @/>';
+               
+            $thumb = $row["store_picture_url"] ? $row["store_picture_url"] : 'img/blog/sample-shop-image-min.png';
+            if(strpos($thumb,'/store/')){
+                $thumb = explode("/store/",$thumb)[0] .'/store/thumb_'. explode("/store/",$thumb)[1];
             }
+            $img =  '<img src="'.$thumb.'" @/>';
+            // if(strlen($row["store_picture"] )< 10){
+            //     $img = "<img src='img/blog/sample-shop-image-min.png' @>";
+            // }else{
+            //     $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'" @/>';
+            // }
 
             $linkimage = '<a href="store.php?store_id='.$row['store_id'].'">' . str_replace('@','style="height: 100%; width: 100%; object-fit: cover"',$img) . '</a>';
             
@@ -53,6 +57,10 @@
         //else if exceed 10
         $limit = true;
     }//end if result    
+
+    if($details['superadmin'] == $user_id){
+        $limit = false;
+    }
 
     if($limit){
         echo ' <div class="col-lg-4 col-sm-6">
