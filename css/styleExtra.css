@@ -233,16 +233,7 @@ form .group-input textarea{
   display: inline;
   margin-top: 380px;
 }
-.row .carde:hover .card_circle {
-  background-color: rgba(255, 60, 112, 0.193); 
-  background-size: contain;
-  background-position: center center;
-  border-radius: 0;
-  margin-left: 0;
-  margin-top: 0;
-  height: 450px;
-  width: 360px;
-}
+
 .row .carde:hover h2{
   background: rgba(255, 117, 43,.8);
   color: #fff;
@@ -252,8 +243,9 @@ form .group-input textarea{
 
 .row .carde:hover h2 small { color: #fff}
 .row .carde:hover p { margin-top: 320px; background: rgba(255, 241, 233, 0.8);
+  padding-top: 10px;
   z-index: 9999;} 
-.row .carde:hover .cspan { font-size: 45px !important; }
+.row .carde:hover .cspan { font-size: 45px !important;}
 .row .card_circle {
   /* background: url('http://lorempixel.com/400/200') no-repeat center bottom; */ 
   background-color: rgba(255, 60, 112, 0.193); 

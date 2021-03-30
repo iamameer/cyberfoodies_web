@@ -124,6 +124,8 @@
     if(strpos($query,"WHERE")){ //if(isset($_GET['search'])){ 
         $queryCount = explode("LIMIT",$query)[0];
         $queryCount = str_replace("*","count(id) as total",$qCount) . ' WHERE ' . explode("WHERE",$queryCount)[1];
+    }else{
+        $queryCount = $qCount;
     } 
     
     //print_r($queryCount);
@@ -161,8 +163,8 @@
             $store_id = $row['store_id'];
 
             $thumb = $row["product_image_url"] ? $row["product_image_url"] : 'img/sample/no-prod-img.jpg';
-            if(strpos($thumb,'/store/')){
-                $thumb = explode("/store/",$thumb)[0] .'/store/thumb_'. explode("/store/",$thumb)[1];
+            if(strpos($thumb,'/'.$store_id.'/')){
+                $thumb = explode("/".$store_id."/",$thumb)[0] .'/'.$store_id.'/thumb_'. explode("/".$store_id."/",$thumb)[1];
             }
             $img =  '<img src="'.$thumb.'" @/>';
             // if(strlen($row["product_image"] )< 10){

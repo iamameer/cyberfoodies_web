@@ -120,12 +120,14 @@
     //Counters
     $totalCount = 0;
     $totalFound = 0;
-    $queryCount = "SELECT count(id) as total FROM ".$details['database'].".".$details['store_table'];
+    $qCount = "SELECT count(id) as total FROM ".$details['database'].".".$details['store_table'];
     if(strpos($query,"WHERE")){ //if(isset($_GET['search'])){ 
         $queryCount = explode("LIMIT",$query)[0];
         $queryCount = str_replace("*","count(id) as total",$qCount) . ' WHERE ' . explode("WHERE",$queryCount)[1];
+    }else{
+        $queryCount = $qCount;
     } 
-    
+
     $resultCount = mysqli_query($conn,$queryCount);
     $dataCount = mysqli_fetch_assoc($resultCount); 
     $totalCount = $dataCount['total'];  
@@ -165,8 +167,8 @@
             $store_category = $row['store_category'];
 
             $thumb = $row["store_picture_url"] ? $row["store_picture_url"] : 'img/blog/sample-shop-image-min.png';
-            if(strpos($thumb,'/store/')){
-                $thumb = explode("/store/",$thumb)[0] .'/store/thumb_'. explode("/store/",$thumb)[1];
+            if(strpos($thumb,'/'.$store_id.'/')){
+                $thumb = explode("/".$store_id."/",$thumb)[0] .'/'.$store_id.'/thumb_'. explode("/".$store_id."/",$thumb)[1];
             }
             $img =  '<img src="'.$thumb.'" @/>';
             // if(strlen($row["store_picture"] )< 10){

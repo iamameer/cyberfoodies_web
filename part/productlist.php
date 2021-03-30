@@ -39,22 +39,30 @@
                 $product_desc = $row['product_description'];
                 //$product_unit = $row['product_unit'];//'sebungkus';
                 //<input type="text" value="'.$product_stock.'">
-
+ 
                 $thumb = $row["product_image_url"] ? $row["product_image_url"] : 'img/sample/no-prod-img.jpg';
-                if(strpos($thumb,'/store/')){
-                    $thumb = explode("/store/",$thumb)[0] .'/store/thumb_'. explode("/store/",$thumb)[1];
+                list($width, $height) = getimagesize(dirname(__DIR__).'/'.$thumb);
+                if($width> $height and strpos($thumb,'no-prod-img')){
+                    $size = 'background-size:contain'; 
+                }else if($width> $height and !strpos($thumb,'no-prod-img')){
+                    $rotate =  'transform: rotateZ(90deg);
+                                background-position: bottom center;'; 
+                    $size = 'background-size:cover'; 
+                }else if($width < $height and !strpos($thumb,'no-prod-img')){ 
+                    $rotate = 'background-position: center center'; 
+                    $size = 'background-size:cover'; 
                 }
+  
                 $img =  '<img src="'.$thumb.'" @/>';
                 // if(strlen($row["product_image"] )< 10){
                 //     $img = "<img src='img/sample/no-prod-img.jpg' >";
                 // }else{
                 //     $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'"  onclick="imgTap()" />';
-                // }
-
-                //print_r($quser_id."//".$user_id);
+                // } 
                 if($quser_id == $user_id){
-                    $img = '<a href="addProduct.php?user_id='.$user_id.'&product_id='.$prod_id.'&store_id='.$store_id.'&mode=edit">'. 
-                            str_replace('@','',$img)  .'</a>';
+                    $img = '<a href="addProduct.php?user_id='.$user_id.'&product_id='.$prod_id.'&store_id='.$store_id.'&mode=edit">'
+                            //. str_replace('@','',$img)  
+                            .'</a>';
                 }
 
                 //stock color 
@@ -78,29 +86,13 @@
                                         </center>
                                         <!--<div class="cta-container transition"><a href="#" class="cta">Call to action</a></div>-->
                                         <div class="card_circle transition" 
-                                            style="background: url(\''.$thumb.'\') no-repeat top center;
+                                            style="background: url(\''.$thumb.'\') no-repeat ;
                                             background-color:rgba(255, 91, 79,.5);
-                                            background-size:contain;
+                                            '.$size.'
                                             "></div>
                                     </div>
                                 </div> ';
- 
-                // $product_row = ' <tr class="productrow">
-                //                     <td class="cart-pic first-row">'.$img.'</td>
-                //                     <td class="cart-title first-row">
-                //                         <h5>'.$product_name.'</h5>
-                //                         <i style="color:#613000">'.$product_desc.'</i>
-                //                     </td>
-                //                     <td class="p-price first-row">'.$product_price.'</td>
-                //                     <td class="qua-col first-row">
-                //                         <div class="quantity">
-                //                             '.$product_stock.'
-                //                         </div>
-                //                     </td>
-                //                     <td class="total-price first-row">'.$product_status.'</td>
-                //                 </tr>';
-            
-                                
+         
                 if(isset($_GET['product_id'])){
                     $product_id = $_GET['product_id'];
                 }else{
@@ -109,11 +101,24 @@
                 if($prod_id == $product_id){
                     $style = 'style="background: rgba(255, 175, 100,.3);margin-bottom:10px;-webkit-box-shadow: 0px 8px 30px 1px #ffb987;box-shadow: 0px 8px 30px 1px #ffb987;"';
                     $product_row = str_replace('style=""',$style,$product_row);
-                } 
+                }  
                 echo $product_row;
                 //echo '<td class="close-td first-row"><i class="ti-cut"></i></td>';
 
             }//endwhile
+  
+            echo '<style type="text/css">
+                    .row .carde:hover .card_circle { 
+                        '.$rotate.' 
+                        background-color: rgba(255, 60, 112, 0.193); 
+                        background-size: 450px 360px;
+                        border-radius: 0;
+                        margin-left: 0;
+                        margin-top: 0;
+                        height: 450px;
+                        width: 360px;
+                    }
+                </style>';
     }else{
         // 0 products
         echo '<tr><td class="cart-title first-row" style="padding-left:20px!important;">Belum ada product dijual
