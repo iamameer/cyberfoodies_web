@@ -123,8 +123,9 @@
     $queryCount = "SELECT count(id) as total FROM ".$details['database'].".".$details['store_table'];
     if(strpos($query,"WHERE")){ //if(isset($_GET['search'])){ 
         $queryCount = explode("LIMIT",$query)[0];
-        $queryCount = str_replace("*","count(id) as total",$queryCount);
+        $queryCount = str_replace("*","count(id) as total",$qCount) . ' WHERE ' . explode("WHERE",$queryCount)[1];
     } 
+    
     $resultCount = mysqli_query($conn,$queryCount);
     $dataCount = mysqli_fetch_assoc($resultCount); 
     $totalCount = $dataCount['total'];  
