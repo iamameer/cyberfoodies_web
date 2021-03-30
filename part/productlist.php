@@ -79,6 +79,7 @@
                                         <!--<div class="cta-container transition"><a href="#" class="cta">Call to action</a></div>-->
                                         <div class="card_circle transition" 
                                             style="background: url(\''.$thumb.'\') no-repeat top center;
+                                            background-color:rgba(255, 91, 79,.5);
                                             background-size:contain;
                                             "></div>
                                     </div>
