@@ -202,6 +202,10 @@
     }
 
     /* 2. BROWSE FOOD */
+    .price-input::after{
+        left: 75px!important;
+    }
+
     p.found{
         font-size:12px!important;
     }

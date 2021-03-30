@@ -95,7 +95,7 @@ function filterFood(){
     } 
 
     //status
-    var status = "&status="+document.getElementById("productstatus").value;
+    var status = "";//"&status="+document.getElementById("productstatus").value;
 
     //search (url)
     var x = window.location.href; 

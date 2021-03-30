@@ -97,110 +97,90 @@
         
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="cart-table"><center>
-                    <div class="blog-detail-title">
+                    <div class="cart-table">
+                        <center>
+                        <div class="blog-detail-title">
                             <?php 
                                 if(isset($_GET['store_id'])){
                                     $store_id = $_GET['store_id'];
                                     include('part/getstorePicName.php');
+
+                                    if(isset($_COOKIE["q"])){
+                                        $str = explode("|",htmlspecialchars($_COOKIE["q"]));
+                                        $quser_id = explode("@",$str[1])[0];
+                                    }else{
+                                        $quser_id = "";
+                                    }
+                                    
+                                    echo '<div class="row">';
+                                    
+                                        include('part/productlist.php'); 
+                                    echo '</div>';
+                                    
+                                    echo '</center> ';
                                 }else{
                                     echo "<script type='text/javascript'>alert('Error: no store_id');
                                     window.location.replace('index.php'); 
                                     </script>";
                                 }
-                             ?>
-                        </div></center> 
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="thprod">Image</th>
-                                    <th class="p-name thprod">Name</th>
-                                    <th class="thprod">Price</th>
-                                    <th class="thprod">Stock</th>
-                                    <th class="thprod">Availability</th>
-                                    <!-- <i class="ti-close"></i> -->
-                                </tr>
-                            </thead>
-                            <tbody>
+                            ?>
+                            <!-- </div> -->
+                        
                             <style type="text/css">
-                                    .productrow:hover{ 
-                                        background: #ffffff;
-                                        margin-bottom: 11px;
-                                        -webkit-box-shadow: 0px 8px 30px 1px #ffcf87;
-                                        box-shadow: 0px 8px 30px 1px #ffcf87;
-                                    }  
-                            </style>
-                                <?php 
-                                    if(isset($_GET['store_id'])){
-                                        $store_id = $_GET['store_id']; 
-                                        if(isset($_COOKIE["q"])){
-                                            $str = explode("|",htmlspecialchars($_COOKIE["q"]));
-                                            $quser_id = explode("@",$str[1])[0];
-                                        }else{
-                                            $quser_id = "";
+                                        .th,.infodrop{
+                                            opacity: 0.6;
+                                            transition: 0.8s;
                                         }
-                                        include('part/productlist.php'); 
-                                    }else{
-                                        echo "<script type='text/javascript'>alert('Error: no store_id');
-                                        window.location.replace('index.php'); 
-                                        </script>";
-                                    }?> 
-                            </tbody>
-                        </table>
-                        <style type="text/css">
-                                    .th,.infodrop{
-                                        opacity: 0.6;
-                                        transition: 0.8s;
-                                    }
-                                    .infodrop{
-                                        display:none;
-                                    }
+                                        .infodrop{
+                                            display:none;
+                                        }
 
-                                    .dis{
-                                        padding:25px;
-                                        border: 1px solid #ebebeb;
-                                    }
-                                    </style>
-                        <table style="margin-top:15px;" class="storeinfo">
-                            <thead>
-                                <tr>
-                                    <th style="background-color:#fa9f37;opacity:1;" class="th" onclick="setActive(this)">
-                                    &#127759;<span class="mob"> Lokasi</span></th>
-                                    <th class="th" onclick="setActive(this)">
-                                    &#128338;<span class="mob"> Waktu Operasi</span></th>
-                                    <th class="th" onclick="setActive(this)" >
-                                    &#128666;<span class="mob"> Maklumat Penghantaran</span></th>
-                                    <th class="th" onclick="setActive(this)" >
-                                    &#128242;</i><span class="mob"> Cara Tempahan</span></th>
-                                    <th class="th" onclick="setActive(this)" >
-                                    &#10071;<span class="mob"> Maklumat Tambahan</span></th>
-                                    <!-- <i class="ti-close"></i> -->
-                                </tr>
-                            </thead>
-                            <tbody>
-                                    <style type="text/css">
-                                        .continue-shop:{   
-                                            background-color:silver;
-                                            -webkit-transition: all 0.3s;
-                                            -o-transition: all 0.3s;
-                                            transition: all 0.3s;
+                                        .dis{
+                                            padding:25px;
+                                            border: 1px solid #ebebeb;
                                         }
-                                        .continue-shop:hover{ 
-                                            background-color:red; 
-                                        }
-                                        p{margin-bottom:0px!important;}
-                                    </style>
-                                    <?php include('part/getstoreDetails.php'); ?> 
-                            </tbody>
-                            </div>
-                            <!-- <div class="discount-coupon">
-                                <h6>Discount Codes</h6>
-                                <form action="#" class="coupon-form">
-                                    <input type="text" placeholder="Enter your codes">
-                                    <button type="submit" class="site-btn coupon-btn">Apply</button>
-                                </form>
-                            </div> -->
+                                        </style>
+                            <table style="margin-top:15px;" class="storeinfo">
+                                <thead>
+                                    <tr>
+                                        <th style="background-color:#fa9f37;opacity:1;" class="th" onclick="setActive(this)">
+                                        &#127759;<span class="mob"> Lokasi</span></th>
+                                        <th class="th" onclick="setActive(this)">
+                                        &#128338;<span class="mob"> Waktu Operasi</span></th>
+                                        <th class="th" onclick="setActive(this)" >
+                                        &#128666;<span class="mob"> Maklumat Penghantaran</span></th>
+                                        <th class="th" onclick="setActive(this)" >
+                                        &#128242;</i><span class="mob"> Cara Tempahan</span></th>
+                                        <th class="th" onclick="setActive(this)" >
+                                        &#10071;<span class="mob"> Maklumat Tambahan</span></th>
+                                        <!-- <i class="ti-close"></i> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <style type="text/css">
+                                            .continue-shop:{   
+                                                background-color:silver;
+                                                -webkit-transition: all 0.3s;
+                                                -o-transition: all 0.3s;
+                                                transition: all 0.3s;
+                                            }
+                                            .continue-shop:hover{ 
+                                                background-color:red; 
+                                            }
+                                            p{margin-bottom:0px!important;}
+                                        </style>
+                                        <?php include('part/getstoreDetails.php'); ?> 
+                                </tbody>
+                                </div>
+                                <!-- <div class="discount-coupon">
+                                    <h6>Discount Codes</h6>
+                                    <form action="#" class="coupon-form">
+                                        <input type="text" placeholder="Enter your codes">
+                                        <button type="submit" class="site-btn coupon-btn">Apply</button>
+                                    </form>
+                                </div> -->
                         </div>
+
                         <div class="col-lg-4 offset-lg-4">
                             <div class="proceed-checkout">
                                 <!-- <ul>
@@ -210,6 +190,7 @@
                                 <?php include('part/wsgen.php'); ?>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="blog-details-inner"> 

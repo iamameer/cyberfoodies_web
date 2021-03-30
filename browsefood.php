@@ -169,7 +169,7 @@
                     </div>                           
                 
                     <div class="filter-widget">
-                        <h4 class="fw-title">Status</h4>
+                        <!-- <h4 class="fw-title">Status</h4>
                             <select type="text" id="productstatus" name="productstatus" placeholder="Status :">
                             <?php 
                                 $arr = array('<option selected="" value = "Available">Dijual (Available)</option>',
@@ -191,7 +191,7 @@
                                     echo $item;
                                 }
                             ?> 
-                            </select>
+                            </select> -->
                         <a href="#" class="filter-btn2" onclick="filterFood()">Filter</a>
                     </div>
                 </div>
