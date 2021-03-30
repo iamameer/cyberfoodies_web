@@ -96,7 +96,7 @@
             $thumbnail =  $chkDir . 'thumb_' . $newFileName;
             list($width, $height) = getimagesize($dest_path);
 
-            if($fileExtension == 'jpg'){
+            if($fileExtension == 'jpg' or $fileExtension == 'jpeg'){
                 $image = imagecreatefromjpeg($dest_path);
             }else if($fileExtension == 'gif'){ 
                 $image = imagecreatefromgif($dest_path);
@@ -125,7 +125,7 @@
                 ' (user_email,query) VALUES ("'.$str[1].'","'.$sql.'")';
             $conn->query($sqlQ); 
             echo "<script type='text/javascript'>
-                    window.location.replace('../profile.php'); 
+                    window.location.replace('../store.php?store_id=".$store_id."'); 
                     </script>";
         } 
 

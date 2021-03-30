@@ -45,24 +45,19 @@
                 if($width> $height and strpos($thumb,'no-prod-img')){
                     $size = 'background-size:contain'; 
                 }else if($width> $height and !strpos($thumb,'no-prod-img')){
-                    $rotate =  'transform: rotateZ(90deg);
+                    $rotate =  '
                                 background-position: bottom center;'; 
-                    $size = 'background-size:cover'; 
+                    $size = 'background-size:contain'; 
                 }else if($width < $height and !strpos($thumb,'no-prod-img')){ 
                     $rotate = 'background-position: center center'; 
                     $size = 'background-size:cover'; 
                 }
-  
-                $img =  '<img src="'.$thumb.'" @/>';
-                // if(strlen($row["product_image"] )< 10){
-                //     $img = "<img src='img/sample/no-prod-img.jpg' >";
-                // }else{
-                //     $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'"  onclick="imgTap()" />';
-                // } 
+   
+                $edit =  '';
                 if($quser_id == $user_id){
-                    $img = '<a href="addProduct.php?user_id='.$user_id.'&product_id='.$prod_id.'&store_id='.$store_id.'&mode=edit">'
+                    $edit = '<a class="cta" href="addProduct.php?user_id='.$user_id.'&product_id='.$prod_id.'&store_id='.$store_id.'&mode=edit">'
                             //. str_replace('@','',$img)  
-                            .'</a>';
+                            .'Edit</a>';
                 }
 
                 //stock color 
@@ -84,7 +79,7 @@
                                         <br/>'.$product_desc.' 
                                         <br/>Stock: '.$product_stock.' (Status: '.$product_status.')</p>
                                         </center>
-                                        <!--<div class="cta-container transition"><a href="#" class="cta">Call to action</a></div>-->
+                                        '.$edit.' 
                                         <div class="card_circle transition" 
                                             style="background: url(\''.$thumb.'\') no-repeat ;
                                             background-color:rgba(255, 91, 79,.5);

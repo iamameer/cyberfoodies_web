@@ -97,7 +97,7 @@
 
             echo '<div class="group-input">
                 <label for="additional">Upload Gambar Produk (Add Product Image) :</label>
-                <input type="file" id="file-upload" name="uploadedFile" accept=".jpg, .png, .gif" onchange="filesize()">
+                <input type="file" id="file-upload" name="uploadedFile" accept=".jpg, .jpeg, .png, .gif" onchange="filesize()">
                 <!-- <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" /> -->
                 <span id="warning" style="display:none;"></span>
                 <span>Upload gambar baru akan menggantikan gambar sekarang<br>
@@ -199,7 +199,7 @@
 
         echo '<div class="group-input">
                 <label for="additional">Upload Gambar Produk (Add Product Image) :</label>
-                <input type="file" id="file-upload" name="uploadedFile" accept=".jpg, .png, .gif" onchange="filesize()">
+                <input type="file" id="file-upload" name="uploadedFile" accept=".jpg, .jpeg,  .png, .gif" onchange="filesize()">
                 <!-- <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" />  -->
                 <span id="warning" style="display:none;"></span>
                 <span>Hanya 1 gambar produk dibenarkan<br>

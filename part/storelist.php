@@ -25,9 +25,10 @@
         //echo '<p>result found</p>';
         while($row = $result -> fetch_assoc()){
                
+            $store_id = $row['store_id'];
             $thumb = $row["store_picture_url"] ? $row["store_picture_url"] : 'img/blog/sample-shop-image-min.png';
-            if(strpos($thumb,'/store/')){
-                $thumb = explode("/store/",$thumb)[0] .'/store/thumb_'. explode("/store/",$thumb)[1];
+            if(strpos($thumb,'/'.$store_id.'/')){
+                $thumb = explode("/".$store_id."/",$thumb)[0] .'/'.$store_id.'/thumb_'. explode("/".$store_id."/",$thumb)[1];
             }
             $img =  '<img src="'.$thumb.'" @/>';
             // if(strlen($row["store_picture"] )< 10){

@@ -116,7 +116,7 @@
 
         <div class="group-input">
             <label for="additional">Upload Gambar Kedai (Add Store Image) :</label>
-            <input type="file" id="file-upload" name="uploadedFile" accept=".jpg, .png, .gif" onchange="filesize()">
+            <input type="file" id="file-upload" name="uploadedFile" accept=".jpg, .jpeg, .png, .gif" onchange="filesize()">
             <!-- <input type="file" name="image[]" id="image" accept=".jpg, .png, .gif" onchange="filesize()" />  -->
             <span id="warning" style="display:none;"></span>
             <span>Hanya satu gambar kedai dibenarkan! Bukan gambar product!<br>

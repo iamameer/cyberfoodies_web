@@ -68,7 +68,7 @@
         $thumbnail =  $chkDir . 'thumb_' . $newFileName;
         list($width, $height) = getimagesize($dest_path);
 
-        if($fileExtension == 'jpg'){
+        if($fileExtension == 'jpg' or $fileExtension == 'jpeg'){
             $image = imagecreatefromjpeg($dest_path);
         }else if($fileExtension == 'gif'){ 
             $image = imagecreatefromgif($dest_path);

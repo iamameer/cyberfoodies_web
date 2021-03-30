@@ -258,7 +258,8 @@ form .group-input textarea{
   width: 650px;
 }
 .row h2.ch2 {
-  color: rgb(233, 139, 51);
+  background: rgba(255, 117, 43,1);
+  color: #fff;
   font-family: 'Raleway', sans-serif;
   font-size: 24px;
   font-weight: 200;
@@ -286,17 +287,11 @@ form .group-input textarea{
   text-align: center;
   padding-top:5px;
   font-size: 25px;
-  font-weight: 700; 
+  font-weight: 700;
 }
 
-.row .cta-container {
-  display: none;
-  margin-top: 320px;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-}
-.row .cta {
+.row .cta{
+  background-color: rgb(18, 165, 89);
   -moz-border-radius: 2px;
   -moz-transition: 0.2s ease-out;
   -ms-transition: 0.2s ease-out;
@@ -304,9 +299,9 @@ form .group-input textarea{
   -webkit-border-radius: 2px;
   -webkit-transition: 0.2s ease-out;
   background-clip: padding-box;
-  border: 2px solid #ff752b;
+  border: 2px solid rgb(52, 247, 189);
   border-radius: 2px;
-  color: #ff752b;
+  color: #ffffff;
   display: inline-block;
   font-family: 'Raleway', sans-serif;
   font-size: 17px;
@@ -320,8 +315,8 @@ form .group-input textarea{
   text-transform: uppercase;
   transition: 0.2s ease-out;
 }
-.row .cta:hover {
-  background-color: #ff752b;
+
+.row .cta:hover { 
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: #fff;
   -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
