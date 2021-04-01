@@ -24,6 +24,7 @@
             ORDER BY product_timestamp desc" ; // AND user_id = '" . $user_id . "'
 
     //print_r($query);
+    $rotate = '';
     $result = $conn-> query($query);
     if($result-> num_rows > 0){
         //echo '<p>result found</p>';
