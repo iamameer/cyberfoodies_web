@@ -141,7 +141,10 @@
         }else{ 
             //rename folder to deleted
             if (file_exists($chkDir)) {
-                rename($chkDir, substr($chkDir,0,-1).'_deleted');
+                $time = new DateTime();
+                $time->setTimezone(new DateTimeZone('Asia/Kuala_Lumpur'));
+                $time = $time->format('Ymd');
+                rename($chkDir, substr($chkDir,0,-1).'_deleted_'.$time);
             }
             
             $sql = addslashes(trim(preg_replace('/\s+/', ' ', $sql)));
