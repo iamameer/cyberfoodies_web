@@ -170,12 +170,18 @@
 
     /* 1. INDEX */
     .single-hero-items ,.set-bg{
-        height: 20%!important; 
-        background-size: 10% auto;
+        height: 100vw!important; 
+        background-size: cover!important;
+        background-repeat: no-repeat!important;
+    }
+    
+    .carr {
+        width:80vw!important; 
     }
 
-    .carr {
-        width:70%!important; 
+    .carbut{
+        height:30px!important;
+        padding: 5px !important;
     }
 
     h1{
