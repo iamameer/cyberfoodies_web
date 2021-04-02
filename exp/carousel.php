@@ -3,7 +3,7 @@
     $arr = array();
 
     #Slider 1 ###################################
-    $img_url = 'https://source.unsplash.com/collection/67804040'; //'img/sample/sliderFood.jpg';
+    $img_url = 'img/sample/sliderFood.jpg';//'https://source.unsplash.com/collection/67804040'; //;
     $small_tag = ''; //caps
     $big_title = 'Hungry?';
     $text = '';
@@ -15,7 +15,7 @@
     $arr1 = array($img_url,$small_tag,$big_title,$text,$button,$spinsales); 
 
     #Slider 2 ###################################
-    $img_url = 'https://source.unsplash.com/collection/84302887'; //'img/sample/sliderOnline.jpg';
+    $img_url = 'img/sample/shopsell.jpg';//'https://source.unsplash.com/collection/84302887'; //
     $small_tag = 'Advertisement'; //caps
     $big_title = 'You\'re selling?';
     $text = 'Sign in and set up your own store FOR FREE, create multiple stores, add multiple products, ALL FOR FREE';

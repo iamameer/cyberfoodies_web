@@ -9,8 +9,10 @@
         die("Error connecting to: ".$conn->connect_error);
     }
 
-    $query = "SELECT * FROM ".$details['database'].".".$details['product_table'] 
-            . " ORDER BY RAND() LIMIT 7 ";
+    $query = "SELECT product_id,product_name,product_price,product_stock,
+            product_status, store_id, store_district, product_image_url  
+            FROM ".$details['database'].".".$details['product_table'] 
+            . " ORDER BY RAND() LIMIT 5 ";
 
     $result = $conn-> query($query);
 
@@ -30,11 +32,16 @@
             $store_id = $row['store_id'];
             $store_district = $row['store_district'];
     
-            if(strlen($row["product_image"] )< 10){
-                $img = "<img src='img/sample/no-prod-img.jpg' @>";
-            }else{
-                $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'" @/>';
+            // if(strlen($row["product_image"] )< 10){
+            //     $img = "<img src='img/sample/no-prod-img.jpg' @>";
+            // }else{
+            //     $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["product_image"] ).'" @/>';
+            // }
+            $thumb = $row["product_image_url"] ? $row["product_image_url"] : 'img/sample/no-prod-img.jpg';
+            if(strpos($thumb,'/'.$store_id.'/')){
+                $thumb = explode("/".$store_id."/",$thumb)[0] .'/'.$store_id.'/thumb_'. explode("/".$store_id."/",$thumb)[1];
             }
+            $img =  '<img src="'.$thumb.'" @/>';
     
             //stock color 
             if($product_stock >= 5 and $product_stock < 10){
@@ -65,7 +72,7 @@
             $item = '  <div class="product-item">
                         <div class="pi-pic">
                         <a href="#">
-                             '.$img.'
+                        '.str_replace('@','',$img) .'
                              </a>
                              '.$product_status.'
                             <div class="icon">
