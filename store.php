@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Fashi Template">
-    <meta name="keywords" content="Fashi, unica, creative, html">
+    <meta name="description" content="Search food here!">
+    <meta name="keywords" content="Cybereats, cyber, eats, fun, cybereats.fun, makan, cyberjaya, sepang, putrajaya, free">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -112,8 +112,8 @@
                                         $quser_id = "";
                                     }
                                     
-                                    echo '<div class="row">';
-                                    
+                                    echo '</div>';  
+                                    echo '<div class="row rowproductlistmobile">'; 
                                         include('part/productlist.php'); 
                                     echo '</div>';
                                     
@@ -140,7 +140,7 @@
                                             border: 1px solid #ebebeb;
                                         }
                                         </style>
-                            <table style="margin-top:15px;" class="storeinfo">
+                            <table style="margin-top:15px;" class="storeinfo" id="storeinfo">
                                 <thead>
                                     <tr>
                                         <th style="background-color:#fa9f37;opacity:1;" class="th" onclick="setActive(this)">
@@ -190,9 +190,10 @@
                                 <?php include('part/wsgen.php'); ?>
                             </div>
                         </div>
-
+                            <a href="#storeinfo" class="floatbutton" style="visibility:hidden;" onclick="floatbutton();" id="floatbutton">
+                                <i class="fa fa-info-circle my-float" id="myfloat"></i>
+                            </a>;
                     </div>
-
                     <div class="blog-details-inner"> 
                         <div class="leave-comment review"> 
                             <?php include('part/comment.php'); ?> 

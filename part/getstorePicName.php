@@ -26,7 +26,7 @@
     if($result-> num_rows > 0){
         //echo '<p>result found</p>';
             while($row = $result -> fetch_assoc()){
-                echo '<h2>'.$row['store_name'].'</h2>';
+                echo '<h2 id="storename">'.$row['store_name'].'</h2>';
                 echo '<p>Status: <span style="';
                 if(strtolower($row['store_status']) == "closed"){
                     echo 'color:red!important;';

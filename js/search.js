@@ -122,4 +122,22 @@ function closeNav() {
 
     document.getElementById("filterblocker").style.width = "0"; 
     document.getElementById("filterblocker").style.right = "-50px";  
-  }
+}
+
+function floatbutton() { 
+    console.log("floatclicked")
+    var x = window.location.href; 
+    if(!x.includes("#storeinfo") && !x.includes("#storename")){
+        document.getElementById("floatbutton").href = "#storename"
+        document.getElementById("myfloat").classList.add("fa-chevron-circle-up");
+        document.getElementById("myfloat").classList.remove("fa-info-circle");
+    }else if(x.includes("#storename")){ 
+            document.getElementById("floatbutton").href = "#storeinfo"
+            document.getElementById("myfloat").classList.add("fa-chevron-circle-up");
+            document.getElementById("myfloat").classList.remove("fa-info-circle"); 
+    }else if(x.includes("#storeinfo")){ 
+        document.getElementById("floatbutton").href = "#storename"
+        document.getElementById("myfloat").classList.remove("fa-chevron-circle-up");
+        document.getElementById("myfloat").classList.add("fa-info-circle");
+    }
+}

@@ -244,7 +244,7 @@ form .group-input textarea{
 .row .carde:hover h2 small { color: #fff}
 .row .carde:hover p { margin-top: 320px; background: rgba(255, 241, 233, 0.8);
   padding-top: 10px;
-  z-index: 9999;} 
+  z-index: 9;} 
 .row .carde:hover .cspan { font-size: 45px !important;}
 .row .card_circle {
   /* background: url('http://lorempixel.com/400/200') no-repeat center bottom; */ 
@@ -267,7 +267,7 @@ form .group-input textarea{
   position: absolute;
   text-align: center;
   width: 100%;
-  z-index: 9999;
+  z-index: 9;
 }
 .row p.cp {
   color: rgba(0,0,0,.6);
