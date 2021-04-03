@@ -42,14 +42,14 @@
         $sabtu = $_POST['sabtu'];
         $ahad = $_POST['ahad'];
 
-        $store_status = $store_status .'~'.
-        $isnin .'|'.
-        $selasa .'|'.
-        $rabu .'|'.
-        $khamis .'|'.
-        $jumaat .'|'.
-        $sabtu .'|'.
-        $ahad;
+        $store_status = $store_status .'~'. 
+                        $ahad.'|'.
+                        $isnin .'|'.
+                        $selasa .'|'.
+                        $rabu .'|'.
+                        $khamis .'|'.
+                        $jumaat .'|'.
+                        $sabtu;
 
         if(strpos($store_map,":")){
             $lat = explode(',',$store_map)[0];

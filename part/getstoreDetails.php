@@ -49,12 +49,17 @@
                 $mm = date('i', strtotime($day)); //01
 
                 //print Operation time
-                for($i = 0; $i <count($store_statusA);$i++){
+                for($i = 0; $i <count($store_statusA);$i++){ 
+                    $istoday = '';
                     if(strpos($store_statusA[$i],'#')){
                         $s = explode('#',$store_statusA[$i]);  
                         $d = ucfirst($s[0]);
 
-                        $operation .= '<tr id="'.$d.'" title="Closed on '.$d.'">
+                        if($today == $i){
+                            $istoday = 'class="today"';
+                        }
+
+                        $operation .= '<tr id="'.$d.'" title="Closed on '.$d.'" '.$istoday.'>
                                         <td>'.$d.'</td>
                                         <td class="opens" style="color:red"> Tutup </td>
                                         <td> </td>
@@ -66,16 +71,15 @@
                         $d = ucfirst($s[0]);
                         $t = explode('>',str_replace(':','',$s[1])); //0800 1800
     
-                        $istoday = '';
-                        $statusP = '';
-                        if(($today-1) == $i){
+                        $statusP = ''; 
+                        if($today == $i){
                             $istoday = 'class="today"';
                             if((int)($hh.$mm) > (int)$t[0] and (int)($hh.$mm) < (int)$t[1]){
                                 $status = '[BUKA]';
                             } 
                             $statusP = $status;
                         }
-                        $operation .= '<tr id="'.$d.'" title="Open '.$d.' at 9am to 6pm" '.$istoday.'">
+                        $operation .= '<tr id="'.$d.'" title="Open '.$d.' at 9am to 6pm" '.$istoday.'>
                                         <td>'.$d.'</td>
                                         <td class="opens">'.date('h:i a',strtotime($t[0])).'</td>
                                         <td>'.$statusP.'</td>

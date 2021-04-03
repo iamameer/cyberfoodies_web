@@ -434,7 +434,7 @@ form .group-input textarea{
 }
 .today {
   color: #fff;
-  background-color: rgb(218, 131, 1);
+  background-color: rgb(241, 168, 57);
 }
 .opening-hours-table tr td:first-child {
   font-weight:bold;
@@ -465,4 +465,10 @@ form .group-input textarea{
 
 a.alink:visited{
   color: rgb(211, 57, 83)!important;
+}
+
+.group-input{ 
+	border: 1px solid #e7ab3c;
+  border-right: 0px none !important;
+  padding: 5px!important;
 }

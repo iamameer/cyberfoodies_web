@@ -165,7 +165,7 @@
                 $hh = date('H', strtotime($day)); //16 
                 $mm = date('i', strtotime($day)); //01
 
-                $d = $store_statusA[($today-1)];
+                $d = $store_statusA[($today)];
                 if(strpos($d,'#')){ 
                     $s = explode('#',$d); //08:00>18:00
                 }else{ 
