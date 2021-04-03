@@ -7,10 +7,10 @@
 
 function searchFood(){ 
     var x = document.getElementById("searchInput").value;
-    if(x.length<2){
-        alert("Please insert a logical keyword to be searched");
-        return;
-    }
+    // if(x.length<2){
+    //     alert("Please insert a logical keyword to be searched");
+    //     return;
+    // }
     
     var url = window.location.href;
     if(url.includes("browsestore.php")){
@@ -33,7 +33,11 @@ function searchFood(){
 function filterStore(){
 
     //search input
-    var x = document.getElementById("searchInput").value;   
+    var x = document.getElementById("searchInput").value;  
+    // if(x.length<2){
+    //     alert("Please insert a logical keyword to be searched");
+    //     return;
+    // } 
     var search = "search="+x; 
 
     //district checkbox
@@ -55,12 +59,12 @@ function filterStore(){
     } 
 
     //status
-    var status = "&status="+document.getElementById("storestatus").value;
+    //var status = "&status="+document.getElementById("storestatus").value;
 
     //category
     var category = "&category="+document.getElementById("category").value;
 
-    window.location.replace("browsestore.php?"+search+district+status+category);
+    window.location.replace("browsestore.php?"+search+district+category);
 
     // if(x.length>0){
     //     window.location.replace("browsestore.php?search="+x+district+status+category);
@@ -140,4 +144,36 @@ function floatbutton() {
         document.getElementById("myfloat").classList.remove("fa-chevron-circle-up");
         document.getElementById("myfloat").classList.add("fa-info-circle");
     }
+}
+
+function switched(toggle){
+    console.log("switched!")
+    let status = '#'
+    if(toggle.checked){
+        status = '@'
+    }
+    let eleName = toggle.getAttribute("name") //isninA
+    document.getElementById(eleName.slice(0,-1)).value = ''
+    document.getElementById(eleName.slice(0,-1)).value  = 
+        eleName.slice(0,-1)
+            +status+ 
+        document.getElementById(eleName.slice(0,-1)+"B").value 
+            +">"+ 
+        document.getElementById(eleName.slice(0,-1)+"C").value
+}
+
+function timechange(input){
+    console.log("timechange!")
+    let status = '#' 
+    let eleName = input.getAttribute("name") // isninB or isninC
+    if( document.getElementById(eleName.slice(0,-1)+"A").checked){
+        status = '@'
+    }
+    document.getElementById(eleName.slice(0,-1)).value = ''
+    document.getElementById(eleName.slice(0,-1)).value  = 
+        eleName.slice(0,-1)
+            +status+ 
+        document.getElementById(eleName.slice(0,-1)+"B").value 
+            +">"+ 
+        document.getElementById(eleName.slice(0,-1)+"C").value
 }

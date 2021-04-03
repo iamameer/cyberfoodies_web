@@ -30,15 +30,38 @@
             if(strpos($thumb,'/'.$store_id.'/')){
                 $thumb = explode("/".$store_id."/",$thumb)[0] .'/'.$store_id.'/thumb_'. explode("/".$store_id."/",$thumb)[1];
             }
-            $img =  '<img src="'.$thumb.'" @/>';
-            // if(strlen($row["store_picture"] )< 10){
-            //     $img = "<img src='img/blog/sample-shop-image-min.png' @>";
-            // }else{
-            //     $img =  '<img src="data:image/jpeg;base64,'.base64_encode( $row["store_picture"] ).'" @/>';
-            // }
+            $img =  '<img src="'.$thumb.'" @/>'; 
 
             $linkimage = '<a href="store.php?store_id='.$row['store_id'].'">' . str_replace('@','style="height: 100%; width: 100%; object-fit: cover"',$img) . '</a>';
             
+            $status = '[TUTUP]';
+                if(strpos($row['store_status'],'~')){
+                    $store_statusA = explode('|',explode('~',$row['store_status'])[1]); // isnin#08:00>18:00
+                    
+                    $time = new DateTime();
+                    $time->setTimezone(new DateTimeZone('Asia/Kuala_Lumpur')); 
+                    $day = $time->format('Y-m-d H:i:s');
+                    $today = date('w', strtotime($day)); //6
+                    $hh = date('H', strtotime($day)); //16 
+                    $mm = date('i', strtotime($day)); //01
+
+                    $d = $store_statusA[($today-1)];
+                    if(strpos($d,'#')){ 
+                        $s = explode('#',$d); //08:00>18:00
+                    }else{ 
+                        $s = explode('@',$d); //08:00>18:00
+                    }
+                    $t = explode('>',str_replace(':','',$s[1])); //0800 1800
+ 
+                    if((int)($hh.$mm) > (int)$t[0] and (int)($hh.$mm) < (int)$t[1]){
+                        $status = '[BUKA]';
+                    } 
+
+                    $store_status = $status;
+                }else{
+                    $store_status = $row['store_status'];
+                }
+ 
             echo ' <div class="col-lg-4 col-sm-6" style="margin-top:10px">
                     <div class="blog-item" >
                         <div class="bi-pic">
@@ -48,7 +71,7 @@
                             <a href="store.php?store_id='.$row['store_id'].'">
                                 <h4>'.$row["store_name"] .'</h4>
                             </a>
-                            <p>'.$row["store_status"] .'<span>- '.$row["store_district"] .'</span></p>
+                            <p>'.$store_status .'<span>- '.$row["store_district"] .'</span></p>
                         </div>
                     </div>
                 </div>';

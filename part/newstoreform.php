@@ -70,8 +70,123 @@
   
         <div class="group-input">
             <label for="time">Waktu operasi (Operating Time)</label>
+               <br>
+            <div style="display:none;">
+                <input type="text" id="isnin" name="isnin" value="isnin#08:00>18:00"></input> 
+                <input type="text" id="selasa" name="selasa" value="selasa#08:00>18:00"></input> 
+                <input type="text" id="rabu" name="rabu" value="rabu#08:00>18:00"></input> 
+                <input type="text" id="khamis" name="khamis" value="khamis#08:00>18:00"></input> 
+                <input type="text" id="jumaat" name="jumaat" value="jumaat#08:00>18:00"></input> 
+                <input type="text" id="sabtu" name="sabtu" value="sabtu#08:00>18:00"></input> 
+                <input type="text" id="ahad" name="ahad" value="ahad#08:00>18:00"></input> 
+            </div>  
+            <div class="toggleA">
+                <input type="checkbox" class="checkA" id="isninA" name="isninA" onchange="switched(this)">
+                    <b class="b switchA"></b>
+                    <b class="b trackA"></b> 
+                    <span style="margin-left:90px;width:100%">
+                        Isnin 
+                        <input type="time" value="08:00" step="900" class="timeclock" 
+                            style="left: 150px!important;top: -15px!important;"
+                            id="isninB" name="isninB" onchange="timechange(this)"> 
+                        <input type="time" value="18:00" step="900" class="timeclock"
+                            style="left: 310px!important;top: -15px!important;"
+                            id="isninC" name="isninC" onchange="timechange(this)">
+                    </span>
+            </div> 
+            <br>
+            <div class="toggleA">
+                <input type="checkbox" class="checkA" id="selasaA" name="selasaA" onchange="switched(this)">
+                    <b class="b switchA"></b>
+                    <b class="b trackA"></b> 
+                    <span style="margin-left:90px;margin-bottom:10px;width:100%">
+                        Selasa 
+                        <input type="time" value="08:00" step="900" class="timeclock" 
+                            style="left: 150px!important;top: -15px!important;"
+                            id="selasaB" name="selasaB" onchange="timechange(this)">
+                        <input type="time" value="18:00" step="900" class="timeclock"
+                            style="left: 310px!important;top: -15px!important;"
+                            id="selasaC" name="selasaC" onchange="timechange(this)">
+                    </span>
+            </div> 
+            <br>
+            <div class="toggleA">
+                <input type="checkbox" class="checkA" id="rabuA" name="rabuA" onchange="switched(this)">
+                    <b class="b switchA"></b>
+                    <b class="b trackA"></b> 
+                    <span style="margin-left:90px;margin-bottom:10px;width:100%">
+                        Rabu 
+                        <input type="time" value="08:00" step="900" class="timeclock" 
+                            style="left: 150px!important;top: -15px!important;"
+                            id="rabuB" name="rabuB" onchange="timechange(this)"> 
+                        <input type="time" value="18:00" step="900" class="timeclock"
+                            style="left: 310px!important;top: -15px!important;"
+                            id="rabuC" name="rabuC" onchange="timechange(this)">
+                    </span>
+            </div> 
+            <br>
+            <div class="toggleA">
+                <input type="checkbox" class="checkA" id="khamisA" name="khamisA" onchange="switched(this)">
+                    <b class="b switchA"></b>
+                    <b class="b trackA"></b> 
+                    <span style="margin-left:90px;margin-bottom:10px;width:100%">
+                        Khamis 
+                        <input type="time" value="08:00" step="900" class="timeclock" 
+                            style="left: 150px!important;top: -15px!important;"
+                            id="khamisB" name="khamisB" onchange="timechange(this)"> 
+                        <input type="time" value="18:00" step="900" class="timeclock"
+                            style="left: 310px!important;top: -15px!important;"
+                            id="khamisC" name="khamisC" onchange="timechange(this)">
+                    </span>
+            </div> 
+            <br>
+            <div class="toggleA">
+                <input type="checkbox" class="checkA" id="jumaatA" name="jumaatA" onchange="switched(this)">
+                    <b class="b switchA"></b>
+                    <b class="b trackA"></b> 
+                    <span style="margin-left:90px;margin-bottom:10px;width:100%">
+                        Jumaat 
+                        <input type="time" value="08:00" step="900" class="timeclock" 
+                            style="left: 150px!important;top: -15px!important;"
+                            id="jumaatB" name="jumaatB" onchange="timechange(this)">
+                        <input type="time" value="18:00" step="900" class="timeclock"
+                            style="left: 310px!important;top: -15px!important;"
+                            id="jumaatC" name="jumaatC" onchange="timechange(this)">
+                    </span>
+            </div> 
+            <br>
+            <div class="toggleA">
+                <input type="checkbox" class="checkA" id="sabtuA" name="sabtuA" onchange="switched(this)">
+                    <b class="b switchA"></b>
+                    <b class="b trackA"></b> 
+                    <span style="margin-left:90px;margin-bottom:10px;width:100%">
+                        Sabtu 
+                        <input type="time" value="08:00" step="900" class="timeclock" 
+                            style="left: 150px!important;top: -15px!important;"
+                            id="sabtuB" name="sabtuB" onchange="timechange(this)"> 
+                        <input type="time" value="18:00" step="900" class="timeclock"
+                            style="left: 310px!important;top: -15px!important;"
+                            id="sabtuC" name="sabtuC" onchange="timechange(this)">
+                    </span>
+            </div> 
+            <br>
+            <div class="toggleA">
+                <input type="checkbox" class="checkA" id="ahadA" name="ahadA" onchange="switched(this)">
+                    <b class="b switchA"></b>
+                    <b class="b trackA"></b> 
+                    <span style="margin-left:90px;margin-bottom:10px;width:100%">
+                        Ahad 
+                        <input type="time" value="08:00" step="900" class="timeclock" 
+                            style="left: 150px!important;top: -15px!important;"
+                            id="ahadB" name="ahadB" onchange="timechange(this)">
+                        <input type="time" value="18:00" step="900" class="timeclock"
+                            style="left: 310px!important;top: -15px!important;"
+                            id="ahadC" name="ahadC" onchange="timechange(this)">
+                    </span>
+            </div> 
+          
             <textarea title="Use # for a newline" type="text" id="time" name="time" 
-            placeholder="eg: Setiap Hari 8am dan 4pm, last order 10pm" &#13; (# = new line)></textarea>
+            placeholder="(Jika lain) eg: Setiap Hari 8am dan 4pm, last order 10pm &#13; (# = new line)"></textarea>
         </div> 
 
         <div class="group-input">

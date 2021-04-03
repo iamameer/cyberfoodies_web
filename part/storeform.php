@@ -132,10 +132,72 @@
             echo '  </select>
                 </div>';
 
+                
+
             echo '<div class="group-input">
-                    <label for="time">Waktu operasi (Operating Time)</label>
-                    <textarea title="Use # for a newline" type="text" id="time" name="time"  
-                    placeholder="eg: Setiap Hari 8am dan 4pm, last order 10pm&#13; (# = new line)">'.$store_time.'</textarea>
+            <label for="time">Waktu operasi (Operating Time)</label>';
+
+            if(strpos($store_status,'~')){
+                $store_statusA = explode('|',explode('~',$store_status)[1]); // isnin#08:00>18:00 
+            echo  ' <br>
+                    <div style="display:none;">
+                        <input type="text" id="isnin" name="isnin" value="'.$store_statusA[0].'"></input> 
+                        <input type="text" id="selasa" name="selasa" value="'.$store_statusA[1].'"></input> 
+                        <input type="text" id="rabu" name="rabu" value="'.$store_statusA[2].'"></input> 
+                        <input type="text" id="khamis" name="khamis" value="'.$store_statusA[3].'"></input> 
+                        <input type="text" id="jumaat" name="jumaat" value="'.$store_statusA[4].'"></input> 
+                        <input type="text" id="sabtu" name="sabtu" value="'.$store_statusA[5].'"></input> 
+                        <input type="text" id="ahad" name="ahad" value="'.$store_statusA[6].'"></input> 
+                    </div>';
+
+              //print Operation time
+              for($i = 0; $i <count($store_statusA);$i++){ 
+                $checked = '';
+                if(strpos($store_statusA[$i],'#')){
+                    $s = explode('#',$store_statusA[$i]);   
+                    $checked = '';
+                }else{
+                    $s = explode('@',$store_statusA[$i]); //08:00>18:00
+                    $checked = 'checked';
+                }
+                $d = $s[0];
+                $t = explode('>',$s[1]); //08:00 18:00
+    
+                echo ' <div class="toggleA">
+                        <input type="checkbox" class="checkA" id="'.$d.'A" name="'.$d.'A" 
+                        '.$checked.'
+                        onchange="switched(this)">
+                            <b class="b switchA"></b>
+                            <b class="b trackA"></b> 
+                            <span style="margin-left:90px;width:100%">
+                                '.ucfirst($d).'
+                                <input type="time" value="'.$t[0].'" step="900" class="timeclock" 
+                                    style="left: 150px!important;top: -15px!important;"
+                                    id="'.$d.'B" name="'.$d.'B" onchange="timechange(this)"> 
+                                <input type="time" value="'.$t[1].'" step="900" class="timeclock"
+                                    style="left: 310px!important;top: -15px!important;"
+                                    id="'.$d.'C" name="'.$d.'C" onchange="timechange(this)">
+                            </span>
+                    </div>';
+                if($i == (count($store_statusA)-1)){
+                    echo '<br>';
+                }
+              }//end for
+ 
+            }else{
+                echo ' <div style="display:none;">
+                            <input type="text" id="isnin" name="isnin" value="isnin#08:00>18:00"></input> 
+                            <input type="text" id="selasa" name="selasa" value="selasa#08:00>18:00"></input> 
+                            <input type="text" id="rabu" name="rabu" value="rabu#08:00>18:00"></input> 
+                            <input type="text" id="khamis" name="khamis" value="khamis#08:00>18:00"></input> 
+                            <input type="text" id="jumaat" name="jumaat" value="jumaat#08:00>18:00"></input> 
+                            <input type="text" id="sabtu" name="sabtu" value="sabtu#08:00>18:00"></input> 
+                            <input type="text" id="ahad" name="ahad" value="ahad#08:00>18:00"></input> 
+                        </div>  ';
+            }
+
+            echo '<textarea title="Use # for a newline" type="text" id="time" name="time"  
+                    placeholder="(Jika lain) eg: Setiap Hari 8am dan 4pm, last order 10pm&#13; (# = new line)">'.$store_time.'</textarea>
                 </div> ';
 
             echo '<div class="group-input">

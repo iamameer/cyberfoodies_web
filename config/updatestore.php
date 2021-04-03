@@ -33,6 +33,24 @@
         $store_info = $_POST['additional'];
         $store_map = $_POST['latlong'];
 
+        //operation time
+        $isnin = $_POST['isnin'];
+        $selasa = $_POST['selasa'];
+        $rabu = $_POST['rabu'];
+        $khamis = $_POST['khamis'];
+        $jumaat = $_POST['jumaat'];
+        $sabtu = $_POST['sabtu'];
+        $ahad = $_POST['ahad'];
+
+        $store_status = $store_status .'~'.
+        $isnin .'|'.
+        $selasa .'|'.
+        $rabu .'|'.
+        $khamis .'|'.
+        $jumaat .'|'.
+        $sabtu .'|'.
+        $ahad;
+
         $sql = 'UPDATE '.$details['database'] .'.' .$details['store_table']. 
                 ' SET 
                 store_name = "'.$store_name.'",

@@ -17,7 +17,7 @@
         </script>";
     } 
 
-    $query = "SELECT store_location,store_time,store_delivery,store_order,store_info,user_id, store_map  
+    $query = "SELECT store_location,store_time,store_status,store_delivery,store_order,store_info,user_id, store_map  
             FROM ".$details['database'].".".$details['store_table'] .
             " WHERE store_id = '" . $store_id ."'";
 
@@ -33,21 +33,67 @@
                $store_info = $row['store_info'];
                $user_id = $row['user_id'];
                $store_map = $row['store_map'];
+               $store_status = $row['store_status'];
             }
 
-            // echo ' <tr class="productrow">
-            //         <td class="dis" style="padding-left:10px;padding-right:10px;">'."aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa".'</td>
-            //         <td class="dis" style="padding-left:10px;padding-right:10px;display:none;">'.$store_time.'</td>
-            //         <td class="dis" style="padding-left:10px;padding-right:10px;display:none;">'.$store_delivery.'</td>
-            //         <td class="dis" style="padding-left:10px;padding-right:10px;display:none;">'.$store_order.'</td>
-            //         <td class="dis" id="info5" style="padding-left:10px;padding-right:10px;display:none;">'.$store_info.'</td>
-            //     </tr>';
+            $operation = '';
+            $status = '[TUTUP]';
+            if(strpos($store_status,'~')){
+                $store_statusA = explode('|',explode('~',$store_status)[1]); // isnin#08:00>18:00
 
-           
+                $time = new DateTime();
+                $time->setTimezone(new DateTimeZone('Asia/Kuala_Lumpur')); 
+                $day = $time->format('Y-m-d H:i:s');
+                $today = date('w', strtotime($day)); //6
+                $hh = date('H', strtotime($day)); //16 
+                $mm = date('i', strtotime($day)); //01
+
+                //print Operation time
+                for($i = 0; $i <count($store_statusA);$i++){
+                    if(strpos($store_statusA[$i],'#')){
+                        $s = explode('#',$store_statusA[$i]);  
+                        $d = ucfirst($s[0]);
+
+                        $operation .= '<tr id="'.$d.'" title="Closed on '.$d.'">
+                                        <td>'.$d.'</td>
+                                        <td class="opens" style="color:red"> Tutup </td>
+                                        <td> </td>
+                                        <td class="closes" style="color:red"> (Closed) </td>
+                                    </tr>';
+                    }else{
+                        $s = explode('@',$store_statusA[$i]); //08:00>18:00
+
+                        $d = ucfirst($s[0]);
+                        $t = explode('>',str_replace(':','',$s[1])); //0800 1800
+    
+                        $istoday = '';
+                        $statusP = '';
+                        if(($today-1) == $i){
+                            $istoday = 'class="today"';
+                            if((int)($hh.$mm) > (int)$t[0] and (int)($hh.$mm) < (int)$t[1]){
+                                $status = '[BUKA]';
+                            } 
+                            $statusP = $status;
+                        }
+                        $operation .= '<tr id="'.$d.'" title="Open '.$d.' at 9am to 6pm" '.$istoday.'">
+                                        <td>'.$d.'</td>
+                                        <td class="opens">'.date('h:i a',strtotime($t[0])).'</td>
+                                        <td>'.$statusP.'</td>
+                                        <td class="closes">'.date('h:i a',strtotime($t[1])).'</td>
+                                    </tr>';
+                    }
+                    
+                }//end for
+ 
+                $operation = '<div id="timetable" style="display:none"><table class="opening-hours-table" >
+                               '.$operation.'
+                            </table></div>';
+            }
+
             echo '</tbody>
             </table>';
 
-             echo ' <p class="dis" style="display:block;">'.str_replace('#','<br/>',$store_location).' 
+            echo ' <p class="dis" style="display:block;">'.str_replace('#','<br/>',$store_location).' 
                     <br/> 
                         <input type="text" id="latlong" name="latlong" value="'.$store_map.'" style="display:none" ></input> 
                         <div id="map" style="height:350px;width:auto"></div>  
@@ -56,7 +102,9 @@
                         src="https://maps.googleapis.com/maps/api/js?key='.$details['googleAPIKey'].'&callback=initMap&libraries=&v=weekly"
                         async ></script> 
                     </p> 
-                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_time).'</p>
+                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_time).'
+                        '.$operation.'
+                    </p>
                     <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_delivery).'</p>
                     <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_order).'</p>
                     <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_info).'</p>
@@ -76,9 +124,6 @@
 
             #Part edit/add mode 
             $owner = 'no';
-//             echo '  <a href="addProduct.php?store_id='.$store_id.'&mode=add" 
-//             class="primary-btn up-cart ownerbtn" style="margin-top:15px;background-color:#e7ab3c">Add product</a>
-// ';
             if(isset($_COOKIE["q"])){
                 $str = explode("|",htmlspecialchars($_COOKIE["q"]));
                 $q = explode("@",$str[1])[0];

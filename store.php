@@ -246,8 +246,9 @@ function report(item){
 }
 
 function setActive(th) {
-    var x =  document.getElementsByClassName("th");
-    var y = document.getElementsByClassName("dis");
+    var x =  document.getElementsByClassName("th"); //thead
+    var y = document.getElementsByClassName("dis"); //p
+    //var z = document.getElementsByClassName("opening-hours-table"); //tabletime
     for(var i=0;i<x.length;i++){
         if(x[i].innerHTML != th.innerHTML){
             x[i].style.backgroundColor = '#fff';
@@ -259,8 +260,6 @@ function setActive(th) {
             y[i].style.opacity = '1';
             y[i].style.display = 'block';
         }
-        // y[i].style.opacity = '0.6';
-        // y[i].style.display = 'none';
     }
     th.style.backgroundColor = '#fa9f37';
     th.style.opacity = '1';
@@ -269,6 +268,12 @@ function setActive(th) {
         document.getElementById("map").style.display = 'block';
     }else{ 
         document.getElementById("map").style.display = 'none';
+    }
+
+    if((th.innerHTML).includes("Waktu")){ 
+        document.getElementById("timetable").style.display = 'block';
+    }else{ 
+        document.getElementById("timetable").style.display = 'none';
     }
 }
 

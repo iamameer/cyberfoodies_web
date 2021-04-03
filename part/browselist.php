@@ -25,8 +25,12 @@
             }
             $found = substr($found,0,-3); 
             $query .= ' WHERE ' . $found;
-        }else{
-            $query .= " WHERE LOWER(product_name) like '%".strtolower($search)."%'";
+        }else{ 
+            if(strlen($search)>0){ 
+                $query .= " WHERE LOWER(product_name) like '%".strtolower($search)."%'";
+            }else{
+                $query .= " WHERE LENGTH(LOWER(product_name))>1 ";
+            }
         }
     }
 

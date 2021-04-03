@@ -327,3 +327,138 @@ form .group-input textarea{
   height:500px;
   width:auto;
 }
+
+/*TOGGLE -------------------*/
+
+.toggleA {
+  position: relative;
+  /* top: 50%;
+  left: 50%; */
+  width: 80px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 100px;
+  background-color: #ddd; 
+  
+  box-shadow: inset 0 0 2px 1px rgba(0,0,0,.05);
+}
+
+.checkA {
+  position: absolute !important;
+  display: block !important;
+  cursor: pointer !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 30px !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  z-index: 6 !important;
+}
+
+  .checkA:checked ~ .trackA {
+    box-shadow: inset 0 0 0 20px #4bd863;
+  }
+
+  .checkA:checked ~ .switchA {
+    right: 2px;
+    left: 48px;
+    transition: .35s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+    transition-property: left, right;
+    transition-delay: .05s, 0s;
+  }
+
+.switchA {
+  width: 30px !important;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  bottom: 2px;
+  right: 22px;
+  background-color: #fff;
+  border-radius: 36px;
+  z-index: 1;
+  transition: .35s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+  transition-property: left, right;
+  transition-delay: 0s, .05s;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+.trackA {
+  width: 80px !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: .35s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.05);
+  border-radius: 40px;
+}
+
+.timeclock{ 
+  width: 150px!important ;  
+  position: absolute   !important;
+  flex-direction: row !important; 
+  float: left!important;
+}
+
+
+/*OPENING TABLE -------------------*/
+.openinghours {
+  font-family:Lucida Console;
+  border-radius:4px;
+  margin:10px;
+  box-shadow: 0 0 10px black;
+  padding:0 10px 0 10px;
+  overflow: hidden;
+  display: inline-block;
+}
+.openinghourscontent {
+  float:left;
+}
+.openinghourscontent h2 {
+  display:block;
+  text-align:center;
+  margin-top:.33em;
+}
+.openinghourscontent button {
+  color:white;
+  font-family:Courier New;
+  font-size:large;
+  font-weight:bolder;
+  background-color:#4679BD;
+  border-radius:4px;
+  width:100%;
+  margin-bottom:10px;
+}
+.today {
+  color: #fff;
+  background-color: rgb(218, 131, 1);
+}
+.opening-hours-table tr td:first-child {
+  font-weight:bold;
+}
+#open-status {
+  display:block;
+  margin-top:-1em;
+  text-align:center;
+  border:dotted lightgrey 3px;
+}
+.openorclosed:after {
+  content:" open during these hours:";
+}
+.open {
+  color:green;
+}
+/* .open:after {
+  content:" Open";
+  color: #6C0;
+}
+.closed:after {
+  content:" Closed";
+  color: red;
+} */
+.opening-hours-table tr td {
+  padding:5px;
+}

@@ -162,17 +162,19 @@
                           
                     </div>
 
-                    <div class="filter-widget filter-widget2" style="margin-top:-30px;">
+                   <!--  <div class="filter-widget filter-widget2" style="margin-top:-30px;">
                         <h4 class="fw-title">Status</h4>
                         <select type="text" id="storestatus" name="storestatus" placeholder="Status :">
                           <?php 
-                            $arr = array('<option selected="" value = "Open">Buka (Open)</option>',
-                                         '<option selected="" value = "Closed">Tutup (Closed)</option>',
-                                         '<option selected="" value = "Holiday">Cuti (Holiday)</option>',
-                                         '<option selected="" value = "Moved">Berpindah (Moved)</option>',
-                                         '<option selected="" value = "Setting">Dalam proses (Setting up)</option>',
-                                         '<option selected="" value = "Other">Lain (Other)</option>',
-                                         '<option selected="" value = "Any">Semua (Any)</option>');
+                            $arr = array( '<option selected="" value = "Closed">Tutup (Closed)</option>',
+                                          '<option selected="" value = "Open">Buka (Open)</option>'
+                                        );
+                                          
+                                        //  '<option selected="" value = "Holiday">Cuti (Holiday)</option>',
+                                        //  '<option selected="" value = "Moved">Berpindah (Moved)</option>',
+                                        //  '<option selected="" value = "Setting">Dalam proses (Setting up)</option>',
+                                        //  '<option selected="" value = "Other">Lain (Other)</option>',
+                                        //  '<option selected="" value = "Any">Semua (Any)</option>'
 
                             foreach($arr as $item){
                                 if(isset($_GET['status'])){
@@ -184,9 +186,9 @@
                                 }
                                 echo $item;
                             }
-                          ?>
+                          ?> 
                         </select>
-                    </div>
+                    </div>-->
 
                     <div class="filter-widget filter-widget2" style="margin-top:-20px;">
                         <h4 class="fw-title">Category</h4>
@@ -239,9 +241,11 @@
                                         <option value="">Alphabet: A to Z</option>
                                         <option value="">Alphabet: Z to A</option> 
                                     </select>
-                                    <!-- <select class="p-show">
-                                        <option value="">Show:</option>
-                                    </select> -->
+                                    <select class="sorting statuskedai">
+                                        <option value="">Status:</option>
+                                        <option value="">Buka</option>
+                                        <option value="">Tutup</option> 
+                                    </select>
                                 </div>
                             </div>
                             <style type="text/css">
@@ -309,54 +313,6 @@
 
     $(document).ready(function(){
 
-        // $('.filter-btn').click(function(){
-
-        //     var pmin = $('#minamount').val();
-        //     pmin = pmin.indexOf("RM") >= 0 ? pmin.split("RM")[1] : pmin;
-
-        //     var pmax = $('#maxamount').val();
-        //     pmax = pmax.indexOf("RM") >= 0 ? pmax.split("RM")[1] : pmax;
-
-        //     var filter = "pmin="+pmin+"&pmax="+pmax;
-
-        //     var url = window.location.href;
-        //     if(url.indexOf("php?") >= 0){
-        //         url += "&";
-        //     }else{
-        //         url += "?";
-        //     }
-
-        //     if(url.indexOf("pmin") >= 0){
-        //         url = url.split("pmin")[0];
-        //     }
- 
-        //     //status
-        //     var status = '&status=';
-        //     if ($('input#available').is(':checked')) {
-        //         status += "a";
-        //     }
-        //     if ($('input#limited').is(':checked')) {
-        //         status += "b";
-        //     }
-        //     if ($('input#outofstock').is(':checked')) {
-        //         status += "c";
-        //     }
-        //     if ($('input#tobeadded').is(':checked')) {
-        //         status += "d";
-        //     }
-        //     if ($('input#preorder').is(':checked')) {
-        //         status += "e";
-        //     }
-        //     if ($('input#other').is(':checked')) {
-        //         status += "f";
-        //     }
-
-        //     filter += status;
-
-        //     $(location).attr('href',url+filter);
-
-        // });
-
         $('.sorting').on('change',function(){  
             var url = window.location.href;
             if(url.indexOf("php?") >= 0){
@@ -379,11 +335,19 @@
             }
         });
 
-        // $("#available").change(function() {
-        //     if(this.checked) {
-        //         //Do stuff
-        //     }
-        // });
+        $('.statuskedai').on('change',function(){   
+            var status = $('.current').text(); 
+            if(status.indexOf("Tutup") >= 0){
+                $('.TUTUP').css("display", "block");
+                $('.BUKA').css("display", "none");
+            }else if(status.indexOf("Buka") >= 0){
+                $('.TUTUP').css("display", "none");
+                $('.BUKA').css("display", "block");
+            }else{
+                $('.TUTUP').css("display", "block");
+                $('.BUKA').css("display", "block");
+            }
+        });
 
     });
 </script>

@@ -31,6 +31,24 @@
     $store_category = $_POST['category'];
     $store_map = $_POST['latlong'];
 
+    //operation time
+    $isnin = $_POST['isnin'];
+    $selasa = $_POST['selasa'];
+    $rabu = $_POST['rabu'];
+    $khamis = $_POST['khamis'];
+    $jumaat = $_POST['jumaat'];
+    $sabtu = $_POST['sabtu'];
+    $ahad = $_POST['ahad'];
+
+    $store_status = $store_status .'~'.
+                    $isnin .'|'.
+                    $selasa .'|'.
+                    $rabu .'|'.
+                    $khamis .'|'.
+                    $jumaat .'|'.
+                    $sabtu .'|'.
+                    $ahad;
+
     if(strpos($store_map,":")){
         $lat = explode(',',$store_map)[0];
         $long = explode(',',$store_map)[1];

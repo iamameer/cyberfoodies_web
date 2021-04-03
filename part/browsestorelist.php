@@ -26,7 +26,11 @@
             $found = substr($found,0,-3); 
             $query .= ' WHERE ' . $found;
         }else{
-            $query .= " WHERE LOWER(store_name) like '%".strtolower($search)."%'";
+            if(strlen($search)>0){ 
+                $query .= " WHERE LOWER(store_name) like '%".strtolower($search)."%'";
+            }else{
+                $query .= " WHERE LENGTH(LOWER(store_name))>1 ";
+            }
         }
     }
 
@@ -57,20 +61,13 @@
                 } 
             }
             $dd = substr($dd,0,-1); 
-            if(strlen($search)>0){
+            if(strlen($dd)>0){
                 $query .= " AND store_district IN ( ".$dd. ")";
             }else{
                 $query .= " WHERE store_district IN ( ".$dd. ")";
             }
         }else{
-            $query .= " WHERE 1 ";
-        }
-    }
-
-    if(isset($_GET['status'])){
-        $status = $_GET['status'];
-        if(strlen($status)>0 AND strtolower($status) != 'any'){
-            $query .= " AND store_status IN ( '".$status. "')"; 
+            //$query .= " AND WHERE 1 ";
         }
     }
 
@@ -109,13 +106,6 @@
         var_dump($result->num_rows);
         trigger_error('Invalid query: ' . $conn->error);
     }
-
-    //Counters [old]
-    // $queryCount = str_replace("SELECT *","SELECT count(id) as total",$query);
-    // $resultCount = mysqli_query($conn,$queryCount);
-    // $dataCount = mysqli_fetch_assoc($resultCount);
-
-    // $totalCount = isset($_GET['search']) ? $result-> num_rows : $dataCount['total'];
 
     //Counters
     $totalCount = 0;
@@ -162,10 +152,38 @@
             $store_district = $row['store_district'];
             $store_order = $row['store_order'];
             $store_phone = $row['store_phone'];
-            $store_time = $row['store_time'];
-            $store_status = $row['store_status'];
+            $store_time = $row['store_time']; 
             $store_category = $row['store_category'];
+            $status = 'TUTUP';
+            if(strpos($row['store_status'],'~')){
+                $store_statusA = explode('|',explode('~',$row['store_status'])[1]); // isnin#08:00>18:00
+                
+                $time = new DateTime();
+                $time->setTimezone(new DateTimeZone('Asia/Kuala_Lumpur')); 
+                $day = $time->format('Y-m-d H:i:s');
+                $today = date('w', strtotime($day)); //6
+                $hh = date('H', strtotime($day)); //16 
+                $mm = date('i', strtotime($day)); //01
 
+                $d = $store_statusA[($today-1)];
+                if(strpos($d,'#')){ 
+                    $s = explode('#',$d); //08:00>18:00
+                }else{ 
+                    $s = explode('@',$d); //08:00>18:00
+                }
+                $t = explode('>',str_replace(':','',$s[1])); //0800 1800
+
+                if((int)($hh.$mm) > (int)$t[0] and (int)($hh.$mm) < (int)$t[1]){
+                    $status = 'BUKA';
+                } 
+
+                $store_status = $status;
+                $statusid = $status;
+            }else{
+                $store_status = $row['store_status'];
+                $statusid = 'BUKA';
+            }
+ 
             $thumb = $row["store_picture_url"] ? $row["store_picture_url"] : 'img/blog/sample-shop-image-min.png';
             if(strpos($thumb,'/'.$store_id.'/')){
                 $thumb = explode("/".$store_id."/",$thumb)[0] .'/'.$store_id.'/thumb_'. explode("/".$store_id."/",$thumb)[1];
@@ -179,16 +197,16 @@
 
             $url = 'store.php?store_id='.$store_id;
 
-            //stock color 
-            if(strtolower($store_status) == 'open'){
+            //status color 
+            if(strpos($store_status,'BUKA')){
                 $store_status = '<span style="color:green!important;">'.$store_status .'</span>';
-            }else if(strtolower($store_status) == 'closed'){
+            }else  if(strpos($store_status,'TUTUP')){
                 $store_status = '<span style="color:red!important;">'.$store_status .'</span>';
             }else{
                 $store_status = '<span style="color:#fc8803!important;">'.$store_status .'</span>';
             }
 
-            echo '  <div class="col-lg-4 col-sm-6 mobilelist">
+            echo '  <div class="col-lg-4 col-sm-6 mobilelist '.$statusid.'">
                         <div class="product-item">
                             <div class="pi-pic" style="overflow:hidden!important;"><a href="'.$url.'">
                                 '.str_replace('@','',$img) .'
