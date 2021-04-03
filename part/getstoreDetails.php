@@ -98,6 +98,9 @@
             $url = '~(?:(https?)://([^\s<]+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i'; 
             $store_order = preg_replace($url, '<a class="alink" href="$0" target="_blank" title="$0">$0</a>', $store_order);
             $store_info = preg_replace($url, '<a  class="alink" href="$0" target="_blank" title="$0">$0</a>', $store_info);
+             
+            $store_map = str_replace('{',"",$store_map);
+            $store_map = str_replace('}',"",$store_map);
             echo ' <p class="dis" style="display:block;">'.str_replace('#','<br/>',$store_location).' 
                     <br/> 
                         <input type="text" id="latlong" name="latlong" value="'.$store_map.'" style="display:none" ></input> 

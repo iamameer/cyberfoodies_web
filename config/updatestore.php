@@ -51,6 +51,13 @@
         $sabtu .'|'.
         $ahad;
 
+        if(strpos($store_map,":")){
+            $lat = explode(',',$store_map)[0];
+            $long = explode(',',$store_map)[1];
+            $store_map = explode(':',$lat)[1] . "," . explode(':',$long)[1]; 
+            $store_map = trim($store_map);
+        }
+        
         $sql = 'UPDATE '.$details['database'] .'.' .$details['store_table']. 
                 ' SET 
                 store_name = "'.$store_name.'",
@@ -63,7 +70,7 @@
                 store_order = "'.$store_order.'",
                 store_phone = "'.$store_phone.'",
                 store_extratext = "'.$store_extratext.'",
-                store_info = "'.$store_info.'",
+                store_info = "'.$store_info.'", 
                 store_map = "'.$store_map.'"';
 
         #img 1.0

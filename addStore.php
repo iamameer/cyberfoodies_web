@@ -262,13 +262,23 @@ function handleChange2(checkbox) {
 
 function handleMap(checkbox) {
     if(checkbox.checked == true){
-        document.getElementById("spanmap").style.display = 'block';
-        document.getElementById("latlong").value = '{"lat": 2.9213,"lng": 101.6559}';
+        document.getElementById("spanmap").style.display = 'block';  
     }else{
         document.getElementById("spanmap").style.display = 'none';
     }
+    if(!document.getElementById("latlong").value) {
+        document.getElementById("latlong").value = '{"lat": 2.9213,"lng": 101.6559}' ;
+    }
+    //initmap();
 }
 
+if(document.getElementById("latlong").value) {
+    document.getElementById("checkmap").checked = true;
+    document.getElementById("spanmap").style.display = 'block';  
+}else{
+    document.getElementById("checkmap").checked = false;
+    document.getElementById("spanmap").style.display = 'none';  
+}
 // $(document).ready(function() {
 //     $("#storename").change(function() {
 //         var storename = $("#storename").val();
