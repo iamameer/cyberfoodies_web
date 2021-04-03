@@ -93,6 +93,11 @@
             echo '</tbody>
             </table>';
 
+            $store_order = str_replace('#',' <br/> ',$store_order);
+            $store_info = str_replace('#',' <br/> ',$store_info);
+            $url = '~(?:(https?)://([^\s<]+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i'; 
+            $store_order = preg_replace($url, '<a class="alink" href="$0" target="_blank" title="$0">$0</a>', $store_order);
+            $store_info = preg_replace($url, '<a  class="alink" href="$0" target="_blank" title="$0">$0</a>', $store_info);
             echo ' <p class="dis" style="display:block;">'.str_replace('#','<br/>',$store_location).' 
                     <br/> 
                         <input type="text" id="latlong" name="latlong" value="'.$store_map.'" style="display:none" ></input> 
@@ -106,8 +111,8 @@
                         '.$operation.'
                     </p>
                     <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_delivery).'</p>
-                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_order).'</p>
-                    <p class="dis" style="display:none;">'.str_replace('#','<br/>',$store_info).'</p>
+                    <p class="dis" style="display:none;">'.$store_order.'</p>
+                    <p class="dis" style="display:none;">'.$store_info.'</p>
                     ';
 
             #Part closure

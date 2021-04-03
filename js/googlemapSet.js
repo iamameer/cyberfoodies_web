@@ -29,7 +29,7 @@ function initMap() {
 
           // The map, centered at current_pos
             const map = new google.maps.Map(document.getElementById("map"), {
-              zoom: 12,
+              zoom: 15,
               center: pos,
             });
             // The marker, positioned at current_pos

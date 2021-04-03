@@ -79,9 +79,9 @@
                                 <i class="icon_heart_alt"></i>
                             </div>
                             <ul>
-                                <li class="w-icon quick-view"><a href="@">'.$product_stock.'</a></li>
-                                <li class="w-icon active"><a href="@">'.$store_district.'</a></li>
-                                <li class="w-icon"><a href="@" style="background:#25D366!important"><i class="fa fa-whatsapp"></i></a></li>
+                                <li class="w-icon quick-view"><a href="#">'.$product_stock.'</a></li>
+                                <li class="w-icon active"><a href="#">'.$store_district.'</a></li>
+                                <li class="w-icon"><a href="#" style="background:#25D366!important"><i class="fa fa-whatsapp"></i></a></li>
                             </ul>
                         </div>
                         <div class="pi-text">

@@ -14,7 +14,7 @@ function initMap() {
     const cyberjaya = {lat: latlong.lat, lng: latlong.lng};
     // The map, centered at cyberjaya
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 12,
+      zoom: 15,
       center: cyberjaya,
     });
     // The marker, positioned at cyberjaya

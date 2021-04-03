@@ -462,3 +462,7 @@ form .group-input textarea{
 .opening-hours-table tr td {
   padding:5px;
 }
+
+a.alink:visited{
+  color: rgb(211, 57, 83)!important;
+}
