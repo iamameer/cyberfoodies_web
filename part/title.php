@@ -9,6 +9,9 @@
     
     ##responsive // pwa
     echo '<link rel="stylesheet" href="css/pwa.css?v3" type="text/css">';
+
+    ##shoutout
+    echo '<link rel="stylesheet" href="shoutout/assets/css/styles.css" />';
     
     ## favico
     echo '  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">

@@ -20,7 +20,7 @@ function seturl(input){
             </li>
             <li id="storelist" ><a href="browsestore.php">Stores &#128722;</a></li>
             <li id="bazaar" ><a href="bazaar.php">Bazaar! &#x1F389;</a>
-            <li id="request"><a href="request.php">Request</a>
+            <li id="shoutout"><a href="shoutout.php">Shoutout &#128226;</a>
                 <!-- <ul class="dropdown">
                 <li><a href="announcement.php">Timeline</a></li>
                 </ul> -->
@@ -28,6 +28,7 @@ function seturl(input){
             <li id="etc" ><a href="#">Etc</a>
                 <ul class="dropdown">
                     <li id="tutorial"><a href="tutorial.php">Tutorial</a></li>
+                    <li id="request"><a href="request.php">Request</a>
                     <li id="announce"><a href="announcement.php">Anouncement</a></li>
                     <li id="faq"><a href="faq.php">FAQ</a></li>
                     <li id="dis"><a href="disclaimer.php">Disclaimer</a></li>

@@ -12,6 +12,13 @@
 
     $timeline = array(
             //0.icon  2.date  3.flag_color  4.flag_text  5.text_color,  6.$text
+        array("check","4th April 2021",$flag_green,"FEATURE",$text_green,
+        "Lots of new features! 
+            <ul>
+                <li>Feature: Automatic status (open/close)</li>
+                <li>New page: <a href='shoutout.php'>Pasar!</a></li>
+                <li>Feature: Magically detect any links!</li> 
+            </ul>"),
         array("info","24th March 2021",$flag_blue,"FEATURE",$text_blue,"Enhanced for mobile browsing!"),
         array("info","21st March 2021",$flag_blue,"FEATURE",$text_blue,"Comment/Review feature added!"),
         array("check","20th March 2021",$flag_green,"LAUNCH",$text_green,"Cybereats soft launching!"),
