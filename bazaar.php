@@ -79,6 +79,15 @@
         <div class="container">
             <!-- Deal Of The Week Section Begin -->
                 <?php include('exp/deal.php'); ?>
+               <center> <br>
+                <img src="https://i.imgur.com/T2OZwyC.jpg" class="bazaarads">
+                <br>Sumber: <a href="https://www.mpsepang.gov.my/en/main/">MP Sepang</a>
+                <br><br>
+                <img src="https://i.imgur.com/4hdmiyK.jpg" class="bazaarads">
+                <br>Sumber: <a href="https://twitter.com/shezzlahhhhh/status/1376829555260891139/photo/2">Twitter</a>
+                <br><br>
+                <img src="https://i.imgur.com/75XZxjI.jpg" class="bazaarads">
+                <br>Sumber: <a href="https://www.instagram.com/p/CMylLriFzFe/">Tamarind Square Instagram</a></center>
             <!--Deal Of The Week Section End -->
             
              <center><!--<img src="img/coming-soon.jpg" alt="" >

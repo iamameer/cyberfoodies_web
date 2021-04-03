@@ -192,7 +192,7 @@
                         </div>
                             <a href="#storeinfo" class="floatbutton" style="visibility:hidden;" onclick="floatbutton();" id="floatbutton">
                                 <i class="fa fa-info-circle my-float" id="myfloat"></i>
-                            </a>;
+                            </a>
                     </div>
                     <div class="blog-details-inner"> 
                         <div class="leave-comment review"> 

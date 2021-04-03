@@ -43,6 +43,7 @@
 
             $thumb = $row["product_image_url"] ? $row["product_image_url"] : 'img/sample/no-prod-img.jpg';
             list($width, $height) = getimagesize(dirname(__DIR__).'/'.$thumb);
+            $size = '';
             if($width> $height and strpos($thumb,'no-prod-img')){
                 $size = 'background-size:contain'; 
             }else if($width> $height and !strpos($thumb,'no-prod-img')){
