@@ -433,6 +433,25 @@
     /* 5. BAZAAR */ 
     .countdown-timer .cd-item { 
         margin-right: 10px!important;
+        height: 70px !important;
+        width: 14vw !important;
+    }
+    .countdown-timer .cd-item span{ 
+        font-size: 15px !important;
+    }
+    .countdown-timer .cd-item p{ 
+        font-size: 10px !important;
+    }
+    .deal-of-week{
+        padding-top: 2px !important;
+        margin-bottom:20px!important;
+    }
+
+    .bz h2{ 
+        font-size: 25px !important;
+    }
+    .bz p,  .bz i{ 
+        font-size: 15px !important;
     }
 
     /* STORE */
@@ -503,6 +522,11 @@
 
     .product-show-option .select-option .sorting.nice-select{
         padding-right: 40px!important;
+    }
+
+    .bazaarads{
+        height:auto !important;
+        width:90vw !important;
     }
 
 }

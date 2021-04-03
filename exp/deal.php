@@ -13,7 +13,7 @@
     -moz-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.42);">
                 <div class="container" >
                     <div class="col-lg-6 text-center"  style=" background: linear-gradient(rgba(0, 0, 0, .8),rgba(0,0,0,0));">
-                        <div class="section-title">
+                        <div class="section-title bz">
                             <h2 style="color:silver; ">'.$title.'</h2>
                             '.$message.'
                             <div class="product-price">
