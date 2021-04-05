@@ -12,15 +12,18 @@
     $str = explode("|",htmlspecialchars($_COOKIE["q"]));
     $user_id = explode("@",$str[1])[0];
     error_reporting(-1); ini_set('display_errors',1);
+
+    $max = 11;
     $query = "SELECT store_id, store_name, store_district, store_status, store_picture, store_picture_url 
             FROM ".$details['database'].".".$details['store_table'] .
-            " WHERE user_id = '" . $user_id . "' ORDER BY store_timestamp desc, store_status, store_district";
+            " WHERE user_id = '" . $user_id . "' ORDER BY store_timestamp desc, store_status, store_district LIMIT ".$max;
 
     //print_r($query);
     $result = $conn-> query($query);
-
+ 
     //If store found, populate
-    if(($result-> num_rows >= 0) AND ($result-> num_rows < 11)){
+    //AND ($result-> num_rows < $max)
+    if(($result-> num_rows >= 0)){
         $limit = false;
         //echo '<p>result found</p>';
         while($row = $result -> fetch_assoc()){

@@ -12,7 +12,8 @@
     if(isset($_COOKIE['q'])){
         $str = explode("|",htmlspecialchars($_COOKIE['q'])); 
         $user_id = explode("@",$str[1])[0];
-        $store_id = str_shuffle($user_id . rand ( 11 , 99 ).substr(str_replace(' ','',$store_name), 0, 5));
+        $temp = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $store_name));
+        $store_id = str_shuffle($user_id . rand ( 11 , 99 ).substr(str_replace(' ','',$temp), 0, 5));
     }else{
         $user_id = "uid";
         $store_id = "sid";
@@ -23,7 +24,8 @@
     $store_time = $_POST['time'];
     $store_delivery = $_POST['delivery'];
     $store_order = $_POST['howtoorder'];
-    $store_phone = $_POST['telephone'];
+    $store_phone =  str_replace(' ', '', $_POST['telephone']);
+    $store_phone =  str_replace('-', '', $store_phone);
     //$whatsapp = isset($_POST['whatsapp']) ? $_POST['whatsapp'] : "";
     $store_extratext = isset($_POST['extratext']) ? $_POST['extratext'] : "";
     $store_info = $_POST['additional'];
@@ -80,7 +82,7 @@
     $time = new DateTime();
     $time->setTimezone(new DateTimeZone('Asia/Kuala_Lumpur'));
     $time = $time->format('Y-m-d H:i:s');
-    $myfile = fopen($chkDir.$store_name.'_'.$time.'.txt', "a");
+    $myfile = fopen($chkDir.str_replace('/','@',$store_name).'_'.$time.'.txt', "a");
 
     #img 2.0
     $store_picture_url = 'img/blog/sample-shop-image-min.png';

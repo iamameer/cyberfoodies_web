@@ -95,7 +95,7 @@
         $time = new DateTime();
         $time->setTimezone(new DateTimeZone('Asia/Kuala_Lumpur'));
         $time = $time->format('Y-m-d H:i:s');
-        $myfile = fopen($chkDir.$store_name.'_'.$time.'.txt', "a");
+        $myfile = fopen($chkDir.str_replace('/','@',$store_name).'_'.$time.'.txt', "a");
         
         #img 2.0
         $store_picture_url = 'img/sample/no-store-img.jpg';

@@ -294,7 +294,7 @@
                     } 
                 }else{
                     if($i>0){ 
-                        $a = str_replace('#','browsestore.php?'.explode($p,$_SERVER['QUERY_STRING'])[0].'page='.($i+1),$a); //jQuery onclick ?
+                        $a = str_replace('#','browsestore.php?'.explode($p,$_SERVER['QUERY_STRING'])[0].$p.($i+1),$a); //jQuery onclick ?
                     }else{
                         $a = str_replace('class="page-btn"','class="page-btn active"',$a);
                     }  

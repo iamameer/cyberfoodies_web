@@ -12,7 +12,8 @@
     if(isset($_COOKIE['q'])){
         $str = explode("|",htmlspecialchars($_COOKIE['q'])); 
         $user_id = explode("@",$str[1])[0];
-        $product_id = str_shuffle($user_id . rand ( 11 , 99 ).substr(str_replace(' ','',$product_name), 0, 5));
+        $temp = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $product_name));
+        $product_id = str_shuffle($user_id . rand ( 11 , 99 ).substr(str_replace(' ','',$temp), 0, 5));
         $store_id = $_GET['store_id'];
     }else{
         $user_id = "uid";
@@ -22,6 +23,7 @@
     $product_price = $_POST['productprice'];
     $product_stock = $_POST['productstock'];
     $product_status = $_POST['productstatus'];
+    $product_description = $_POST['productdesc'];
 
     #img 1.0
     $image_file = '';
@@ -89,9 +91,10 @@
     }
 
     $sql = 'INSERT IGNORE INTO '.$details['database'] .'.' .$details['product_table'].
-            '(user_id, store_id,store_district,product_id,product_name, product_price, product_stock, product_status, product_image,product_image_url) 
+            '(user_id, store_id,store_district,product_id,product_name, product_description,
+            product_price, product_stock, product_status, product_image,product_image_url) 
             VALUES ("'.$user_id.'","'.$store_id.'","'.$store_district.'","'.$product_id.'",
-                "'.$product_name.'","'.$product_price.'","'.$product_stock.'","'.$product_status.'", "'.$image_file.'","'.$product_image_url.'")';
+                "'.$product_name.'", "'.$product_description.'","'.$product_price.'","'.$product_stock.'","'.$product_status.'", "'.$image_file.'","'.$product_image_url.'")';
     //print_r($sql);
     if(!$conn-> query($sql)){
         echo("Error: ".$conn->error);

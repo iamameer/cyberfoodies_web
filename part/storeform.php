@@ -132,7 +132,13 @@
             echo '  </select>
                 </div>';
 
-                
+            echo '<div class="group-input">
+                <label for="delivery">Maklumat Penghantaran (Delivery Information)</label>
+                <textarea title="Use # for a newline" type="text" id="delivery" name="delivery"  
+                placeholder="Cyberjaya (RM2) &#13;Putrajaya & Seri Kembangan (RM 4) &#13;Dengkil & Puchong (RM5)&#13; (# = new line)"
+                onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
+                onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()">'.$store_delivery.'</textarea>
+            </div>';
 
             echo '<div class="group-input">
             <label for="time">Waktu operasi (Operating Time)</label>';
@@ -171,10 +177,10 @@
                             <b class="b trackA"></b> 
                             <span style="margin-left:90px;width:100%">
                                 '.ucfirst($d).'
-                                <input type="time" value="'.$t[0].'" step="900" class="timeclock" 
+                                <input type="time" value="'.$t[0].'" step="60" class="timeclock" 
                                     style="left: 150px!important;top: -15px!important;"
                                     id="'.$d.'B" name="'.$d.'B" onchange="timechange(this)"> 
-                                <input type="time" value="'.$t[1].'" step="900" class="timeclock"
+                                <input type="time" value="'.$t[1].'" step="60" class="timeclock"
                                     style="left: 310px!important;top: -15px!important;"
                                     id="'.$d.'C" name="'.$d.'C" onchange="timechange(this)">
                             </span>
@@ -199,14 +205,6 @@
             echo '<textarea title="Use # for a newline" type="text" id="time" name="time"  
                     placeholder="(Jika lain) eg: Setiap Hari 8am dan 4pm, last order 10pm&#13; (# = new line)">'.$store_time.'</textarea>
                 </div> ';
-
-            echo '<div class="group-input">
-                    <label for="delivery">Maklumat Penghantaran (Delivery Information)</label>
-                    <textarea title="Use # for a newline" type="text" id="delivery" name="delivery"  
-                    placeholder="Cyberjaya (RM2) &#13;Putrajaya & Seri Kembangan (RM 4) &#13;Dengkil & Puchong (RM5)&#13; (# = new line)"
-                    onchange="checkIfEmpty()" onfocus="checkIfEmpty()" onblur="checkIfEmpty()" 
-                    onclick="checkIfEmpty()"  onkeyup="checkIfEmpty()">'.$store_delivery.'</textarea>
-                </div>';
 
             echo '<div class="group-input">
                     <label for="howtoorder">Cara Tempahan (How to order)</label>
@@ -237,7 +235,7 @@
                 echo $whatsapp;
             }
 
-            echo '<div class="group-input">
+            echo '<div class="group-input" style="border: none !important;">
                     <label for="extratext"></label>
                     <textarea title="Use # for a newline" type="text" id="extratext" name="extratext" 
                     placeholder="Text whatsapp (Contol/Example): 

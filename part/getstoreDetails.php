@@ -97,9 +97,16 @@
             echo '</tbody>
             </table>';
 
-            $store_order = str_replace('#',' <br/> ',$store_order);
+            $store_order = str_replace('#',' <br/> ',$store_order); 
+            $store_order = str_replace(' instagram.com',' http://instagram.com',$store_order); 
+            $store_order = str_replace(' wasap.my',' http://wasap.my',$store_order);
+            
             $store_info = str_replace('#',' <br/> ',$store_info);
+            $store_info = str_replace(' instagram.com',' http://instagram.com',$store_info); 
+            $store_info = str_replace(' wasap.my',' http://wasap.my',$store_info);
+ 
             $url = '~(?:(https?)://([^\s<]+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i'; 
+            
             $store_order = preg_replace($url, '<a class="alink" href="$0" target="_blank" title="$0">$0</a>', $store_order);
             $store_info = preg_replace($url, '<a  class="alink" href="$0" target="_blank" title="$0">$0</a>', $store_info);
              
