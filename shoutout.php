@@ -62,7 +62,7 @@
                             //         window.location.replace('index.php');</script>";
                             // }else{
                                 echo '<script type="text/javascript">
-                                        document.getElementById("bazaar").classList.add("active");
+                                        document.getElementById("shoutout").classList.add("active");
                                     </script>';
                             // }
                         ?>
