@@ -245,7 +245,7 @@
                 // else if ($maxpage > 10){
                 //     $maxpage = 10;
                 // }
-                if(isset($_GET['search'])){
+                if(isset($_GET['search']) or isset($_SERVER['QUERY_STRING'])){
                     $p = "&page="; 
                 }else{
                     $p = "page=";
