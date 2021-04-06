@@ -91,7 +91,7 @@
                                         <input type="text" id="name" name="name" placeholder="Your name" required>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="text" id="email" name="email" placeholder="Your email" required>
+                                        <input type="text" id="email" name="email" placeholder="Your phone / email" required>
                                     </div>
                                     <div class="col-lg-12">
                                         <textarea id="message" name="message" placeholder="Your message" required></textarea>
