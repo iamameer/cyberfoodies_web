@@ -198,9 +198,9 @@
             $url = 'store.php?store_id='.$store_id;
 
             //status color 
-            if(strpos($store_status,'BUKA')){
+            if($store_status=='BUKA'){
                 $store_status = '<span style="color:green!important;">'.$store_status .'</span>';
-            }else  if(strpos($store_status,'TUTUP')){
+            }else  if($store_status=='TUTUP'){
                 $store_status = '<span style="color:red!important;">'.$store_status .'</span>';
             }else{
                 $store_status = '<span style="color:#fc8803!important;">'.$store_status .'</span>';

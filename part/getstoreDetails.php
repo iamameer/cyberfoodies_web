@@ -79,11 +79,13 @@
                             } 
                             $statusP = $status;
                         }
-                        $operation .= '<tr id="'.$d.'" title="Open '.$d.' at 9am to 6pm" '.$istoday.'>
+                        $opentime = date('h:i a',strtotime($t[0]));
+                        $closetime = date('h:i a',strtotime($t[1]));
+                        $operation .= '<tr id="'.$d.'" title="Open '.$d.' at '.$opentime.' to '.$closetime.'" '.$istoday.'>
                                         <td>'.$d.'</td>
-                                        <td class="opens">'.date('h:i a',strtotime($t[0])).'</td>
+                                        <td class="opens">'.$opentime.'</td>
                                         <td>'.$statusP.'</td>
-                                        <td class="closes">'.date('h:i a',strtotime($t[1])).'</td>
+                                        <td class="closes">'.$closetime.'</td>
                                     </tr>';
                     }
                     
