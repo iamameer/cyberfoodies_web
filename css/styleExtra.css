@@ -112,9 +112,8 @@ form .group-input textarea{
 }
 
 .pagination{
-  width: 50%;
-  margin: 0 auto!important;
-  
+  width: 95%;
+  margin: 0 auto!important; 
 }
 
 .page-btn{

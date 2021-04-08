@@ -235,7 +235,7 @@
                         <div class="row">
                             <div class="col-lg-7 col-md-7">
                                 <div class="select-option"> 
-                                    <div class="mobilefilter" onclick="openNav()"><i class="fa fa-filter"></i> Filter</div>
+                                    <div class="mobilefilter" onclick="openNav()"><i class="fa fa-filter"></i><span class="f"> Filter</span></div>
                                     <select class="sorting">
                                         <option value="">Sort: Default</option>
                                         <option value="">Alphabet: A to Z</option>

@@ -23,19 +23,19 @@
                         <div class="countdown-timer" id="countdown">
                             <div class="cd-item">
                                 <span>56</span>
-                                <p>Days</p>
+                                <p>Hari</p>
                             </div>
                             <div class="cd-item">
                                 <span>12</span>
-                                <p>Hrs</p>
+                                <p>Jam</p>
                             </div>
                             <div class="cd-item">
                                 <span>40</span>
-                                <p>Mins</p>
+                                <p>Min</p>
                             </div>
                             <div class="cd-item">
                                 <span>52</span>
-                                <p>Secs</p>
+                                <p>Saat</p>
                             </div>
                         </div>
                         '.$button.'
