@@ -450,6 +450,6 @@
         if(searchVal.includes("&")){
             searchVal = searchVal.split("&")[0];
         } 
-        document.getElementById("searchInput").value = searchVal.replace("%20"," ");
+        document.getElementById("searchInput").value = searchVal.replaceAll("%20"," ");
     }
 </script>
