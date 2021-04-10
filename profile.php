@@ -156,25 +156,33 @@
                     </div>
                     </div>
                      
-                     
-                        <!-- <div class="leave-comment">
-                            <h4>Leave A Comment</h4>
-                            <form action="#" class="comment-form">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <input type="text" placeholder="Name">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" placeholder="Email">
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <textarea placeholder="Messages"></textarea>
-                                        <button type="submit" class="site-btn">Send message</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div> -->
+                     <?php 
+                        //  if(isset($_COOKIE["q"])){
+                        //     $str = explode("|",htmlspecialchars($_COOKIE["q"])); 
+                        //     $details = include('config/config.php');
 
+                        //     $admin = explode("@",$str[1])[0];
+                        //     if($admin == $details['superadmin'] or $admin == $details['administrator']){
+                        //         echo '<div class="leave-comment">
+                        //                 <h4>Transfer Store</h4>
+                        //                 <form action="config/transferstore.php" method="post" class="comment-form">
+                        //                     <div class="row">
+                        //                         <div class="col-lg-6">
+                        //                             <input type="text" name="user_id" placeholder="username/gmail">
+                        //                         </div>
+                        //                         <div class="col-lg-6">
+                        //                             <input type="text" name="curr_id" value="furqanprince95" placeholder="furqanprice95">
+                        //                         </div>
+                        //                         <div class="col-lg-12">
+                        //                             <textarea name="store_id" placeholder="store name/link"></textarea>
+                        //                             <button type="submit" class="site-btn">Transfer</button>
+                        //                         </div>
+                        //                     </div>
+                        //                 </form>
+                        //             </div>';
+                        //     }//endif admin
+                        //  }//end if Q
+                     ?> 
                     </div>
                 </div>
             </div>

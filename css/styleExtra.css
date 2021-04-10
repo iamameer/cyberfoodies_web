@@ -471,3 +471,7 @@ a.alink:visited{
   border-right: 0px none !important;
   padding: 5px!important;
 }
+
+.errPHP {
+  display:none !important;
+}

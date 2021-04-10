@@ -85,7 +85,7 @@
         $limit = true;
     }//end if result    
 
-    if($details['superadmin'] == $user_id){
+    if($details['administrator'] == $user_id){
         $limit = false;
     }
 

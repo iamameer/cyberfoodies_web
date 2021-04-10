@@ -147,13 +147,13 @@
                 $store_statusA = explode('|',explode('~',$store_status)[1]); // isnin#08:00>18:00 
             echo  ' <br>
                     <div style="display:none;">
-                        <input type="text" id="isnin" name="isnin" value="'.$store_statusA[0].'"></input> 
-                        <input type="text" id="selasa" name="selasa" value="'.$store_statusA[1].'"></input> 
-                        <input type="text" id="rabu" name="rabu" value="'.$store_statusA[2].'"></input> 
-                        <input type="text" id="khamis" name="khamis" value="'.$store_statusA[3].'"></input> 
-                        <input type="text" id="jumaat" name="jumaat" value="'.$store_statusA[4].'"></input> 
-                        <input type="text" id="sabtu" name="sabtu" value="'.$store_statusA[5].'"></input> 
-                        <input type="text" id="ahad" name="ahad" value="'.$store_statusA[6].'"></input> 
+                        <input type="text" id="ahad" name="ahad" value="'.$store_statusA[0].'"></input> 
+                        <input type="text" id="isnin" name="isnin" value="'.$store_statusA[1].'"></input> 
+                        <input type="text" id="selasa" name="selasa" value="'.$store_statusA[2].'"></input> 
+                        <input type="text" id="rabu" name="rabu" value="'.$store_statusA[3].'"></input> 
+                        <input type="text" id="khamis" name="khamis" value="'.$store_statusA[4].'"></input> 
+                        <input type="text" id="jumaat" name="jumaat" value="'.$store_statusA[5].'"></input> 
+                        <input type="text" id="sabtu" name="sabtu" value="'.$store_statusA[6].'"></input> 
                     </div>';
 
               //print Operation time
@@ -192,13 +192,13 @@
  
             }else{
                 echo ' <div style="display:none;">
+                            <input type="text" id="ahad" name="ahad" value="ahad#08:00>18:00"></input> 
                             <input type="text" id="isnin" name="isnin" value="isnin#08:00>18:00"></input> 
                             <input type="text" id="selasa" name="selasa" value="selasa#08:00>18:00"></input> 
                             <input type="text" id="rabu" name="rabu" value="rabu#08:00>18:00"></input> 
                             <input type="text" id="khamis" name="khamis" value="khamis#08:00>18:00"></input> 
                             <input type="text" id="jumaat" name="jumaat" value="jumaat#08:00>18:00"></input> 
                             <input type="text" id="sabtu" name="sabtu" value="sabtu#08:00>18:00"></input> 
-                            <input type="text" id="ahad" name="ahad" value="ahad#08:00>18:00"></input> 
                         </div>  ';
             }
 

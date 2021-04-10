@@ -44,8 +44,9 @@
                         $s = explode('@',$d); //08:00>18:00
                     }
                     $t = explode('>',str_replace(':','',$s[1])); //0800 1800
- 
-                    if((int)($hh.$mm) > (int)$t[0] and (int)($hh.$mm) < (int)$t[1]){
+                    
+                    $maxopen = ((int)$t[1] < 1) ? 2400 : (int)$t[1];
+                    if((int)($hh.$mm) > (int)$t[0] and (int)($hh.$mm) < $maxopen){
                         $status = '[BUKA]';
                     } 
 
