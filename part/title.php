@@ -39,5 +39,14 @@
     
     echo "<script type='text/javascript' src='js/search.js'> </script>";
 
+    echo  '<script async src="https://www.googletagmanager.com/gtag/js?id=G-26QE93M6YG"></script>';
+    echo "<script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', '".$details['gtag']."');
+        </script>";
+
     echo '<title>Cybereats</title>';
 ?>

@@ -7,9 +7,17 @@ echo '<div class="container topcontainer">
                 <i class=" fa fa-envelope" style="color:red"></i>
                 <span class="textTop">contact admin</span>
             </div></a>
-            <a href="https://t.me/joinchat/LaKQuhb_BCr22Ht2NRAulw">
-            <div class="phone-service"><img src="https://i.imgur.com/kika3LW.png" style="width:16px;height:16px">
+
+            <a href="https://t.me/joinchat/LaKQuhb_BCr22Ht2NRAulw"> 
+            <div class="phone-service">
+            <img src="https://i.imgur.com/kika3LW.png" style="width:16px;height:16px">
             <span class="textTop"> Go to Cyberjaya Food telegram</span>
+            </div></a>
+
+            <a href="https://cyberjayacommunity.com">
+            <div class="phone-service">
+            <img src="https://www.cyberjayacommunity.com/wp-content/uploads/2021/01/Cyberjaya-Community-Logo1.png" style="width:16px;height:16px">
+            <span class="textTop"> cyberjayacommunity.com</span>
             </div></a>
         </div>
 

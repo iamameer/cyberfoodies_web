@@ -17,6 +17,7 @@
     #where product_name
     if(isset($_GET['search'])){
         $search = $_GET['search'];
+        $search = preg_replace('/[^a-zA-Z0-9_ -]/s',' ',$search);
         if(strpos($search," ")){
             $find = explode(" ",$search);
             $found = " LOWER(product_name) LIKE '%".strtolower($search)."%' OR ";

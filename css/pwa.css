@@ -340,6 +340,7 @@
 
     .page-btn{
         padding: 4px 10px!important;
+        margin: 2px!important;
     }
 
     .filter-widget{
@@ -529,5 +530,31 @@
     .bazaarads{
         height:auto !important;
         width:90vw !important;
+    }
+
+    .bazaarcard{
+        width:100vw!important;
+        padding:10px !important;
+    }
+
+    .bazaarcard .control{
+        left:0!important;
+    }
+
+    .bazaarcard h1{font-size:20px!important}
+    .bazaarcard p{font-size:14px!important}
+    .bazaarcard .product-details{
+        padding:5px!important;
+    }
+
+    .bazaarcard .product-image{
+        right:0!important;
+        height:330px!important;
+        width: 50vw!important;
+        position:absolute!important;
+    }
+
+    .bazaarcard .product-image img{
+        object-fit:cover!important
     }
 }

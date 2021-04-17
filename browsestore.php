@@ -81,7 +81,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
                         <a href="index.php"><i class="fa fa-home"></i> Home</a>
-                        <span>Foods</span>
+                        <span>Stores</span>
                     </div>
                 </div>
             </div>

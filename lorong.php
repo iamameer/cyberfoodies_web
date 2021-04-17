@@ -62,7 +62,7 @@
                             //         window.location.replace('index.php');</script>";
                             // }else{
                                 echo '<script type="text/javascript">
-                                        document.getElementById("bazaar").classList.add("active");
+                                        document.getElementById("lorong").classList.add("active");
                                     </script>';
                             // }
                         ?>
@@ -81,7 +81,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
                         <a href="index.php"><i class="fa fa-home"></i>Home</a>
-                        <span>Bazaar</span>
+                        <span>Lorong Belakang</span>
                     </div>
                 </div>
             </div>
@@ -122,108 +122,64 @@
                                         opacity: .5;
                                     }
                                 </style>
-
-                            <div class="card">
-                                <div class="card-heading active">
-                                    <a data-toggle="collapse" data-target="#collapseOne">
-                                        TAPAK (Park & Ride)
-                                    </a>
-                                </div>
-                                <div id="collapseOne" class="collapse" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <p>Waktu: Sepanjang bulan ramadhan ( 2pm - 8pm )
-                                        <br>Sumber: <a href="https://www.mpsepang.gov.my/en/main/">MP Sepang</a>
+                                        <h2>Welcome to Lorong Belakang! </h2>
+                                        <p><b>Waktu: Setiap Sabtu ( 4pm - 10pm ) </b>
+                                        <br>Ingin berbuka puasa di Lorong Belakang Cyberjaya? Waze atau Google map ke Shaftsbury Square Cyberjaya. 
+                                        <br>Kami menyediakan tempat lepak khas untuk anda serta keluarga dan rakan-rakan anda. Jumpa anda setiap Sabtu!  
+                                        <br>Sumber: <a href="https://twitter.com/lorong_belakang">Twitter</a> 
+                                        <br>
+                                        <a href="https://t.co/WboHJ7NImc?amp=1"
+                                        <div class="primary-btn" style="padding-top:2px;">Berminat?</div></a>
                                         </p><br>
-                                         
-                                            <figure>
+                                        <figure>
                                                 <div class="maplayout">
                                                     <div class="testbox1" onmouseover="maphover()"></div>
                                                     <div class="testbox2" onmouseover="maphover()"></div>
 
-                                                    <img src='https://i.imgur.com/T2OZwyC.jpg' class="bazaarads"
+                                                    <img src='https://pbs.twimg.com/profile_banners/1310126818809184257/1616248296/1500x500' class="bazaarads"
                                                     alt='missing'/>
-                                                </div>
-                                                <figcaption>(Layout dan list vendor akan datang)</figcaption>
-                                            </figure>
-
-                                            <?php //include('exp/bazaar1.html'); ?>
-
-                                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15938.662594190624!2d101.6549224!3d2.9122192!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x911b3aef2d99682c!2sTapak%20Urban%20Street%20Dining%20Cyberjaya!5e0!3m2!1sen!2smy!4v1618302362088!5m2!1sen!2smy"
-                                                width="95%" height="400px"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                                            
-                                    </div> 
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-heading">
-                                    <a class="active" data-toggle="collapse" data-target="#collapseTwo">
-                                        Prima Avenue
-                                    </a>
-                                </div>
-                                <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <p>Waktu: Sepanjang bulan ramadhan ( 3pm - 8pm )   
-                                        <br>Sumber: <a href="https://twitter.com/shezzlahhhhh/status/1376829555260891139/photo/2">Twitter</a> 
-                                        </p><br>
-                                         
-                                            <figure>
-                                                <div class="maplayout">
-                                                    <div class="testbox1" onmouseover="maphover()"></div>
-                                                    <div class="testbox2" onmouseover="maphover()"></div>
-
-                                                    <img src='https://i.imgur.com/ZVvVC8a.jpg' class="bazaarads"
-                                                    alt='missing'/> 
                                                 </div>
                                                 <figcaption></figcaption>
                                             </figure>
 
-                                            <?php include('exp/timeline-prima.php'); ?>
-
-                                            
-                                            <center><figure>
-                                                <div class="maplayout">  
-                                                    <img src='https://i.imgur.com/koLQAHX.png' class="bazaarads"
-                                                    alt='missing'/> 
-                                                </div>
-                                                <figcaption>Layout Bazaar</figcaption>
-                                            </figure>   </center>
-
-                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.633739686484!2d101.65527595134651!3d2.921224455313223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb6f92d65ab89%3A0xc02d18120df42cb9!2sPrima%20Avenue%2C%20Cyberjaya%2C%2063000%20Cyberjaya%2C%20Selangor!5e0!3m2!1sen!2smy!4v1618302721023!5m2!1sen!2smy" 
-                                                width="95%" height="400px"  style="border:0;" allowfullscreen="" loading="lazy"></iframe> 
-                                    </div> 
-                                </div>
-                            </div>
-
                             <div class="card">
                                 <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseThree">
-                                        Tamarind Square [Dibatalkan/Cancelled]
+                                    <a class="active" data-toggle="collapse"  data-target="#collapseTwo">
+                                        Senarai Penjual (17 April 2021)
                                     </a>
                                 </div>
-                                <div id="collapseThree" class="collapse" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <p><strike>Waktu: Sepanjang bulan ramadhan ( 2pm - 8pm )</strike> <a href="https://twitter.com/Twt_Cyberjaya/status/1381928681036124177">[Rujuk]</a>
-                                        <br>Sumber: <a href="https://www.instagram.com/p/CMylLriFzFe/">Tamarind Square Instagram</a>
-                                        </p><br>
-                                         
-                                            <figure>
-                                                <div class="maplayout">
-                                                    <div class="testbox1" onmouseover="maphover()"></div>
-                                                    <div class="testbox2" onmouseover="maphover()"></div>
+                                <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body"> 
+                                            <?php include('exp/timeline-lorong.php'); ?> 
+                                    </div> 
 
-                                                    <img src='https://i.imgur.com/75XZxjI.jpg'  class="bazaarads"
-                                                    alt='missing'/>
+                                        
+                                    <center><figure>
+                                                <div class="maplayout">  
+                                                    <img src='https://i.imgur.com/8GSfnos.png' class="bazaarads"
+                                                    alt='missing'/> 
                                                 </div>
-                                                <figcaption>(Layout dan list vendor akan datang)</figcaption>
-                                            </figure>
+                                                <figcaption>Layout</figcaption>
+                                            </figure>   </center>
+                                </div>
+                            </div>
 
-                                            <?php //include('exp/bazaar1.html'); ?> 
-                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.63792184357!2d101.63430545134649!3d2.9200457553197126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb72c965ab4cd%3A0x38201f285c241048!2sTamarind%20Square!5e0!3m2!1sen!2smy!4v1618302908983!5m2!1sen!2smy" 
+                            
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" >
+                                        Lokasi
+                                    </a>
+                                </div>
+                                <div id="collapseThree" class="collapse show " data-parent="#accordionExample">
+                                    <div class="card-body">   
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1992.3128200783212!2d101.66086127606091!3d2.923505878184341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb65623667c1d%3A0xaaaaa564888f7f15!2sShaftsbury%20Square!5e0!3m2!1sen!2smy!4v1618648929062!5m2!1sen!2smy" 
                                                 width="95%" height="400px"  style="border:0;" allowfullscreen="" loading="lazy"></iframe> 
                                     </div> 
                                 </div>
                             </div>
+
+                       
 
 
     </section>
