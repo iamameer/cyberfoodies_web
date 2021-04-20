@@ -8,21 +8,21 @@
                 </div>
                 <ol>
                 <a href="#1">1.	Furzani Burger</a><br>
-                <a href="#2">2.	Nasi Lan Kedah</a><br>
-                <a href="#3">3.	Astro Broadband</a><br>
+                <a href="#2">2.	Mango Float</a><br>
+                <a href="#3">3.	Nasi Lan Kedah</a><br>
                 <a href="#4">4.	Takoyaki & Sushi</a><br>
                 <a href="#5">5.	Ayam Geprek</a><br>
                 <a href="#6">6.	Padi House</a><br>
                 <a href="#7">7.	Tokio Café</a><br>
                 <a href="#8">8.	Satay & Char Keuy Teow</a><br>
                 <a href="#9">9.	Daging Harimau Menangis</a><br>
-                <a href="#10">10.	Uncle K </a><br>
-                <a href="#11">11.	Nasi Dagang</a><br>
-                <a href="#12">12/13.	Mior Kitchen (western) </a><br>
-                <a href="#13">14.	Old Town </a><br>
-                <a href="#14">15.	Café Kuih</a><br>
-                <a href="#15">16.	Nasi Lauk Campur (Taufik)</a><br>
-                <a href="#16">17.	Nasi Ayam Kunyit</a><br>
+                <a href="#10">10. Nasi Dagang</a><br>
+                <a href="#11">11. TK Cabin</a><br>
+                <a href="#12">12/13. Mior Kitchen (western) </a><br>
+                <a href="#13">14. Old Town </a><br>
+                <a href="#14">15. Café Kuih</a><br>
+                <a href="#15">16. Nasi Lauk Campur (Taufik)</a><br>
+                <a href="#16">17. Nasi Ayam Kunyit</a><br>
                 </ol><br><br>
             </div>
         </div>
@@ -42,18 +42,18 @@
             #2
             $contact = '(0)';
             $insta = '5';
-            $vendor = '2. Nasi Lan Kedah';
-            $desc = 'Lauk campur';
-            $img = '';
+            $vendor = '2. Mango Float';
+            $desc = 'Air';
+            $img = 'https://pbs.twimg.com/media/EzFegJwVEAIISLZ?format=jpg&name=large';
 
             $arr2 = array($contact, $insta, $vendor, $desc,$img);
 
             #3
             $contact = '(0)';
             $insta = '5';
-            $vendor = '3. Astro Broadband';
-            $desc = 'Retail';
-            $img = 'https://i.imgur.com/advHeTm.jpg';
+            $vendor = '3. Nasi Lan Kedah';
+            $desc = 'Lauk campur';
+            $img = 'https://pbs.twimg.com/media/EzKFTJvUUAApHsP?format=jpg&name=large';
 
             $arr3 = array($contact, $insta, $vendor, $desc,$img);
 
@@ -88,8 +88,8 @@
             $contact = '(0)';
             $insta = '5';
             $vendor = '7. Tokio Café';
-            $desc = '-';
-            $img = '';
+            $desc = '(combined with Padi House)';
+            $img = 'https://i.imgur.com/AhTmphN.jpg';
  
              $arr7 = array($contact, $insta, $vendor, $desc,$img);
 
@@ -113,21 +113,21 @@
 
 
             #10
-            $contact = '(0)';
-            $insta = '5';
-            $vendor = '10. Uncle K';
-            $desc = '-';
+            $contact = '0193643714';
+            $insta = '5';   
+            $vendor = '10. Nasi Dagang'; 
+            $desc = 'Ayam Masak Merak, Nasi Dagang';
             $img = 'https://i.imgur.com/vmwtVnZ.jpg';
 
             $arr10 = array($contact, $insta, $vendor, $desc,$img);
 
             
             #11
-            $contact = '(0)';
+            $contact = '0193224768';
             $insta = '5';
-            $vendor = '11. Nasi Dagang';
+            $vendor = '11. TK Cabin';
             $desc = 'Nasi Goreng, Telur Goreng, Air Mata Kucing';
-            $img = 'https://i.imgur.com/Z2LaAwS.jpg';
+            $img = 'https://i.imgur.com/Z2LaAwS.jpg'; 
 
             $arr11 = array($contact, $insta, $vendor, $desc,$img);
 
@@ -152,7 +152,7 @@
 
             #15
             $contact = '013-763 0610';
-            $insta = '5';
+            $insta = 'Kue_cafe';
             $vendor = '15. Café Kuih';
             $desc = 'Kuih Muih, Masak Lemak, Ayam Salai, Itik Salai, Asam Pedas';
             $img = 'https://i.imgur.com/TH75oNP.jpg';
@@ -160,10 +160,10 @@
             $arr15 = array($contact, $insta, $vendor, $desc,$img);
 
             #16
-            $contact = '(0)';
+            $contact = '0143348676';
             $insta = '5';
             $vendor = '16. Nasi Lauk Campur (Taufik)';
-            $desc = '-';
+            $desc = 'Nasi campur';
             $img = 'https://i.imgur.com/Rjp45eP.jpg';
 
             $arr16 = array($contact, $insta, $vendor, $desc,$img);
@@ -189,14 +189,23 @@
                 $phone =  str_replace('-','',$phone);
 
                 $whatsapp = (strlen($phone)>3) ?
-                            '<a href="https://wa.me/6'.$phone.'"style="color:white" >
-                                '.$arr[$d][0].'
-                            </a>' : '(no contact)';
+                            '
+                                <div class="tag-item" 
+                                    style="background-color:#25D366;padding:5px;color:white;border-radius:6px">
+                                    <a href="https://wa.me/6'.$phone.'"style="color:white" >
+                                        <i class="fa fa-whatsapp" style="color:white" ></i>
+                                     Whatsapp
+                                    </a>
+                                </div> 
+                           ' : 
+                             '' ;
 
                 $instagram = (strlen($arr[$d][1])>3) ? 
-                            '<a href="https://instagram.com/'.$arr[$d][1].'"  >
+                            '<a href="https://instagram.com/'.$arr[$d][1].'" 
+                                style="background-color:#C13584;padding:5px;color:white;border-radius:6px"" >
+                                <i class="fa fa-instagram"></i> 
                                 '.$arr[$d][1].'
-                            </a>' : '(no instagram)';
+                            </a>' : ' ';
 
                 $image =  (strlen($arr[$d][4])>3) ? 
                              $arr[$d][4]
@@ -208,12 +217,8 @@
                                 <img src="'.$image .'" alt="">
                                 <div class="latest-text">
                                     <div class="tag-list">
-                                        <div class="tag-item" style="background-color:#25D366;padding:5px;color:white">
-                                            <i class="fa fa-whatsapp" style="color:white" ></i>
-                                            '.$whatsapp.'
-                                        </div>
-                                        <div class="tag-item">
-                                            <i class="fa fa-instagram"></i>
+                                            '.$whatsapp.' 
+                                        <div class="tag-item"> 
                                             '.$instagram.'
                                         </div>
                                     </div> 

@@ -90,7 +90,7 @@
     <!-- Breadcrumb Section Begin -->
 
     <!-- Blog Details Section Begin -->
-    <section class="blog-details spad blogcontent" style="padding-top:15px;">
+    <section class="blog-details spad blogcontent" style="padding-top:15px;" id="topcontainer">
         <div class="container">
            
              <center><!--<img src="img/coming-soon.jpg" alt="" >  --> 
@@ -225,6 +225,9 @@
                                 </div>
                             </div>
 
+                            <a href="#topcontainer" class="floatbutton" style="visibility:hidden;" id="floatbutton">
+                                <i class="fa fa-chevron-circle-up my-float" id="myfloat"></i>
+                            </a>
 
     </section>
     <!-- Blog Details Section End -->
