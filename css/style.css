@@ -37,6 +37,7 @@ body {
 	font-family: "Muli", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
+	scroll-behavior: smooth;
 }
 
 h1,
@@ -4079,7 +4080,7 @@ ol {
 @media only screen and (min-width: 1200px) {
 	.container {
 		/* max-width: 1170px; */
-		max-width: 1330px;
+		max-width: 1450px;
 	}
 }
 

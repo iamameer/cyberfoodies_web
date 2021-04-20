@@ -2,12 +2,23 @@
 
     $arr = array();
 
+    #Slider 0 ###################################
+    $img_url = 'https://i.imgur.com/3RqCE2h.jpg';
+    $small_tag = 'Notice'; //caps
+    $big_title = '';
+    $text = '';
+    $button = '<a href="https://t.co/WboHJ7NImc?amp=1" class="primary-btn carbut" style="padding-top:6px;">Check it out!</a>';//
+    $spinsales = '';
+
+    $arr0 = array($img_url,$small_tag,$big_title,$text,$button,$spinsales);  
+  
+
     #Slider 1 ###################################
     $img_url = 'img/sample/sliderFood.jpg';//'https://source.unsplash.com/collection/67804040'; //;
     $small_tag = ''; //caps
     $big_title = 'Hungry?';
     $text = '';
-    $button = '<a href="browsefood.php" class="primary-btn carbut">Browse food!</a>';
+    $button = '<a href="browsefood.php" class="primary-btn carbut" style="padding-top:6px;">Browse food!</a>';
     $spinsales = '';
     //'<div class="off-card">
     //                 <h2>Sale <span>50%</span></h2>
@@ -19,7 +30,7 @@
     $small_tag = 'Advertisement'; //caps
     $big_title = 'You\'re selling?';
     $text = 'Sign in and set up your own store FOR FREE, create multiple stores, add multiple products, ALL FOR FREE';
-    $button = '<a href="browsestore.php" class="primary-btn carbut">or browse store</a>';
+    $button = '<a href="browsestore.php" class="primary-btn carbut" style="padding-top:6px;">or browse store</a>';
     $spinsales = '';
 
     $arr2 = array($img_url,$small_tag,$big_title,$text,$button,$spinsales); 
@@ -29,35 +40,25 @@
     $small_tag = 'Notice'; //caps
     $big_title = '';
     $text = '';
-    $button = '<a href="http://ekl.mpsepang.gov.my/sso/" class="primary-btn carbut">MP SEPANG Website</a>';//
+    $button = '<a href="http://ekl.mpsepang.gov.my/sso/" class="primary-btn carbut" style="padding-top:6px;">MP SEPANG Website</a>';//
     $spinsales = '';
 
     $arr3 = array($img_url,$small_tag,$big_title,$text,$button,$spinsales);
 
     #Slider 4 ###################################
-    $img_url = 'https://i.imgur.com/rxykR4Y.jpg';
-    $small_tag = 'Notice'; //caps
-    $big_title = '';
-    $text = '';
-    $button = '<a href="https://wa.me/0186665041" class="primary-btn carbut">Contact (TAMARIND)</a>';//
-    $spinsales = '';
-
-    $arr4 = array($img_url,$small_tag,$big_title,$text,$button,$spinsales);  
-
-    #Slider 5 ###################################
     $img_url = 'https://i.imgur.com/kvjla5x.jpg';
     $small_tag = 'Notice'; //caps
     $big_title = '';
     $text = '';
-    $button = '<a href="https://wa.me/0143697135" class="primary-btn carbut">Contact (ACAP)</a>';//
+    $button = '<a href="https://wa.me/0143697135" class="primary-btn carbut" style="padding-top:6px;">Contact (ACAP)</a>';//
     $spinsales = '';
 
-    $arr5 = array($img_url,$small_tag,$big_title,$text,$button,$spinsales);  
+    $arr4 = array($img_url,$small_tag,$big_title,$text,$button,$spinsales);  
 
     ///////////////////////////////////////////////////////////////////
 
     $arr = array(
-            $arr1,$arr2,$arr3,$arr4,$arr5
+            $arr0,$arr1,$arr2,$arr3,$arr4
         );
 
     for($d = 0;$d<count($arr);$d++){

@@ -557,4 +557,8 @@
     .bazaarcard .product-image img{
         object-fit:cover!important
     }
+
+    .pwabazaar{
+        font-size: 18px!important;
+    }
 }

@@ -13,7 +13,7 @@
         $str = explode("|",htmlspecialchars($_COOKIE['q'])); 
         $user_id = explode("@",$str[1])[0];
         $temp = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $store_name));
-        $store_id = str_shuffle($user_id . rand ( 11 , 99 ).substr(str_replace(' ','',$temp), 0, 5));
+        $store_id = $temp.'_'.substr($user_id,0,5);//str_shuffle($user_id . rand ( 11 , 99 ).substr(str_replace(' ','',$temp), 0, 5));
     }else{
         $user_id = "uid";
         $store_id = "sid";
@@ -139,13 +139,13 @@
     if(!$conn-> query($sql)){ 
         echo("Error: ".$conn->error. ' @'.$sql);
     }else{
-        $sql2 = ' INSERT INTO '.$details['database'] .'.' .$details['user_table'].
-                '(user_phone) VALUES ("'.$store_phone.'") ';
-        $conn->query($sql2); 
-        $sql = addslashes(trim(preg_replace('/\s+/', ' ', $sql)));
-            $sqlQ = ' INSERT IGNORE INTO '.$details['database'] .'.' .$details['query_table'].
-                ' (user_email,query) VALUES ("'.$str[1].'","'.$sql.'")';
-        $conn->query($sqlQ); 
+        // $sql2 = ' INSERT INTO '.$details['database'] .'.' .$details['user_table'].
+        //         '(user_phone) VALUES ("'.$store_phone.'") WHERE ';
+        // $conn->query($sql2); 
+        // $sql = addslashes(trim(preg_replace('/\s+/', ' ', $sql)));
+        //     $sqlQ = ' INSERT IGNORE INTO '.$details['database'] .'.' .$details['query_table'].
+        //         ' (user_email,query) VALUES ("'.$str[1].'","'.$sql.'")';
+        // $conn->query($sqlQ); 
         echo "<script type='text/javascript'>
                 window.location.replace('../profile.php'); 
                 </script>";

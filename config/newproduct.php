@@ -12,9 +12,9 @@
     if(isset($_COOKIE['q'])){
         $str = explode("|",htmlspecialchars($_COOKIE['q'])); 
         $user_id = explode("@",$str[1])[0];
-        $temp = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $product_name));
-        $product_id = str_shuffle($user_id . rand ( 11 , 99 ).substr(str_replace(' ','',$temp), 0, 5));
+        $temp = preg_replace('/[^A-Za-z0-9\-]/', '', str_replace(' ', '-', $product_name)); 
         $store_id = $_GET['store_id'];
+        $product_id = $temp.'_'.substr($store_id,0,5).rand ( 11 , 99 );//str_shuffle($user_id . rand ( 11 , 99 ).substr(str_replace(' ','',$temp), 0, 5));
     }else{
         $user_id = "uid";
         $product_id = "pid";

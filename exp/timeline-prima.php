@@ -3,9 +3,27 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>Senarai penjual (vendors list)</h2>
+                <div class="section-title" style="margin-bottom:2px">
+                    <h2 class="pwabazaar">Senarai penjual (vendors list)</h2>
                 </div>
+                <ol>
+                <a href="#1">1.	Furzani Burger</a><br>
+                <a href="#2">2.	Nasi Lan Kedah</a><br>
+                <a href="#3">3.	Astro Broadband</a><br>
+                <a href="#4">4.	Takoyaki & Sushi</a><br>
+                <a href="#5">5.	Ayam Geprek</a><br>
+                <a href="#6">6.	Padi House</a><br>
+                <a href="#7">7.	Tokio Café</a><br>
+                <a href="#8">8.	Satay & Char Keuy Teow</a><br>
+                <a href="#9">9.	Daging Harimau Menangis</a><br>
+                <a href="#10">10.	Uncle K </a><br>
+                <a href="#11">11.	Nasi Dagang</a><br>
+                <a href="#12">12/13.	Mior Kitchen (western) </a><br>
+                <a href="#13">14.	Old Town </a><br>
+                <a href="#14">15.	Café Kuih</a><br>
+                <a href="#15">16.	Nasi Lauk Campur (Taufik)</a><br>
+                <a href="#16">17.	Nasi Ayam Kunyit</a><br>
+                </ol><br><br>
             </div>
         </div>
         <div class="row">
@@ -182,11 +200,11 @@
 
                 $image =  (strlen($arr[$d][4])>3) ? 
                              $arr[$d][4]
-                            : 'https://i.imgur.com/4hdmiyK.jpg';
+                            : 'https://i.imgur.com/Fbvbumo.png?1';
                 
                 echo ' 
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-latest-blog">
+                        <div id="'.($d+1).'"  class="col-lg-4 col-md-6">
+                            <div class="single-latest-blog"  style="background-color:rgba(255, 156, 94,.2);padding:5px">
                                 <img src="'.$image .'" alt="">
                                 <div class="latest-text">
                                     <div class="tag-list">
@@ -198,10 +216,8 @@
                                             <i class="fa fa-instagram"></i>
                                             '.$instagram.'
                                         </div>
-                                    </div>
-                                    <a href="#">
-                                        <h4>'.$arr[$d][2].'</h4>
-                                    </a>
+                                    </div> 
+                                        <h4>'.$arr[$d][2].'</h4> 
                                     <p>'.$arr[$d][3].'</p>
                                 </div>
                             </div>
